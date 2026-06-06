@@ -1,0 +1,394 @@
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,html,body{width:100%;height:100%;overflow:hidden;font-family:'Nunito',sans-serif;touch-action:manipulation;background:#000510;}
+
+#ns{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#000510 0%,#020820 40%,#050d30 70%,#0a0520 100%);overflow:hidden;}
+.nc{background:rgba(10,20,60,.35);border:1px solid rgba(100,180,255,.2);border-radius:28px;padding:30px 24px;width:90%;max-width:340px;text-align:center;backdrop-filter:blur(8px);box-shadow:0 0 40px rgba(50,100,255,.15);}
+.nc h1{font-family:'Fredoka One';font-size:2rem;color:#F4C430;margin-bottom:6px;}
+.nc p{font-size:.88rem;color:#999;font-weight:700;margin-bottom:22px;line-height:1.5;}
+#ni{width:100%;border:3px solid #F4C430;border-radius:14px;padding:13px;font-family:'Fredoka One';font-size:1.4rem;text-align:center;outline:none;margin-bottom:18px;background:#FFF8E8;color:#333;}
+#nb{background:linear-gradient(135deg,#F4C430,#FFD700);border:none;border-radius:30px;padding:14px 48px;font-family:'Fredoka One';font-size:1.15rem;color:white;cursor:pointer;box-shadow:0 6px 20px rgba(244,196,48,.4);}
+
+#hm{position:fixed;inset:0;z-index:50;display:none;flex-direction:column;align-items:center;background:linear-gradient(180deg,#000510 0%,#020820 40%,#050d30 70%,#0a0520 100%);overflow-y:auto;}
+#hm-inner{width:100%;max-width:560px;padding:14px 14px 80px;}
+#hm-head{text-align:center;padding:14px 0 10px;}
+#hm-head h1{font-family:'Fredoka One';font-size:clamp(1.4rem,5.5vw,2rem);color:white;text-shadow:0 2px 12px rgba(0,60,30,.25);}
+#hm-score{background:rgba(255,255,255,.88);border-radius:30px;padding:8px 20px;display:inline-flex;align-items:center;gap:8px;margin:8px 0 10px;box-shadow:0 4px 16px rgba(0,0,0,.12);}
+#hm-score span{font-family:'Fredoka One';font-size:1.2rem;color:#F4C430;}
+#hm-score em{font-family:'Fredoka One';font-size:.85rem;color:#5DBB7A;font-style:normal;}
+#streak-msg{font-size:.76rem;font-weight:700;color:#6622CC;background:rgba(255,255,255,.8);border-radius:20px;padding:6px 14px;margin-bottom:8px;display:none;text-align:center;}
+.hm-btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;}
+.hm-btn{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:30px;padding:6px 14px;font-family:'Fredoka One';font-size:.74rem;color:white;cursor:pointer;}
+.story-banner{background:rgba(255,255,255,.12);border:1px solid rgba(255,200,100,.3);border-radius:18px;padding:13px 16px;margin-bottom:12px;display:flex;align-items:center;gap:12px;cursor:pointer;}
+.sb-ico{font-size:2rem;}
+.sb-info{flex:1;}
+.sb-title{font-family:'Fredoka One';font-size:.9rem;color:#FFD700;}
+.sb-sub{font-size:.72rem;font-weight:700;color:rgba(255,200,100,.55);}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.rb{background:rgba(255,255,255,.88);border:none;border-radius:18px;padding:12px 6px;text-align:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.1);transition:transform .15s;}
+.rb:hover{transform:translateY(-2px);}
+.rb.locked{opacity:.5;cursor:not-allowed;}
+.rb-ico{font-size:2rem;margin-bottom:4px;}
+.rb-name{font-family:'Fredoka One';font-size:.68rem;color:#333;line-height:1.2;}
+.rb-info{font-size:.6rem;color:#F4C430;margin-top:2px;font-weight:700;}
+
+#gs{position:fixed;inset:0;z-index:60;display:none;}
+#gc{position:absolute;inset:0;cursor:crosshair;}
+#ghud{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;justify-content:space-between;align-items:center;padding:9px 12px;}
+#gsp{background:rgba(255,255,255,.88);border-radius:40px;padding:6px 16px;display:flex;align-items:center;gap:6px;box-shadow:0 3px 14px rgba(0,0,0,.13);}
+#gsn{font-family:'Fredoka One';font-size:1.4rem;color:#F4C430;min-width:38px;}
+#gsn.bump{animation:bump .3s;}
+@keyframes bump{0%{transform:scale(1)}45%{transform:scale(1.6)}100%{transform:scale(1)}}
+#grp{background:rgba(255,255,255,.88);border-radius:40px;padding:6px 14px;display:flex;align-items:center;gap:5px;box-shadow:0 3px 14px rgba(0,0,0,.13);}
+#grn{font-family:'Fredoka One';font-size:.8rem;color:#5DBB7A;}
+#gbk{background:rgba(255,255,255,.75);border:none;border-radius:30px;padding:6px 14px;font-family:'Nunito';font-size:.76rem;font-weight:700;color:#888;cursor:pointer;}
+#gpb{position:fixed;top:52px;left:10px;right:10px;height:6px;background:rgba(255,255,255,.35);border-radius:4px;z-index:69;overflow:hidden;}
+#gp{height:100%;background:linear-gradient(90deg,#F4C430,#FFD700);border-radius:4px;width:0%;transition:width .4s;}
+#gles{position:fixed;top:66px;left:50%;transform:translateX(-50%);z-index:68;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);border-radius:16px;padding:6px 16px;opacity:0;transition:opacity .5s;pointer-events:none;max-width:90vw;text-align:center;}
+#gles p{font-size:.76rem;font-weight:800;color:rgba(255,255,255,.9);}
+#gles.show{opacity:1;}
+
+.fm{position:fixed;z-index:80;pointer-events:none;text-align:center;animation:fmin .4s cubic-bezier(.175,.885,.32,1.275) forwards;}
+@keyframes fmin{from{transform:translate(-50%,-50%) scale(0);opacity:0;}to{transform:translate(-50%,-50%) scale(1);opacity:1;}}
+.fm.out{animation:fmout .5s ease forwards;}
+@keyframes fmout{to{transform:translate(-50%,-85%) scale(.9);opacity:0;}}
+.fmi{background:linear-gradient(145deg,#fff,#f8f5ff);border-radius:22px;padding:14px 22px;max-width:280px;min-width:200px;box-shadow:0 10px 40px rgba(0,0,0,.35),0 2px 8px rgba(0,0,0,.2);display:flex;flex-direction:column;align-items:center;gap:5px;}
+.fme{font-size:2.2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2));}
+.fmt{font-size:.92rem;font-weight:900;color:#1a1a2e;line-height:1.4;text-align:center;text-shadow:none;letter-spacing:.01em;}
+.fmq{font-size:.72rem;color:#666;font-style:italic;margin-top:2px;line-height:1.3;}
+.fmp{font-family:'Fredoka One';font-size:1.2rem;margin-top:3px;font-weight:900;}
+
+#ach{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s;padding:16px;}
+#ach.show{opacity:1;pointer-events:auto;}
+.ac{background:linear-gradient(145deg,#FFF8E8,#FFEFC5);border-radius:26px;padding:30px 22px;text-align:center;max-width:290px;width:100%;box-shadow:0 20px 55px rgba(0,0,0,.28);border:3px solid #F4C430;animation:acpop .5s cubic-bezier(.175,.885,.32,1.275);}
+@keyframes acpop{from{transform:scale(.6);opacity:0;}to{transform:scale(1);opacity:1;}}
+.ac-ico{font-size:3.2rem;margin-bottom:6px;}
+.ac-tit{font-family:'Fredoka One';font-size:1.7rem;color:#F4C430;margin-bottom:5px;}
+.ac-sub{font-size:.86rem;font-weight:700;color:#8a7040;line-height:1.5;margin-bottom:12px;}
+.ac-sc{font-family:'Fredoka One';font-size:2rem;color:#5DBB7A;margin-bottom:14px;}
+#acok{background:linear-gradient(135deg,#F4C430,#FFD700);border:none;border-radius:30px;padding:11px 36px;font-family:'Fredoka One';font-size:1.05rem;color:white;cursor:pointer;}
+
+#bc{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:75;background:rgba(255,255,255,.92);border-radius:18px;padding:14px 20px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.16);display:none;}
+#bc.show{display:block;}
+.bc-t{font-size:.82rem;font-weight:700;color:#555;margin-bottom:10px;}
+.bc-b{display:flex;gap:10px;justify-content:center;}
+.bcy{background:#FF5555;border:none;border-radius:20px;padding:8px 22px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;}
+.bcn{background:#5DBB7A;border:none;border-radius:20px;padding:8px 22px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;}
+
+/* REPORT / KELIME DEFTERİ */
+.overlay{position:fixed;inset:0;z-index:96;display:none;align-items:center;justify-content:center;background:rgba(5,2,20,.9);backdrop-filter:blur(12px);padding:16px;}
+.overlay.show{display:flex;}
+.ov-card{border-radius:24px;padding:22px 18px;width:min(400px,100%);max-height:85vh;overflow-y:auto;}
+.ov-card.dark{background:linear-gradient(145deg,#0a1628,#061020);border:2px solid rgba(100,180,255,.3);}
+.ov-card.light{background:linear-gradient(145deg,#ffffff,#f8f4ff);}
+.ov-card h2{font-family:'Fredoka One';font-size:1.5rem;text-align:center;margin-bottom:16px;}
+.ov-close{display:block;margin:14px auto 0;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:7px 24px;font-family:'Nunito';font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);cursor:pointer;}
+.kd-tabs{display:flex;gap:6px;margin-bottom:12px;justify-content:center;}
+.kd-tab{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:5px 14px;font-family:'Fredoka One';font-size:.75rem;color:rgba(255,255,255,.55);cursor:pointer;}
+.kd-tab.active{background:rgba(100,180,255,.2);border-color:rgba(100,180,255,.5);color:#7BBCFF;}
+.kd-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.kw-item{background:rgba(255,255,255,.05);border:1px solid rgba(100,180,255,.12);border-radius:14px;padding:10px;text-align:center;}
+.kw-ico{font-size:1.4rem;margin-bottom:3px;}
+.kw-tr{font-family:'Fredoka One';font-size:.78rem;color:rgba(255,255,255,.75);}
+.kw-en{font-size:.82rem;font-weight:900;color:#7BBCFF;margin-top:2px;}
+.kw-de{font-size:.82rem;font-weight:900;color:#FF8844;margin-top:2px;}
+.kw-cnt{font-size:.58rem;color:rgba(255,255,255,.3);margin-top:3px;}
+.rstat{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:14px;background:#f0eaff;margin-bottom:8px;}
+.rstat-ico{font-size:1.4rem;}
+.rstat-lbl{font-size:.7rem;font-weight:700;color:#888;}
+.rstat-val{font-family:'Fredoka One';font-size:1.05rem;color:#6622CC;}
+
+/* ── OKİŞİ ── */
+#oki-canvas{image-rendering:pixelated;filter:drop-shadow(0 4px 12px rgba(102,34,204,.3));}
+@keyframes oki-bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.oki-happy{animation:oki-bounce .5s ease 3;}
+
+/* ── TEMALAR ── */
+body[data-theme="purple"] { --t-bg1:#1a0a3e; --t-bg2:#0d1248; --t-bg3:#280a6e; --t-accent:#AA88FF; --t-rb:#2a1060; --t-rb-border:rgba(170,100,255,.35); --t-rb-hover:#3a1880; }
+body[data-theme="teal"]   { --t-bg1:#003366; --t-bg2:#004488; --t-bg3:#005599; --t-accent:#44DDBB; --t-rb:#004466; --t-rb-border:rgba(68,200,180,.35); --t-rb-hover:#006688; }
+body[data-theme="rose"]   { --t-bg1:#3a0020; --t-bg2:#550030; --t-bg3:#440025; --t-accent:#FF88AA; --t-rb:#4a0028; --t-rb-border:rgba(255,100,150,.35); --t-rb-hover:#660035; }
+body[data-theme="forest"] { --t-bg1:#0a2010; --t-bg2:#0d2e14; --t-bg3:#143320; --t-accent:#66DD88; --t-rb:#0d2810; --t-rb-border:rgba(80,200,100,.35); --t-rb-hover:#1a3e1c; }
+body[data-theme="night"]  { --t-bg1:#050510; --t-bg2:#0a0a20; --t-bg3:#080818; --t-accent:#88BBFF; --t-rb:#0a0a1e; --t-rb-border:rgba(100,150,255,.35); --t-rb-hover:#12122e; }
+/* default (original) */
+body { --t-bg1:#1a0a3e; --t-bg2:#0d1248; --t-bg3:#280a6e; --t-accent:#AA88FF; --t-rb:#2a1060; --t-rb-border:rgba(170,100,255,.35); --t-rb-hover:#3a1880; }
+
+@keyframes charFloat  { 0%,100%{transform:translateY(0)}    50%{transform:translateY(-8px)} }
+@keyframes charWave   { 0%,100%{transform:rotate(0)}         25%{transform:rotate(-8deg) translateY(-4px)} 75%{transform:rotate(8deg) translateY(-4px)} }
+@keyframes charJump   { 0%{transform:translateY(0)}          40%{transform:translateY(-20px) scale(1.08)} 100%{transform:translateY(0)} }
+@keyframes charBounce { 0%,100%{transform:scale(1)}          50%{transform:scale(1.1) rotate(-3deg)} }
+@keyframes charSway   { 0%,100%{transform:rotate(-5deg)}     50%{transform:rotate(5deg)} }
+@keyframes charSad    { 0%,100%{transform:translateY(0)}     50%{transform:translateY(4px) rotate(-3deg)} }
+@keyframes charGlow   { 0%,100%{opacity:.6;transform:scale(1)}  50%{opacity:1;transform:scale(1.12)} }
+@keyframes charSpark  { 0%{opacity:0;transform:scale(0) rotate(0deg)} 50%{opacity:1;transform:scale(1.2) rotate(180deg)} 100%{opacity:0;transform:scale(0) rotate(360deg)} }
+@keyframes charShake  { 0%,100%{transform:translateX(0) scale(1)} 20%{transform:translateX(-8px) scale(1.05) rotate(-3deg)} 40%{transform:translateX(8px) scale(1.08) rotate(3deg)} 60%{transform:translateX(-5px) scale(1.05) rotate(-2deg)} 80%{transform:translateX(5px) scale(1.03) rotate(2deg)} }
+
+@keyframes shopFloat  { 0%,100%{transform:translateY(0)}    50%{transform:translateY(-8px)} }
+@keyframes shopGlow   { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.12)} }
+@keyframes shopBounce { 0%,100%{transform:scale(1)}            50%{transform:scale(1.1) rotate(-3deg)} }
+@keyframes shopGlow  { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.12)} }
+@keyframes shopBounce{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.1) rotate(-3deg)} }
+
+@keyframes growthPop {
+  0%   { transform:scale(0) rotate(-10deg); opacity:0; }
+  70%  { transform:scale(1.1) rotate(3deg); opacity:1; }
+  100% { transform:scale(1) rotate(0deg); }
+}
+@keyframes growthPulse {
+  0%,100% { transform:scale(1); }
+  50%     { transform:scale(1.08); }
+}
+
+@keyframes streakPop {
+  0%  { transform:scale(0.5); opacity:0; }
+  70% { transform:scale(1.05); opacity:1; }
+  100%{ transform:scale(1); }
+}
+@keyframes streakRingRotate { to{transform:rotate(360deg);} }
+@keyframes streakCountPop { 0%{transform:scale(0) rotate(-10deg);opacity:0;} 70%{transform:scale(1.25) rotate(3deg);} 100%{transform:scale(1) rotate(0deg);opacity:1;} }
+#streak-ov > div { animation: streakPop .5s cubic-bezier(.34,1.56,.64,1); }
+
+@keyframes gbigEmojiPop {
+  0%   { opacity:0; transform:scale(0) rotate(-20deg); }
+  60%  { transform:scale(1.2) rotate(5deg); opacity:1; }
+  100% { transform:scale(1) rotate(0deg); }
+}
+@keyframes gbigCharPop {
+  0%   { opacity:0; transform:scale(0.2) translateY(40px); }
+  70%  { transform:scale(1.1) translateY(-10px); opacity:1; }
+  100% { transform:scale(1) translateY(0); }
+}
+@keyframes gbigTitleIn {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes gbigBtnPop {
+  from { opacity:0; transform:scale(0.7); }
+  to   { opacity:1; transform:scale(1); }
+}
+@keyframes gbigGlow {
+  0%,100% { opacity:0.5; transform:scale(1); }
+  50%     { opacity:1; transform:scale(1.15); }
+}
+@keyframes gbigConf {
+  from { transform:translateY(-20px) rotate(0deg); opacity:1; }
+  to   { transform:translateY(800px) rotate(720deg); opacity:0; }
+}
+
+/* ══ ANI DEFTERİ ══ */
+
+
+
+
+/* Yıldız canvas */
+
+
+/* === ANA EKRAN === */
+.screen{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;}
+
+/* EduVerse arka plan yazıları - şeffaf */
+.ev-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.05;z-index:1;}
+.ev-bg div{font-family:'Fredoka One';white-space:nowrap;position:absolute;}
+
+/* Header */
+.header{
+  padding:18px 20px 10px;flex-shrink:0;position:relative;z-index:5;
+  background:linear-gradient(180deg,rgba(0,5,20,.95),transparent);
+  text-align:center;
+}
+.header-logo{font-family:'Fredoka One';font-size:1.8rem;}
+.hl-e{color:#FFD700;text-shadow:0 0 14px rgba(255,215,0,.6);}
+.hl-v{color:#88CCFF;text-shadow:0 0 14px rgba(100,180,255,.6);}
+.header-sub{font-family:'Fredoka One';font-size:.75rem;color:rgba(150,200,255,.4);
+  letter-spacing:3px;margin-top:2px;}
+
+/* Scroll */
+.entries{
+  flex:1;overflow-y:auto;padding:12px 16px 80px;
+  position:relative;z-index:5;
+  scrollbar-width:thin;scrollbar-color:rgba(100,180,255,.2) transparent;
+}
+
+/* Anı Kartı */
+.mcard{
+  border-radius:20px;padding:14px;margin-bottom:12px;
+  cursor:pointer;transition:transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden;
+  animation:cardSlide .5s ease both;
+}
+.mcard:hover{transform:scale(1.02);}
+.mcard:active{transform:scale(.98);}
+@keyframes cardSlide{from{opacity:0;transform:translateY(15px);}to{opacity:1;transform:translateY(0);}}
+
+/* Kart içi */
+.mcard-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.mcard-emoji{font-size:2.4rem;flex-shrink:0;}
+.mcard-info{flex:1;}
+.mcard-title{font-family:'Fredoka One';font-size:.95rem;}
+.mcard-date{font-size:.65rem;color:rgba(200,220,255,.4);margin-top:2px;}
+.mcard-char{width:58px;height:70px;object-fit:contain;flex-shrink:0;
+  animation:charFloat 3s ease-in-out infinite;}
+@keyframes charFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+.mcard-stats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+.stat{background:rgba(0,0,0,.3);border-radius:10px;padding:3px 9px;
+  font-size:.62rem;color:rgba(200,220,255,.7);font-family:'Fredoka One';
+  border:1px solid rgba(255,255,255,.08);}
+
+.mcard-quote{
+  border-radius:0 10px 10px 0;padding:7px 12px;
+  font-size:.7rem;color:rgba(255,255,255,.65);
+  font-style:italic;line-height:1.4;
+  border-left:3px solid currentColor;
+  background:rgba(0,0,0,.2);
+}
+
+.mcard-tap{
+  text-align:center;margin-top:8px;font-family:'Fredoka One';
+  font-size:.58rem;letter-spacing:2px;
+  color:rgba(255,255,255,.25);
+  animation:tapBlink 2s ease-in-out infinite;
+}
+@keyframes tapBlink{0%,100%{opacity:.25;}50%{opacity:.7;}}
+@keyframes hookIcoPulse{0%,100%{transform:scale(1) translateY(0);}50%{transform:scale(1.12) translateY(-6px);}}
+
+/* Geri butonu */
+.back-btn{
+  position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:20;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;padding:11px 30px;
+  font-family:'Fredoka One';font-size:.85rem;color:rgba(200,220,255,.6);
+  cursor:pointer;backdrop-filter:blur(8px);transition:all .2s;
+}
+.back-btn:hover{background:rgba(255,255,255,.12);color:white;}
+
+/* === FLASHBACK SAHNESİ === */
+.flashback{
+  position:fixed;inset:0;z-index:100;
+  display:none;flex-direction:column;align-items:center;
+  overflow:hidden;
+}
+
+/* Sinematik bantlar */
+.cin-top,.cin-bot{
+  position:absolute;left:0;right:0;height:44px;background:#000;z-index:20;
+  display:flex;align-items:center;padding:0 8px;gap:5px;flex-shrink:0;
+}
+.cin-top{top:0;}
+.cin-bot{bottom:0;}
+.cin-hole{width:11px;height:15px;border-radius:2px;background:#111;border:1px solid #2a2a2a;flex-shrink:0;}
+
+/* EduVerse bg yazıları - flashbackte de */
+.fb-ev-bg{position:absolute;inset:44px;overflow:hidden;pointer-events:none;opacity:.06;z-index:1;}
+.fb-ev-bg div{font-family:'Fredoka One';white-space:nowrap;position:absolute;}
+
+/* Tarih damgası */
+.fb-date-stamp{
+  position:absolute;top:52px;left:50%;transform:translateX(-50%);z-index:15;
+  font-family:'Fredoka One';font-size:.65rem;color:rgba(255,215,0,.7);
+  letter-spacing:3px;background:rgba(0,0,0,.6);padding:4px 14px;
+  border-radius:10px;border:1px solid rgba(255,215,0,.2);
+  white-space:nowrap;
+  animation:stampIn .5s ease .3s both;
+}
+@keyframes stampIn{from{opacity:0;transform:translateX(-50%) scale(.7);}to{opacity:1;transform:translateX(-50%) scale(1);}}
+
+/* İçerik alanı */
+.fb-content{
+  position:absolute;inset:44px;z-index:10;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:44px 20px 50px;
+  overflow-y:auto;
+}
+
+/* Pasta bölümü */
+.fb-cake-section{text-align:center;margin-bottom:8px;}
+.fb-candles{display:flex;justify-content:center;gap:6px;margin-bottom:2px;}
+.fb-flame{font-size:1.1rem;animation:flameDance .4s ease-in-out infinite alternate;}
+@keyframes flameDance{from{transform:rotate(-4deg)scale(1);}to{transform:rotate(4deg)scale(1.1);}}
+.fb-candle-body{width:9px;height:20px;border-radius:3px;margin-top:-4px;}
+.fb-cake-emoji{font-size:4rem;animation:cakePop .8s cubic-bezier(.34,1.56,.64,1) .5s both;}
+@keyframes cakePop{
+  from{opacity:0;transform:scale(.2) rotate(-10deg);}
+  60%{transform:scale(1.1) rotate(3deg);opacity:1;}
+  to{transform:scale(1) rotate(0);}
+}
+
+/* Başlık */
+.fb-title{
+  font-family:'Fredoka One';font-size:2rem;text-align:center;
+  animation:titleIn .8s ease .8s both;
+  text-shadow:0 0 20px currentColor;
+}
+.fb-sub{
+  font-size:.75rem;color:rgba(255,255,255,.5);text-align:center;
+  margin:4px 0 12px;animation:titleIn .8s ease 1s both;
+}
+@keyframes titleIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* Dönüşüm satırı */
+.fb-transform{
+  display:flex;align-items:flex-end;justify-content:center;
+  gap:8px;margin-bottom:10px;animation:titleIn .8s ease 1.1s both;
+}
+.fb-old-wrap{text-align:center;opacity:.4;}
+.fb-old-wrap img{width:55px;height:66px;object-fit:contain;filter:grayscale(.6) brightness(.7);}
+.fb-old-lbl{font-family:'Fredoka One';font-size:.58rem;color:rgba(255,255,255,.3);margin-top:2px;}
+.fb-arrow-icon{font-size:1.8rem;padding-bottom:28px;animation:arrPulse .8s ease-in-out infinite;}
+@keyframes arrPulse{0%,100%{opacity:.5;transform:scale(1);}50%{opacity:1;transform:scale(1.25);}}
+.fb-new-wrap{text-align:center;}
+.fb-new-wrap img{
+  width:95px;height:114px;object-fit:contain;
+  animation:newCharIn 1s cubic-bezier(.34,1.56,.64,1) .6s both;
+}
+@keyframes newCharIn{
+  from{opacity:0;transform:scale(.2) translateY(20px);}
+  70%{transform:scale(1.1);opacity:1;}
+  to{transform:scale(1);}
+}
+.fb-new-lbl{font-family:'Fredoka One';font-size:.7rem;margin-top:3px;}
+
+/* Quote */
+.fb-quote{
+  border-radius:0 12px 12px 0;padding:8px 14px;
+  font-style:italic;font-size:.75rem;color:rgba(255,255,255,.75);
+  line-height:1.4;margin:0 0 10px;width:100%;max-width:280px;
+  border-left:3px solid;background:rgba(0,0,0,.3);
+  animation:titleIn .8s ease 1.3s both;
+}
+
+/* Stats chips */
+.fb-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;
+  margin-bottom:12px;animation:titleIn .8s ease 1.4s both;}
+.fb-chip{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:5px 12px;font-family:'Fredoka One';
+  font-size:.65rem;color:rgba(200,220,255,.8);
+}
+
+/* Kapat */
+.fb-close-btn{
+  position:absolute;bottom:52px;left:50%;transform:translateX(-50%);z-index:25;
+  background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;padding:9px 24px;
+  font-family:'Fredoka One';font-size:.8rem;color:rgba(200,220,255,.6);
+  cursor:pointer;backdrop-filter:blur(8px);transition:all .2s;
+  white-space:nowrap;
+  animation:titleIn .8s ease 1.8s both;
+}
+.fb-close-btn:hover{background:rgba(255,255,255,.1);color:white;}
+
+/* Balonlar + konfeti + yıldız */
+.fb-bals,.fb-confs,.fb-stars-r{position:absolute;inset:44px;overflow:hidden;pointer-events:none;z-index:3;}
+.fb-bal{position:absolute;font-size:1.8rem;animation:balUp linear infinite;}
+@keyframes balUp{from{transform:translateY(110%);opacity:.9;}to{transform:translateY(-20%);opacity:0;}}
+.fb-c{position:absolute;border-radius:2px;animation:cFall linear infinite;}
+@keyframes cFall{from{transform:translateY(-20px) rotate(0deg);opacity:1;}to{transform:translateY(110vh) rotate(720deg);opacity:0;}}
+.fb-s{position:absolute;animation:sFall linear infinite;}
+@keyframes sFall{from{transform:translateY(-30px);opacity:1;}to{transform:translateY(110vh);opacity:0;}}
+
+/* Slide animasyon */
+@keyframes slideInRight{from{transform:translateX(100%);}to{transform:translateX(0);}}
+@keyframes slideOutRight{from{transform:translateX(0);}to{transform:translateX(100%);}}
+
+@keyframes snpc{0%{opacity:1;transform:translateY(0) scale(1);}100%{opacity:0;transform:translateY(95vh) scale(0.8);}}100%{opacity:0;transform:translateY(110vh) rotate(360deg);}}
+@keyframes snfl{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.sndot{width:9px;height:9px;border-radius:50%;border:none;padding:0;cursor:pointer;display:inline-block;margin:0 3px;background:rgba(255,255,255,.3);transition:background .3s;}
