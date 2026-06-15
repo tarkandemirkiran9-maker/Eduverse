@@ -14,6 +14,72 @@ function evValuesOn(){
 function evValuesLang(){
   try{ return (window.eduverseValuesLang && window.eduverseValuesLang()) || localStorage.getItem('ev_values_lang') || ''; }catch(e){ return ''; }
 }
+function evArabicActive(){
+  try{ return evValuesOn() && evValuesLang()==='ar'; }catch(e){ return false; }
+}
+var EV_AR_TEXT={
+  roomOk:'\u0623\u062d\u0633\u0646\u062a! +15 \u0646\u062c\u0645\u0629',
+  roomHint:'\u062a\u0644\u0645\u064a\u062d: \u0627\u0646\u0638\u0631 \u0625\u0644\u0649 \u0627\u0644\u0628\u0627\u0644\u0648\u0646',
+  reportBtn:'\uD83D\uDCCA \u062A\u0642\u0631\u064A\u0631',
+  shareBtn:'\uD83D\uDCCA \u0645\u0634\u0627\u0631\u0643\u0629',
+  parentReport:'\u062A\u0642\u0631\u064A\u0631 \u0627\u0644\u0648\u0627\u0644\u062F\u064A\u0646',
+  dailySummary:'\u0645\u0644\u062E\u0635 \u064A\u0648\u0645\u064A \u0644\u0644\u062A\u0639\u0644\u0645',
+  reportPreparing:'\u064A\u062A\u0645 \u062A\u062D\u0636\u064A\u0631 \u0627\u0644\u062A\u0642\u0631\u064A\u0631...',
+  qrHint:'\u0627\u0645\u0633\u062D \u0631\u0645\u0632 QR \u0628\u0627\u0644\u0647\u0627\u062A\u0641',
+  close:'\u0625\u063A\u0644\u0627\u0642',
+  score:'\u0627\u0644\u0646\u0642\u0627\u0637',
+  stars:'\u0646\u062C\u0648\u0645',
+  coins:'\u0646\u0642\u0648\u062F',
+  point:'\u0646\u0642\u0637\u0629',
+  day:'\u064A\u0648\u0645',
+  days:'\u0623\u064A\u0627\u0645',
+  word:'\u0643\u0644\u0645\u0629',
+  room:'\u063A\u0631\u0641\u0629',
+  today:'\u0627\u0644\u064A\u0648\u0645',
+  earned:'\u0627\u0644\u0645\u0643\u062A\u0633\u0628',
+  average:'\u0627\u0644\u0645\u062A\u0648\u0633\u0637',
+  chart:'\u0622\u062E\u0631 7 \u0623\u064A\u0627\u0645',
+  dailyReport:'\u062A\u0642\u0631\u064A\u0631 \u064A\u0648\u0645\u064A',
+  starTitle:'\u0646\u0642\u0627\u0637 \u0627\u0644\u0646\u062C\u0648\u0645',
+  starSub:'\u0646\u0642\u0627\u0637 \u062A\u0643\u0633\u0628\u0647\u0627 \u0645\u0646 \u0627\u0644\u0623\u0644\u0639\u0627\u0628 \u0627\u0644\u0635\u063A\u064A\u0631\u0629',
+  coinTitle:'\u0646\u0642\u0648\u062F \u0627\u0644\u0633\u0639\u0627\u062F\u0629',
+  coinSub:'\u0623\u0648\u0643\u064A \u064A\u0646\u0645\u0648 \u0628\u0647\u0630\u0647 \u0627\u0644\u0646\u0642\u0648\u062F',
+  egg:'\u0628\u064A\u0636\u0629',
+  baby:'\u0635\u063A\u064A\u0631',
+  child:'\u0646\u0627\u0634\u0626',
+  young:'\u0634\u0627\u0628',
+  big:'\u0643\u0628\u064A\u0631',
+  angel:'\u0645\u0644\u0627\u0643',
+  noData:'\u0644\u0627 \u062A\u0648\u062C\u062F \u0628\u064A\u0627\u0646\u0627\u062A \u0628\u0639\u062F',
+  bestPerformance:'\u0623\u0641\u0636\u0644 \u0623\u062F\u0627\u0621',
+  fed:'\u062A\u0645 \u0625\u0637\u0639\u0627\u0645\u0647',
+  todayStatus:'\u062D\u0627\u0644\u0629 \u0627\u0644\u064A\u0648\u0645',
+  weekActivity:'\u0646\u0634\u0627\u0637 \u0622\u062E\u0631 7 \u0623\u064A\u0627\u0645',
+  otherDays:'\u0623\u064A\u0627\u0645 \u0623\u062E\u0631\u0649',
+  completed:'\u0627\u0643\u062A\u0645\u0644',
+  maxLevel:'\u0623\u0642\u0635\u0649 \u0645\u0633\u062A\u0648\u0649',
+  nextArrow:'\u0646\u0642\u0637\u0629 \u2192',
+  wearing:'\u064A\u0631\u062A\u062F\u064A',
+  none:'\u0644\u0627 \u0634\u064A\u0621',
+  chooseItem:'\u0627\u062E\u062A\u0631 \u0645\u0646\u062A\u062C\u0627!',
+  shopTitle:'* \u063A\u0631\u0641\u0629 \u0627\u0644\u0634\u062E\u0635\u064A\u0629',
+  owned:'\u0645\u0645\u0644\u0648\u0643',
+  takeOff:'\u0627\u0646\u0632\u0639',
+  wear:'\u0627\u0631\u062A\u062F\u0650',
+  removed:'\u062A\u0645 \u0646\u0632\u0639\u0647. \u0643\u064A\u0641 \u064A\u0628\u062F\u0648\u061F',
+  looksGood:'\u064A\u0644\u064A\u0642 \u0628\u0643 \u0643\u062B\u064A\u0631\u0627!',
+  bought:'\u0627\u0634\u062A\u0631\u064A\u062A',
+  notEnough:'\u0627\u0644\u0646\u0642\u0648\u062F \u063A\u064A\u0631 \u0643\u0627\u0641\u064A\u0629. \u0623\u062D\u062A\u0627\u062C',
+  streakTitle:'\u0633\u0644\u0633\u0644\u0629 \u0627\u0644\u0623\u064A\u0627\u0645',
+  bestStreak:'\u0623\u0641\u0636\u0644 \u0633\u0644\u0633\u0644\u0629',
+  secretProgress:'\u062A\u0642\u062F\u0645 \u0627\u0644\u063A\u0631\u0641\u0629 \u0627\u0644\u0633\u0631\u064A\u0629',
+  continue:'\u0645\u062A\u0627\u0628\u0639\u0629'
+};
+function evAr(key){ return EV_AR_TEXT[key] || key; }
+function evArRoomName(id,fallback){
+  var map={ibadet:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0628\u0627\u062F\u0629',ders:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0644\u0645',arapca:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629',sifa:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0634\u0641\u0627\u0621',sinema:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0633\u064A\u0646\u0645\u0627',oyuncak:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0644\u0639\u0628',cevre:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0623\u0645\u0627\u0646\u0629',caliskan:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0627\u062C\u062A\u0647\u0627\u062F',sanat:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0641\u0646',mutfak:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0637\u0639\u0627\u0645',aile:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0627\u0626\u0644\u0629',ada:'\u062C\u0632\u064A\u0631\u0629 \u0627\u0644\u0633\u0643\u064A\u0646\u0629',nefes:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0646\u0641\u0633 \u0627\u0644\u0637\u064A\u0628',para:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0635\u062F\u0642\u0629',muzik:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0635\u0648\u062A \u0627\u0644\u062C\u0645\u064A\u0644',boyama:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0623\u0644\u0648\u0627\u0646',puzzle:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0623\u062D\u062C\u064A\u0629',lazer:'\u063A\u0631\u0641\u0629 \u0627\u0644\u062A\u0631\u0643\u064A\u0632',hayvanat:'\u062D\u062F\u064A\u0642\u0629 \u0627\u0644\u062D\u064A\u0648\u0627\u0646\u0627\u062A',refleks:'\u063A\u0631\u0641\u0629 \u0627\u0644\u0633\u0631\u0639\u0629'};
+  return map[id] || fallback || '\u063A\u0631\u0641\u0629';
+}
 function evEnglishValuesActive(){
   try{ return evValuesOn() && evValuesLang()==='en'; }catch(e){ return false; }
 }
@@ -36,6 +102,7 @@ function evText(text){
 }
 
 function evJarLang(){
+  if(!(evValuesOn&&evValuesOn())) return 'tr';
   var l='';
   try{ l=evValuesLang(); }catch(e){}
   return (l==='de'||l==='en'||l==='fr'||l==='ar') ? l : 'tr';
@@ -49,6 +116,10 @@ function evJarText(key){
     ar:{starsTitle:'النجوم',coinsTitle:'النقود',todayTitle:'اليوم',stars:'نجوم',coins:'نقود',today:'اليوم',moreStarsCoin:'نجوم إضافية = قطعة واحدة',moreCoins:'نقود إضافية',max:'المستوى الأقصى!'}
   };
   var l=evJarLang();
+  if(l==='ar'){
+    var arJar={starsTitle:evAr('starTitle'),coinsTitle:evAr('coinTitle'),todayTitle:evAr('dailyReport'),stars:evAr('stars'),coins:evAr('coins'),today:evAr('today'),moreStarsCoin:'\u0646\u062C\u0645\u0629 \u0625\u0636\u0627\u0641\u064A\u0629 = \u0646\u0642\u062F \u0648\u0627\u062D\u062F',moreCoins:'\u0646\u0642\u0648\u062F \u0625\u0636\u0627\u0641\u064A\u0629',max:evAr('maxLevel')+'!'};
+    return arJar[key] || key;
+  }
   return (dict[l]&&dict[l][key]) || dict.en[key] || key;
 }
 
@@ -61,11 +132,86 @@ function evGermanRoomLabel(room){
   return room && room.name ? evText(room.name) : 'dieser Raum';
 }
 function evGermanQuestion(room, original){
+  if(evValuesOn() && evValuesLang()==='tr'){
+    var trRid=(room&&room.id)||'genel';
+    var trValuesQuestions={
+      ibadet:{q:'Sakinlesmek icin ne yapabiliriz?',opts:['Derin nefes almak','Acele etmek','Bagirmak','Vazgecmek'],ans:0,exp:'Derin nefes almak zihni ve bedeni rahatlatir.',ans_txt:'Derin nefes almak'},
+      ders:{q:'Ogrenirken hangisi yardimci olur?',opts:['Merakla soru sormak','Hemen vazgecmek','Dikkati dagitmak','Rastgele tahmin etmek'],ans:0,exp:'Merak ve soru sormak ogrenmeyi guclendirir.',ans_txt:'Merakla soru sormak'},
+      oyuncak:{q:'Oyun oynarken hangi davranis degerlidir?',opts:['Adil olmak ve paylasmak','Her seyi almak','Kurallari yok saymak','Arkadasini uzmek'],ans:0,exp:'Adil oyun arkadasligi ve guveni artirir.',ans_txt:'Adil olmak ve paylasmak'},
+      cevre:{q:'Dunyayi korumak icin ne yapabiliriz?',opts:['Suyu tasarruflu kullanmak','Copu yere atmak','Isigi bosuna yakmak','Bitkilere zarar vermek'],ans:0,exp:'Kucuk iyi aliskanliklar dogayi korur.',ans_txt:'Suyu tasarruflu kullanmak'},
+      nefes:{q:'Derin nefes almak neye yardim eder?',opts:['Sakinlesmeye','Acele etmeye','Daginik kalmaya','Kavga etmeye'],ans:0,exp:'Sakin nefes bedenin ve zihnin toparlanmasina yardim eder.',ans_txt:'Sakinlesmeye'},
+      para:{q:'Parayi kullanirken hangisi iyi bir aliskanliktir?',opts:['Planlamak ve paylasmak','Hepsini harcamak','Hic dusunmemek','Israf etmek'],ans:0,exp:'Planlamak, biriktirmek ve paylasmak guclu degerlerdir.',ans_txt:'Planlamak ve paylasmak'},
+      puzzle:{q:'Bulmacada hangisi yardimci olur?',opts:['Sabir ve mantik','Acele etmek','Vazgecmek','Rastgele yapmak'],ans:0,exp:'Sabir ve mantik parcalari birlestirmeyi kolaylastirir.',ans_txt:'Sabir ve mantik'},
+      lazer:{q:'Odak odasi hangi beceriyi guclendirir?',opts:['Dikkat','Daginiklik','Gurultu','Karmasa'],ans:0,exp:'Dikkat dogru anda dogru hareketi secmeyi kolaylastirir.',ans_txt:'Dikkat'},
+      hayvanat:{q:'Canlilara nasil davranmaliyiz?',opts:['Nazik ve dikkatli','Kaba','Gurultulu','Saygisiz'],ans:0,exp:'Nezaket tum canlilar icin onemlidir.',ans_txt:'Nazik ve dikkatli'},
+      refleks:{q:'Refleksler nasil gelisir?',opts:['Pratik yaparak','Hic denemeden','Bakmayarak','Vazgecerek'],ans:0,exp:'Tekrar ve dikkat refleksleri guclendirir.',ans_txt:'Pratik yaparak'},
+      boyama:{q:'Resim yaparken hangisi degerlidir?',opts:['Hayal gucu ve sabir','Ofke','Acele','Karmasa'],ans:0,exp:'Sanat sabir ve hayal gucuyle guzellesir.',ans_txt:'Hayal gucu ve sabir'},
+      sanat:{q:'Sanat hangi beceriyi guclendirir?',opts:['Yaraticilik','Tartisma','Daginiklik','Vazgecmek'],ans:0,exp:'Yaraticilik fikirleri gorunur hale getirir.',ans_txt:'Yaraticilik'},
+      atlas:{q:'Dunyayi kesfederken hangisi onemlidir?',opts:['Merak ve saygi','On yargi','Ilgisizlik','Korku'],ans:0,exp:'Merak ve saygi yeni yerleri daha iyi anlamayi saglar.',ans_txt:'Merak ve saygi'},
+      caliskan:{q:'Basari icin hangisi yardim eder?',opts:['Her gun kucuk adim atmak','Beklemek','Denememek','Hemen birakmak'],ans:0,exp:'Kucuk adimlar zamanla buyuk gelisim olur.',ans_txt:'Her gun kucuk adim atmak'},
+      mutfak:{q:'Mutfakta hangi davranis onemlidir?',opts:['Temiz ve dikkatli olmak','Israf etmek','Paylasmamak','Dikkatsiz davranmak'],ans:0,exp:'Temizlik ve dikkat saglikli aliskanliklar kurar.',ans_txt:'Temiz ve dikkatli olmak'},
+      aile:{q:'Aileyi hangi davranis guclendirir?',opts:['Dinlemek ve saygi','Sadece bagirmak','Kimseyi duymamak','Yalniz kalmak'],ans:0,exp:'Dinlemek ve saygi evde guveni artirir.',ans_txt:'Dinlemek ve saygi'},
+      ada:{q:'Sessiz bir anda ne yapmak iyi gelir?',opts:['Sakin nefes almak','Gurultu yapmak','Acele etmek','Kizmak'],ans:0,exp:'Kisa bir sakin an dusunceleri toparlar.',ans_txt:'Sakin nefes almak'},
+      sifa:{q:'Iyi hissetmek icin hangisi yardimci olur?',opts:['Saglikli aliskanliklar','Az uyumak','Surekli stres','Dikkatsiz olmak'],ans:0,exp:'Saglik kucuk iyi secimlerle guclenir.',ans_txt:'Saglikli aliskanliklar'},
+      ilkbahar:{q:'Ilkbahar bize neyi hatirlatir?',opts:['Yenilenme ve buyume','Vazgecmek','Karanlik','Durgunluk'],ans:0,exp:'Yenilenme umudu ve gelisimi hatirlatir.',ans_txt:'Yenilenme ve buyume'},
+      muzik:{q:'Muzik hangi beceriyi destekler?',opts:['Duygu ve ritim','Karmasa','Tartisma','Sikinti'],ans:0,exp:'Muzik duyguyu, ritmi ve dikkati birlestirir.',ans_txt:'Duygu ve ritim'},
+      kumanda:{q:'Oyun alaninda ne onemlidir?',opts:['Odak ve tepki','Sadece sans','Bakmamak','Vazgecmek'],ans:0,exp:'Odaklanmak daha iyi tepki vermeyi saglar.',ans_txt:'Odak ve tepki'},
+      bilgisayar:{q:'Teknolojide hangisi onemlidir?',opts:['Guvenli ve yaratici dusunmek','Her seye tiklamak','Bilgiyi paylasmak','Hic ogrenmemek'],ans:0,exp:'Teknoloji bilincli kullanilinca daha faydali olur.',ans_txt:'Guvenli ve yaratici dusunmek'},
+      english:{q:'Dil ogrenirken ne yardim eder?',opts:['Her gun pratik yapmak','Hic dinlememek','Sadece tahmin etmek','Vazgecmek'],ans:0,exp:'Kisa ve duzenli pratik dil ogrenmeyi kolaylastirir.',ans_txt:'Her gun pratik yapmak'},
+      deutsch:{q:'Yeni kelime ogrenirken hangisi iyidir?',opts:['Tekrar etmek','Hemen unutmak','Hic okumamak','Karistirmak'],ans:0,exp:'Tekrar etmek kelimeleri kalici hale getirir.',ans_txt:'Tekrar etmek'},
+      arapca:{q:'Yeni harf ogrenirken ne yardim eder?',opts:['Yavas ve dikkatli calismak','Hic bakmamak','Hepsini karistirmak','Vazgecmek'],ans:0,exp:'Yeni harfler sakin tekrar ile daha kolay ogrenilir.',ans_txt:'Yavas ve dikkatli calismak'}
+    };
+    var trExtra={
+      ibadet:[{q:'Hangi aliskanlik sakinligi arttirir?',opts:['Derin nefes','Bagirmak','Kosturmak','Sinirli olmak'],ans:0,exp:'Sakin nefes en iyi rahatlatici aractir.',ans_txt:'Derin nefes'},{q:'Sessizlik ne saglar?',opts:['Dusunce berrakligi','Gurultu','Kargasa','Yorgunluk'],ans:0,exp:'Sessizlik zihni toparlar ve enerji verir.',ans_txt:'Dusunce berrakligi'}],
+      ders:[{q:'Ogrenmeyi kolaylastiran hangisidir?',opts:['Tekrar etmek','Unutmak','Ilgisiz kalmak','Korkmak'],ans:0,exp:'Tekrar yaparak bilgi kalici hale gelir.',ans_txt:'Tekrar etmek'},{q:'Zor bir soruyla karsilasintiğinda ne yapmaliyiz?',opts:['Sabir ile denemeye devam','Hemen birak','Bagir','Yardim isteme'],ans:0,exp:'Sabir ile devam etmek cozumu yaklastirir.',ans_txt:'Sabir ile denemeye devam'}],
+      cevre:[{q:'Dogaya nasil katkida bulunabiliriz?',opts:['Atiklari dogru atmak','Israf etmek','Kirletmek','Ilgisiz kalmak'],ans:0,exp:'Kucuk dogru aliskanliklar buyuk fark yaratir.',ans_txt:'Atiklari dogru atmak'},{q:'Cevreye saygi nasil gosterilir?',opts:['Bitkilere zarar vermemek','Agaclari kirmak','Su israf etmek','Hayvanları uzun etmek'],ans:0,exp:'Dogaya zarar vermemek en guzel saygi gosterisidir.',ans_txt:'Bitkilere zarar vermemek'}],
+      oyuncak:[{q:'Arkadas ile oynarken ne onemlidir?',opts:['Sirasini beklemek','Her seyi almak','Kazanmak icin hile','Kizmak'],ans:0,exp:'Sira beklemek ve sabir arkadasligi guclendirir.',ans_txt:'Sirasini beklemek'},{q:'Kaybettiginde ne yapmalisin?',opts:['Tebrik edip devam etmek','Aglamak ve birak','Kizmak','Oyun bitmedi demek'],ans:0,exp:'Kaybetmeyi kabullenmek buyuk bir olgunluktur.',ans_txt:'Tebrik edip devam etmek'}],
+      refleks:[{q:'Refleks odasi ne ogretir?',opts:['Hizli dusunmeyi','Yavas kalmayı','Dikkatsizligi','Birakmayı'],ans:0,exp:'Hizli karar vermek pratikle gelisir.',ans_txt:'Hizli dusunmeyi'},{q:'Konsantrasyon icin hangisi yardimcidir?',opts:['Derin nefes','Gurultu','Endise','Acele'],ans:0,exp:'Sakin bir zihin daha hizli tepki verir.',ans_txt:'Derin nefes'}],
+      muzik:[{q:'Muzik dinlerken ne olur?',opts:['Duygular yogunlasir','Dikkat dagilir','Gurultu olusur','Hicbir sey olmaz'],ans:0,exp:'Muzik duygulari derinlestirir ve konsantrasyonu arttirir.',ans_txt:'Duygular yogunlasir'},{q:'Muzik ne ile ilgilidir?',opts:['Ritim ve duygu','Karmasa','Gurultu','Agri'],ans:0,exp:'Muzik ritim ve duygunun bileşimidir.',ans_txt:'Ritim ve duygu'}]
+    };
+    var trBase=trValuesQuestions[trRid];
+    var trList=trBase?[trBase].concat(trExtra[trRid]||[]):[{q:'Bu odada hangi deger onemlidir?',opts:['Merak ve saygi','Vazgecmek','Tartismak','Daginik davranmak'],ans:0,exp:'Merak ve saygi her etkinligi daha degerli yapar.',ans_txt:'Merak ve saygi'}];
+    return trList[evHash((original||'')+(room&&room.id||''))%trList.length];
+  }
   if(evValuesOn() && evValuesLang()==='fr'){
-    return {q:'Quelle valeur est importante dans '+(room&&room.name?evText(room.name):'cette salle')+' ?',opts:['Curiosite et respect','Abandonner','Se disputer','Faire du desordre'],ans:0,exp:'La curiosite et le respect rendent chaque activite plus precieuse.',ans_txt:'Curiosite et respect'};
+    var frRid=(room&&room.id)||'genel';
+    var frMap={
+      ibadet:{q:'Que faire pour rester calme ?',opts:['Respirer profondement','Se precipiter','Crier','Abandonner'],ans:0,exp:'Respirer profondement aide l esprit et le corps a se reposer.',ans_txt:'Respirer profondement'},
+      ders:{q:'Qu est-ce qui aide le plus a apprendre ?',opts:['Poser des questions curieuses','Abandonner tout de suite','Se distraire','Deviner au hasard'],ans:0,exp:'Les bonnes questions rendent l apprentissage plus fort.',ans_txt:'Poser des questions curieuses'},
+      oyuncak:{q:'Quel comportement est precieux en jouant ?',opts:['Etre juste et partager','Tout prendre','Ignorer les regles','Blesser son ami'],ans:0,exp:'Le jeu loyal renforce l amitie et la confiance.',ans_txt:'Etre juste et partager'},
+      cevre:{q:'Comment proteger la planete ?',opts:['Economiser l eau','Jeter les dechets','Gaspiller la lumiere','Abimer les plantes'],ans:0,exp:'Les petites bonnes habitudes protegent la nature.',ans_txt:'Economiser l eau'},
+      nefes:{q:'A quoi aide la respiration profonde ?',opts:['A se calmer','A se precipiter','A rester distrait','A se disputer'],ans:0,exp:'Respirer calmement aide le corps et l esprit a recuperer.',ans_txt:'A se calmer'},
+      para:{q:'Quelle est une bonne habitude avec l argent ?',opts:['Planifier et partager','Tout depenser','Ne jamais reflechir','Gaspiller'],ans:0,exp:'Planifier, economiser et partager sont des valeurs fortes.',ans_txt:'Planifier et partager'},
+      puzzle:{q:'Qu est-ce qui aide dans un puzzle ?',opts:['Patience et logique','Se precipiter','Abandonner','Faire au hasard'],ans:0,exp:'La patience et la logique aident a assembler les pieces.',ans_txt:'Patience et logique'},
+      lazer:{q:'Quelle competence la salle de concentration renforce-t-elle ?',opts:['L attention','La distraction','Le bruit','Le desordre'],ans:0,exp:'L attention aide a choisir le bon geste au bon moment.',ans_txt:'L attention'},
+      hayvanat:{q:'Comment traiter les animaux ?',opts:['Avec douceur et soin','Brutalement','Bruyamment','Sans respect'],ans:0,exp:'La douceur est importante pour tous les etres vivants.',ans_txt:'Avec douceur et soin'},
+      refleks:{q:'Comment ameliorer ses reflexes ?',opts:['En pratiquant','Sans essayer','En regardant ailleurs','En abandonnant'],ans:0,exp:'La repetition et l attention ameliorent les reflexes.',ans_txt:'En pratiquant'},
+      boyama:{q:'De quoi as-tu besoin pour peindre ?',opts:['Imagination et patience','Colere','Precipitation','Chaos'],ans:0,exp:'L art s embellit avec la patience et l imagination.',ans_txt:'Imagination et patience'},
+      sanat:{q:'Quelle competence l art renforce-t-il ?',opts:['La creativite','La dispute','La distraction','Abandonner'],ans:0,exp:'La creativite rend les idees visibles.',ans_txt:'La creativite'},
+      atlas:{q:'Qu est-ce qui est important pour explorer le monde ?',opts:['Curiosite et respect','Prejuges','Indifference','Peur'],ans:0,exp:'La curiosite et le respect permettent de mieux comprendre de nouveaux endroits.',ans_txt:'Curiosite et respect'},
+      caliskan:{q:'Qu est-ce qui aide a reussir ?',opts:['Faire un petit pas chaque jour','Attendre','Ne pas essayer','Abandonner vite'],ans:0,exp:'Les petits pas deviennent de grands progres avec le temps.',ans_txt:'Faire un petit pas chaque jour'},
+      mutfak:{q:'Quel comportement est important en cuisine ?',opts:['Etre propre et attentif','Gaspiller','Ne pas partager','Etre negligent'],ans:0,exp:'La proprete et l attention creent de bonnes habitudes de sante.',ans_txt:'Etre propre et attentif'},
+      aile:{q:'Quel comportement renforce la famille ?',opts:['Ecouter et respecter','Crier seulement','Ne pas entendre','Rester seul'],ans:0,exp:'Ecouter et respecter augmente la confiance a la maison.',ans_txt:'Ecouter et respecter'},
+      ada:{q:'Que faire lors d un moment calme ?',opts:['Respirer doucement','Faire du bruit','Se precipiter','Se mettre en colere'],ans:0,exp:'Un court moment calme regroupe les pensees.',ans_txt:'Respirer doucement'},
+      sifa:{q:'Qu est-ce qui aide a se sentir bien ?',opts:['De bonnes habitudes de sante','Peu dormir','Beaucoup de stress','Etre negligent'],ans:0,exp:'La sante se renforce par de bons petits choix.',ans_txt:'De bonnes habitudes de sante'},
+      ilkbahar:{q:'A quoi le printemps nous fait-il penser ?',opts:['Renouveau et croissance','Abandonner','L obscurite','La stagnation'],ans:0,exp:'Le renouveau rappelle l espoir et le developpement.',ans_txt:'Renouveau et croissance'},
+      muzik:{q:'Quelle competence la musique soutient-elle ?',opts:['Emotion et rythme','Chaos','Dispute','Ennui'],ans:0,exp:'La musique unit l emotion, le rythme et l attention.',ans_txt:'Emotion et rythme'},
+      kumanda:{q:'Qu est-ce qui est important dans la salle de jeux ?',opts:['Concentration et reaction','Juste la chance','Ne pas regarder','Abandonner'],ans:0,exp:'La concentration permet de mieux reagir.',ans_txt:'Concentration et reaction'},
+      bilgisayar:{q:'Qu est-ce qui est important avec la technologie ?',opts:['Penser de facon sure et creative','Cliquer sur tout','Partager des donnees','Ne jamais apprendre'],ans:0,exp:'La technologie est plus utile quand on l utilise consciemment.',ans_txt:'Penser de facon sure et creative'},
+      english:{q:'Qu est-ce qui aide a apprendre une langue ?',opts:['Pratiquer chaque jour','Ne jamais ecouter','Seulement deviner','Abandonner'],ans:0,exp:'Une pratique courte et reguliere facilite l apprentissage.',ans_txt:'Pratiquer chaque jour'},
+      deutsch:{q:'Qu est-ce qui est bien pour apprendre de nouveaux mots ?',opts:['Repeter','Oublier tout de suite','Ne jamais lire','Melanger'],ans:0,exp:'Repeter rend les mots permanents.',ans_txt:'Repeter'},
+      arapca:{q:'Qu est-ce qui aide a apprendre de nouvelles lettres ?',opts:['Travailler lentement et attentivement','Ne jamais regarder','Tout melanger','Abandonner'],ans:0,exp:'Les nouvelles lettres s apprennent plus facilement avec une repetition calme.',ans_txt:'Travailler lentement et attentivement'}
+    };
+    return frMap[frRid] || {q:'Quelle valeur est importante dans '+(room&&room.name?evText(room.name):'cette salle')+' ?',opts:['Curiosite et respect','Abandonner','Se disputer','Faire du desordre'],ans:0,exp:'La curiosite et le respect rendent chaque activite plus precieuse.',ans_txt:'Curiosite et respect'};
   }
   if(evValuesOn() && evValuesLang()==='ar'){
-    return {q:'ما القيمة المهمة في '+(room&&room.name?evText(room.name):'هذه الغرفة')+'؟',opts:['الفضول والاحترام','الاستسلام','الجدال','الفوضى'],ans:0,exp:'الفضول والاحترام يجعلان كل نشاط أكثر قيمة.',ans_txt:'الفضول والاحترام'};
+    var arDuaQuestions=[
+      {q:'ماذا نقول قبل البدء بعمل جميل؟',opts:['بسم الله','لا أعرف','غدا','لا شيء'],ans:0,exp:'قول بسم الله يذكّر الطفل بالنية الطيبة والبداية المباركة.',ans_txt:'بسم الله'},
+      {q:'ما العمل الذي يقرّبنا إلى الله كل يوم؟',opts:['الصلاة','اللعب فقط','النوم طوال اليوم','نسيان الخير'],ans:0,exp:'الصلاة تعلّم الطفل الهدوء والنظام والقرب من الله.',ans_txt:'الصلاة'},
+      {q:'ماذا نفعل عندما نريد الخير لأنفسنا ولمن نحب؟',opts:['ندعو الله','نغضب','نترك الخير','نؤذي الآخرين'],ans:0,exp:'الدعاء يفتح باب الرجاء والطمأنينة.',ans_txt:'ندعو الله'},
+      {q:'ماذا نتعلم من قراءة القرآن؟',opts:['الهداية والأخلاق الجميلة','الكسل','الكلام السيئ','نسيان الصدق'],ans:0,exp:'القرآن يعلّم الرحمة والصدق وحسن الخلق.',ans_txt:'الهداية والأخلاق الجميلة'}
+    ];
+    return arDuaQuestions[evHash((room&&room.id)||'ibadet')%arDuaQuestions.length];
   }
   if(evValuesOn() && evValuesLang()==='en'){
     var rid=(room&&room.id)||'general';
@@ -81,7 +227,19 @@ function evGermanQuestion(room, original){
       hayvanat:{q:'How should we treat animals?',opts:['With kindness and care','Roughly','Loudly','Without respect'],ans:0,exp:'Care also belongs to animals and nature.',ans_txt:'With kindness and care'},
       refleks:{q:'How do reflexes improve?',opts:['With practice','By doing nothing','By looking away','By giving up'],ans:0,exp:'Reflexes grow with repetition and attention.',ans_txt:'With practice'},
       boyama:{q:'What do you need when painting?',opts:['Imagination and patience','Rushing','Anger','Chaos'],ans:0,exp:'Painting makes ideas visible and trains patience.',ans_txt:'Imagination and patience'},
-      atlas:{q:'What makes a world explorer?',opts:['Curiosity and respect','Prejudice','No interest','Fear of new things'],ans:0,exp:'Curiosity and respect help you discover the world.',ans_txt:'Curiosity and respect'}
+      atlas:{q:'What makes a world explorer?',opts:['Curiosity and respect','Prejudice','No interest','Fear of new things'],ans:0,exp:'Curiosity and respect help you discover the world.',ans_txt:'Curiosity and respect'},
+      caliskan:{q:'What helps you succeed step by step?',opts:['Practice every day','Just wait','Never try','Give up quickly'],ans:0,exp:'Small steps become big progress over time.',ans_txt:'Practice every day'},
+      mutfak:{q:'What is important in the kitchen?',opts:['Being clean and careful','Wasting food','Not sharing','Being careless'],ans:0,exp:'Cleanliness and care build healthy habits.',ans_txt:'Being clean and careful'},
+      aile:{q:'What makes a family stronger?',opts:['Listening and respect','Only shouting','Not hearing anyone','Staying alone'],ans:0,exp:'Listening and respect increase trust at home.',ans_txt:'Listening and respect'},
+      ada:{q:'What is good to do in a quiet moment?',opts:['Breathe calmly','Make noise','Rush','Get angry'],ans:0,exp:'A short quiet moment helps gather your thoughts.',ans_txt:'Breathe calmly'},
+      sifa:{q:'What helps you feel well?',opts:['Healthy habits','Sleeping little','Too much stress','Being careless'],ans:0,exp:'Health grows through good small choices.',ans_txt:'Healthy habits'},
+      ilkbahar:{q:'What does spring remind us of?',opts:['Renewal and growth','Giving up','Darkness','Stagnation'],ans:0,exp:'Renewal reminds us of hope and development.',ans_txt:'Renewal and growth'},
+      muzik:{q:'What skill does music support?',opts:['Emotion and rhythm','Chaos','Argument','Boredom'],ans:0,exp:'Music unites emotion, rhythm and attention.',ans_txt:'Emotion and rhythm'},
+      kumanda:{q:'What matters in the game arena?',opts:['Focus and reaction','Only luck','Not looking','Giving up'],ans:0,exp:'Focus makes reactions faster and better.',ans_txt:'Focus and reaction'},
+      bilgisayar:{q:'What is important with technology?',opts:['Think safely and creatively','Click on everything','Share data','Never learn'],ans:0,exp:'Technology is more useful when used consciously.',ans_txt:'Think safely and creatively'},
+      english:{q:'What helps when learning a language?',opts:['Practice every day','Never listen','Only guess','Give up'],ans:0,exp:'Short regular practice makes language learning easier.',ans_txt:'Practice every day'},
+      deutsch:{q:'What is good for learning new words?',opts:['Repeat them','Forget right away','Never read','Mix everything'],ans:0,exp:'Repeating makes words permanent.',ans_txt:'Repeat them'},
+      arapca:{q:'What helps when learning new letters?',opts:['Work slowly and carefully','Never look','Mix everything','Give up'],ans:0,exp:'New letters are learned more easily with calm repetition.',ans_txt:'Work slowly and carefully'}
     };
     return map[rid] || {q:'What matters in '+(room&&room.name?evText(room.name):'this room')+'?',opts:['Curiosity and respect','Giving up','Arguing','Mess'],ans:0,exp:'Curiosity and respect make every room valuable.',ans_txt:'Curiosity and respect'};
   }
@@ -117,31 +275,1385 @@ function evGermanQuestion(room, original){
   return map[rid] || {q:'Was ist in '+evGermanRoomLabel(room)+' wichtig?',opts:['Neugier und Respekt','Aufgeben','Streit','Unordnung'],ans:0,exp:'Neugier und Respekt machen jedes Spiel wertvoll.',ans_txt:'Neugier und Respekt'};
 }
 function evGermanCardText(original){
+  if(evValuesOn() && evValuesLang()==='tr'){
+    if(String(original||'').indexOf('Cevap:')===0) return original;
+    var trCardRid=(currentRoom&&currentRoom.id)||'genel';
+var trCards={
+  ibadet:[
+    'Sakin kalmak guclu bir beceridir.',
+    'Derin bir nefes dusunceleri toparlar.',
+    'Kisa bir sessizlik kalbi rahatlatir.',
+    'Sabir en guzel erdemlerden biridir.',
+    'Sessizlik zihni temizler.',
+    'Huzur iceriden gelir.',
+    'Sakin bir an guc verir.',
+    'Nefesini kontrol eden kendini kontrol eder.',
+    'Kizginken dur ve bir nefes al.',
+    'Rahatlama bir sanattir, pratikle gelisir.',
+    'Duygu yonetimi yasam boyu ise yarar.',
+    'Kendi icleri sakin olan disariya da huzur verir.',
+    'Sabir beklemek degil, dogru zamani secmektir.',
+    'Dinginlik gucten gelir, korkudan degil.',
+    'Bir nefes bile dusunceni degistirebilir.',
+    'Sakinlik kararlarini iyilestirir.',
+    'GuclU bir zihin sakin bir zihinden baser.',
+    'Sessizlikte en iyi fikirler dogabilir.',
+    'Odaklanmak ogrenilebilir bir beceridir.',
+    'Duygularini tanimak onlari yonetmeni saglar.',
+    'Stresi kabul etmek onu azaltir.',
+    'Her zor durumun bir cozumu vardir.',
+    'Rahatlama teknikleri her yerde kullanilabilir.',
+    'Zihin ve beden birlikte calismak uygundur.',
+    'Sakin bir zihin daha iyi karar verir.',
+    'Nefes egzersizleri her yasla uyumludur.',
+    'Sessizlik en iyi ogretmenlerden biridir.',
+    'Huzur aranmaz, icte bulunur.',
+    'Zor anlarda sakin olmak cesaret ister.',
+    'Kendinle baris hayatini kolaylastirir.',
+    'Meditasyon odaklanmayi guclendirir.',
+    'Yogunlasma pratikle artar.',
+    'Kendi duygu dunu tanimak onemlidir.',
+    'Endurans ve sabir en guclu ikilidir.',
+    'Bir mola zihnini yeniler.',
+    'Sakinlik bir zayiflik degil, guctur.',
+    'Konsantrasyon kaslar gibi guclenebilir.',
+    'Kendi sesini dinlemek bilgeligin baslangigidir.',
+    'Degismeyeni kabullenmek huzur verir.',
+    'Her an yeniden baslamak mumkundur.',
+    'Sakin bir yer bulmak bazen yeterlidir.',
+    'Ritim ve nefes beraber calisir.',
+    'Goz kapamak bir dinlenme bimidir.',
+    'Gerginlik nefesle gidebilir.',
+    'Bedenini dinlemek zekadir.',
+    'Kisa bir mola uzun bir yolu kolaylastirir.',
+    'Hizli karar vermek zaman zaman zararlidir.',
+    'Sabir sanatcilar ve bilgeler icin aynı onemdedir.',
+    'Calismak ve dinlenmek birbirini tamamlar.',
+    'Her gece uyumak da bir sifir noktasidir.'
+  ],
+  ders:[
+    'Her soru yeni bir kapi acar.',
+    'Kucuk adimlarla daha guclu ogrenirsin.',
+    'Merak etmek cesaret verir.',
+    'Bilgi paylasilinca cogalir.',
+    'Hatalar ogrenmenin parcasidir.',
+    'Tekrar etmek kalici ogrenme saglar.',
+    'Soru sormaktan korkma.',
+    'Yeni bir sey ogrendikten sonra pay.',
+    'Anlamak ezberden gucludur.',
+    'Ogrenmenin sonu yoktur.',
+    'Merak dusunceyi acar.',
+    'Her kitap yeni bir dunya sunar.',
+    'Dinlemek ogrenmenin yarisidir.',
+    'Notlar alma hafizayi guclendirir.',
+    'Kavramak ezberi yener.',
+    'Baslangicta zorlanmak normaldir.',
+    'Hata yapmak yolun parcasidir.',
+    'Ogrenirken eglenmek daha iyidir.',
+    'Dusunmek en iyi egzersizdir.',
+    'Merak bir motor gibi calisir.',
+    'Sormak bilmemenin guzel halidir.',
+    'Her bilgi birbirini destekler.',
+    'Sabir ile ogrenmek kalici sonuc verir.',
+    'Anlamak butunlukten gelir.',
+    'Ogrenirken hata yapmak dogaldir.',
+    'Bilgi biriktikce daha kolay ogrenilir.',
+    'Odakli calisma daginik calismayi yener.',
+    'Kisa sureli yogun calisma ise yarar.',
+    'Ogrenme bir yolculuktur, varis degil.',
+    'Her gun biraz ilerleme muazzamdir.',
+    'Merakli zihinler her yerde ogrenebilir.',
+    'Sorular cevaplardan daha degerli olabilir.',
+    'Anlamadan ezberleme cok calistirir az verir.',
+    'Farkli yontemler denerken ogren.',
+    'Zorlandikca buyursun.',
+    'Ogrenme keyfi iceride saklidir.',
+    'Bilmek yetmez, kullanmak gerekir.',
+    'Her alanda merakli olmak zenginlestirir.',
+    'Derin anlayis yuzeysel bilgiden iyidir.',
+    'Ogrenme bir akin gibi ilerler.',
+    'Pratik bilgiyi pekistirir.',
+    'Kucuk kesfler buyuk motivasyon verir.',
+    'Zihin acik tutulursa gelisir.',
+    'Ogrenmeyi sevmek en buyuk hediyedir.',
+    'Bilgi guctur ama paylasinca daha guc.',
+    'Her yasam dersle doludur.',
+    'Dikkatli gozlemci cok sey ogrenir.',
+    'Kendi ogrenme tarzini bulmak onemlidir.',
+    'Bazen bir adim geri cekilmek ilerlemeye yardimci olur.',
+    'Ogrenme hayat boyu surer.'
+  ],
+  oyuncak:[
+    'Adil oyun daha eglencelidir.',
+    'Paylasmak oyunu guzellestirir.',
+    'Iyi arkadaslar dikkatle oynar.',
+    'Siraya girmek sabrini guclendirir.',
+    'Kural olmayan oyun kaos olur.',
+    'Kaybetmek de oyunun parcasidir.',
+    'Birlikte oynamak daha zevklidir.',
+    'Arkadasini mutlu etmek onu kazanmaktan guzelmdir.',
+    'Oyun kurallarini herkes bilmeli.',
+    'Hile yapmamak en buyuk oyun kuralidir.',
+    'Takım ruhunu oyun ogretir.',
+    'Kaybedince tebrik etmek buyukluktur.',
+    'Birlikte dusmek de bir oyunun parcasidir.',
+    'Hayal kurmak yaratici oyunun temeli.',
+    'Oyun oynamak strateji gerektirir.',
+    'Farkli kultureelden oyunlar ogrenilir.',
+    'Oyun kural olmadan bitmez.',
+    'Sira beklemek sabir ister.',
+    'Paylasmak arkadasligi guclendirir.',
+    'Oyunun sonu yeniden baslamaktir.',
+    'Bir oyun kazanmak her seyi kazanmak degil.',
+    'Arkadaslik oyundan daha degerlidir.',
+    'Kurallar herkesi korur.',
+    'Oyunda rekabet saglikli olabilir.',
+    'Fair play hayatin her yerinde gecerlidir.',
+    'Kaybetmekten ogrenmek mumkun.',
+    'Birlikte dusunmek zevklidir.',
+    'Yaratici oyun hayal gucunu actirir.',
+    'Oyun cesitleri konsantrasyonu gelisir.',
+    'Kucuk oyunlar buyuk dersler verir.',
+    'Oyun sirasinda sabir cok onemli.',
+    'Birlikte kazanmak tek basina kazanmaktan guzel.',
+    'Duzgunce oynamak karakteri gosterir.',
+    'Oyun hem egit hem eglence.',
+    'Duygu yonetimi oyunda sinavdur.',
+    'Kazanmak guveli olunca anlamlidir.',
+    'Oynamak da bir sanattir.',
+    'Hayal guclu oyun sinirsizdir.',
+    'Oyunda empati kurmak onemlidir.',
+    'Herkese esit davranan ogrenciler basarili olur.',
+    'Her oyun yeni bir beceri kazandirir.',
+    'Oyun esnasinda iletisim gucludur.',
+    'Kendini ifade etmek oyunla olur.',
+    'Oyunlarin farkli kulturlerde farkli kurallar vardir.',
+    'Strateji dusunmek oyunu zenginlestirir.',
+    'Esneklik oyunun temel kurali.',
+    'Oyun hayatin kucuk bir modeli.',
+    'Hatayi kabullenmek adil oyunun geregidir.',
+    'Sabir calisinca guclenir.',
+    'Geri dalmak da ilerlemenin bir parcasidir.'
+  ],
+  cevre:[
+    'Iyi aliskanliklar dunyayi korur.',
+    'Bugun dogaya kucuk bir iyilik yaptin.',
+    'Ozen gostermek gezegeni guclendirir.',
+    'Su tasarrufu gelecegi korur.',
+    'Geri donusum kaynakları yeniler.',
+    'Isiklari kapatmak enerji korur.',
+    'Her agac bir nefes verir.',
+    'Dogaya zarar vermemek en buyuk saygi.',
+    'Arti plastik denizleri kirletir.',
+    'Hava temizligi herkesin sorunlulugudur.',
+    'Kucuk degisiklikler buyuk fark yaratir.',
+    'Copleri ayristirmak dogayi korur.',
+    'Dogal alanlar hepimizin evidir.',
+    'Su kaynakalarini kirletmemek gerekir.',
+    'Biciklet kullanmak havayı temizler.',
+    'Orman onemli bir ekosistemdir.',
+    'Deniz canlilari koruma gerektirir.',
+    'Karbonayak izimizi azaltabiliriz.',
+    'Yenilenebilir enerji gelecegi aydinlatir.',
+    'Dogal denge bozulunca herkes etkilenir.',
+    'Topragi kirletmemek saglikli yasam icin gereklidir.',
+    'Hayvanlar yasam alanlarinda korunmalidir.',
+    'Su, en degerli kaynaktir.',
+    'Ariz plastik binlerce yil bozulmaz.',
+    'Cevreye duyarli olmak sorumluluktir.',
+    'Ekosistemi anlamak onu korumaya yardimci olur.',
+    'Her cop dogru yerine gitmeli.',
+    'Tasarruf kucukten aliskanlik haline gelmeli.',
+    'Dogayi kesfetmek onu sevmeyi saglar.',
+    'Bitkileri dikmek atmosfere katkidir.',
+    'Deniz plastiklerinden baliklar zarar goruyor.',
+    'Enerji tasarrufu herkesin gorevi.',
+    'Hava kirliligi akcigerlere zarar verir.',
+    'Ormanlari korumak iklimi dengeler.',
+    'Her canlinin bir yasam hakki var.',
+    'Su dovri dogal bir dongudur, kirletirsek bozulur.',
+    'Guneş enerjisi temiz bir kaynak.',
+    'Yasam alanlarini korumak turler icin kritik.',
+    'Insanlar dogan bir parcasi olarak hareket etmeli.',
+    'Kuresel ısınma herkesin sorunudur.',
+    'Kucukten iyi aliskanlik buyukce devam eder.',
+    'Dogaya hasar verdigimizde kendimize de veriyoruz.',
+    'Yerel uretim nakliye kirliligini azaltir.',
+    'Organik tarim toprak sagligini korur.',
+    'Su tasarrufu gelecek nesillere hediyedir.',
+    'Geri donusum ekonomiye de katki saglar.',
+    'Elektrikli araclar kent havasini temizler.',
+    'Dogal cevreye duyarlilik egitiminizin parcasi olmali.',
+    'Her insan dogayi koruma gorevine ortaktir.',
+    'Kucuk aliskanliklar buyuk sonuclar uretir.'
+  ],
+  nefes:[
+    'Sakin nefes guc verir.',
+    'Bir derin nefes dusunceleri toparlar.',
+    'Yavas nefes al, net hareket et.',
+    'Nefes bedeni ve zihni birlestirir.',
+    'Nefes teknikleri stres azaltir.',
+    'Her nefes yeni bir baslangicter.',
+    'Derin nefes kalp atisini yavaşlatir.',
+    'Nefesi kontrol etmek duyguyu kontrol etmek.',
+    'Kisa bir nefes molasi zihin acabilir.',
+    'Burun dan nefes almak saglidir.',
+    'Nefes ritmi ruh haline etki eder.',
+    'Karın nefesi en derin rahatlamamadir.',
+    'Nefes sayarak odaklanabilirsin.',
+    'Dort saniye al, dort saniye ver.',
+    'Derin nefes oksijeni arttirir.',
+    'Nefes farkindanligi meditasyonun temelidir.',
+    'Yogada nefes en onemli unsurdur.',
+    'Nefes beden dilinin bir parcasidir.',
+    'Sakin nefes karar vermeyi kolaylastirir.',
+    'Nefes teknikleri uyku kalitesini arttirir.',
+    'Gergin anlarda duruz, nefes al.',
+    'Nefes kalmak icin degil, yasamak icin alinir.',
+    'Nefes pratigi beden farkindaliginı arttirir.',
+    'Sabahleyin derin nefesle basla.',
+    'Nefes siraya girdigimizde bile ise yarar.',
+    'Yavas nefes panik hissini azaltir.',
+    'Nefes teknikleri sporda da kullanilir.',
+    'Farkinda nefes duyguyu yonetmeye yardimci olur.',
+    'Nefes yogunlasma anlarda bile sakinlestirir.',
+    'Burun nefesi agi nefesinden sagliklidir.',
+    'Nefes sayimi konsantrasyonu gelisir.',
+    'Rahatlamak icin sadece 3 derin nefes yeterli olabilir.',
+    'Nefes her derde iyi gelen ilactir.',
+    'Derin nefes kas gerginligini azaltir.',
+    'Nefes ile beden dengelenir.',
+    'Zihni sakinlestirmek icin onbir kere derin nefes al.',
+    'Nefes teknikleri sinavi daha sakin gecirmeni saglar.',
+    'Stresli anlarda nefes en iyi arkadasin.',
+    'Kucuklere nefes teknikleri ogretmek degerlidir.',
+    'Nefes kontrol etmek ozguven verir.',
+    'Sakin nefes yuzde gulus olusturur.',
+    'Nefes ile beden ve zihin sifira sifirlaniyor.',
+    'Her gun birkaç derin nefes almak kafi.',
+    'Nefes hayatin en kucuk ve en buyuk eylemidir.',
+    'Sakin nefes agiligi arttirir.',
+    'Nefes farkindanligi cocukliktan baslamali.',
+    'Nefes ile korku gecirilebilir.',
+    'Derin nefes yuz kaslarini rahatlatir.',
+    'Nefes ritmi beden ritmini etkiler.',
+    'Sabah nefes egzersizi gunuzu guzellestiriy.'
+  ],
+  para:[
+    'Planla, biriktir, paylas.',
+    'Deger akilli kullanimla buyur.',
+    'Comertlik kalbi zenginlestirir.',
+    'Biriktirmek gelecek icin yatirim yapmaktir.',
+    'Gereksiz harcama israftir.',
+    'Ihtiyac ile istegi ayirt etmek onemlidir.',
+    'Kucuk birikimler zamanla buyur.',
+    'Paylasmak cok verirmiyor, cok kazandiriyor.',
+    'Akilli harcama bir beceridir.',
+    'Bire bir vermek bircok seyi degerlendirir.',
+    'Para aracidir, amac degil.',
+    'Birlikte biriktirmek daha eglenceli.',
+    'Ucuz almak her zaman iyi degildir.',
+    'Kaliteli secimler uzun vade tasarruf saglar.',
+    'Butce yapmak disiplin ister.',
+    'Hediye vermek iliskiyi guclulendiriyor.',
+    'Tasarruf bir aliskanlik haline gelebilir.',
+    'Para yonetimi erken ogrenilmesi gereken bir beceri.',
+    'Ihtiyaç listesi yaparak alısverişe cik.',
+    'Bir seyi almadan once iki kez duşun.',
+    'Para mutlulugu satin alamaz ama hayatı kolaylaştırır.',
+    'Birlikte karar vermek kaynakları iyi kullanmak demek.',
+    'Israf sadece parayı değil doğayı da etkiler.',
+    'Kucuk tasarruflar buyuk hedeflere ulastirir.',
+    'Birs eyi oldurmeden önce degerini dusun.',
+    'Yatırım yapmak geleceği planlamaktır.',
+    'Finansal okur-yazarlık hayat boyu ise yarar.',
+    'Harcamalarını takip etmek seni bilinçli yapar.',
+    'Para yönetimi öğrenilebilir bir beceridir.',
+    'Paylaşmak zenginliği artırmaz ama anlamını artırır.',
+    'Tasarruf alışkanlığı küçükken başlar.',
+    'İhtiyacından fazlasını almamak bilgeliktir.',
+    'Güvenilir kaynaklardan bilgi al, büyük kararlar ver.',
+    'Değerli şeylere para harcamak yatırım sayılır.',
+    'Sosyal sorumluluk parayla da ifade edilir.',
+    'Gönüllü çalışmak para vermek kadar değerlidir.',
+    'Toplum için üretmek bireysel kazançtan önemlidir.',
+    'Para harcamadan önce beklemek alışkanlığı kazan.',
+    'Ödünç verirken dikkatli ol.',
+    'Şeffaf olmak güven inşa eder.',
+    'Çalışarak kazanmak gurur verir.',
+    'Emek olmadan para anlamsız gelir.',
+    'İyi bir amaç için harcamak değer yaratır.',
+    'Para yönetiminde sabır şarttır.',
+    'Bir şeyi satın almadan önce neden istediğini sor.',
+    'Lüks ile ihtiyacı karıştırma.',
+    'Birikimini anlamlı bir şey için kullan.',
+    'Komşuna yardım etmek de bir yatırımdır.',
+    'Paylaşım ekonomisi kaynakları verimli kullanır.',
+    'Her kuruş bir niyet taşır.'
+  ],
+  puzzle:[
+    'Mantik yolu bulur.',
+    'Sabir parcalari birlestirir.',
+    'Deseni fark ediyorsun.',
+    'Her parca bir anlam tasir.',
+    'Sistematik dusunmek cozume goturur.',
+    'Zor parcalar en cok seyleri ogretir.',
+    'Bir adim geri cekilmek yeni bakis acisi saglar.',
+    'Cozumu bulmak cok sordan geciyor.',
+    'Sabir ile her bulmaca cozulur.',
+    'Bulmaca beyin kasini guclendirir.',
+    'Deneme yanlisi yontem cok seyi ogretir.',
+    'Hata yapmak rotayi duzeltmene yardim eder.',
+    'Her cumle tamamlanabilir.',
+    'Parcalari gruplamak kolaylastirir.',
+    'Buyuk resmi gormek parcalari yerleştirmeye yardimci olur.',
+    'Bulmacada sira ve sistem ise yarar.',
+    'Zor bulmacalar beyin gelisimini hizlandirir.',
+    'Bir yerden baslamak en onemli adimdir.',
+    'Renk ve sekle gore parcalamak mantiklidir.',
+    'Koseyi bulmak bulmacada iyi baslangiçtir.',
+    'Bulmacada dikkat ve odak en buyuk yardimcidir.',
+    'Sonucu hayal ederek ilerleme yardimci olur.',
+    'Her hatali deneme dogru yere yaklastirir.',
+    'Bulmacada sabir ve sakinlik ise yarar.',
+    'Cesitli bulmaca turleri farkli becerileri gelistirir.',
+    'Bulmacalar mekansal zekayı geliştirir.',
+    'Parcalari ayırt etmek görsel beceri ister.',
+    'Bir bulmacayi bitirmek derin bir tatmin verir.',
+    'Buyuk bulmacalarda alt gruplar yap.',
+    'Bulmaca zaman yonetimini de ogretir.',
+    'Kendi stratejini geliştirmek ozgundur.',
+    'Mantikli tahminler cozume yaklaştırır.',
+    'Bir bulmacayi arkadasınla yapmak daha eglencelidir.',
+    'Bulmaca calismak konsantrasyonu arttirir.',
+    'Her bulmaca bir problem cozme egzersizdir.',
+    'Gorsel bellek bulmacada cok ise yarar.',
+    'Dikkatli gözlem eksik parcayı bulur.',
+    'Sabırlı olmak bulmacada zaferi getirir.',
+    'Parcalarin sekli ipucu verir.',
+    'Buyuk parcadan kucuge dogru ilerlemek mantiklidir.',
+    'Bulmacalar odak ve sabrı birlikte geliştirir.',
+    'Bir bulmaca gunde en az bir kez dene.',
+    'Zor bulmacalar guven insa eder.',
+    'Cozumsuz gorunen problemlerin cozumu vardir.',
+    'Beyin yorulunca mola ver ve devam et.',
+    'Bulmacada renk kodlama stratejisi ise yarar.',
+    'Her yapboz parcasi es eslemeden gecmeli.',
+    'Sabir ve dikkat kombinasyonu kazandirir.',
+    'Bulmacayi tamamlamak ozguveni arttirir.',
+    'Her zorluk asilinca yeni bir seviye acilir.'
+  ],
+  lazer:[
+    'Odak hedefi bulur.',
+    'Dikkat senin isigindir.',
+    'Sakin ve net kal.',
+    'Konsantrasyon pratikle gelisir.',
+    'Dikkat daginik olmadan hedefi yakala.',
+    'Her an dikkat farkli bir guzellik getirir.',
+    'Odaklanmak kaslar gibi egitilir.',
+    'Dikkat azalmadan once mola ver.',
+    'Goz ve zihnin birlikte calismasi cok guclüdür.',
+    'Birsey yaparken tamamen o seye katil.',
+    'Lazer gibi odaklanmak beceeri ister.',
+    'Hedeflerin olunca dikkat kolaydir.',
+    'Her saniyeye dikkat etmek buyuk avantajdir.',
+    'Zihin akillanmis hedefler ile calısır.',
+    'Dikkat kayboldugunda durup yeniden baslayabilirsin.',
+    'Odak goz ile degil, zihin ile gerceklisir.',
+    'Konsantrasyon zaman icinde guclenir.',
+    'Dikkat dagitanlardan uzak durmak yardimci olur.',
+    'Hedef net oldugunda dikkat surekli olur.',
+    'Tek ise odaklanmak cok ise giriismekten iyidir.',
+    'Lazer odaklanma verimliliği arttirir.',
+    'Sessiz ortam dikkatı arttirir.',
+    'Beyin bir anda bir işe odaklanır.',
+    'Zihin antrenmanı dikkat suresi ni arttirir.',
+    'Her sabah zihni calistirmak gunluk performansi arttirir.',
+    'Odaklanilmis faaliyet en verimli calismadir.',
+    'Dikkat edilmis bir hedef cok daha hizli ulasılabilir.',
+    'Odakli bir saat daginik bes saatten daha verimlidir.',
+    'Dinleme faaliyetleri dikkat sure sini arttirir.',
+    'Beden hareketi beyin odaklanmasini destekler.',
+    'Odaklanma yonetimi hayat boyu faydali bir becerdir.',
+    'Kisa sureli yogun calisma uzun sureli daginik calismayi yener.',
+    'Beyninize en iyi odaklanma saatini taniyın.',
+    'Dikkat turmlarla gelisir.',
+    'Gunu planlayarak dikkat dagıtıcıları azalt.',
+    'Odaklanmak bir secimdir, sans degil.',
+    'Sessizlik odaklanmanin en buyuk yardımcısıdır.',
+    'Her gunde 20 dakika odaklanma pratigi yapilabilir.',
+    'Sosyal medyadan uzak durmak odagı arttirir.',
+    'Hedeflerin yazılmasi motivasyonu guclendirir.',
+    'Dikkat kasini guclendirmek icin calis.',
+    'Bir gorev odakli tamamlamak daha tatmin edici.',
+    'Odak becerisi girisimci bir zihnin temelidir.',
+    'Zihin egzersizleri ile dikkat arttirilabilir.',
+    'Dogru nefes odaklanmaya yardimci olur.',
+    'Beden ve zihin birlikte odaklaninca en iyisi cikiyor.',
+    'Dikkat dağinıkken mola ver, sonra devam et.',
+    'Her odaklanma suresini bir dakika uzat.',
+    'Dikkat yonetimi stres yonetiminin parcasidir.',
+    'Lazer odaklanma basarisinin temel aracídir.'
+  ],
+  hayvanat:[
+    'Canlilar saygiyi hak eder.',
+    'Ozen gostermek guclu bir davranistir.',
+    'Nezaket tum canlilar icindir.',
+    'Hayvanlar konusamaz ama hisseder.',
+    'Bir canliya bakmak sorumluluk ister.',
+    'Hayvan sevgisi empatiyi gelistirir.',
+    'Dogadaki her canlının bir rolu vardir.',
+    'Nesli tukenen hayvanlar koruma alimalidir.',
+    'Evcil hayvanlara bakmak disiplin ogretir.',
+    'Deniz canlilari okyanusun sagligini gosterir.',
+    'Kucuk bocekler bile ekosistemin parcasidir.',
+    'Kelebek etkisi dogada her seyin birbirine baglidir.',
+    'Kuslarin gocu muhtesem bir dogal olaydır.',
+    'Hayvanlar iletisim kurabilir, sadece farkli sekilde.',
+    'Vahsi hayatı dogal yasam alaninda korumak gerekir.',
+    'Hayvan zulmune karsi durmak onlarin sesidir.',
+    'Her hayvanın bir ailesi, bir yuvasi vardir.',
+    'Dogadaki denge bozulunca herkes etkilenir.',
+    'Hayvanlar stres azaltmaya yardimci olabilir.',
+    'Aquaryum ziyareti deniz ekosistemini ogretir.',
+    'Hayvanat bahcesi eslitlik ve gorevlilik bilinci verir.',
+    'Yunus zekasi insanlari sasirtmaya devam ediyor.',
+    'Agac yuvalari orumlari gorur korur.',
+    'Balinalar okyanusun en buyuk ve en zekilerinden.',
+    'Sinekler iyi haber tasiyicilaridir doga icin.',
+    'Kurtlar surulerle hareket ederek guclenir.',
+    'Fil beligesi, anlar ve aile baglari.',
+    'Karincar koloniileri toplu calışmanın modelidir.',
+    'Arılar balsizasyon icin kritik oneme sahip.',
+    'Kuşlar iklim değişikliğine göç ederek adapte olur.',
+    'Deniz kaplumbağaları asırlarca yaşayabilir.',
+    'Ahtapotlar çok zeki ve uyum sağlayıcı.',
+    'Hayvanlar genellikle depremi insanlardan önce hisseder.',
+    'Canlılar arasındaki ilişkiler ekosistemin anahtarıdır.',
+    'Bir türü korumak tüm zinciri korumak demektir.',
+    'Evcil hayvanlar insana sadakat öğretir.',
+    'Hayvan davranışlarını anlamak empati geliştirir.',
+    'Doğadaki her ses bir iletişim biçimidir.',
+    'Kış uykusu bir hayatta kalma stratejisidir.',
+    'Kamuflaj doğanın en yaratıcı buluşlarından.',
+    'Göç eden hayvanlar yönleri içgüdüyle bulur.',
+    'Hayvanlar da ağrı ve sevinç hisseder.',
+    'Bir böceği öldürmek yerine taşı.',
+    'Sahilde deniz canlılarını elleme, gözlemle.',
+    'Hayvanların seslerini tanımak doğa bilincini artırır.',
+    'Doğal belgeseller hayvan dünyasını anlamamızı sağlar.',
+    'Her canlı türü milyonlarca yıllık evrimin ürünü.',
+    'Hayvanlar dürüsttür, hile yapmazlar.',
+    'Bir kedinin sesini dinlemek stres azaltır.',
+    'Doğayla bağlantı kurmak ruhu dinlendirir.'
+  ],
+  refleks:[
+    'Hizli ama sakin.',
+    'Tepki pratikle gelisir.',
+    'Odaklanmak seni hizlandirir.',
+    'Refleksler tekrarla guclenIr.',
+    'Hız ve doğruluk birlikte gelişir.',
+    'Dikkatli gözlem tepkiyi hızlandırır.',
+    'Her egzersiz sinir sistemini eğitir.',
+    'Vücut antrenmanla kendini yeniler.',
+    'Tepki süresi ölçülebilir ve geliştirilebilir.',
+    'Spor refleksleri keskinleştirir.',
+    'Müzik ritmi refleks pratiği için iyidir.',
+    'Gözler ve eller beraber çalışır.',
+    'Refleks antrenmanı konsantrasyonu artırır.',
+    'Her hata bir sonraki denemede kullanılır.',
+    'Hız sabırsızlıkla değil, pratikle gelir.',
+    'Beden ve zihnin koordinasyonu önemlidir.',
+    'Refleks testleri eğlenceli ve öğreticidir.',
+    'İnce motor beceriler erken gelişir.',
+    'Refleksin temeli dikkattir.',
+    'Beyin antrenmanlı refleksleri otomatikleştirir.',
+    'Spor ve oyun refleks için en iyi ortam.',
+    'Tepki süren sürekli ölçersen gelişimini görürsün.',
+    'Zihin yorgunken refleks yavaşlar, dinlen.',
+    'Uyku refleksleri yeniler.',
+    'Refleks geliştirme eğlenceli olabilir.',
+    'Her başarılı tepki özgüveni artırır.',
+    'Kendini test etmek gelişimi gösterir.',
+    'Kaslar tekrar tekrar çalışınca hafıza oluşur.',
+    'Dikkat olmadan hız tehlikeli olabilir.',
+    'Hareket ve düşünce birlikte antrenman yapar.',
+    'Tepki süresi ile öğrenme hızı ilişkilidir.',
+    'Refleks çalışmak eğlenceli görsellerle daha kolay.',
+    'Küçük yaşta refleks geliştirmek ömür boyu faydalı.',
+    'Refleks beyin ve beden koordinasyonunun ürünü.',
+    'Pratik yapmak her seferinde biraz iyileştirir.',
+    'Sakin bir zihin en hızlı tepkiyi verir.',
+    'Beden dilini okumak da bir refleks becerisidir.',
+    'Doğru nefes refleks performansını artırır.',
+    'Her tur yeni bir fırsat.',
+    'Yavaş başlamak hızı güvenli artırır.',
+    'Refleks hataları öğrenme fırsatıdır.',
+    'Tekrar yaptıkça refleksler kalıcı hale gelir.',
+    'Beyin plastisitesi sayesinde refleksler geliştirilebilir.',
+    'Çevik olmak sahada avantaj sağlar.',
+    'Dikkatli gözlem yanlış tepkiyi azaltır.',
+    'Her pratik seni bir adım öne götürür.',
+    'Refleks eğitimi yaşla birlikte daha zorlaşır ama mümkündür.',
+    'Sabah egzersizi refleks performansını artırır.',
+    'Koordinasyon çalışmaları refleksi tamamlar.',
+    'Refleks çalışmak eğlenceli bir meydan okumadur.'
+  ],
+  boyama:[
+    'Renklerin gucu var.',
+    'Hayal gucu fikirleri gorunur yapar.',
+    'Sabir sanati guzellestirir.',
+    'Her renk bir duyguyu anlatir.',
+    'Sanat sabir ister.',
+    'Boya duyguyu ifade eder.',
+    'Renklerin kombinasyonu benzersiz guzeller olusturur.',
+    'Her fırça darbesi bir karar.',
+    'Sanat bireyseldir, kural yoktur.',
+    'Renk karistiarmak yeni renkler yaratir.',
+    'Boyama rahatlama saglayabilir.',
+    'Hayal gucuyle sınır yok.',
+    'Sanat iletişimin baska bir biçimidir.',
+    'Renkler duyguları aktarabilir.',
+    'Sabah boyama gunü guzellestirmenin yoludur.',
+    'Sanat en eski insan ifadesidir.',
+    'Mağara resimleri ilk insanların sanatıdır.',
+    'Renk teorisi sanatın temel bilimidir.',
+    'Ana renklerden her renk yaratılabilir.',
+    'Gölge ve ışık resme derinlik katar.',
+    'Boyama zihinsel sağlık için faydalıdır.',
+    'Yaratıcılık kaslar gibi gelişir.',
+    'Sanat eserleri tarih anlatır.',
+    'Soyut sanat duyguları serbest bırakır.',
+    'Gerçekçi çizim gözlem gücünü artırır.',
+    'Her çocuk doğuştan bir sanatçıdır.',
+    'Sanat terapisi iyileşmeye yardımcı olur.',
+    'Renk psikolojisi davranışları etkiler.',
+    'Mavi sakinleştirir, kırmızı enerji verir.',
+    'Yeşil doğayı ve huzuru temsil eder.',
+    'Sarı neşe ve iyimserliği sembolize eder.',
+    'Turuncu yaratıcılık ve enerjinin rengidir.',
+    'Mor zekanın ve sezginin rengi olarak bilinir.',
+    'Beyaz sadeliği ve temizliği ifade eder.',
+    'Siyah güç ve zarafeti temsil eder.',
+    'Renklerin kültürel anlamları farklı olabilir.',
+    'Sanat dil bariyerini aşar.',
+    'Bir tablo bin kelime anlatır.',
+    'Sanat müzeleri tarihin aynasıdır.',
+    'Boyama konsantrasyonu artırır.',
+    'Karmaşık duygular boyamayla ifade edilebilir.',
+    'Sanat hem süreç hem sonuçtur.',
+    'Bitmemiş bir sanat eseri de değerlidir.',
+    'Boyama hatası düzeltilebilir veya yeni bir şeye dönüşür.',
+    'Her sanat eseri o anın belgesidir.',
+    'Sanat insanlığın ortak dilidir.',
+    'Renk seçimi kişiliği yansıtabilir.',
+    'Boyama bir meditasyon biçimi olabilir.',
+    'Sanat eleştirisi bakış açısını genişletir.',
+    'Her boyama bir keşif yolculuğudur.'
+  ],
+  sanat:[
+    'Hayal gucun parliyor.',
+    'Yaraticilik cesaret ister.',
+    'Her renk bir fikir anlatir.',
+    'Sanat dil engellerini aşar.',
+    'Yaratıcılık doğuştan ve geliştirilebilir.',
+    'Her yaratıcı fikir değerlidir.',
+    'Sanat sormakla başlar.',
+    'İlham her yerde bulunabilir.',
+    'Farklı malzemeler farklı sonuçlar verir.',
+    'Teknik ve yaratıcılık birlikte gelişir.',
+    'Sanatın kuralları esnetilebilir.',
+    'Bir fikir gerçeğe dönüşebilir.',
+    'Hayal gücü sınırsız bir kaynaktır.',
+    'Hata yapmak yeni keşiflere açar.',
+    'Deneyin – sanat deneme yanılmayla öğrenir.',
+    'Sanat paylaşılınca daha anlamlı olur.',
+    'Kendi tarzını bulmak bir yolculuk.',
+    'Diğer sanatçılardan ilham almak kopya değil, öğrenmedir.',
+    'Eleştiri büyüme için gereklidir.',
+    'Her çizgi bir duygunun izini taşır.',
+    'Sanat müzeleri ilhama açılan kapılardır.',
+    'Çocukların sanatı en saf ifadedir.',
+    'Doğadan ilham alan sanat çok güçlüdür.',
+    'Ses de bir sanat formudur.',
+    'Dans hem sanat hem egzersizdir.',
+    'Tiyatro empati geliştirir.',
+    'Heykel üç boyutlu düşünmeyi öğretir.',
+    'Fotoğrafçılık anın sanatıdır.',
+    'Yazarlık iç sesin dışa vurumudur.',
+    'Her sanat dalının kendi dili vardır.',
+    'Sanat zamanla değer kazanır.',
+    'Küçük bir sanat çalışması bile büyük etki bırakır.',
+    'Günlük hayatta sanat her yerdedir.',
+    'Sanat toplumları dönüştürebilir.',
+    'Mizah da bir sanat formudur.',
+    'Karikatür toplumu yorumlar.',
+    'Kültürel sanat çeşitliliği zenginliktir.',
+    'Sanat anlık duygulardan tarihe köprü kurar.',
+    'Bir şiir de görsel sanat kadar güçlüdür.',
+    'Sanatla iletişim bazen sözden daha etkilidir.',
+    'Dijital sanat yeni bir boyut açtı.',
+    'Animasyon sanat ve teknolojinin buluşmasıdır.',
+    'Grafik tasarım iletişimi güçlendirir.',
+    'Mimari hem sanat hem bilimdir.',
+    'Moda da bir sanat ifadesidir.',
+    'El sanatları gelenekleri yaşatır.',
+    'Sanat terapi yöntemlerinde kullanılıyor.',
+    'Yaratıcı düşünce her alanda geçerlidir.',
+    'Sanat insanı insan yapan şeylerdendir.',
+    'Her gün bir şey yarat, küçük de olsa.'
+  ],
+  atlas:[
+    'Dunya kesiflerle dolu.',
+    'Saygi yeni yollar acar.',
+    'Merak dunyayi buyutur.',
+    'Her ülkenin kendine özgü bir kültürü var.',
+    'Harita okumak çok yönlülük gerektirir.',
+    'Dünya 7 kıtaya ayrılır.',
+    'Okyanus dünya yüzeyinin yüzde yetmişinden fazlasını kaplar.',
+    'Her başkent bir tarihin merkezi.',
+    'Kültürler arası benzerlikler insanlığı birleştirir.',
+    'Farklılıklar zenginliktir.',
+    'Seyahat zihin genişletir.',
+    'Bayraklar ülkelerin sembolüdür.',
+    'Her dil bir dünya görüşünü taşır.',
+    'Coğrafya kaderi şekillendirir.',
+    'İklim bölgeleri yaşam tarzını etkiler.',
+    'Dağlar sınırları belirler.',
+    'Nehirler uygarlıkların beşiğidir.',
+    'Çöller dünyada kendi ekosistemine sahip.',
+    'Tropikal ormanlar dünyanın akciğerleri.',
+    'Kutup bölgeleri iklim değişikliğinin ilk göstergesi.',
+    'Dünya nüfusu sekiz milyarı geçti.',
+    'Her ülkenin ulusal yemeği vardır.',
+    'Müzik kültürlerin sesini taşır.',
+    'Geleneksel kıyafetler tarihi yansıtır.',
+    'Din ve kültür birbirini etkiler.',
+    'Ticaret yolları medeniyetleri şekillendirdi.',
+    'İpek yolu tarihin en önemli ticaret rotasıdır.',
+    'Okyanus akıntıları küresel iklimi etkiler.',
+    'Coğrafi keşifler tarihin akışını değiştirdi.',
+    'Her kıtanın özgün hayvan türleri var.',
+    'Amazon nehri dünyanın en büyük nehir sistemi.',
+    'Himalayalar dünyanın en yüksek dağ silsilesi.',
+    'Afrika insan ırkının anavatanıdır.',
+    'Antartika bilim için keşfedilmeyi bekliyor.',
+    'Asya dünya nüfusunun çoğuna ev sahipliği yapıyor.',
+    'Avrupa kültürel zenginliğin merkezi.',
+    'Amerika kıtası keşiflerin simgesi.',
+    'Avustralya kendine özgü fauna ile ünlü.',
+    'Okyanusya adalar topluluğunun evi.',
+    'Her kültürün yeni yılı farklı kutlanır.',
+    'Dünyada altı binden fazla dil konuşuluyor.',
+    'Küçük ülkeler büyük kültürlere ev sahipliği yapabilir.',
+    'Coğrafya tarihi şekillendirir.',
+    'Her coğrafya benzersiz bir gıda kültürü yaratır.',
+    'Uluslararası iş birliği küresel sorunları çözer.',
+    'Kültürel empati barışı destekler.',
+    'Dünyayı anlamak kendini anlamaktır.',
+    'Harita üzerinde her nokta bir hikaye taşır.',
+    'Dünya atlası merakın en büyük kaynağıdır.',
+    'Her ülkeyi öğrenmek bir pencere açmaktır.'
+  ],
+  caliskan:[
+    'Her gun kucuk adim at.',
+    'Dusuk adimlar buyuk hedefe gotururür.',
+    'Azim basarinin temelidir.',
+    'Emek olmadan gelen basari anlamsiz.',
+    'Dusunce ve eylem birlikte olmali.',
+    'Her gunun bir hedefi olmali.',
+    'Plan yapmak basarıyı kolaylaştırır.',
+    'Küçük başarılar büyük motivasyon verir.',
+    'Süreklilik başarının sırrıdır.',
+    'Bir görevi bitirmek sonraki göreve enerji verir.',
+    'Zaman yönetimi disiplinin bir parçasıdır.',
+    'Her çalışma saati bir yatırımdır.',
+    'Zorluklar büyüme fırsatıdır.',
+    'Hata yapmak ilerlemenin göstergesidir.',
+    'Hedeflerini yaz ve her gün bak.',
+    'Başkalarının başarısından ilham al.',
+    'Kendi hızında ilerleme de geçerlidir.',
+    'Sabah erken kalkmak üretkenliği artırır.',
+    'Odaklı çalışma dağınık çalışmayı yener.',
+    'İyi dinlenmek iyi çalışmanın ön koşuludur.',
+    'Her gün biraz daha iyi olmak mümkündür.',
+    'Gurur verici sonuçlar emek ister.',
+    'Alışkanlık oluşturmak 21 gün sürer.',
+    'Sorumluluk alabilmek olgunluğun göstergesidir.',
+    'Görev tamamlamak güven inşa eder.',
+    'Kendi kendini motive edebilmek önemli bir beceri.',
+    'Her başarı küçük adımların toplamıdır.',
+    'Başarısızlık pes etmek değil, öğrenmektir.',
+    'Geri bildirim almak gelişimi hızlandırır.',
+    'Zaman ve enerji yönetimi hayati becerilerdir.',
+    'Her gün düzenli çalışmak büyük sonuçlar doğurur.',
+    'Performansını ölçmek gelişimini görünür kılar.',
+    'İyi rol modeller ilham verir.',
+    'Ekip çalışması bireysel çabayı güçlendirir.',
+    'Her küçük ilerleme kutlanmayı hak eder.',
+    'Disiplin bir kaslar gibi gelişir.',
+    'Zaman kaybı bir yatırım fırsatını kaçırmaktır.',
+    'Uzun vadeli düşünmek başarının anahtarıdır.',
+    'Güçlü yönlerini keşfet ve geliştir.',
+    'Zayıf yönlerini de fırsata dönüştür.',
+    'Motivasyon içten geldiğinde en güçlüdür.',
+    'Her gün yeni bir şey öğren.',
+    'Sürekli gelişim mükemmelliğin yolu.',
+    'Zorlu görevler en çok geliştirir.',
+    'Emek her zaman karşılıksız kalmaz.',
+    'Azim ile imkansız mümkün olur.',
+    'Çalışmak hem hak hem görevdir.',
+    'Başarı tesadüf değil, tercih ve çalışmadır.',
+    'Her çalışma seansı seni biraz daha ileriye taşır.',
+    'Kalıcı başarı için tutarlı çalış.'
+  ],
+  mutfak:[
+    'Temiz ve dikkatli olmak onemlidir.',
+    'Saglikli beslenme enerji verir.',
+    'Paylasmak yemegi guzellestirir.',
+    'Mutfak güvenliği her zaman önce.',
+    'Sebze ve meyveler vitaminin kaynağı.',
+    'Hijyen gıda zehirlenmesini önler.',
+    'Yemek pişirmek sabır ve pratik ister.',
+    'Her kültürün kendine özgü mutfağı var.',
+    'El yıkamak en basit hijyen kuralıdır.',
+    'Taze malzemeler yemekleri daha lezzetli yapar.',
+    'Mutfakta keskin aletlere dikkat et.',
+    'Atıkları azaltmak sürdürülebilir bir mutfak için önemli.',
+    'Yemekleri paylaşmak sevgi göstergesidir.',
+    'Pişirme teknikleri besin değerini etkiler.',
+    'Sağlıklı atıştırmalıklar enerjini korur.',
+    'Şeker ve tuz tüketimini dengele.',
+    'Protein kasları güçlendirir.',
+    'Lifli gıdalar sindirime yardımcı olur.',
+    'Su en önemli içecektir.',
+    'Abur cubur beyin performansını düşürür.',
+    'Kahvaltı günün en önemli öğünüdür.',
+    'Yavaş yemek yemek sindirime yardımcı olur.',
+    'Yemek masasında ekransız oturmak ilişkiyi güçlendirir.',
+    'Mutfak hem bilim hem sanattır.',
+    'Tarif okumak ve anlamak önemlidir.',
+    'Mezur kullanmak doğru miktarı sağlar.',
+    'Fırın kullanırken yetişkin yardımı al.',
+    'Mutfak temizliği alışkanlık olmalı.',
+    'Meyve suyu soda dan daha sağlıklıdır.',
+    'Doğal tatlandırıcılar rafine şekerden iyidir.',
+    'Çiğ et çiğ sebzeyle aynı bıçakla kesilmemeli.',
+    'Soğuk gıdaları soğuk saklayın.',
+    'Sıcak gıdaları sıcak saklayın.',
+    'Son kullanma tarihine dikkat edin.',
+    'Mevsimine göre yemek pişirmek doğaya saygıdır.',
+    'Yerel ürünleri tercih etmek ekonomiye katkıdır.',
+    'Pişirmek bir yaratıcılık alanıdır.',
+    'Yemeğin rengi besleyiciliği gösterir.',
+    'Tahıllar uzun enerji sağlar.',
+    'Yağı doğru seçmek sağlık için önemlidir.',
+    'Zeytinyağı sağlıklı bir seçimdir.',
+    'Baharatlar hem lezzet hem sağlık katar.',
+    'Fermente gıdalar bağırsak sağlığını destekler.',
+    'Mutfakta deney yapmak yeni lezzetler keşfettirir.',
+    'Yemek yapmak bir bakım ve sevgi eylemidir.',
+    'Toplulukla yemek yemek ilişkileri güçlendirir.',
+    'Atıkları kompostlamak toprağa geri verir.',
+    'Ölçülü yemek sağlıklı bir alışkanlıktır.',
+    'Yemek öğrenciler için yakıttır.',
+    'Mutfak hem öğrenme hem deneyim alanıdır.'
+  ],
+  aile:[
+    'Dinlemek ve saygi aileyi guclendirir.',
+    'Sevgi kucuk jestlerle gosterilir.',
+    'Aile guvenin temelidir.',
+    'Birlikte vakit geçirmek ilişkileri güçlendirir.',
+    'Empati kurmak aile içinde huzur sağlar.',
+    'Her bireyin duygularını anlamaya çalış.',
+    'Tartışmak sağlıklıdır, saygısızlık değil.',
+    'Teşekkür etmek küçük bir jest büyük anlam taşır.',
+    'Özür dilemek olgunluğun işaretidir.',
+    'Aile kuralları herkesin işini kolaylaştırır.',
+    'Büyüklere saygı değerlerin temelidir.',
+    'Küçüklere şefkat göstermek onları güçlendirir.',
+    'Aile sırlarını korumak güveni artırır.',
+    'Birlikte yemek yemek bağ kurar.',
+    'Gelenekleri yaşatmak aile kimliğini güçlendirir.',
+    'Her aile üyesinin katkısı değerlidir.',
+    'Kardeşler en uzun süre arkadaşlık yapanlardır.',
+    'Çatışmayı sakin bir şekilde çözmek önemlidir.',
+    'Destekleyici bir aile başarıyı artırır.',
+    'Aile içi iletişim çok yönlü olmalıdır.',
+    'Çocukların görüşlerini dinlemek onları değerli hissettirir.',
+    'Sorumluluk paylaşımı aile içi dengeyi sağlar.',
+    'Birlikte güvenmek aile çimentosudur.',
+    'Aile içi rutinler güvenlik hissi verir.',
+    'Hayır demek de bir sevgi şeklidir.',
+    'Sınırlar aile içinde de saygı gerektirir.',
+    'Her neslin aile içinde öğreteceği şeyler var.',
+    'Büyükbabalar ve büyükanneler hazine gibidir.',
+    'Aile şiddetine izin verilmez.',
+    'Birlikte oyun oynamak bağları güçlendirir.',
+    'Aile içi mizah stresi azaltır.',
+    'Kayıplar aileleri bir araya getirebilir.',
+    'Kutlamalar aile hafızasını oluşturur.',
+    'Birlikte yolculuk etmek aileyi kaynaştırır.',
+    'Güven inşa etmek zaman ister.',
+    'Aile içinde dürüstlük en büyük değerdir.',
+    'Her aile farklıdır ve bu zenginliktir.',
+    'Ailenin geçmişini öğrenmek kök hissi verir.',
+    'Aile değerleri kimliğin temelini oluşturur.',
+    'İyi iletişim yanlış anlamaları önler.',
+    'Aile içi destek zorlu dönemlerde hayat kurtarır.',
+    'Birbirini dinlemek sevginin en güzel göstergesi.',
+    'Kıskanmak yerine destek vermek aileyi büyütür.',
+    'Minnettarlık aile içinde de önemlidir.',
+    'Bağlantı kurabilmek için zaman ayırmak gerekir.',
+    'Saygı hem verilmeli hem istenmelidir.',
+    'Ailenle vakit geçirmek bir seçim ve önceliktir.',
+    'Her aile üyesi farklı ama eşit değerlidir.',
+    'Aile sevgisi koşulsuz olduğunda güçlüdür.',
+    'Aile her zaman bir güvenli liman olmalıdır.'
+  ],
+  ada:[
+    'Sessizlik enerji verir.',
+    'Sakin bir an her şeyi değiştirebilir.',
+    'Yalnız kalmak da bir beceridir.',
+    'İç sesin fısıltısını dinle.',
+    'Sakin bir ortam yaratıcılığı artırır.',
+    'Kendi kendine olmak korkutucu değil, güçlü.',
+    'Sessizlikte düşünceler netleşir.',
+    'Bir dakika bile sakin oturmak değerlidir.',
+    'Doğada vakit geçirmek ruhu dinlendirir.',
+    'Kendi düşüncelerinle buluşmak önemlidir.',
+    'Dinginlik zihinsel sağlığın temelidir.',
+    'Yalnızlık ve yalnız hissetmek farklıdır.',
+    'Kendi kendine güvenmek büyük bir güçtür.',
+    'İçsel denge dışsal huzur getirir.',
+    'Kendi bakış açını değerlendirme zamanı bul.',
+    'Sessiz bir an kendini yeniden keşfetme fırsatıdır.',
+    'Sakin bir yer bulmak bazen bir mucizedir.',
+    'Meditasyon iç huzuru güçlendirir.',
+    'Kendi sesini duymak için bazen dışarıyı susturmalısın.',
+    'Sessizlik düşüncelerin toparlanmasını sağlar.',
+    'Hayal kurmak da bir ihtiyaçtır.',
+    'Kendi kendine bakım en önemli bakımdır.',
+    'Bir an için gözlerini kapat ve dinle.',
+    'Sessizlik bazen en derin cevabı verir.',
+    'İç gözlem gelişimi hızlandırır.',
+    'Kendi duygularınla yüzleşmek için sessizliğe ihtiyaç var.',
+    'Teknolojiden uzaklaşmak zihni temizler.',
+    'Doğa sessizliği en şifali sestir.',
+    'Kitap okumak sessiz bir yolculuktur.',
+    'Günlük tutmak iç sesi görünür kılar.',
+    'Yavaşlamak bazen en hızlı ilerlemedir.',
+    'Kendi sınırlarını bilmek olgunluktur.',
+    'Sessizlikte en derin duygular yüzeylemez.',
+    'Huzurlu bir an gelecek kararlarını aydınlatabilir.',
+    'Kendi kendine olmayı sevmek özgürlüktür.',
+    'İç barış dışarıdaki her şeyi kolaylaştırır.',
+    'Sabahın erken saatlerinde sessizliği yakala.',
+    'Yatmadan önce bir dakika sakin ol.',
+    'Kendini dinlemek bir alışkanlık haline gelebilir.',
+    'Derin düşünce sakinlikten doğar.',
+    'Kendine ait bir köşen olsun.',
+    'Günde bir kez kendinle baş başa kal.',
+    'Zihin gürültüsünü azaltmak mümkündür.',
+    'Sessizlikte güç vardır.',
+    'Kendi zihnini tanımak bir ömür sürer.',
+    'Sakin bir sabah güzel bir günün habercisi.',
+    'İçerideki fırtınanı sakinleştir.',
+    'Dinginlik seçimle gelir.',
+    'Kendine yatırım yapmanın en ucuz yolu sessizliktir.',
+    'Sessiz anlar hayatın en değerli hediyesidir.'
+  ],
+  sifa:[
+    'Saglikli aliskanliklar guc verir.',
+    'Kucuk adimlar buyuk saglik saglar.',
+    'Beden ve zihin birlikte iyilesir.',
+    'Uyku iyileşmenin en doğal yolu.',
+    'Su içmek her organı besler.',
+    'Egzersiz hem beden hem zihin için şifalı.',
+    'Sağlıklı beslenmek bir tercih ve alışkanlık.',
+    'Hastalık gelmeden önlem almak en iyisidir.',
+    'Doktor ziyareti sağlığı korur.',
+    'Diş fırçalamak ağız sağlığı için şart.',
+    'Eller yıkamak mikropları engeller.',
+    'Güneş ışığı D vitamini sağlar.',
+    'Doğada yürümek stresi azaltır.',
+    'Derin uyku bağışıklığı güçlendirir.',
+    'Ekran süresini sınırlamak göz sağlığını korur.',
+    'Sebze yemek bağırsak sağlığını destekler.',
+    'Şekerli içecekleri azalt.',
+    'Yeterli protein kas gelişimine yardımcı olur.',
+    'Kafein ve şeker enerjini düzenler.',
+    'Sağlıklı kilo bir denge meselesi.',
+    'Stres bağışıklığı zayıflatabilir.',
+    'Olumlu düşünce bağışıklığı güçlendirir.',
+    'Gülmek doğal bir ilaçtır.',
+    'Sosyal bağlantı zihinsel sağlığı destekler.',
+    'Olumsuz duygular saklanırsa zararlı olabilir.',
+    'Destek istemek zayıflık değil, güçtür.',
+    'Her beden farklıdır, kendini karşılaştırma.',
+    'Düzenli kontroller hastalıkları erken yakalar.',
+    'Bağışıklık sistemi için uyku kritik.',
+    'Hijyen alışkanlıkları küçüklükten başlar.',
+    'Aşı toplum sağlığını korur.',
+    'Stresi yönetmek sağlığı korumaktır.',
+    'Her gün hareket etmek şifalıdır.',
+    'Masa başı çalışırken mola ver.',
+    'Ergonomik oturmak sırt sağlığını korur.',
+    'Nefes egzersizleri kan basıncını düzenler.',
+    'Meditasyon kortizol düzeyini düşürür.',
+    'Sağlıklı ilişkiler ruh sağlığını besler.',
+    'Doğal tedaviler bazı rahatsızlıklara yardımcı olabilir.',
+    'Zihinsel sağlık bedensel sağlık kadar önemlidir.',
+    'Her gün mutluluk hissetmek haktan fazlasıdır.',
+    'Amaç duygusu sağlığı güçlendirir.',
+    'Minnettarlık duygusu ruh halini iyileştirir.',
+    'Yeterli dinlenme verimliliği artırır.',
+    'Çocuklarda sağlıklı alışkanlık ömür boyu sürer.',
+    'Erken uyumak büyüme hormonlarını destekler.',
+    'Sosyal destek stresle başa çıkmayı kolaylaştırır.',
+    'Sağlık zenginliğin en önemli şeklidir.',
+    'Beden sinyallerini dinlemeyi öğren.',
+    'Kendine iyi bakmak en önemli sorumluluktur.'
+  ],
+  ilkbahar:[
+    'Yenilenme ve buyume.',
+    'Umut her bahar acar.',
+    'Her gun yeni bir baslangic.',
+    'İlkbahar değişimin simgesidir.',
+    'Yeni başlangıçlar cesaret ister.',
+    'Doğa her yıl yenilenir.',
+    'Bahar çiçekleri umut taşır.',
+    'Mevsimler değişim güzelliğini öğretir.',
+    'Tohumlar sessizce büyür.',
+    'Sabır büyümenin anahtarıdır.',
+    'Her soğuk kış bir ilkbahar getirir.',
+    'Küçük filiz büyük ağaç olur.',
+    'Değişim korkutucu değil, heyecan verici.',
+    'Yeni bir dönem yeni fırsatlar taşır.',
+    'Bahar temizliği zihni de temizler.',
+    'Çiçek açmak için köklerin sağlam olması lazım.',
+    'İlerleme her zaman görünmez ama sürer.',
+    'Hayat mevsimler gibi döngüseldir.',
+    'Durağanlık geçicidir, büyüme kalıcıdır.',
+    'Yenilenme hem doğa hem insanın özelliği.',
+    'Her gün yeni bir ilkbahar günüdür.',
+    'Zorluklar geçip gider, tıpkı kış gibi.',
+    'Büyümek bazen acı verir ama değer.',
+    'İlkbaharın renkleri yaratıcılığı besler.',
+    'Yeni bir şey denemek ilkbahar gibi canlandırır.',
+    'Değişime açık olmak büyük bir beceri.',
+    'Her kış baharın beklentisiyle doludur.',
+    'Doğanın döngüsünden hayat dersleri çıkar.',
+    'Küçük adımlar büyük dönüşümlere yol açar.',
+    'İlkbahar enerjisi tüm canlılara geçer.',
+    'Yeniden başlamak zayıflık değil, cesaret.',
+    'Her gün güneş biraz daha erken doğar.',
+    'Isınan toprak yeni hayatlar barındırır.',
+    'Kar eriyince özgürlük hissi gelir.',
+    'İlkbahar bir umut sözüdür.',
+    'Büyümek için zamanın gelmesini bekle.',
+    'Sabır tohumu büyüme meyvasını verir.',
+    'Her bitki güneşe doğru büyür.',
+    'Karanlık geçer, aydınlık gelir.',
+    'Her yeni başlangıç bir hediyedir.',
+    'İlkbahar doğanın yeniden doğuşudur.',
+    'Köklerin sağlam olunca fırtına eğmez.',
+    'Yenilenme cesareti gerektirir.',
+    'Her zorluk geçtikten sonra bahar güzelleşir.',
+    'Doğa her zaman yolunu bulur.',
+    'İlkbahar bize umut etmeyi hatırlatır.',
+    'Çiçekler zorlu koşullarda da açabilir.',
+    'Hayat bazen yavaş bazen hızlı büyür.',
+    'İlkbahar dönüşümün simgesidir.',
+    'Her mevsim kendi güzelliğini taşır.'
+  ],
+  muzik:[
+    'Ritim enerji verir.',
+    'Muzik duyguyu birlestirir.',
+    'Her ritmi hissediyorsun.',
+    'Müzik evrensel bir dildir.',
+    'Notalar duygular gibi birbirini izler.',
+    'Her enstrüman farklı bir ses dünyası açar.',
+    'Ritim koordinasyonu geliştirir.',
+    'Müzik beyin gelişimini destekler.',
+    'Şarkı söylemek stres azaltır.',
+    'Müzik dinlemek konsantrasyonu artırır.',
+    'Her kültürün kendine özgü müziği vardır.',
+    'Müzik hafızayı güçlendirir.',
+    'Ritim duymak içgüdüsel bir beceridir.',
+    'Müzik eğitimi disiplin öğretir.',
+    'Enstrüman çalmak sabır ister.',
+    'Melodi duygu yoğunluğunu artırır.',
+    'Müzik terapisi iyileşmeye yardımcı olur.',
+    'Koro birlikte çalışmayı öğretir.',
+    'Müzik okuma yazma gibi öğrenilebilir.',
+    'Ritim ve dil gelişimi iç içedir.',
+    'Müzik beynin her bölgesini aktive eder.',
+    'Nota okuyabilmek bir beceridir.',
+    'Doğa sesleri de bir müziktir.',
+    'Vurmalı çalgılar ritim duygusunu geliştirır.',
+    'Davul ritimle iletişimi öğretir.',
+    'Keman sabır ve hassasiyetle çalınır.',
+    'Piyano on parmak koordinasyonu ister.',
+    'Gitar hem melodi hem akor taşır.',
+    'Flüt nefes kontrolü geliştirer.',
+    'Müzisyenler pratikle büyür.',
+    'Bir beste yaratmak harika hissettirer.',
+    'Müzik dans etmeye davet eder.',
+    'Ritim duygusu yazılı olarak gösterilemez, hissedilir.',
+    'Müzik dinlemek sezgiseli güçlendirir.',
+    'Ses tınısı her enstrümana özgüdür.',
+    'Müzik motivasyon artırabilir.',
+    'Sporda müzik performansı yükseltir.',
+    'Uykuya dalmak için sakin müzik iyidir.',
+    'Müzik kültür aktarımının bir aracıdır.',
+    'Her müzik türünde kendini bulmak mümkün.',
+    'Kendi besteni yapmak kendin ifade etmektir.',
+    'Müzik duygu düzenlemesine yardımcı olur.',
+    'Müzikle büyüyen çocuklar daha iyi dil geliştirir.',
+    'Müzik toplulukları bir arada tutar.',
+    'Her nota özenle seçilir.',
+    'Ritim farkındalığı matematikle bağlantılıdır.',
+    'Müzik hem yaratıcı hem analitik düşünmeyi geliştirır.',
+    'Sesle oynamak çocukların en doğal eğitimidir.',
+    'Müziği hissetmek onu anlamaktan önce gelir.',
+    'Müzik ruhun vitaminidir.'
+  ],
+  kumanda:[
+    'Odak ve tepki.',
+    'Konsantrasyon kazandırır.',
+    'Her oyun yeni beceri öğretir.',
+    'Strateji düşünmek oyunda şart.',
+    'Hızlı karar vermek pratikle gelişir.',
+    'Oyunun kurallarını öğren, sonra uygula.',
+    'Başarısızlık öğrenme fırsatıdır.',
+    'Ekip oyunları iş birliğini öğretir.',
+    'Sakin kalmak performansı artırır.',
+    'Her seviye yeni bir meydan okuma.',
+    'Gözlemlemek strateji geliştirmenin temelidir.',
+    'Oyun içinde sabır kritik öneme sahip.',
+    'Hızlı tepki süreleri antrenmanla kısalır.',
+    'Oyunda sorun çözmek gerçek hayata yansır.',
+    'Her oyun bir zihin egzersizidir.',
+    'Kontrol etmeyi öğrenmek önce kendinle başlar.',
+    'Geri bildirim almak gelişimi sağlar.',
+    'Oyunda yenilmek utanç değil, öğrenme.',
+    'Rakibini saygıyla karşıla.',
+    'Sağlıklı rekabet motivasyon artırır.',
+    'Oyun süresi dengelenmeli.',
+    'Ekran başında uzun süre oturmak sağlıksız.',
+    'Oyun araçtır, amaç değil.',
+    'Sosyal oyunlar gerçek iletişim becerisi geliştirir.',
+    'Sanal başarı gerçek beceri ile gelir.',
+    'Oyun etiği gerçek hayat değerleriyle örtüşmeli.',
+    'Bağımlılık riskini fark etmek önemli.',
+    'Dijital denge sağlıklı yaşamın parçası.',
+    'Oyunlarda şiddet gerçek değerlerle bağdaşmaz.',
+    'Oyun tasarımı yaratıcılık ve kodlamayı birleştirir.',
+    'Dijital vatandaşlık öğrenilebilir.',
+    'Online güvenlik her oyuncunun sorumluluğu.',
+    'Kişisel bilgilerini oyunda paylaşma.',
+    'Siber zorbalık gerçek zarar verir.',
+    'Oyunda arkadaş kurallarına dikkat et.',
+    'Oyun süresi öğrenmek için de ayrılmalı.',
+    'Müzik olmayan oyunlarda sakinlik artar.',
+    'Oyunlarda empatik düşünme gelişebilir.',
+    'Oyun içi kararlar gerçek değerleri yansıtmalı.',
+    'Oyun tasarımcısı olmak çok yönlü beceri ister.',
+    'Yapay zeka oyun dünyasını dönüştürüyor.',
+    'Her oyundan bir şey öğrenebilirsin.',
+    'Gerçek oyun arkadaşlığı ekran dışında da sürer.',
+    'Oyunu bitirip gerçek dünyaya dön.',
+    'Oyun başlamadan önce kural belirle.',
+    'Kaybeden de galip gibi davranabilir.',
+    'Oyunda çıkmaz sokaklar çözüm gerektirir.',
+    'Sabır oyun dünyasında da ödüllendiriliyor.',
+    'Strateji oyunlar akademik başarıyı destekler.',
+    'Oyunun bir hedefi varsa daha anlamlı.'
+  ],
+  bilgisayar:[
+    'Guvenli ve yaratici dusun.',
+    'Teknoloji alet olarak kullanilmali.',
+    'Kod yazmak dili ogrenmek gibi.',
+    'Dijital okuryazarlık artık temel beceri.',
+    'İnternet bilgiye açılan kapıdır.',
+    'Güvenli internet kuralları hayati önem taşır.',
+    'Kişisel bilgileri internette paylaşma.',
+    'Güçlü şifre güvenliğin ilk adımı.',
+    'Siber zorbalığa karşı dur.',
+    'Ekran süreni dengeli tut.',
+    'Yapay zeka insanla birlikte çalışır.',
+    'Kodlama mantıksal düşünmeyi geliştirir.',
+    'Algoritma sorun çözme adımlarıdır.',
+    'Robotlar insanlara yardımcı araçlardır.',
+    'İnternet bilgisini doğrula.',
+    'Sahte haberleri tanıma becerisi önemli.',
+    'Dijital ayak izi kalıcıdır.',
+    'Online kimliğini gerçek kimliğinle uyumlu tut.',
+    'Yazılım güncellemeleri güvenliği sağlar.',
+    'Virus koruması dijital sağlık için şart.',
+    'Veri gizliliği bir haktır.',
+    'Fotoğraf paylaşımında dikkatli ol.',
+    'İnternette tanıştığın herkese güvenmek doğru değil.',
+    'Dijital işbirliği yaratıcılığı artırır.',
+    'Teknoloji sorunu değil, çözüm olmalı.',
+    'Her teknoloji öğrenilebilir ve geliştirilebilir.',
+    'Yapay zekanın geleceği belirsiz ama heyecan verici.',
+    'Bilgisayar bilimi geleceğin dilidir.',
+    'Kadınlar teknolojide eşit yere sahip.',
+    'Kodlamak herkes için mümkün.',
+    'Dijital sanat yaratıcılığa yeni boyut katar.',
+    'Akıllı şehirler teknolojiyle şekilleniyor.',
+    'İnternet of Things her şeyi bağlıyor.',
+    'Veri bilimi kararları güçlendiriyor.',
+    'Siber güvenlik uzmanları geleceğin koruyucusu.',
+    'Teknoloji etik kurallar içinde kullanılmalı.',
+    'Yapay zekayla yaratıcı çalışmalar yapılabilir.',
+    'Programlama oyunla da öğrenilebilir.',
+    'Her uygulama bir ihtiyacı karşılar.',
+    'Ekran bağımlılığı gerçek bir risktir.',
+    'Dengeyi korumak dijital refahın temelidir.',
+    'Teknolojiyi anlamak onu kontrol etmeni sağlar.',
+    'Enerji verimliliği dijital sistemlerde önemli.',
+    'Bulut bilişim verilere her yerden erişim sağlar.',
+    'Blok zinciri güven ve şeffaflık sunar.',
+    'Açık kaynak iş birliğini destekler.',
+    'İnternet insan hakları kapsamında değerlendiriliyor.',
+    'Teknoloji yokluğu bir dezavantaj değil, denge.',
+    'Her dijital araç bir beceri seti gerektirir.',
+    'Teknoloji insanlığın hizmetinde olmalıdır.'
+  ],
+  english:[
+    'Her kelime yeni bir koprudur.',
+    'Pratik yaparak daha iyi olursun.',
+    'Dil ogrenirken eglenmek suratlandirir.',
+    'İngilizce günlük hayatta her yerde.',
+    'Kelime hazinesi okuyarak genişler.',
+    'Dinlemek dil öğrenmenin temelidir.',
+    'Konuşmak korkuyu yener.',
+    'Hata yapmak öğrenmenin işaretidir.',
+    'Her cümle bir adımdır.',
+    'Gramer zamanla oturur.',
+    'Film izlemek dil geliştirir.',
+    'Şarkı söylemek kelime öğretir.',
+    'Günlük pratik hafızayı güçlendirir.',
+    'Bir yabancı dil yeni bir dünya açar.',
+    'İngilizce uluslararası iletişimin anahtarı.',
+    'Her yeni kelime bir zafer.',
+    'Kelime kartları öğrenmeyi hızlandırır.',
+    'Okuyarak dil yapısı içselleşir.',
+    'Yazma dil bilgisini pekiştirir.',
+    'İngilizce öğrenmek sabır ister.',
+    'Her dilde güzel şeyler söylenebilir.',
+    'Yabancı dil beyin esnekliğini artırır.',
+    'Dil öğrenmek kültürü de öğrenmektir.',
+    'İngilizce bilmek kariyer fırsatları açar.',
+    'Çocuklar dil öğrenmede çok yeteneklidir.',
+    'Erken başlamak dil öğrenmeyi kolaylaştırır.',
+    'Bir gün bir kelime büyük fark yaratır.',
+    'İngilizce ile dünyanın dörtte üçüne ulaşabilirsin.',
+    'Sesli kitaplar dil geliştirir.',
+    'Çift dilli olmak büyük bir avantaj.',
+    'Yanlış telaffuz düzeltilebilir, önemli olan denemek.',
+    'Dil öğrenmek yorucu ama harika bir yolculuk.',
+    'İngilizce öğrenmek en iyi yatırımlardan biri.',
+    'Her dil öğrenen zihni genişlemiş biridir.',
+    'İngilizce konuşmak güven verir.',
+    'Yabancı dil bilmek yeni dostlar edindirir.',
+    'Dili düzgün yazmak iyi iletişimdir.',
+    'Akademik İngilizce ayrı bir beceri gerektirir.',
+    'Teknoloji dil öğrenmeyi kolaylaştırdı.',
+    'Her uygulama farklı bir dil öğretme yöntemi sunar.',
+    'Dil öğrenirken sabır ve tutarlılık şart.',
+    'Her kelimeyi bir bağlamla öğren.',
+    'Sözcük oyunları kelime hazinesini genişletir.',
+    'İngilizce çizgi filmler öğrenmeyi eğlenceli kılar.',
+    'Dilin müziği ritim ve vurgu taşır.',
+    'Dil öğrenmek empatik olmayı da öğretir.',
+    'Pratik yapacak ortak bulmak motivasyon artırır.',
+    'Günlük İngilizce rutini oluşturmak çok faydalı.',
+    'Her okuma parçası bir dil dersıidir.',
+    'İngilizce öğrenmek bir yaşam boyu devam eder.'
+  ],
+  deutsch:[
+    'Almanca adim adim.',
+    'Tekrar etmek kalici ogretime saglar.',
+    'Her yeni kelime bir kazanim.',
+    'Almanca Avrupa\'nın en çok konuşulan dillerinden.',
+    'Almanca öğrenmek Avrupa\'ya açılan bir kapı.',
+    'Alman kültürü zengin ve çeşitli.',
+    'Almanca dilbilgisi sistematiktir.',
+    'Almancada cinsiyet sınıflandırması var.',
+    'Almanca bileşik kelimeler çok oluşturabilir.',
+    'Almanca sözlük öğrenmeyi sistematik hale getirir.',
+    'Almancada da pratik şart.',
+    'Alman çizgi film ve podcastleri dil geliştirir.',
+    'Almanca bilmek iş dünyasında avantaj sağlar.',
+    'Her Almanca cümle bir yapboz gibi.',
+    'Almanca düzenli çalışmayla öğrenilir.',
+    'Alman edebiyatı çok zengindir.',
+    'Almanya tarih ve bilim açısından önemlidir.',
+    'Almanca Avusturya ve İsviçre\'de de konuşulur.',
+    'Almanca öğrenmek diğer Germen dillerini kolaylaştırır.',
+    'Almancada selamlaşmalar önemlidir.',
+    'Guten Morgen, günaydın demek çok güzel.',
+    'Danke, teşekkürler demek ilk öğrenilecek kelime.',
+    'Almancada sayılar mantıklıdır.',
+    'Almancada günler haftaları izler.',
+    'Almancada renkler kolay öğrenilir.',
+    'Her öğrenilen kelime bir kazanımdır.',
+    'Almanca dilbilgisi zorlu ama sistematik.',
+    'Almancada öğrenmek sabır ister.',
+    'Günlük Almanca pratiği çok önemli.',
+    'Almancayı konuşmak en hızlı öğrenme yöntemi.',
+    'Alman kültürünü öğrenmek dili zenginleştirir.',
+    'Almanca öğrenen zihin esnekliğini artırır.',
+    'Almanca edebiyat ve felsefe dünyaya katkıda bulunmuştur.',
+    'Almancada aksan önemlidir.',
+    'Almancayı doğal ortamda duymak en iyisidir.',
+    'Almancada fiil sona gider.',
+    'Alman şiiri çok güçlüdür.',
+    'Almanca öğrenmek çok kültürlülüğü destekler.',
+    'Her Almanca kelime Latince veya diğer dillerden iz taşır.',
+    'Almancayı öğrenmek bir yaşam boyu sürer.',
+    'Almancada pratik her fırsatta yapılmalı.',
+    'Almanca dinleyerek de öğrenilir.',
+    'Almanca öğrenmek beyin plastisitesini artırır.',
+    'Almancada sevinç ve başarıyı ifade etmek kolay.',
+    'Alman müziği dünya müziğini etkiledi.',
+    'Almanca bilmek Alman edebiyatını orijinalden okuttur.',
+    'Almancayı çocuklara öğretmek çok değerli.',
+    'Alman teknolojisi ve mühendisliği ünlüdür.',
+    'Almancada her kelime bir kültür taşır.',
+    'Almanca öğrenmek gerçekten değerli bir yatırım.'
+  ],
+  arapca:[
+    'Yeni harfler yeni dunyalar acar.',
+    'Dikkatli calismak hizlandiriyor.',
+    'Her isaret bir ses tasir.',
+    'Arapça dünyanın en eski dillerinden biri.',
+    'Arapça alfabesi sağdan sola yazılır.',
+    'Her Arapça harf birkaç farklı biçim alabilir.',
+    'Arapça seslerin çeşitliliği zengindir.',
+    'Arapça öğrenmek sabır ister.',
+    'Kelime kökü sistemi Arapçanın güçlü yapısı.',
+    'Hareke işaretleri doğru okumayı sağlar.',
+    'Arapça birçok dili etkilemiştir.',
+    'Türkçede çok sayıda Arapça kökenli kelime var.',
+    'Arapçada selamlama çok önemlidir.',
+    'Merhaba Arapçada Merhaba dır.',
+    'Arapça kuralları öğrenilince kolaylaşır.',
+    'Arapça öğrenmek dünya mirasına kapı açar.',
+    'Arapça edebiyatı çok zengindir.',
+    'Arap kültürü misafirperverlikiyle ünlüdür.',
+    'Arapça matematiğin gelişimine katkıda bulundu.',
+    'Sıfır kavramı Arapçadan dilimize geçti.',
+    'Arapça astronomi ve tıp tarihinde önemli rol oynadı.',
+    'Arapça her gün biraz öğrenilerek gelişir.',
+    'Her harf ustaca yazılabilir.',
+    'Hat sanatı Arapça yazının güzelliğini yansıtır.',
+    'Arapça sözlü edebiyat çok köklüdür.',
+    'Arapça öğrenmek diğer Semitik dillere kapı açar.',
+    'Her Arapça harf ayrı bir ses dünyası taşır.',
+    'Arapçada nazik ifadeler çok önemlidir.',
+    'Arapça dünyada yaklaşık üç yüz milyon kişi konuşuyor.',
+    'Arapça öğrenmek kültürel anlayışı güçlendirir.',
+    'Arapça sesli harflerin kullanımı dikkat ister.',
+    'Arapçada kelimelerin kökü üç harften oluşur çoğunlukla.',
+    'Arapça öğrenmek zor ama çok ödüllendirici.',
+    'Her yeni Arapça kelime kültürel bir köprüdür.',
+    'Arapça kalligrafisi dünyaca hayranlık uyandırır.',
+    'Arapça öğrenmek empatiyi ve anlayışı artırır.',
+    'Arap dünyası coğrafi olarak çok geniştir.',
+    'Arapça lehçeler arasında farklılıklar vardır.',
+    'Fus-ha standart yazı ve resmi Arapça.',
+    'Arapça öğrenmek iş dünyasında avantaj sağlar.',
+    'Her arapça harf adımda gerçek ilerleme var.',
+    'Arapça öğrenmek beynin yeni bölgelerini aktive eder.',
+    'Arapçada rakamlar evrenseldir.',
+    'Arap müziği kendine özgü makamlarıyla zengindir.',
+    'Arapça öğrenmek hem eğitici hem ilham verici.',
+    'Arapçada kelimeler köküne göre gruplanır.',
+    'Her yeni Arapça harf başarı hissi verir.',
+    'Arapça öğrenmek dünyayı daha büyük gösterir.',
+    'Arap uygarlığı insan tarihine çok katkıda bulundu.',
+    'Arapça öğrenmek bir ömür boyu süren bir yolculuk.'
+  ]
+};
+    var trArr=trCards[trCardRid]||['Guzel ilerliyorsun.','Degerli bir adim attin.','Devam et, bu iyi bir secimdi.'];
+    return trArr[evHash(original)%trArr.length];
+  }
   if(evValuesOn() && evValuesLang()==='fr'){
-    var frCards=['Bravo !','Tu progresses tres bien.','Continue, c’etait excellent.'];
-    return frCards[evHash(original)%frCards.length];
+    var frRid=(currentRoom&&currentRoom.id)||'genel';
+    var frCards={
+      ibadet:['Le calme est une superforce.','Un esprit clair allegue le coeur.','La gentillesse commence par un moment paisible.'],
+      ders:['Chaque question ouvre une nouvelle porte.','Tu apprends de plus en plus fort.','La curiosite te rend courageux.'],
+      oyuncak:['Jouer loyalement est plus amusant.','Partager rend le jeu plus grand.','Les bons amis jouent avec soin.'],
+      cevre:['Les bonnes habitudes aident la Terre.','Aujourd hui tu protege un peu de nature.','Prendre soin rend la planete plus forte.'],
+      nefes:['Respirer calmement te rend fort.','Un souffle profond clarifie tes pensees.','Respire lentement, agis clairement.'],
+      para:['Planifie, economise, partage.','La valeur grandit avec un usage sage.','La generosite enrichit le coeur.'],
+      puzzle:['La logique trouve le chemin.','La patience assemble les pieces.','Tu vois le schema.'],
+      lazer:['La concentration atteint la cible.','L attention est ton rayon de lumiere.','Reste calme et precis.'],
+      hayvanat:['Les animaux meritent le respect.','Prendre soin te rend fort.','La gentillesse appartient a tous les etres.'],
+      refleks:['Rapide mais calme.','La reaction grandit avec la pratique.','La concentration te rend plus rapide.'],
+      boyama:['Tes couleurs ont du pouvoir.','L imagination rend les idees visibles.','La patience rend l art beau.'],
+      sanat:['Ton imagination brille.','La creativite demande du courage.','Chaque couleur raconte une idee.'],
+      atlas:['Le monde est plein de decouvertes.','Le respect ouvre de nouveaux chemins.','La curiosite agrandit le monde.'],
+      mutfak:['Les bonnes habitudes rendent fort.','Agir consciemment est sain.','Partager rend chaque repas plus chaleureux.'],
+      aile:['Le respect renforce la famille.','Ecouter est un cadeau.','L amour se montre dans les petits gestes.'],
+      ada:['Le silence donne de l energie.','Respire calmement, pense clairement.','Un moment calme peut tout changer.'],
+      sifa:['La sante grandit par de bons choix.','Prends bien soin de toi.','Les petits pas sains ont un grand effet.'],
+      caliskan:['Les petits pas comptent.','La pratique te rend meilleur chaque jour.','Perseverer est du vrai courage.'],
+      muzik:['Le rythme apporte de l energie.','La musique connecte sentiment et concentration.','Ecoute, ressens le rythme.'],
+      kumanda:['Concentration activee, jeu commence.','Reagir vite, rester calme.','Tu controles avec l attention.'],
+      bilgisayar:['La technologie a besoin d idees brillantes.','Penser en securite, agir creativement.','Le code c est penser en etapes.'],
+      english:['La pratique rend les mots amicaux.','Chaque mot est un petit pont.','La langue grandit avec le courage.'],
+      deutsch:['L allemand devient plus facile avec la pratique.','Chaque mot est une petite victoire.','La langue grandit pas a pas.'],
+      arapca:['Nouvelles lettres, nouveaux mondes.','Pratiquer lentement rend sur.','Chaque signe a un son.']
+    };
+    var frArr=frCards[frRid]||['Bravo !','Tu progresses tres bien.','Continue, c est excellent.'];
+    return frArr[evHash(original)%frArr.length];
   }
   if(evValuesOn() && evValuesLang()==='ar'){
-    var arCards=['أحسنت!','أنت تتقدم بشكل رائع.','تابع، كان ذلك ممتازا.'];
+    var arCards=[
+      'سبحان الله، القلب يطمئن بذكر الله.',
+      'الصلاة نور وهدوء.',
+      'الدعاء يفتح باب الأمل.',
+      'القرآن يهدي إلى الخير.',
+      'النية الطيبة تجعل العمل أجمل.',
+      'الرحمة والصدق من أجمل الأخلاق.'
+    ];
     return arCards[evHash(original)%arCards.length];
   }
   if(evValuesOn() && evValuesLang()==='en'){
     var rid=(currentRoom&&currentRoom.id)||'general';
-    var cards={
-      ibadet:['Calm is a superpower.','A clear mind makes the heart lighter.','Kindness starts with a quiet moment.'],
-      ders:['Every question opens a new door.','You learn stronger step by step.','Curiosity makes you brave.'],
-      oyuncak:['Fair play is more fun.','Sharing makes the game bigger.','Good friends play with care.'],
-      cevre:['Good habits help the Earth.','Today you protect a small piece of nature.','Care makes the planet stronger.'],
-      nefes:['Calm breathing makes you strong.','One deep breath clears your thoughts.','Breathe slowly, act clearly.'],
-      para:['Plan, save, share.','Value grows through wise use.','Generosity makes the heart rich.'],
-      puzzle:['Logic finds the way.','Patience puts the pieces together.','You can see the pattern.'],
-      lazer:['Focus hits the target.','Attention is your light beam.','Stay calm and precise.'],
-      hayvanat:['Animals deserve respect.','Care makes you strong.','Kindness belongs to all living things.'],
-      refleks:['Fast, but calm.','Reaction grows with practice.','Focus makes you quicker.'],
-      boyama:['Your colors have power.','Imagination makes ideas visible.','Patience makes art beautiful.'],
-      sanat:['Your imagination shines.','Creativity needs courage.','Every color tells an idea.'],
-      atlas:['The world is full of discoveries.','Respect opens new paths.','Curiosity makes the world bigger.']
-    };
+var cards={
+  ibadet:['Staying calm is a powerful skill.','A deep breath clears your mind.','A moment of silence rests the heart.','Patience is one of the finest virtues.','Silence cleanses the mind.','Peace comes from within.','A calm moment gives strength.','Controlling your breath controls yourself.','When angry, stop and breathe.','Relaxation is an art that grows with practice.','Emotional regulation is a lifelong skill.','Those calm inside spread peace outside.','Patience is not waiting, it is choosing the right moment.','Stillness comes from strength, not fear.','Even one breath can change your thinking.','Calmness improves your decisions.','A strong mind begins with a calm mind.','In silence, the best ideas may be born.','Focus is a skill that can be learned.','Knowing your emotions helps you manage them.','Accepting stress reduces it.','Every difficult situation has a solution.','Relaxation techniques can be used anywhere.','Mind and body work best together.','A calm mind makes better decisions.','Breathing exercises suit every age.','Silence is one of the best teachers.','Peace is not searched for, it is found within.','Staying calm in hard moments takes courage.','Being at peace with yourself eases life.','Meditation strengthens focus.','Concentration grows with practice.','Knowing your emotional state matters.','Endurance and patience make the strongest pair.','A break renews the mind.','Calmness is not weakness, it is strength.','Concentration can be strengthened like a muscle.','Listening to your inner voice is the beginning of wisdom.','Accepting what cannot change brings peace.','Starting fresh is always possible.','Finding a calm space is sometimes enough.','Rhythm and breath work together.','Closing your eyes is a form of rest.','Tension can leave with a breath.','Listening to your body is wisdom.','A short break makes a long path easier.','Fast decisions can sometimes be harmful.','Patience is as important for artists as for the wise.','Work and rest complete each other.','Every night of sleep is a reset point.'],
+  ders:['Every question opens a new door.','You learn stronger step by step.','Curiosity makes you brave.','Knowledge multiplies when shared.','Mistakes are part of learning.','Repetition creates lasting knowledge.','Do not be afraid to ask.','Share what you learn with others.','Understanding beats memorizing.','Learning has no end.','Curiosity opens the mind.','Every book offers a new world.','Listening is half of learning.','Taking notes strengthens memory.','Understanding beats rote learning.','Struggling at first is normal.','Making mistakes is part of the journey.','Learning while enjoying accelerates growth.','Thinking is the best exercise.','Curiosity works like a motor.','Asking is the beautiful side of not knowing.','Every piece of knowledge supports others.','Patient learning produces lasting results.','Understanding comes from the whole picture.','Making mistakes while learning is natural.','As knowledge builds, learning becomes easier.','Focused work beats scattered effort.','Short intense sessions are effective.','Learning is a journey, not a destination.','A little progress every day is enormous.','Curious minds can learn anywhere.','Questions can be more valuable than answers.','Memorizing without understanding wastes effort.','Try different methods as you learn.','Struggle brings growth.','The joy of learning hides within.','Knowing is not enough, you must apply.','Being curious in every field enriches you.','Deep understanding beats surface knowledge.','Learning flows like a stream.','Practice reinforces knowledge.','Small discoveries give great motivation.','A mind kept open grows.','Loving learning is the greatest gift.','Knowledge is power but more so when shared.','Every life is full of lessons.','Careful observers learn a lot.','Finding your own learning style matters.','Sometimes a step back helps you move forward.','Learning lasts a lifetime.'],
+  oyuncak:['Fair play is more fun.','Sharing makes the game bigger.','Good friends play with care.','Taking turns strengthens patience.','A game without rules becomes chaos.','Losing is also part of the game.','Playing together is more enjoyable.','Making your friend happy is better than winning.','Everyone should know the game rules.','Not cheating is the greatest rule.','Games teach team spirit.','Congratulating the winner takes maturity.','Falling together is also part of the game.','Imagination is the foundation of creative play.','Playing requires strategy.','Games from different cultures can be learned.','A game cannot end without rules.','Waiting your turn takes patience.','Sharing strengthens friendship.','The end of a game is the start of another.','Winning a game is not winning everything.','Friendship is more valuable than a game.','Rules protect everyone.','Healthy competition in games can exist.','Fair play applies to all of life.','Learning from losing is possible.','Thinking together is enjoyable.','Creative play sparks imagination.','Diverse games develop concentration.','Small games teach big lessons.','Patience during play is very important.','Winning together is better than winning alone.','Playing properly shows character.','Play is both education and entertainment.','Emotional management is tested in games.','Winning is meaningful only when earned fairly.','Playing is also an art.','Imaginative play is limitless.','Building empathy in play is important.','Equal treatment in games builds success.','Every game teaches a new skill.','Communication during play is powerful.','Self-expression happens through play.','Different cultures have different game rules.','Strategic thinking enriches a game.','Flexibility is a core rule of play.','Play is a small model of life.','Accepting mistakes is part of fair play.','Patience strengthens with practice.','Stepping back is also part of progress.'],
+  cevre:['Good habits protect the Earth.','Today you protected a small piece of nature.','Care makes the planet stronger.','Saving water protects the future.','Recycling renews resources.','Turning off lights conserves energy.','Every tree gives breath.','Not harming nature is the greatest respect.','Extra plastic pollutes the oceans.','Air cleanliness is everyone\'s responsibility.','Small changes make a big difference.','Sorting waste protects nature.','Natural spaces are home to all.','We must not pollute water sources.','Using bicycles cleans the air.','Forests are an important ecosystem.','Sea creatures need protection.','We can reduce our carbon footprint.','Renewable energy lights the future.','When natural balance breaks, everyone is affected.','Not polluting soil is necessary for healthy life.','Animals should be protected in their habitats.','Water is the most valuable resource.','Random plastic takes thousands of years to break down.','Being sensitive to the environment is responsibility.','Understanding ecosystems helps protect them.','Every piece of waste must go to the right place.','Saving habits should start from childhood.','Exploring nature helps you love it.','Planting plants contributes to the atmosphere.','Plastic in the seas harms fish.','Energy saving is everyone\'s duty.','Air pollution harms lungs.','Protecting forests balances climate.','Every living thing has a right to life.','The water cycle breaks when polluted.','Solar energy is a clean resource.','Protecting habitats is critical for species.','Humans should act as part of nature.','Global warming is everyone\'s problem.','Good habits in childhood continue into adulthood.','When we harm nature we harm ourselves.','Local production reduces transport pollution.','Organic farming protects soil health.','Saving water is a gift to future generations.','Recycling also contributes to the economy.','Electric vehicles clean city air.','Environmental sensitivity should be part of your education.','Every person shares responsibility for protecting nature.','Small habits produce big results.'],
+  nefes:['Calm breathing makes you strong.','One deep breath clears your thoughts.','Breathe slowly, act clearly.','Breath connects body and mind.','Breathing techniques reduce stress.','Every breath is a new beginning.','Deep breath slows the heart rate.','Controlling breath is controlling emotion.','A short breathing pause can open the mind.','Breathing through the nose is healthy.','Breathing rhythm affects mood.','Belly breathing is the deepest relaxation.','You can focus by counting your breaths.','Breathe in four seconds, out four seconds.','Deep breathing increases oxygen.','Breath awareness is the foundation of meditation.','In yoga breath is the most important element.','Breath is part of body language.','Calm breath makes decision making easier.','Breathing techniques improve sleep quality.','In tense moments stop and breathe.','Breath is not just for staying, it is for living.','Breath practice increases body awareness.','Start the morning with deep breaths.','Breathing helps even when waiting in line.','Slow breathing reduces panic.','Breathing techniques are also used in sports.','Aware breathing helps manage emotion.','Focused breathing calms even in intensity.','Nasal breathing is healthier than mouth breathing.','Counting breaths improves concentration.','Just three deep breaths can be enough to relax.','Breath is the remedy for many ailments.','Deep breathing reduces muscle tension.','Balance is restored through breath.','Breathe deeply eleven times to calm the mind.','Breathing techniques help you be calmer in exams.','In stressful moments your breath is your best friend.','Teaching breathing techniques to children is valuable.','Controlling breath gives confidence.','Calm breath creates a smile on your face.','Breath resets body and mind to zero.','A few deep breaths each day is enough.','Breath is the smallest and greatest act of life.','Calm breath increases agility.','Breath awareness should begin in childhood.','Fears can pass through breath.','Deep breath relaxes the muscles of the face.','Breathing rhythm affects body rhythm.','Morning breath exercise can make your day beautiful.'],
+  para:['Plan, save, share.','Value grows through wise use.','Generosity enriches the heart.','Saving is investing in the future.','Unnecessary spending is waste.','It is important to distinguish needs from wants.','Small savings grow over time.','Sharing does not diminish, it multiplies.','Smart spending is a skill.','Giving gains much.','Money is a tool, not an end.','Saving together is more fun.','Buying cheap is not always good.','Quality choices save money long term.','Making a budget takes discipline.','Giving gifts strengthens relationships.','Saving can become a habit.','Money management is a skill learned early.','Make a needs list before shopping.','Think twice before buying something.','Money cannot buy happiness but eases life.','Deciding together means using resources well.','Waste affects not just money but nature too.','Small savings lead to big goals.','Think about the value before you buy.','Investing means planning the future.','Financial literacy serves you for life.','Tracking spending makes you conscious.','Money management is a learnable skill.','Sharing does not increase wealth but increases meaning.','Saving habits start when young.','Not taking more than you need is wisdom.','Get reliable information before big decisions.','Spending on valuable things is an investment.','Social responsibility is also expressed with money.','Volunteering is as valuable as donating.','Producing for community is more important than personal gain.','Get in the habit of waiting before spending.','Be careful when lending.','Being transparent builds trust.','Earning by working gives pride.','Without effort money feels meaningless.','Spending for a good cause creates value.','Patience is essential in money management.','Ask yourself why you want it before buying.','Do not confuse luxury with need.','Use your savings for something meaningful.','Helping your neighbor is also an investment.','Sharing economy uses resources efficiently.','Every coin carries an intention.'],
+  puzzle:['Logic finds the way.','Patience puts the pieces together.','You can see the pattern.','Every piece carries meaning.','Systematic thinking leads to solutions.','The hardest pieces teach the most.','Stepping back gives a new perspective.','Many attempts lead to the solution.','Every puzzle can be solved with patience.','Puzzles strengthen the brain muscle.','Trial and error teaches a lot.','Mistakes help you correct your path.','Every sentence can be completed.','Grouping pieces makes it easier.','Seeing the big picture helps place the parts.','Order and system help in puzzles.','Hard puzzles accelerate brain development.','Starting somewhere is the most important step.','Sorting by color and shape is logical.','Finding the corner piece is a great start.','Attention and focus are your biggest helpers.','Imagining the result helps you progress.','Every failed attempt brings you closer.','Patience and calm help in puzzles.','Different types of puzzles develop different skills.','Puzzles develop spatial intelligence.','Distinguishing pieces takes visual skill.','Completing a puzzle gives deep satisfaction.','In big puzzles make sub-groups.','Puzzles also teach time management.','Developing your own strategy is unique.','Logical guesses bring you closer.','Doing a puzzle with a friend is more fun.','Working on puzzles increases concentration.','Every puzzle is a problem-solving exercise.','Visual memory is very useful in puzzles.','Careful observation finds the missing piece.','Being patient brings victory in puzzles.','The shape of pieces gives clues.','Moving from big to small is logical.','Puzzles develop focus and patience together.','Try a puzzle at least once a day.','Hard puzzles build confidence.','Seemingly unsolvable problems have solutions.','Rest when the brain is tired, then continue.','Color coding strategy works in puzzles.','Every puzzle piece must find its match.','Patience and attention combined wins.','Completing a puzzle increases self-confidence.','Every challenge overcome opens a new level.'],
+  lazer:['Focus hits the target.','Attention is your light beam.','Stay calm and precise.','Concentration grows with practice.','Catch the target without losing focus.','Every moment of attention brings different beauty.','Focus is trained like a muscle.','Take a break before attention fades.','Eyes and mind working together is very powerful.','Fully engage in whatever you do.','Laser focus is a skill.','When you have targets, focus is easy.','Paying attention to every second is a big advantage.','Mind works with clear targets.','When focus is lost, stop and restart.','Focus is not with the eyes but the mind.','Concentration strengthens over time.','Staying away from distractions helps.','When the goal is clear, focus stays continuous.','Focusing on one task beats doing many at once.','Laser focus increases efficiency.','A quiet environment boosts attention.','The brain focuses on one task at a time.','Mind training increases attention duration.','Daily mind exercise improves daily performance.','Focused activity is the most productive work.','A focused goal is reached much faster.','One focused hour beats five scattered hours.','Listening activities increase attention span.','Physical movement supports brain focus.','Attention management is a lifelong useful skill.','Short intense work beats long scattered work.','Know your best focus hours.','Attention improves with practice.','Plan your day to reduce distractions.','Focus is a choice, not luck.','Silence is the greatest aid to focus.','Twenty minutes of focus practice can be done daily.','Staying away from social media increases focus.','Writing goals strengthens motivation.','Strengthen your attention muscle.','Completing one task focused is more satisfying.','Focus skill is the foundation of an entrepreneurial mind.','Attention can be increased with mental exercises.','Correct breathing helps concentration.','When body and mind focus together, the best emerges.','When focus scatters, take a break then continue.','Extend each focus session by one minute.','Attention management is part of stress management.','Laser focus is the core tool of success.'],
+  hayvanat:['Animals deserve respect.','Care makes you strong.','Kindness belongs to all living things.','Animals cannot speak but they feel.','Caring for a living thing requires responsibility.','Loving animals develops empathy.','Every living thing in nature has a role.','Endangered animals should be protected.','Taking care of a pet teaches discipline.','Sea creatures show the health of the oceans.','Even small insects are part of the ecosystem.','The butterfly effect shows everything in nature is connected.','The migration of birds is a magnificent natural event.','Animals communicate, just in different ways.','Wild life must be protected in natural habitats.','Standing against animal cruelty is their voice.','Every animal has a family, a home.','When natural balance breaks, everyone is affected.','Animals can help reduce stress.','Aquarium visits teach marine ecosystems.','The zoo gives a sense of care and duty.','Dolphin intelligence continues to amaze humans.','Tree nests shelter and protect species.','Whales are among the largest and smartest ocean creatures.','Flies are good news carriers for nature.','Wolves strengthen by moving in packs.','Elephant memory and family bonds are remarkable.','Ant colonies are models of collective work.','Bees are critically important for pollination.','Birds adapt to climate change by migrating.','Sea turtles can live for centuries.','Octopuses are very intelligent and adaptable.','Animals often sense earthquakes before humans.','Relationships between living things are the key to ecosystems.','Protecting one species means protecting the whole chain.','Pets teach loyalty to humans.','Understanding animal behavior develops empathy.','Every sound in nature is a form of communication.','Hibernation is a survival strategy.','Camouflage is one of nature\'s most creative inventions.','Migrating animals find their way by instinct.','Animals also feel pain and joy.','Move an insect instead of killing it.','Observe sea creatures at the beach, do not touch.','Recognizing animal sounds increases nature awareness.','Natural documentaries help us understand the animal world.','Every species is the product of millions of years of evolution.','Animals are honest, they do not cheat.','Hearing a cat purr reduces stress.','Connecting with nature rests the soul.'],
+  refleks:['Fast, but calm.','Reaction grows with practice.','Focus makes you quicker.','Reflexes strengthen with repetition.','Speed and accuracy develop together.','Careful observation speeds up reaction.','Every exercise trains the nervous system.','The body renews itself with training.','Reaction time is measurable and improvable.','Sport sharpens reflexes.','Musical rhythm is great for reflex practice.','Eyes and hands work together.','Reflex training increases concentration.','Every mistake is used in the next attempt.','Speed comes from practice, not impatience.','Coordination of body and mind is important.','Reflex tests are fun and educational.','Fine motor skills develop early.','The foundation of reflexes is attention.','The brain automates trained reflexes.','Sport and play are the best environment for reflexes.','If you keep measuring reaction time you see progress.','Rest when the mind is tired, reflexes slow down.','Sleep renews reflexes.','Developing reflexes can be fun.','Every successful reaction builds confidence.','Testing yourself shows development.','Muscles form memory through repeated action.','Speed without attention can be dangerous.','Movement and thought train together.','Reaction time relates to learning speed.','Working reflexes is easier with fun visuals.','Developing reflexes young is beneficial for life.','Reflexes are the product of brain-body coordination.','Practice improves a little every time.','A calm mind gives the fastest response.','Reading body language is also a reflex skill.','Correct breathing improves reflex performance.','Every round is a new opportunity.','Starting slowly safely increases speed.','Reflex mistakes are learning opportunities.','Repetition makes reflexes permanent.','Reflexes can be developed thanks to brain plasticity.','Being agile provides an advantage in the field.','Careful observation reduces wrong responses.','Every practice takes you one step forward.','Reflex training gets harder with age but is possible.','Morning exercise improves reflex performance.','Coordination work completes reflexes.','Reflex work is a fun challenge.'],
+  boyama:['Your colors have power.','Imagination makes ideas visible.','Patience makes art beautiful.','Every color tells an emotion.','Art takes patience.','Paint expresses feeling.','Color combinations create unique beauties.','Every brushstroke is a decision.','Art is individual, there are no rules.','Mixing colors creates new colors.','Coloring can provide relaxation.','There are no limits with imagination.','Art is another form of communication.','Colors can convey emotions.','Morning coloring is a way to beautify the day.','Art is humanity\'s oldest form of expression.','Cave paintings are the art of early humans.','Color theory is the basic science of art.','Every color can be created from primary colors.','Shadow and light add depth to a painting.','Coloring is beneficial for mental health.','Creativity develops like muscles.','Works of art tell history.','Abstract art frees emotions.','Realistic drawing increases observation power.','Every child is a born artist.','Art therapy helps healing.','Color psychology affects behavior.','Blue calms, red gives energy.','Green represents nature and peace.','Yellow symbolizes joy and optimism.','Orange is the color of creativity and energy.','Purple is known as the color of intelligence and intuition.','White expresses simplicity and cleanliness.','Black represents power and elegance.','Cultural meanings of colors can differ.','Art transcends language barriers.','A painting tells a thousand words.','Art museums are mirrors of history.','Coloring increases concentration.','Complex emotions can be expressed through coloring.','Art is both process and result.','An unfinished artwork is also valuable.','A coloring mistake can be corrected or turned into something new.','Every artwork is a document of its moment.','Art is the common language of humanity.','Color choice can reflect personality.','Coloring can be a form of meditation.','Art criticism broadens perspective.','Every coloring is a journey of discovery.'],
+  sanat:['Your imagination shines.','Creativity needs courage.','Every color tells an idea.','Art transcends language barriers.','Creativity is innate and can be developed.','Every creative idea is valuable.','Art begins with a question.','Inspiration can be found everywhere.','Different materials give different results.','Technique and creativity develop together.','The rules of art can be stretched.','An idea can become reality.','Imagination is an unlimited source.','Making mistakes opens new discoveries.','Experiment — art learns through trial and error.','Art becomes more meaningful when shared.','Finding your own style is a journey.','Being inspired by other artists is learning, not copying.','Criticism is necessary for growth.','Every line carries the trace of an emotion.','Art museums are doors opening to inspiration.','Children\'s art is the purest expression.','Art inspired by nature is very powerful.','Sound is also a form of art.','Dance is both art and exercise.','Theatre develops empathy.','Sculpture teaches three-dimensional thinking.','Photography is the art of the moment.','Writing is the outward expression of the inner voice.','Every art form has its own language.','Art gains value over time.','Even a small artwork leaves a big impact.','Art is everywhere in daily life.','Art can transform societies.','Humor is also an art form.','Cartoons interpret society.','Cultural art diversity is richness.','Art bridges fleeting emotions and history.','A poem is as powerful as visual art.','Communicating with art can be more effective than words.','Digital art opened a new dimension.','Animation is where art and technology meet.','Graphic design strengthens communication.','Architecture is both art and science.','Fashion is also a form of artistic expression.','Handicrafts keep traditions alive.','Art is used in therapeutic methods.','Creative thinking applies in every field.','Art is one of the things that makes us human.','Create something every day, even if small.'],
+  atlas:['The world is full of discoveries.','Respect opens new paths.','Curiosity makes the world bigger.','Every country has its own unique culture.','Reading maps requires versatility.','The world is divided into 7 continents.','Oceans cover more than seventy percent of Earth\'s surface.','Every capital is the center of a history.','Cross-cultural similarities unite humanity.','Differences are richness.','Travel expands the mind.','Flags are symbols of countries.','Every language carries a worldview.','Geography shapes destiny.','Climate zones affect lifestyles.','Mountains define borders.','Rivers are the cradle of civilizations.','Deserts have their own ecosystem.','Tropical forests are the lungs of the world.','Polar regions are the first indicators of climate change.','World population has passed eight billion.','Every country has a national dish.','Music carries the voice of cultures.','Traditional clothing reflects history.','Religion and culture influence each other.','Trade routes shaped civilizations.','The Silk Road is history\'s most important trade route.','Ocean currents affect global climate.','Geographic discoveries changed the course of history.','Every continent has its unique animal species.','The Amazon is the world\'s largest river system.','The Himalayas are the world\'s highest mountain range.','Africa is the homeland of the human race.','Antarctica awaits scientific exploration.','Asia is home to most of the world\'s population.','Europe is a center of cultural richness.','The Americas are a symbol of discovery.','Australia is famous for its unique fauna.','Oceania is home to island communities.','Every culture celebrates the new year differently.','More than six thousand languages are spoken in the world.','Small countries can be home to great cultures.','Geography shapes history.','Every geography creates a unique food culture.','International cooperation solves global problems.','Cultural empathy supports peace.','Understanding the world is understanding yourself.','Every point on the map carries a story.','A world atlas is the greatest source of curiosity.','Learning about every country opens a window.'],
+  caliskan:['Take small steps every day.','Small steps lead to big goals.','Perseverance is the foundation of success.','Success without effort is meaningless.','Thought and action must go together.','Every day should have a goal.','Planning makes success easier.','Small successes give great motivation.','Consistency is the secret of success.','Finishing one task gives energy for the next.','Time management is part of discipline.','Every working hour is an investment.','Difficulties are growth opportunities.','Making mistakes shows progress.','Write your goals and look at them every day.','Take inspiration from others\' successes.','Progressing at your own pace is also valid.','Waking early increases productivity.','Focused work beats scattered work.','Good rest is a prerequisite for good work.','Getting a little better every day is possible.','Worthy results take effort.','Forming a habit takes 21 days.','Being able to take responsibility shows maturity.','Completing tasks builds trust.','Being able to motivate yourself is an important skill.','Every success is the sum of small steps.','Failure is not giving up, it is learning.','Getting feedback speeds up development.','Time and energy management are vital skills.','Regular daily work produces great results.','Measuring your performance makes development visible.','Good role models inspire.','Teamwork strengthens individual effort.','Every small progress deserves celebration.','Discipline develops like a muscle.','Wasting time is missing an investment opportunity.','Long-term thinking is the key to success.','Discover and develop your strengths.','Turn your weaknesses into opportunities.','Motivation is strongest when it comes from within.','Learn something new every day.','Continuous improvement is the road to excellence.','Challenging tasks develop you most.','Effort is never left unrewarded.','Perseverance makes the impossible possible.','Work is both a right and a duty.','Success is a choice and work, not chance.','Every work session takes you a little further.','Work consistently for lasting success.'],
+  mutfak:['Being clean and careful matters.','Healthy eating gives energy.','Sharing makes meals better.','Kitchen safety always comes first.','Vegetables and fruits are sources of vitamins.','Hygiene prevents food poisoning.','Cooking takes patience and practice.','Every culture has its own kitchen.','Washing hands is the simplest hygiene rule.','Fresh ingredients make food tastier.','Be careful with sharp tools in the kitchen.','Reducing waste is important for a sustainable kitchen.','Sharing food is a sign of love.','Cooking techniques affect nutritional value.','Healthy snacks preserve your energy.','Balance sugar and salt consumption.','Protein strengthens muscles.','Fibrous foods aid digestion.','Water is the most important drink.','Junk food lowers brain performance.','Breakfast is the most important meal of the day.','Eating slowly aids digestion.','Sitting screen-free at the dinner table strengthens relationships.','The kitchen is both science and art.','Reading and understanding a recipe is important.','Using measuring cups ensures correct quantities.','Get adult help when using the oven.','Kitchen cleanliness should be a habit.','Fruit juice is healthier than soda.','Natural sweeteners are better than refined sugar.','Raw meat and raw vegetables should not be cut with the same knife.','Keep cold foods cold.','Keep hot foods hot.','Check expiry dates.','Cooking according to season is respect for nature.','Preferring local products contributes to the economy.','Cooking is a creative space.','The color of food indicates its nutritional content.','Grains provide lasting energy.','Choosing the right fat is important for health.','Olive oil is a healthy choice.','Spices add both flavor and health benefits.','Fermented foods support gut health.','Experimenting in the kitchen discovers new tastes.','Cooking is an act of care and love.','Eating together as a community strengthens relationships.','Composting waste returns it to the soil.','Eating in moderation is a healthy habit.','Food is fuel for students.','The kitchen is both a learning and experience space.'],
+  aile:['Listening and respect strengthen family.','Love is shown in small gestures.','Family is the foundation of trust.','Spending time together strengthens relationships.','Empathy brings peace within the family.','Try to understand everyone\'s feelings.','Arguing is healthy, disrespect is not.','Saying thank you carries great meaning in a small gesture.','Apologizing is a sign of maturity.','Family rules make everyone\'s life easier.','Respecting elders is the foundation of values.','Showing kindness to the young strengthens them.','Keeping family secrets increases trust.','Eating together builds bonds.','Keeping traditions alive strengthens family identity.','Every family member\'s contribution is valuable.','Siblings are the longest-lasting friends.','Resolving conflict calmly is important.','A supportive family increases success.','Family communication should be multidirectional.','Listening to children\'s views makes them feel valued.','Sharing responsibility maintains family balance.','Trusting together is family cement.','Family routines give a sense of security.','Saying no is also a form of love.','Boundaries in family also require respect.','Every generation has things to teach the family.','Grandparents are like treasure.','Family violence is never acceptable.','Playing games together strengthens bonds.','Family humor reduces stress.','Losses can bring families together.','Celebrations create family memories.','Traveling together blends the family.','Building trust takes time.','Honesty within family is the greatest value.','Every family is different and this is richness.','Learning your family\'s past gives a sense of roots.','Family values form the foundation of identity.','Good communication prevents misunderstandings.','Family support saves lives in hard times.','Listening to each other is the most beautiful sign of love.','Supporting instead of envying grows the family.','Gratitude matters within family too.','Time must be set aside to connect.','Respect must both be given and asked for.','Spending time with family is a choice and priority.','Every family member is different but equally valuable.','Family love is powerful when unconditional.','Family should always be a safe haven.'],
+  ada:['Silence gives energy.','A calm moment can change everything.','Being alone is also a skill.','Listen to the whisper of your inner voice.','A calm environment increases creativity.','Being by yourself is not scary, it is powerful.','Thoughts become clearer in silence.','Even one minute of sitting quietly is valuable.','Spending time in nature rests the soul.','Meeting your own thoughts is important.','Tranquility is the foundation of mental health.','Loneliness and feeling lonely are different.','Trusting yourself is a great strength.','Inner balance brings outer peace.','Find time to evaluate your own perspective.','A quiet moment is an opportunity to rediscover yourself.','Finding a peaceful place is sometimes a miracle.','Meditation strengthens inner peace.','To hear your own voice, sometimes silence the outside.','Silence helps thoughts to gather.','Daydreaming is also a need.','Self-care is the most important care.','Close your eyes for a moment and listen.','Silence sometimes gives the deepest answer.','Self-reflection speeds up development.','You need silence to face your own emotions.','Stepping away from technology clears the mind.','The silence of nature is the most healing sound.','Reading is a silent journey.','Keeping a journal makes the inner voice visible.','Slowing down is sometimes the fastest progress.','Knowing your own limits is maturity.','The deepest emotions do not surface in silence.','A peaceful moment can illuminate future decisions.','Loving being alone is freedom.','Inner peace makes everything outside easier.','Catch the silence in the early morning hours.','Be calm for a minute before sleeping.','Listening to yourself can become a habit.','Deep thought is born from calm.','Have your own corner.','Be alone with yourself once a day.','Reducing mind noise is possible.','There is power in silence.','Knowing your own mind takes a lifetime.','A calm morning is the herald of a beautiful day.','Calm the storm inside you.','Calmness comes with choice.','Investing in yourself is the cheapest way, which is silence.','Quiet moments are life\'s most valuable gifts.'],
+  sifa:['Healthy habits give strength.','Small steps bring great health.','Body and mind heal together.','Sleep is nature\'s most natural healing.','Drinking water nourishes every organ.','Exercise is healing for both body and mind.','Eating healthy is a choice and habit.','Prevention before illness is the best approach.','Doctor visits protect health.','Brushing teeth is essential for oral health.','Washing hands blocks germs.','Sunlight provides vitamin D.','Walking in nature reduces stress.','Deep sleep strengthens immunity.','Limiting screen time protects eye health.','Eating vegetables supports gut health.','Reduce sugary drinks.','Sufficient protein helps muscle development.','Caffeine and sugar regulate energy.','Healthy weight is a matter of balance.','Stress can weaken immunity.','Positive thinking strengthens immunity.','Laughter is a natural medicine.','Social connection supports mental health.','Hiding negative emotions can be harmful.','Asking for help is not weakness, it is strength.','Every body is different, do not compare yourself.','Regular check-ups catch illness early.','Sleep is critical for the immune system.','Hygiene habits start in childhood.','Vaccines protect community health.','Managing stress is protecting health.','Moving every day is healing.','Take breaks when working at a desk.','Ergonomic sitting protects back health.','Breathing exercises regulate blood pressure.','Meditation lowers cortisol levels.','Healthy relationships nourish mental health.','Natural remedies can help some conditions.','Mental health is as important as physical health.','Feeling happy every day is more than a right.','A sense of purpose strengthens health.','Gratitude improves mood.','Sufficient rest increases productivity.','Healthy habits in children last a lifetime.','Sleeping early supports growth hormones.','Social support makes it easier to cope with stress.','Health is the most important form of wealth.','Learn to listen to body signals.','Taking care of yourself is the most important responsibility.'],
+  ilkbahar:['Renewal and growth.','Hope blooms every spring.','Every day is a new beginning.','Spring is the symbol of change.','New beginnings take courage.','Nature renews itself every year.','Spring flowers carry hope.','Seasons teach the beauty of change.','Seeds grow in silence.','Patience is the key to growth.','Every cold winter brings a spring.','A small sprout becomes a great tree.','Change is not scary, it is exciting.','A new era carries new opportunities.','Spring cleaning also cleanses the mind.','Roots must be firm for flowers to bloom.','Progress is not always visible but it continues.','Life is cyclical like seasons.','Stagnation is temporary, growth is lasting.','Renewal is a quality of both nature and humans.','Every day is a new spring day.','Difficulties pass, just like winter.','Growing sometimes hurts but is worth it.','The colors of spring nurture creativity.','Trying something new refreshes like spring.','Being open to change is a great skill.','Every winter is full of anticipation of spring.','Life lessons come from nature\'s cycles.','Small steps lead to great transformations.','Spring energy passes to all living things.','Starting again is not weakness, it is courage.','Every day the sun rises a little earlier.','The warming ground hosts new lives.','When snow melts, a sense of freedom comes.','Spring is a promise of hope.','Wait for the time to grow.','The patient seed of patience gives the fruit of growth.','Every plant grows toward the sun.','Darkness passes, light comes.','Every new beginning is a gift.','Spring is nature\'s rebirth.','When roots are firm, storms cannot bend.','Renewal requires courage.','Spring becomes more beautiful after every hardship passes.','Nature always finds its way.','Spring reminds us to hope.','Flowers can bloom even in difficult conditions.','Life grows sometimes slowly sometimes fast.','Spring is the symbol of transformation.','Every season carries its own beauty.'],
+  muzik:['Rhythm gives energy.','Music unites emotion.','You feel every rhythm.','Music is a universal language.','Notes follow each other like emotions.','Every instrument opens a different sound world.','Rhythm develops coordination.','Music supports brain development.','Singing reduces stress.','Listening to music increases concentration.','Every culture has its own music.','Music strengthens memory.','Sensing rhythm is an instinctive skill.','Music education teaches discipline.','Playing an instrument takes patience.','Melody increases emotional intensity.','Music therapy helps healing.','Choir teaches working together.','Music can be learned like reading and writing.','Rhythm and language development are intertwined.','Music activates every part of the brain.','Reading music is a skill.','Natural sounds are also a form of music.','Percussion instruments develop rhythm sense.','Drums teach rhythmic communication.','Violin is played with patience and sensitivity.','Piano requires coordination of ten fingers.','Guitar carries both melody and chords.','Flute develops breath control.','Musicians grow with practice.','Creating a composition feels wonderful.','Music invites you to dance.','The feeling of rhythm cannot be written, it is felt.','Listening to music strengthens intuition.','Each instrument has its own timbre.','Music can increase motivation.','Music raises performance in sport.','Calm music is good for falling asleep.','Music is a tool for cultural transmission.','Every type of music can be found within yourself.','Making your own composition is expressing yourself.','Music helps regulate emotions.','Children who grow up with music develop better language.','Music keeps communities together.','Every note is carefully chosen.','Rhythm awareness is connected to mathematics.','Music develops both creative and analytical thinking.','Playing with sounds is children\'s most natural education.','Feeling music comes before understanding it.','Music is the vitamin of the soul.'],
+  kumanda:['Focus and reaction.','Concentration wins.','Every game teaches a new skill.','Strategic thinking is essential in games.','Quick decision making improves with practice.','Learn the rules of the game, then apply them.','Failure is a learning opportunity.','Team games teach cooperation.','Staying calm improves performance.','Every level is a new challenge.','Observing is the foundation of strategy development.','Patience in the game is critically important.','Fast reaction times shorten with training.','Problem solving in games reflects on real life.','Every game is a mental exercise.','Learning to control starts with controlling yourself.','Getting feedback provides development.','Losing in games is not shame, it is learning.','Greet your opponent with respect.','Healthy competition increases motivation.','Game time should be balanced.','Sitting in front of a screen for long is unhealthy.','Games are a tool, not an end.','Social games develop real communication skills.','Virtual success comes with real skill.','Game ethics should align with real life values.','Recognizing the risk of addiction is important.','Digital balance is part of healthy life.','Violence in games does not match real values.','Game design combines creativity and coding.','Digital citizenship can be learned.','Online safety is every player\'s responsibility.','Do not share personal information in games.','Cyberbullying causes real harm.','Pay attention to friend rules in games.','Game time should also be set aside for learning.','Games without music can increase calmness.','Empathic thinking can develop in games.','Decisions in games should reflect real values.','Becoming a game designer requires versatile skills.','AI is transforming the game world.','You can learn something from every game.','Real game friendships continue outside the screen.','Finish the game and return to the real world.','Set rules before the game starts.','The loser can also act like a winner.','Dead ends in games require solutions.','Patience in the game world is also rewarded.','Strategy games support academic success.','A game with a purpose is more meaningful.'],
+  bilgisayar:['Think safely and creatively.','Technology should be used as a tool.','Writing code is like learning a language.','Digital literacy is now a basic skill.','The internet is a door to knowledge.','Safe internet rules are vital.','Do not share personal information online.','A strong password is the first step to security.','Stand against cyberbullying.','Keep screen time balanced.','Artificial intelligence works alongside humans.','Coding develops logical thinking.','Algorithm is the steps of problem solving.','Robots are helpful tools for humans.','Verify internet information.','Recognizing fake news is important.','Your digital footprint is permanent.','Keep your online identity consistent with your real identity.','Software updates maintain security.','Virus protection is essential for digital health.','Data privacy is a right.','Be careful when sharing photos.','Not everyone you meet online should be trusted.','Digital collaboration increases creativity.','Technology should be a solution, not a problem.','Every technology can be learned and developed.','The future of artificial intelligence is uncertain but exciting.','Computer science is the language of the future.','Women have an equal place in technology.','Coding is possible for everyone.','Digital art adds a new dimension to creativity.','Smart cities are being shaped by technology.','The Internet of Things connects everything.','Data science empowers decisions.','Cybersecurity experts are the guardians of the future.','Technology must be used within ethical rules.','Creative work can be done with artificial intelligence.','Programming can also be learned through games.','Every application meets a need.','Screen addiction is a real risk.','Maintaining balance is the foundation of digital well-being.','Understanding technology allows you to control it.','Energy efficiency is important in digital systems.','Cloud computing provides access to data from anywhere.','Blockchain offers trust and transparency.','Open source supports collaboration.','The internet is being evaluated within human rights.','Absence of technology is not a disadvantage, it is balance.','Every digital tool requires a skill set.','Technology must serve humanity.'],
+  english:['Every word is a new bridge.','You get better by practicing.','Having fun while learning a language speeds progress.','English is everywhere in daily life.','Vocabulary expands through reading.','Listening is the foundation of language learning.','Speaking overcomes fear.','Making mistakes is a sign of learning.','Every sentence is a step.','Grammar settles over time.','Watching films develops language.','Singing teaches words.','Daily practice strengthens memory.','One foreign language opens a new world.','English is the key to international communication.','Every new word is a victory.','Flashcards speed up learning.','Language structure becomes internalized through reading.','Writing consolidates language knowledge.','Learning English takes patience.','Beautiful things can be said in every language.','A foreign language increases brain flexibility.','Learning a language is also learning the culture.','Knowing English opens career opportunities.','Children are very talented at learning languages.','Starting early makes language learning easier.','One word a day makes a big difference.','With English you can reach three quarters of the world.','Audiobooks develop language.','Being bilingual is a great advantage.','Wrong pronunciation can be corrected, the important thing is to try.','Language learning is tiring but a wonderful journey.','Learning English is one of the best investments.','Every language learner has an expanded mind.','Speaking English builds confidence.','Knowing a foreign language makes new friends.','Writing the language correctly is good communication.','Academic English requires a separate skill.','Technology made language learning easier.','Every app offers a different language teaching method.','Patience and consistency are essential in language learning.','Learn every word in a context.','Word games expand vocabulary.','English cartoons make learning fun.','The music of language carries rhythm and stress.','Learning a language also teaches empathy.','Finding a partner to practice with increases motivation.','Creating a daily English routine is very beneficial.','Every reading piece is a language lesson.','Learning English continues for a lifetime.'],
+  deutsch:['German step by step.','Repetition creates lasting learning.','Every new word is a gain.','German is one of the most spoken languages in Europe.','Learning German opens a door to Europe.','German culture is rich and diverse.','German grammar is systematic.','German has gender classification.','German can form very compound words.','A German dictionary makes learning systematic.','Practice is also essential in German.','German cartoons and podcasts develop language.','Knowing German provides advantages in the business world.','Every German sentence is like a puzzle.','German is learned with regular work.','German literature is very rich.','Germany is important historically and scientifically.','German is also spoken in Austria and Switzerland.','Learning German makes other Germanic languages easier.','Greetings are important in German.','Guten Morgen, saying good morning is very nice.','Danke, thank you is the first word to learn.','Numbers in German are logical.','Days follow weeks in German.','Colors are easy to learn in German.','Every word learned is a gain.','German grammar is difficult but systematic.','Learning German takes patience.','Daily German practice is very important.','Speaking German is the fastest way to learn.','Learning German culture enriches the language.','Learning German increases mental flexibility.','German literature and philosophy have contributed to the world.','Accent is important in German.','Hearing German in a natural environment is best.','In German the verb goes to the end.','German poetry is very powerful.','Learning German supports multiculturalism.','Every German word carries traces from Latin or other languages.','Learning German is a lifelong journey.','German practice should be done at every opportunity.','German is also learned by listening.','Learning German increases brain plasticity.','It is easy to express joy and success in German.','German music influenced world music.','Knowing German allows reading German literature in the original.','Teaching German to children is very valuable.','German technology and engineering are renowned.','Every word in German carries a culture.','Learning German is truly a valuable investment.'],
+  arapca:['New letters open new worlds.','Working carefully accelerates progress.','Every sign carries a sound.','Arabic is one of the world\'s oldest languages.','The Arabic alphabet is written from right to left.','Every Arabic letter can take several different forms.','Arabic sounds are very diverse.','Learning Arabic takes patience.','The root word system is Arabic\'s powerful structure.','Diacritic marks ensure correct reading.','Arabic has influenced many languages.','Turkish has many words of Arabic origin.','Greeting is very important in Arabic.','Hello in Arabic is Marhaba.','Arabic rules become easier once learned.','Learning Arabic opens a door to world heritage.','Arabic literature is very rich.','Arab culture is famous for its hospitality.','Arabic contributed to the development of mathematics.','The concept of zero passed into our languages from Arabic.','Arabic played an important role in the history of astronomy and medicine.','Arabic improves a little each day with learning.','Every letter can be written skillfully.','Calligraphy reflects the beauty of Arabic writing.','Arabic oral literature has very deep roots.','Learning Arabic opens the door to other Semitic languages.','Every Arabic letter carries its own sound world.','Polite expressions are very important in Arabic.','About three hundred million people speak Arabic worldwide.','Learning Arabic strengthens cultural understanding.','The use of vowels in Arabic requires attention.','Arabic words usually consist of a three-letter root.','Learning Arabic is difficult but very rewarding.','Every new Arabic word is a cultural bridge.','Arabic calligraphy inspires worldwide admiration.','Learning Arabic increases empathy and understanding.','The Arab world is geographically very vast.','There are differences between Arabic dialects.','Fusha is standard written and formal Arabic.','Knowing Arabic provides advantages in business.','With every Arabic letter step there is real progress.','Learning Arabic activates new brain regions.','Numbers in Arabic are universal.','Arab music is rich with its unique modes.','Learning Arabic is both educational and inspiring.','Words in Arabic are grouped according to their root.','Every new Arabic letter gives a sense of success.','Learning Arabic makes the world seem bigger.','Arab civilization contributed greatly to human history.','Learning Arabic is a lifelong journey.'],
+};
     var arr=cards[rid]||['Good job.','You are on a strong path.','Keep going, that was great.'];
     return arr[evHash(original)%arr.length];
   }
@@ -2383,7 +3895,7 @@ function drawRoomDeco(ts,id){
     var mx2=W*.38, my2=H*.57;
     ctx.beginPath(); ctx.arc(mx2,my2,H*.035,0,Math.PI*2); ctx.stroke();
     ctx.font=Math.round(W*.02)+'px Fredoka One'; ctx.textAlign='center'; ctx.fillStyle='rgba(80,60,30,.45)';
-    ctx.fillText(evValuesOn()&&evValuesLang()==='en'?'IDEA':(evValuesOn()&&evValuesLang()==='de'?'IDEE':'FIKIR'),mx2,my2+H*.012);
+    ctx.fillText(evValuesOn()&&evValuesLang()==='en'?'IDEA':(evValuesOn()&&evValuesLang()==='fr'?'IDEE':(evValuesOn()&&evValuesLang()==='de'?'IDEE':'FIKIR')),mx2,my2+H*.012);
     [[-.055,-.06],[.055,-.055],[-.06,.05],[.05,.06],[0,-.075]].forEach(function(br){
       ctx.beginPath(); ctx.moveTo(mx2,my2); ctx.lineTo(mx2+W*br[0],my2+H*br[1]); ctx.stroke();
       ctx.beginPath(); ctx.arc(mx2+W*br[0],my2+H*br[1],H*.022,0,Math.PI*2); ctx.stroke();
@@ -2813,10 +4325,10 @@ function drawRoomDeco(ts,id){
     // Title text
     ctx.save();
     ctx.fillStyle='rgba(0,0,0,.3)'; ctx.font='bold '+Math.round(W*.06)+'px Fredoka One'; ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.fillText((evValuesOn()&&evValuesLang()==='en')?'TREASURE ROOM':((evValuesOn()&&evValuesLang()==='de')?'SCHATZRAUM':'HAZINE ODASI'),W*.5+2,H*.12+2);
+    ctx.fillText((evValuesOn()&&evValuesLang()==='en')?'TREASURE ROOM':((evValuesOn()&&evValuesLang()==='fr')?'SALLE DES TRESORS':((evValuesOn()&&evValuesLang()==='de')?'SCHATZRAUM':'HAZINE ODASI')),W*.5+2,H*.12+2);
     var tg=ctx.createLinearGradient(W*.15,H*.1,W*.85,H*.14);
     tg.addColorStop(0,'#B8860B'); tg.addColorStop(.3,'#FFD700'); tg.addColorStop(.6,'#FFF5A0'); tg.addColorStop(1,'#B8860B');
-    ctx.fillStyle=tg; ctx.fillText((evValuesOn()&&evValuesLang()==='en')?'TREASURE ROOM':((evValuesOn()&&evValuesLang()==='de')?'SCHATZRAUM':'HAZINE ODASI'),W*.5,H*.12);
+    ctx.fillStyle=tg; ctx.fillText((evValuesOn()&&evValuesLang()==='en')?'TREASURE ROOM':((evValuesOn()&&evValuesLang()==='fr')?'SALLE DES TRESORS':((evValuesOn()&&evValuesLang()==='de')?'SCHATZRAUM':'HAZINE ODASI')),W*.5,H*.12);
     ctx.textBaseline='alphabetic'; ctx.restore();
     // Floor
     var flr=ctx.createLinearGradient(0,H*.75,0,H);
@@ -2883,7 +4395,7 @@ function drawRoomDeco(ts,id){
     ctx.strokeStyle='rgba(32,22,10,.88)'; ctx.lineWidth=W*.016; ctx.lineCap='round';
     ctx.beginPath(); ctx.moveTo(grx-W*.028,gry-H*.018); ctx.lineTo(grx-W*.065,gry+H*.03+Math.sin(gph)*H*.02); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(grx+W*.028,gry-H*.018); ctx.lineTo(grx+W*.065,gry+H*.03+Math.sin(gph+1)*H*.02); ctx.stroke();
-    cage(gx-W*.06,gy-H*.02,W*.2,H*.18); sign(gx,gy+H*.17,(evValuesOn()&&(evValuesLang()==='en'||evValuesLang()==='de'))?'🦍 Gorilla':'🦍 Goril');
+    cage(gx-W*.06,gy-H*.02,W*.2,H*.18); sign(gx,gy+H*.17,(evValuesOn()&&(evValuesLang()==='en'||evValuesLang()==='de'||evValuesLang()==='fr'))?'🦍 Gorilla':'🦍 Goril');
     // ─ ZEBRA right ─
     var zx=W*.76+Math.sin(ts*.001)*W*.018, zy=H*.44;
     ctx.fillStyle='rgba(20,12,5,.2)'; ctx.fillRect(W*.7,H*.37,W*.2,H*.2);
@@ -2923,7 +4435,7 @@ function drawRoomDeco(ts,id){
     ctx.fillStyle='rgba(75,125,28,.95)'; ctx.beginPath(); ctx.arc(crx+W*.068,cry+H*.01,W*.011,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(crx+W*.088,cry+H*.01,W*.011,0,Math.PI*2); ctx.fill();
     ctx.fillStyle='rgba(255,195,0,.92)'; ctx.beginPath(); ctx.arc(crx+W*.068,cry+H*.01,W*.006,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(crx+W*.088,cry+H*.01,W*.006,0,Math.PI*2); ctx.fill();
     ctx.fillStyle='#0a0a0a'; ctx.beginPath(); ctx.arc(crx+W*.068,cry+H*.01,W*.003,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(crx+W*.088,cry+H*.01,W*.003,0,Math.PI*2); ctx.fill();
-    sign(crx,cry+H*.1,(evValuesOn()&&evValuesLang()==='en')?'\uD83D\uDC0A Crocodile':((evValuesOn()&&evValuesLang()==='de')?'\uD83D\uDC0A Krokodil':'\uD83D\uDC0A Timsah'));
+    sign(crx,cry+H*.1,(evValuesOn()&&evValuesLang()==='en')?'\uD83D\uDC0A Crocodile':((evValuesOn()&&evValuesLang()==='fr')?'\uD83D\uDC0A Crocodile':((evValuesOn()&&evValuesLang()==='de')?'\uD83D\uDC0A Krokodil':'\uD83D\uDC0A Timsah')));
     // ─ SNAKE on branch ─
     var snx=W*.62, sny=H*.28;
     ctx.strokeStyle='rgba(55,50,20,.55)'; ctx.lineWidth=W*.018;
@@ -3410,7 +4922,7 @@ function drawRoomDeco(ts,id){
       ctx.fillStyle='rgba(150,180,255,.6)'; ctx.font=Math.round(H*.028)+'px Nunito'; ctx.fillText(evText('Dogru cevabi yakala!'),W*.5,H*.21);
     } else {
       ctx.fillStyle='rgba(255,255,255,.5)'; ctx.font='bold '+Math.round(H*.045)+'px Fredoka One'; ctx.textAlign='center';
-      ctx.fillText(evText('Hazir misin?'),W*.5,H*.17);
+      ctx.fillText(evValuesOn&&evValuesOn()&&evValuesLang?((evValuesLang()==='en'?'Ready?':(evValuesLang()==='de'?'Bereit?':(evValuesLang()==='fr'?'Pret ?':'Hazir misin?')))):'Hazir misin?',W*.5,H*.17);
     }
     // Score bar
     if(MS>0){
@@ -3425,7 +4937,7 @@ function drawRoomDeco(ts,id){
       ctx.fillText('Seviye '+MLvl+'  •  Çözülen: '+MSolved,W*.5,H*.025);
     } else {
       ctx.fillStyle='rgba(255,255,255,.5)'; ctx.font='bold '+Math.round(H*.04)+'px Fredoka One'; ctx.textAlign='center';
-      ctx.fillText(evText('Hazir misin?'),W*.5,H*.17);
+      ctx.fillText(evValuesOn&&evValuesOn()&&evValuesLang?((evValuesLang()==='en'?'Ready?':(evValuesLang()==='de'?'Bereit?':(evValuesLang()==='fr'?'Pret ?':'Hazir misin?')))):'Hazir misin?',W*.5,H*.17);
     }
     // Floor
     ctx.fillStyle='rgba(10,15,40,.6)'; ctx.fillRect(0,H*.78,W,H*.22);
@@ -4019,7 +5531,7 @@ function drawRoomDeco(ts,id){
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold ' + Math.floor(W*0.12) + 'px Fredoka One, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(evValuesOn()&&evValuesLang()==='en'?'WORLD TOUR':(evValuesOn()&&evValuesLang()==='de'?'WELTREISE':'DUNYA TURU'), W/2, H*0.92);
+    ctx.fillText(evValuesOn()&&evValuesLang()==='en'?'WORLD TOUR':(evValuesOn()&&evValuesLang()==='fr'?'TOUR DU MONDE':(evValuesOn()&&evValuesLang()==='de'?'WELTREISE':'DUNYA TURU')), W/2, H*0.92);
     ctx.restore();
   }
 
@@ -4678,13 +6190,15 @@ function answerRoomSoru(idx, btn) {
     btn.style.background = 'rgba(68,255,136,.25)';
     btn.style.borderColor = '#44FF88';
     btn.style.color = '#44FF88';
-    fb.innerHTML = '<span style="color:#44FF88">' + evGermanOk('OK! Grossartig! +15 Sterne') + '</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.5)">' + q.exp + '</span>';
+    var roomFeedbackLang = evValuesOn() ? (evValuesLang() || 'tr') : 'tr';
+    var roomOkText = roomFeedbackLang==='ar' ? evAr('roomOk') : (roomFeedbackLang==='tr' ? 'OK! Harika! +15 Yildiz' : (roomFeedbackLang==='en' ? 'OK! Great! +15 Stars' : (roomFeedbackLang==='fr' ? 'OK ! Super ! +15 Etoiles' : 'OK! Grossartig! +15 Sterne')));
+    fb.innerHTML = '<span style="color:#44FF88">' + evGermanOk(roomOkText) + '</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.5)">' + q.exp + '</span>';
     addScore(15, window.W/2, 100, '#44FF88');
     _soruState.answerBalloonPending = false;
     // Karakter tepkisi — doğru
     setTimeout(function(){
       setCharState('jump', 2000);
-      var correctBubbles = (evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en') ? ['Great! I knew it! 🌟','Awesome! Keep going! 🎉','Bravo! You are brilliant! ⭐','Yes! Correct! 🚀'] : ['Süper! Bunu biliyordum! 🌟','Harika! Devam et! 🎉','Bravo! Sen dahisin! ⭐','Yeeees! Doğru! 🚀'];
+      var correctBubbles = (evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en') ? ['Great! I knew it! 🌟','Awesome! Keep going! 🎉','Bravo! You are brilliant! ⭐','Yes! Correct! 🚀'] : (evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr') ? ['Super ! Je le savais ! 🌟','Genial ! Continue ! 🎉','Bravo ! Tu es brillant ! ⭐','Oui ! Correct ! 🚀'] : ['Süper! Bunu biliyordum! 🌟','Harika! Devam et! 🎉','Bravo! Sen dahisin! ⭐','Yeeees! Doğru! 🚀'];
       showOkiBubble(correctBubbles[Math.floor(Math.random()*correctBubbles.length)]);
       for(var _si=0;_si<5;_si++) setTimeout(_spawnSpark, _si*120);
     }, 150);
@@ -4694,12 +6208,14 @@ function answerRoomSoru(idx, btn) {
     btn.style.color = '#FF5555';
     allBtns[q.ans].style.background = 'rgba(68,255,136,.1)';
     allBtns[q.ans].style.borderColor = 'rgba(68,255,136,.5)';
-    fb.innerHTML = '<span style="color:rgba(255,220,80,.8)">' + evGermanOk('Hinweis: Schau im Ballon nach!') + ' -> <b>' + q.ans_txt + '</b></span>';
+    var roomFeedbackLang = evValuesOn() ? (evValuesLang() || 'tr') : 'tr';
+    var roomHintText = roomFeedbackLang==='ar' ? evAr('roomHint') : (roomFeedbackLang==='tr' ? 'Ipucu: Balona bak!' : (roomFeedbackLang==='en' ? 'Hint: Check the balloon!' : (roomFeedbackLang==='fr' ? 'Indice : regarde dans le ballon !' : 'Hinweis: Schau im Ballon nach!')));
+    fb.innerHTML = '<span style="color:rgba(255,220,80,.8)">' + evGermanOk(roomHintText) + ' -> <b>' + q.ans_txt + '</b></span>';
     _soruState.answerBalloonPending = true;
     // Karakter tepkisi — yanlış
     setTimeout(function(){
       setCharState('sad', 2500);
-      var wrongBubbles = (evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en') ? ['Mistakes help us learn! 💪','No worries, try the next one! 🌈','Almost! Look for the answer balloon! 👀','We learned it, keep going! 😊'] : ['Eh, hata yapmak da öğrenmek! 💪','Merak etme, bir sonraki! 🌈','Neredeyse! Balondan bak! 👀','Öğrendik, devam! 😊'];
+      var wrongBubbles = (evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en') ? ['Mistakes help us learn! 💪','No worries, try the next one! 🌈','Almost! Look for the answer balloon! 👀','We learned it, keep going! 😊'] : (evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr') ? ['Les erreurs nous apprennent ! 💪','Pas de soucis, essaie le suivant ! 🌈','Presque ! Cherche le ballon-reponse ! 👀','On a appris, continuons ! 😊'] : ['Eh, hata yapmak da öğrenmek! 💪','Merak etme, bir sonraki! 🌈','Neredeyse! Balondan bak! 👀','Öğrendik, devam! 😊'];
       showOkiBubble(wrongBubbles[Math.floor(Math.random()*wrongBubbles.length)]);
     }, 150);  // Balonda göster!
   }
@@ -6151,33 +7667,37 @@ function updateStreak(){
 
 // ── OVERLAYS ──
 function showKelime(){
-  var en=!!(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en');
-  var de=!!(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de');
+  var _kL=(window.evValuesLang&&evValuesLang())||localStorage.getItem('ev_values_lang')||'';
+  var _kO=!!(window.evValuesOn&&evValuesOn())||localStorage.getItem('eduverse_values_mode')==='1';
+  var en=_kO&&_kL==='en'; var de=_kO&&_kL==='de'; var fr=_kO&&_kL==='fr'; var ar=_kO&&_kL==='ar';
   var ov=document.getElementById('kov');
   if(ov){
-    var title=ov.querySelector('div[style*="font-size:1.6rem"]');
-    if(title) title.textContent=en?'Learned Words':(de?'Gelernte Woerter':title.textContent);
+    ov.setAttribute('dir',ar?'rtl':'ltr');
+    var title=ov.querySelector('h2')||ov.querySelector('div[style*="font-size:1.6rem"]');
+    if(title){title.setAttribute('data-no-translate','1');title.textContent=ar?'\u{1F4D3} \u0627\u0644\u0643\u0644\u0645\u0627\u062a \u0627\u0644\u0645\u062a\u0639\u0644\u0645\u0629':(en?'\u{1F4D3} Learned Words':(de?'\u{1F4D3} Gelernte W\u00f6rter':(fr?'\u{1F4D3} Mots appris':'\u{1F4D3} \u00d6\u011frenilen Kelimeler')));}
     var tabs=ov.querySelectorAll('.kd-tab');
-    if(tabs[0]) tabs[0].textContent=en?'All':(de?'Alle':tabs[0].textContent);
-    if(tabs[1]) tabs[1].textContent='English';
-    if(tabs[2]) tabs[2].textContent=en?'German':(de?'Deutsch':tabs[2].textContent);
+    tabs.forEach(function(t){t.setAttribute('data-no-translate','1');});
+    if(ar){if(tabs[0])tabs[0].textContent='\u0627\u0644\u0643\u0644';if(tabs[1])tabs[1].textContent='\u0625\u0646\u062c\u0644\u064a\u0632\u064a';if(tabs[2])tabs[2].textContent='\u0623\u0644\u0645\u0627\u0646\u064a';}
+    else{if(tabs[0])tabs[0].textContent=en?'All':(de?'Alle':(fr?'Tous':'Hepsi'));if(tabs[1])tabs[1].textContent=en?'English':(de?'Englisch':(fr?'Anglais':'Ingilizce'));if(tabs[2])tabs[2].textContent=en?'German':(de?'Deutsch':(fr?'Allemand':'Almanca'));}
   }
   filterK(en?'en':'all',document.querySelector('.kd-tab'));
+  var _kb=document.querySelector('#kov .ov-close');if(_kb){_kb.setAttribute('data-no-translate','1');_kb.textContent=ar?'\u0625\u063a\u0644\u0627\u0642':(en?'Close':(de?'Schlie\u00dfen':(fr?'Fermer':'Kapat')));}
   document.getElementById('kov').classList.add('show');
 }
 var kFilter='all';
 function filterK(lang,btn){
-  var en=!!(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en');
-  var de=!!(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de');
+  var _fL=(window.evValuesLang&&evValuesLang())||localStorage.getItem('ev_values_lang')||'';
+  var _fO=!!(window.evValuesOn&&evValuesOn())||localStorage.getItem('eduverse_values_mode')==='1';
+  var en=_fO&&_fL==='en'; var de=_fO&&_fL==='de'; var fr=_fO&&_fL==='fr'; var ar=_fO&&_fL==='ar';
   if(en) lang='en';
   kFilter=lang;
   document.querySelectorAll('.kd-tab').forEach(function(t){t.classList.remove('active');});
   if(btn) btn.classList.add('active');
   var words=Object.keys(learnedWords);
-  document.getElementById('k-count').textContent=en?words.length+' words learned':(de?words.length+' Woerter gelernt':words.length+' kelime ogrenildi');
+  var _kc=document.getElementById('k-count');if(_kc){_kc.setAttribute('data-no-translate','1');_kc.textContent=ar?words.length+' \u0643\u0644\u0645\u0629 \u062a\u0639\u0644\u0645\u062a':(en?words.length+' words learned':(de?words.length+' W\u00f6rter gelernt':(fr?words.length+' mot'+(words.length===1?'':'s')+' appris':words.length+' kelime ogrenildi')));}
   var grid=document.getElementById('k-grid');
   var matching=VOCAB.filter(function(v){return learnedWords[v.tr];});
-  if(!matching.length){ grid.innerHTML='<div style="text-align:center;padding:20px;color:rgba(255,255,255,.4);font-weight:700;grid-column:1/-1">'+(en?'No words yet!<br>Go to a language room.':(de?'Noch keine Woerter!<br>Geh in einen Sprachraum.':'Henuz kelime yok!<br>Ingilizce veya Almanca odasina gir.'))+'</div>'; return; }
+  if(!matching.length){ grid.innerHTML='<div style="text-align:center;padding:20px;color:rgba(255,255,255,.4);font-weight:700;grid-column:1/-1">'+(ar?'\u0644\u0627 \u0643\u0644\u0645\u0627\u062a!<br>\u0627\u062f\u062e\u0644 \u063a\u0631\u0641\u0629 \u0644\u063a\u0629.':(en?'No words yet!<br>Go to a language room.':(de?'Noch keine W\u00f6rter!<br>Geh in einen Sprachraum.':(fr?'Aucun mot pour le moment !<br>Entre dans une salle de langue.':'Henuz kelime yok!<br>Ingilizce veya Almanca odasina gir.'))))+'</div>'; return; }
   grid.innerHTML=matching.map(function(v){
     if(en){
       return '<div class="kw-item">'
@@ -6198,6 +7718,8 @@ function filterK(lang,btn){
 
 function _buildSoruStats(){
   try{
+    var arStats = evArabicActive&&evArabicActive();
+    var enStats = evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en';
     var stats=JSON.parse(localStorage.getItem('ev_soru_stats')||'{}');
     var keys=Object.keys(stats);
     if(!keys.length) return '';
@@ -6222,9 +7744,25 @@ function _buildSoruStats(){
       boyama:'Boyama',bilgisayar:'Bilgisayar',hayvanat:'Hayvanat',
       odulodasi:'Ödül',lazer:'Lazer',gizli:'Gizli'
     };
+    if(arStats){
+      roomNames={};
+      keys.forEach(function(k){ roomNames[k]=evArRoomName(k,k); });
+    } else if(enStats){
+      roomNames={
+        ibadet:'Reflection',ders:'Learning',cevre:'Nature',aile:'Family',
+        mutfak:'Kitchen',sanat:'Art',ada:'Island',sifa:'Wellness',
+        oyuncak:'Play',caliskan:'Goal',ilkbahar:'Spring',
+        nefes:'Breathing',para:'Money',arapca:'Letters',english:'English',
+        deutsch:'German',atlas:'World Explorer',muzik:'Music',kumanda:'Game',
+        boyama:'Color',bilgisayar:'Computer',hayvanat:'Animal World',
+        odulodasi:'Reward',lazer:'Laser',gizli:'Secret'
+      };
+    }
     var zayifHtml='';
     if(sorted.length){
       zayifHtml='<div style="margin-top:4px;font-size:.72rem;color:rgba(0,0,0,.5);">Çalışılması gerekenler: ';
+      if(arStats) zayifHtml='<div style="margin-top:4px;font-size:.72rem;color:rgba(0,0,0,.5);">\u064A\u062D\u062A\u0627\u062C \u0625\u0644\u0649 \u062A\u062F\u0631\u064A\u0628: ';
+      else if(enStats) zayifHtml='<div style="margin-top:4px;font-size:.72rem;color:rgba(0,0,0,.5);">Needs practice: ';
       zayifHtml+=sorted.map(function(k){
         var pct=Math.round((stats[k].correct/stats[k].total)*100);
         return (roomNames[k]||k)+' %'+pct;
@@ -6234,8 +7772,8 @@ function _buildSoruStats(){
     return '<div class="rstat" style="flex-direction:column;align-items:flex-start;gap:4px;">'
       +'<div style="display:flex;align-items:center;gap:8px;width:100%;">'
       +'<div class="rstat-ico">🧠</div>'
-      +'<div><div class="rstat-lbl">Soru Doğruluk Oranı</div>'
-      +'<div class="rstat-val">%'+genel+' ('+totC+'/'+totT+' doğru)</div></div>'
+      +'<div><div class="rstat-lbl">'+(arStats?'\u0646\u0633\u0628\u0629 \u0627\u0644\u0625\u062C\u0627\u0628\u0627\u062A \u0627\u0644\u0635\u062D\u064A\u062D\u0629':(enStats?'Question Accuracy':'Soru Doğruluk Oranı'))+'</div>'
+      +'<div class="rstat-val">'+(enStats?(genel+'% ('+totC+'/'+totT+' correct)'):'%'+genel+' ('+totC+'/'+totT+' '+(arStats?'\u0635\u062D\u064A\u062D':'doğru')+')')+'</div></div>'
       +'<div style="flex:1;height:7px;background:rgba(0,0,0,.08);border-radius:4px;margin-left:auto;max-width:80px;">'
       +'<div style="height:100%;background:'+(genel>=70?'#44CC88':genel>=40?'#FFB800':'#FF5555')+';width:'+genel+'%;border-radius:4px;"></div>'
       +'</div></div>'
@@ -6247,21 +7785,55 @@ function _buildSoruStats(){
 
 
 function evFixReportShareChrome(){
-  var de=false,en=false; try{de=!!(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de'); en=!!(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en');}catch(e){}
+  // Dil belirleme - önce Values, sonra Dua Evi AR, son olarak TR varsayılan
+  var _lang='tr';
+  try{
+    if(evValuesOn&&evValuesOn()&&evValuesLang){
+      _lang=evValuesLang()||'tr';
+    } else if(window.evArabicActive&&evArabicActive()){
+      _lang='ar';
+    }
+  }catch(e){}
+
+  var _ar=_lang==='ar';
+  var _fr=_lang==='fr';
+  var _de=_lang==='de';
+  var _en=_lang==='en';
+
+  // Rapor başlık butonları
   var rap=document.getElementById('rapor-btn');
-  if(rap) rap.textContent = en ? '📊 Progress' : (de ? '📊 Fortschritt' : '📊 Rapor');
+  if(rap) rap.textContent=_ar?'\u{1F4CA} \u062A\u0642\u0631\u064A\u0631':(_fr?'📊 Rapport':(_de?'📊 Fortschritt':(_en?'📊 Progress':'📊 Rapor')));
   var qr=document.getElementById('qr-btn');
-  if(qr) qr.textContent = en ? '📊 Share' : (de ? '📊 Teilen' : '📊 Paylaş');
+  if(qr) qr.textContent=_ar?'\u{1F4CA} \u0645\u0634\u0627\u0631\u0643\u0629':(_fr?'📊 Partager':(_de?'📊 Teilen':(_en?'📊 Share':'📊 Paylaş')));
   var rt=document.getElementById('report-title');
-  if(rt) rt.textContent = en ? '📊 Report' : (de ? '📊 Lernbericht' : '📊 Rapor');
+  if(rt) rt.textContent=_ar?'\u{1F4CA} \u062A\u0642\u0631\u064A\u0631':(_fr?'📊 Rapport':(_de?'📊 Lernbericht':(_en?'📊 Report':'📊 Rapor')));
   var qt=document.getElementById('qr-title');
-  if(qt) qt.textContent = en ? 'Parent Report' : (de ? 'Elternbericht' : 'Ebeveyn Raporu');
+  if(qt) qt.textContent=_ar?'\u062A\u0642\u0631\u064A\u0631 \u0627\u0644\u0648\u0627\u0644\u062F\u064A\u0646':(_fr?'Rapport parent':(_de?'Elternbericht':(_en?'Parent Report':'Ebeveyn Raporu')));
   var qs=document.getElementById('qr-subtitle');
-  if(qs) qs.textContent = en ? 'Daily learning summary' : (de ? 'Taeglicher Lernfortschritt' : 'Günlük öğrenme özeti');
+  if(qs) qs.textContent=_ar?'\u0645\u0644\u062E\u0635 \u064A\u0648\u0645\u064A \u0644\u0644\u062A\u0639\u0644\u0645':(_fr?'R\u00e9sum\u00e9 d\u2019apprentissage':(_de?'T\u00e4glicher Lernfortschritt':(_en?'Daily learning summary':'G\u00fcnl\u00fck \u00f6\u011frenme \u00f6zeti')));
   var qu=document.getElementById('qr-url-txt');
-  if(qu && (!qu.textContent || qu.textContent.indexOf('http')<0)) qu.textContent = en ? 'Preparing report...' : (de ? 'Bericht wird vorbereitet...' : 'Rapor hazırlanıyor...');
+  if(qu&&(!qu.textContent||qu.textContent.indexOf('http')<0)) qu.textContent=_ar?'\u064A\u062A\u0645 \u062A\u062D\u0636\u064A\u0631 \u0627\u0644\u062A\u0642\u0631\u064A\u0631...':(_fr?'Pr\u00e9paration du rapport...':(_de?'Bericht wird vorbereitet...':(_en?'Preparing report...':'Rapor haz\u0131rlan\u0131yor...')));
   var qh=document.getElementById('qr-scan-hint');
-  if(qh) qh.textContent = en ? 'Scan QR code with your phone' : (de ? 'QR-Code mit dem Telefon scannen' : 'QR kodu telefonla tara');
+  if(qh) qh.textContent=_ar?'\u0627\u0645\u0633\u062D \u0631\u0645\u0632 QR \u0628\u0627\u0644\u0647\u0627\u062A\u0641':(_fr?'Scanne le QR code avec ton t\u00e9l\u00e9phone':(_de?'QR-Code mit dem Telefon scannen':(_en?'Scan QR code with your phone':'QR kodu telefonla tara')));
+
+  // RTL/LTR
+  var qov=document.getElementById('qr-ov');
+  if(qov){
+    if(_ar){ qov.setAttribute('dir','rtl'); qov.setAttribute('lang','ar'); }
+    else{ qov.removeAttribute('dir'); qov.setAttribute('lang',_lang); }
+  }
+
+  // PDF butonu
+  var dlBtn=document.querySelector('#qr-ov button[onclick="downloadPDF()"]');
+  if(dlBtn) dlBtn.textContent=_ar?'\u062A\u062D\u0645\u064A\u0644 \u0627\u0644\u062A\u0642\u0631\u064A\u0631':(_fr?'T\u00e9l\u00e9charger le PDF':(_de?'PDF herunterladen':(_en?'Download PDF':'PDF \u0130ndir')));
+
+  // Mail butonu
+  var mailBtn=document.querySelector('#qr-ov button[onclick="sendMailReport()"]');
+  if(mailBtn) mailBtn.textContent=_ar?'\u0625\u0631\u0633\u0627\u0644 \u0628\u0627\u0644\u0628\u0631\u064A\u062F':(_fr?'Envoyer par e-mail':(_de?'E-Mail senden':(_en?'Send Email':'E-posta G\u00f6nder')));
+
+  // Kapat butonu
+  var closeBtns=document.querySelectorAll('#qr-ov button[onclick*="qr-ov"]');
+  closeBtns.forEach(function(b){ b.textContent=_ar?'\u0625\u063A\u0644\u0627\u0642':(_fr?'Fermer':(_de?'Schlie\u00dFen':(_en?'Close':'Kapat'))); });
 }
 
 
@@ -6279,6 +7851,81 @@ function showReport(){
   var topRoom='',topScore=0;
   Object.keys(roomBests).forEach(function(r){if((roomBests[r]||0)>topScore){topScore=roomBests[r];topRoom=r;}});
   var roomObj=topRoom?ROOMS.find(function(r){return r.id===topRoom;}):null;
+  if(evArabicActive&&evArabicActive()){
+    var rov=document.getElementById('rov');
+    if(rov){ rov.setAttribute('dir','rtl'); rov.setAttribute('lang','ar'); }
+    var rTitle=document.getElementById('report-title');
+    if(rTitle) rTitle.textContent='\uD83D\uDCCA \u062A\u0642\u0631\u064A\u0631';
+    var rClose=document.querySelector('#rov .ov-close');
+    if(rClose) rClose.textContent='\u0625\u063A\u0644\u0627\u0642';
+    var arBestName=topRoom?evArRoomName(topRoom,roomObj?roomObj.name:topRoom):evAr('none');
+    var arStageMap={'Bebek Oki\u015Fi':'\u0623\u0648\u0643\u064A \u0627\u0644\u0637\u0641\u0644','K\u00FC\u00E7\u00FCk Oki\u015Fi':'\u0623\u0648\u0643\u064A \u0627\u0644\u0635\u063A\u064A\u0631','Okul Oki\u015Fi':'\u0623\u0648\u0643\u064A \u0627\u0644\u0645\u062A\u0639\u0644\u0645','Kahraman Oki\u015Fi':'\u0623\u0648\u0643\u064A \u0627\u0644\u0628\u0637\u0644','Y\u0131ld\u0131z Oki\u015Fi':'\u0623\u0648\u0643\u064A \u0627\u0644\u0646\u062C\u0645','Melek Oki\u015Fi':'\u0623\u0648\u0643\u064A \u0627\u0644\u0645\u0644\u0627\u0643'};
+    var arStage=arStageMap[getOkiStage().name]||'\u0623\u0648\u0643\u064A';
+    function rsar(ico,lbl,val){return '<div class="rstat"><div class="rstat-ico">'+ico+'</div><div><div class="rstat-lbl">'+lbl+'</div><div class="rstat-val">'+val+'</div></div></div>';}
+    document.getElementById('r-date').textContent=new Date().toLocaleDateString('ar-SA')+' - '+playerName;
+    document.getElementById('r-content').innerHTML=
+      rsar('\u2B50','\u0645\u062C\u0645\u0648\u0639 \u0627\u0644\u0646\u0642\u0627\u0637',totalScore+' '+evAr('stars'))+
+      rsar('\uD83D\uDCC5','\u0627\u0644\u0645\u062A\u0639\u0644\u0645 \u0627\u0644\u064A\u0648\u0645',tw+' '+evAr('word'))+
+      rsar('\uD83C\uDF0D','\u0645\u062C\u0645\u0648\u0639 \u0627\u0644\u0643\u0644\u0645\u0627\u062A',words+' '+evAr('word'))+
+      rsar('\uD83D\uDD25','\u0633\u0644\u0633\u0644\u0629 \u0627\u0644\u0623\u064A\u0627\u0645',streak+' '+(streak===1?evAr('day'):evAr('days')))+
+      rsar('\uD83C\uDFE0','\u0627\u0644\u063A\u0631\u0641 \u0627\u0644\u0645\u0643\u062A\u0634\u0641\u0629',rooms+' / '+ROOMS.length+' '+evAr('room'))+
+      rsar('\uD83D\uDCAA','\u0623\u0641\u0636\u0644 \u063A\u0631\u0641\u0629',arBestName)+
+      rsar('\uD83C\uDF1F','\u0645\u0631\u062D\u0644\u0629 \u0623\u0648\u0643\u064A',arStage)+
+      _buildSoruStats();
+    document.getElementById('rov').classList.add('show');
+    return;
+  }
+  if(evValuesOn && evValuesOn() && evValuesLang && evValuesLang()==='en'){
+    var enRoomNames={
+      ibadet:'Calm Room',ders:'Learning Room',cevre:'Nature Room',aile:'Family Room',
+      mutfak:'Kitchen',sanat:'Art Studio',ada:'Island',sifa:'Wellness Room',
+      oyuncak:'Play Room',caliskan:'Goal Room',ilkbahar:'Spring Room',
+      nefes:'Breathing Room',para:'Money Room',arapca:'Letters Room',english:'English Room',
+      deutsch:'German Room',atlas:'World Explorer',muzik:'Music Room',kumanda:'Game Room',
+      boyama:'Color Room',bilgisayar:'Computer Room',hayvanat:'Animal World',
+      odulodasi:'Reward Room',lazer:'Laser Room',gizli:'Secret Room',sinema:'Cinema'
+    };
+    function rsen(ico,lbl,val){return '<div class="rstat"><div class="rstat-ico">'+ico+'</div><div><div class="rstat-lbl">'+lbl+'</div><div class="rstat-val">'+val+'</div></div></div>';}
+    function enQuestionStats(){
+      try{
+        var stats=JSON.parse(localStorage.getItem('ev_soru_stats')||'{}');
+        var keys=Object.keys(stats);
+        if(!keys.length) return '';
+        var total=0,correct=0;
+        keys.forEach(function(k){total+=stats[k].total;correct+=stats[k].correct;});
+        if(!total) return '';
+        var pct=Math.round((correct/total)*100);
+        var weak=keys.filter(function(k){return stats[k].total>=2;}).sort(function(a,b){
+          return (stats[a].correct/stats[a].total)-(stats[b].correct/stats[b].total);
+        }).slice(0,3);
+        var weakHtml='';
+        if(weak.length){
+          weakHtml='<div style="margin-top:4px;font-size:.72rem;color:rgba(0,0,0,.5);">Areas to Improve: '
+            +weak.map(function(k){return (enRoomNames[k]||k)+' '+Math.round((stats[k].correct/stats[k].total)*100)+'%';}).join(' · ')
+            +'</div>';
+        }
+        return '<div class="rstat" style="flex-direction:column;align-items:flex-start;gap:4px;">'
+          +'<div style="display:flex;align-items:center;gap:8px;width:100%;">'
+          +'<div class="rstat-ico">🧠</div>'
+          +'<div><div class="rstat-lbl">Question Accuracy</div><div class="rstat-val">'+pct+'% ('+correct+'/'+total+' correct)</div></div>'
+          +'<div style="flex:1;height:7px;background:rgba(0,0,0,.08);border-radius:4px;margin-left:auto;max-width:80px;">'
+          +'<div style="height:100%;background:'+(pct>=70?'#44CC88':pct>=40?'#FFB800':'#FF5555')+';width:'+pct+'%;border-radius:4px;"></div>'
+          +'</div></div>'+weakHtml+'</div>';
+      }catch(e){return '';}
+    }
+    var enBestName=topRoom?(enRoomNames[topRoom]||(roomObj&&evRoomDisplayName(roomObj))||'Room'):'Not yet';
+    document.getElementById('r-date').textContent=new Date().toLocaleDateString('en-US')+' - '+playerName;
+    document.getElementById('r-content').innerHTML=
+      rsen('⭐','Total Points',totalScore+' Stars')+
+      rsen('📅','Words Learned Today',tw+' Words')+
+      rsen('🇬🇧','Words',words+' Words')+
+      rsen('🔥','Days',streak+' '+(streak===1?'day':'days'))+
+      rsen('🏠','Rooms Explored',rooms+' / '+ROOMS.length+' Rooms')+
+      rsen('💪','Best Room',enBestName)+
+      enQuestionStats();
+    document.getElementById('rov').classList.add('show');
+    return;
+  }
   if(evValuesOn && evValuesOn() && evValuesLang && evValuesLang()==='de'){
     var deRoomNames={ders:'Lernen',atlas:'Welt-Entdecker',puzzle:'Puzzle',nefes:'Atem-Raum',sanat:'Kreativraum',boyama:'Malraum',refleks:'Reflex-Raum',hayvanat:'Tierwelt',kelime:'Woerter',gorev:'Aufgaben',odak:'Fokus-Raum',lazer:'Laser-Raum',sinema:'Kino',okul:'Schulraum',dukkan:'Laden',market:'Laden',muzik:'Musik',oyuncak:'Spiel',ada:'Insel',caliskan:'Lernziel',cevre:'Natur',aile:'Familie'};
     function rsde(ico,lbl,val){return '<div class="rstat"><div class="rstat-ico">'+ico+'</div><div><div class="rstat-lbl">'+lbl+'</div><div class="rstat-val">'+val+'</div></div></div>';}
@@ -6295,6 +7942,28 @@ function showReport(){
     document.getElementById('rov').classList.add('show');
     return;
   }
+  if(evValuesOn && evValuesOn() && evValuesLang && evValuesLang()==='fr'){
+    var frRoomNames={ibadet:'Salle calme',ders:'Salle d apprentissage',cevre:'Salle nature',aile:'Salle famille',mutfak:'Cuisine',sanat:'Atelier art',ada:'Ile',sifa:'Salle bien-etre',oyuncak:'Salle de jeux',caliskan:'Salle effort',ilkbahar:'Jardin printemps',nefes:'Salle respiration',para:'Salle partage',arapca:'Salle lettres',english:'Salle anglais',deutsch:'Salle allemand',atlas:'Explorateur monde',muzik:'Salle musique',kumanda:'Salle jeux video',boyama:'Salle couleurs',bilgisayar:'Salle informatique',hayvanat:'Monde animal',odulodasi:'Salle recompenses',lazer:'Salle laser',gizli:'Salle mystere',sinema:'Cinema',puzzle:'Salle puzzle',refleks:'Salle reflexe'};
+    function rsfr(ico,lbl,val){return '<div class="rstat"><div class="rstat-ico">'+ico+'</div><div><div class="rstat-lbl">'+lbl+'</div><div class="rstat-val">'+val+'</div></div></div>';}
+    var frBestName=topRoom?(frRoomNames[topRoom]||(roomObj&&evRoomDisplayName(roomObj))||'Salle'):'Pas encore';
+    document.getElementById('r-date').textContent=new Date().toLocaleDateString('fr-FR')+' - '+playerName;
+    document.getElementById('r-content').innerHTML=
+      rsfr('\u2B50','Points totaux',totalScore+' Etoiles')+
+      rsfr('\uD83D\uDCC5','Appris aujourd hui',tw+' mots')+
+      rsfr('\uD83C\uDDEB\uD83C\uDDF7','Mots au total',words+' mots')+
+      rsfr('\uD83D\uDD25','Serie de jours',streak+' '+(streak===1?'jour':'jours'))+
+      rsfr('\uD83C\uDFE0','Salles explorees',rooms+' / '+ROOMS.length+' salles')+
+      rsfr('\uD83D\uDCAA','Meilleure salle',frBestName)+
+      '<div style="margin-top:10px;padding:12px 14px;border-radius:12px;background:rgba(100,160,220,.12);border:1px solid rgba(100,160,220,.28);font-size:.8rem;line-height:1.5;color:rgba(255,255,255,.82);font-weight:700;">Mode Valeurs : neutre, international, sans contenu religieux.</div>';
+    document.getElementById('rov').classList.add('show');
+    return;
+  }
+  var _rov=document.getElementById('rov');
+  if(_rov){ _rov.removeAttribute('dir'); _rov.setAttribute('lang','tr'); }
+  var _rtitle=document.getElementById('report-title');
+  if(_rtitle) _rtitle.textContent='\uD83D\uDCCA Rapor';
+  var _rclose=document.querySelector('#rov .ov-close');
+  if(_rclose) _rclose.textContent='Kapat';
   document.getElementById('r-date').textContent=new Date().toLocaleDateString('tr-TR')+' - '+playerName;
   // Psikoloji analizi
   var psych='';
@@ -6363,6 +8032,10 @@ function evRoomDisplayName(room){
     var de={ders:'Lernen',atlas:'Welt-Entdecker',puzzle:'Puzzle',nefes:'Atem-Raum',sanat:'Kreativraum',boyama:'Malraum',refleks:'Reflex-Raum',hayvanat:'Tierwelt',kelime:'Woerter',gorev:'Aufgaben',odak:'Fokus-Raum',lazer:'Laser-Raum',sinema:'Kino',okul:'Schulraum',dukkan:'Laden',market:'Laden',muzik:'Musik',oyuncak:'Spiel',ada:'Insel',caliskan:'Lernziel',cevre:'Natur',aile:'Familie'};
     return de[room.id]||room.name;
   }
+  if(evValuesLang()==='fr'){
+    var fr={ibadet:'Salle calme',sinema:'Cin\u00e9ma',ders:'Salle d\u2019apprentissage',oyuncak:'Salle de jeux',cevre:'Prot\u00e9ger la plan\u00e8te',caliskan:'Salle de l\u2019effort',sanat:'Atelier d\u2019art',mutfak:'Laboratoire cuisine',aile:'Salle de la famille',ada:'\u00cele tranquille',sifa:'Salle du bien-\u00eatre',ilkbahar:'Jardin du printemps',odulodasi:'Salle des r\u00e9compenses',nefes:'Salle de respiration',para:'Salle du partage',arapca:'Lettres du monde',gizli:'Salle myst\u00e8re',english:'Salle d\u2019anglais',deutsch:'Salle d\u2019allemand',okyanus:'Salle oc\u00e9an',atlas:'Explorateur du monde',muzik:'Salle de musique',boyama:'Salle des couleurs',kumanda:'Salle de jeux vid\u00e9o',puzzle:'Salle puzzle',lazer:'Salle laser',bilgisayar:'Salle informatique',hayvanat:'Monde animal',refleks:'Salle r\u00e9flexe'};
+    return fr[room.id]||room.name;
+  }
   return room.name;
 }
 
@@ -6387,11 +8060,15 @@ function buildGrid(){
     sm.textContent=(evValuesOn()&&evValuesLang()==='fr')?(streak+'/5 jour - Salle mystere dans '+(5-streak)+' jours !'):(evValuesOn()&&evValuesLang()==='ar')?(streak+'/5 يوم - الغرفة الغامضة بعد '+(5-streak)+' أيام!'):(streak+'/5 '+evText('gun')+' - '+evText('Gizli Oda icin')+' '+(5-streak)+' '+evText('gun kaldi')+'!'); sm.style.display='block';
   } else { sm.style.display='none'; }
   ROOMS.forEach(function(room){
-    var locked=room.id==='sinema'?false:(totalScore<room.unlock);
+    var _vo=!!(window.evValuesOn&&evValuesOn())||localStorage.getItem('eduverse_values_mode')==='1';
+    var locked=room.id==='sinema'?false:(_vo?false:(totalScore<room.unlock));
     var best=roomBests[room.id]||0;
     var btn=document.createElement('button');
     btn.className='rb'+(locked&&room.id!=='sinema'?' locked':'');
-    btn.innerHTML='<div class="rb-ico">'+evRoomDisplayIcon(room)+'</div><div class="rb-name">'+evRoomDisplayName(room)+'</div><div class="rb-info">'+(locked&&room.id!=='sinema'?'\uD83D\uDD12 '+room.unlock+'\u2B50':best&&room.id!=='sinema'?best+'\u2B50 '+evText('En iyi'):'\u25B6 '+(evValuesOn()&&evValuesLang()==='ar'?'مشاهدة':evText('Izle'))+'!')+'</div>';
+    var arGrid = evArabicActive&&evArabicActive();
+    var bestLabel = arGrid ? '\u0627\u0644\u0623\u0641\u0636\u0644' : evText('En iyi');
+    var watchLabel = arGrid ? '\u0645\u0634\u0627\u0647\u062F\u0629' : evText('Izle');
+    btn.innerHTML='<div class="rb-ico">'+evRoomDisplayIcon(room)+'</div><div class="rb-name">'+evRoomDisplayName(room)+'</div><div class="rb-info">'+(locked&&room.id!=='sinema'?'\uD83D\uDD12 '+room.unlock+'\u2B50':best&&room.id!=='sinema'?best+'\u2B50 '+bestLabel:'\u25B6 '+watchLabel+'!')+'</div>';
     if(!locked||room.id==='sinema') btn.onclick=function(){enterRoom(room);};
     grid.appendChild(btn);
   });
@@ -6706,6 +8383,227 @@ function _updateDuaLangUI(){
 (function(){
   var saved = localStorage.getItem('dua_lang');
   if(saved && DUA_LANG_DATA[saved]) _duaLang = saved;
+})();
+
+(function(){
+  function frOn(){
+    try{ return !!(evValuesOn && evValuesOn() && evValuesLang && evValuesLang()==='fr'); }catch(e){ return false; }
+  }
+  function frCleanText(s){
+    if(!frOn() || !s) return s;
+    return String(s)
+      .replace(/Seed Oki\s*->\s*(\d+)\s*stars\s*left/i,'Graine Oki -> $1 étoiles restantes')
+      .replace(/GUN SERISI|GÜN SERİSİ/g,'SÉRIE DE JOURS')
+      .replace(/En iyi/g,'Meilleure série')
+      .replace(/Hoş geldin!\s*🌱\s*Seriyi başlatıyoruz!?/g,'Bienvenue ! Ta série commence aujourd’hui !')
+      .replace(/Üç gün! Alışkanlık oluşuyor!/g,'Trois jours ! Une habitude se construit !')
+      .replace(/Mystère Salle ilerlemesi|Gizli oda ilerlemesi/g,'Progression de la salle mystère')
+      .replace(/\bCmt\b/g,'Sam')
+      .replace(/\bPaz\b/g,'Dim')
+      .replace(/\bPzt\b/g,'Lun')
+      .replace(/\bSal\b/g,'Mar')
+      .replace(/\bÇar\b/g,'Mer')
+      .replace(/\bPer\b/g,'Jeu')
+      .replace(/\bCum\b/g,'Ven')
+      .replace(/Étoiles Puanlari|Étoiles Puanları|Yıldız Puanları|Stars Puanlari/g,'Points d’étoiles')
+      .replace(/Mini oyunlardan kazanilan puanlar|Mini oyunlardan kazanılan puanlar/g,'Points gagnés dans les mini-jeux')
+      .replace(/Bugun kazanilan|Bugün kazanılan/g,'Gagné aujourd’hui')
+      .replace(/100 Étoiles = 1 Pièces/g,'100 étoiles = 1 pièce')
+      .replace(/(\d+) etoiles de plus = 1 piece/g,'$1 étoiles de plus = 1 pièce')
+      .replace(/Mutluluk Paraları/g,'Pièces de bonheur')
+      .replace(/Oki bu paralarla buyur/g,'Oki grandit avec ces pièces')
+      .replace(/Yumurta/g,'Œuf')
+      .replace(/Bebek/g,'Bébé')
+      .replace(/Kucuk|Küçük/g,'Petit')
+      .replace(/Ebeveyn bunu gerçek bir ödüle çevirebilir/g,'Le parent peut transformer cela en vraie récompense')
+      .replace(/10 Pièces = 1 Récompense hakki/g,'10 pièces = 1 droit de récompense')
+      .replace(/hakki/g,'droit')
+      .replace(/Hinweis: Schau im Ballon nach!/g,'Indice : regarde dans le ballon !')
+      .replace(/Toplam Puan/g,'Points totaux')
+      .replace(/Bugün Öğrenilen/g,'Mots appris aujourd’hui')
+      .replace(/Toplam Kelime/g,'Total des mots')
+      .replace(/Kelime/g,'Mots')
+      .replace(/\bGün\b/g,'Jours')
+      .replace(/Keşfedilen Salle/g,'Salles explorées')
+      .replace(/En İyi Salle/g,'Meilleure salle')
+      .replace(/Soru Doğruluk Oranı/g,'Précision des questions')
+      .replace(/Çalışılması gerekenler:/g,'À améliorer :')
+      .replace(/Henüz yok/g,'Aucune salle')
+      .replace(/Henüz veri yok/g,'Aucune donnée pour le moment')
+      .replace(/Bugün henüz bir Salle ziyaret edilmedi\./g,'Aucune salle visitée aujourd’hui.')
+      .replace(/SON 7 GÜN AKTİVİTESİ/g,'7 DERNIERS JOURS')
+      .replace(/Bugün/g,'Aujourd’hui')
+      .replace(/Diğer günler/g,'Autres jours')
+      .replace(/Melek beslendi/g,'Oki nourri')
+      .replace(/Beslendi!/g,'Nourri !')
+      .replace(/Maksimum seviye!/g,'Niveau maximum !')
+      .replace(/tamamlandı/g,'terminé')
+      .replace(/Download PDF/g,'Télécharger le PDF')
+      .replace(/Send Mail/g,'Envoyer par e-mail')
+      .replace(/Öğrenilen Mots/g,'Mots appris')
+      .replace(/0 kelime ogrenildi|0 kelime öğrenildi/g,'0 mots appris')
+      .replace(/Henüz kelime yok!/g,'Aucun mot pour le moment !')
+      .replace(/Anglais veya Allemand odasına gir\./g,'Entre dans une salle de langue.')
+      .replace(/Tümü/g,'Tous')
+      .replace(/Doğa/g,'Nature')
+      .replace(/Kahraman/g,'Héros')
+      .replace(/Sihirbaz/g,'Magie')
+      .replace(/Uzay/g,'Espace')
+      .replace(/Akvaryum/g,'Art et mer')
+      .replace(/Şampiyon/g,'Champion')
+      .replace(/Yaprak Tac/g,'Couronne de feuilles')
+      .replace(/Çiçek Bileklik/g,'Bracelet fleuri')
+      .replace(/Mantar Şapka/g,'Chapeau champignon')
+      .replace(/Kelebek Kanat/g,'Ailes de papillon')
+      .replace(/Kalkan/g,'Bouclier')
+      .replace(/Kılıç/g,'Épée')
+      .replace(/Çıkar/g,'Retirer')
+      .replace(/\bGiy\b/g,'Porter')
+      .replace(/Bir ürün seç!/g,'Choisis un objet !')
+      .replace(/Wearing:/g,'Porté :');
+  }
+  function frCleanTextNodes(root){
+    if(!frOn() || !root) return;
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null), node, nodes=[];
+    while((node=walker.nextNode())) nodes.push(node);
+    nodes.forEach(function(n){
+      var v=frCleanText(n.nodeValue);
+      if(v!==n.nodeValue) n.nodeValue=v;
+    });
+  }
+  function frSet(id,txt){
+    var el=document.getElementById(id);
+    if(el) el.textContent=txt;
+  }
+  function frCleanHome(){
+    if(!frOn()) return;
+    frCleanTextNodes(document.body);
+    var title=document.querySelector('h1');
+    if(title && /Maison des Valeurs/.test(title.textContent)){
+      title.style.fontSize='clamp(2rem, 6.3vw, 3.5rem)';
+      title.style.lineHeight='1';
+      title.style.maxWidth='92vw';
+      title.style.marginLeft='auto';
+      title.style.marginRight='auto';
+      title.style.whiteSpace='normal';
+    }
+  }
+  function frCleanStarJar(){
+    if(!frOn()) return;
+    var ov=document.getElementById('star-ov');
+    if(!ov) return;
+    ov.setAttribute('lang','fr');
+    ov.removeAttribute('dir');
+    frCleanTextNodes(ov);
+    var total=typeof getTotalStars==='function'?getTotalStars():0;
+    var today=typeof getTodayStars==='function'?getTodayStars():0;
+    var rem=total%100;
+    frSet('star-count',total+' étoiles');
+    frSet('star-today','+'+today+' aujourd’hui');
+    frSet('star-to-coin-txt',(100-rem)+' étoiles de plus = 1 pièce');
+    var blocks=ov.querySelectorAll('div');
+    if(blocks[1]) blocks[1].textContent='Points d’étoiles';
+    if(blocks[2]) blocks[2].textContent='Points gagnés dans les mini-jeux';
+    var bar=document.getElementById('star-to-coin-bar');
+    if(bar && bar.parentElement && bar.parentElement.parentElement && bar.parentElement.parentElement.firstElementChild){
+      bar.parentElement.parentElement.firstElementChild.textContent='100 étoiles = 1 pièce';
+    }
+    var todayEl=document.getElementById('star-today');
+    if(todayEl && todayEl.parentElement && todayEl.parentElement.firstElementChild){
+      todayEl.parentElement.firstElementChild.textContent='Gagné aujourd’hui';
+    }
+    var b=ov.querySelector('button');
+    if(b) b.textContent='Fermer';
+  }
+  function frCleanCrystalJar(){
+    if(!frOn()) return;
+    var ov=document.getElementById('crystal-ov');
+    if(!ov) return;
+    ov.setAttribute('lang','fr');
+    ov.removeAttribute('dir');
+    frCleanTextNodes(ov);
+    var names=['Œuf','Bébé','Petit','Jeune','Grand','Ange'];
+    var coins=typeof getCoins==='function'?getCoins():0;
+    var stage=typeof getCoinStage==='function'?getCoinStage():null;
+    var idx=(typeof OKI_COIN_STAGES!=='undefined' && stage)?OKI_COIN_STAGES.indexOf(stage):0;
+    if(idx<0) idx=0;
+    frSet('crystal-count',coins+' pièces');
+    frSet('crystal-stage',(stage && stage.emoji?stage.emoji+' ':'')+names[idx]);
+    var next=(typeof OKI_COIN_STAGES!=='undefined')?OKI_COIN_STAGES[idx+1]:null;
+    frSet('crystal-next',next?((next.min-coins)+' pièces de plus -> '+names[idx+1]):'Niveau maximum !');
+    var blocks=ov.querySelectorAll('div');
+    if(blocks[1]) blocks[1].textContent='Pièces de bonheur';
+    if(blocks[2]) blocks[2].textContent='Oki grandit avec ces pièces';
+    var reward=document.getElementById('crystal-stage-box');
+    reward=reward && reward.nextElementSibling;
+    if(reward && reward.children && reward.children[0]) reward.children[0].textContent='Le parent peut transformer cela en vraie récompense';
+    if(reward && reward.children && reward.children[1]) reward.children[1].textContent='10 pièces = 1 droit de récompense';
+    var b=ov.querySelector('button');
+    if(b) b.textContent='Fermer';
+  }
+  function frCleanStreak(){
+    if(!frOn()) return;
+    var ov=document.getElementById('streak-ov');
+    if(!ov) return;
+    ov.setAttribute('lang','fr');
+    ov.removeAttribute('dir');
+    var count=parseInt((document.getElementById('streak-count')||{}).textContent,10)||1;
+    frSet('streak-title','SÉRIE DE JOURS');
+    frSet('streak-best','🏆 Meilleure série : '+count+' '+(count>1?'jours':'jour'));
+    frSet('streak-msg',count===1?'Bienvenue ! Ta série commence aujourd’hui !':count+' jours d’affilée ! Continue !');
+    frSet('streak-goal-label','Progression de la salle mystère');
+    var left=Math.max(0,5-count);
+    frSet('streak-goal-txt',left?'Encore '+left+' '+(left>1?'jours':'jour'):'🔓 Ouverte !');
+    var days=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+    ov.querySelectorAll('#streak-days .streak-day-dot,.streak-day-dot').forEach(function(d,i){
+      if(i<7) d.textContent=days[i];
+    });
+    frCleanTextNodes(ov);
+  }
+  function frCleanReport(){
+    if(!frOn()) return;
+    ['report-ov','qr-ov','rov','share-ov'].forEach(function(id){ frCleanTextNodes(document.getElementById(id)); });
+  }
+  function frCleanShop(){
+    if(!frOn()) return;
+    frCleanTextNodes(document.getElementById('shop-ov'));
+  }
+  function frCleanWords(){
+    if(!frOn()) return;
+    var ov=document.getElementById('kelime-ov');
+    if(!ov) return;
+    frCleanTextNodes(ov);
+    var h=ov.querySelector('h2');
+    if(h) h.textContent='📓 Mots appris';
+  }
+  function frCleanAll(){
+    frCleanHome();
+    frCleanStarJar();
+    frCleanCrystalJar();
+    frCleanStreak();
+    frCleanReport();
+    frCleanShop();
+    frCleanWords();
+  }
+  function frSoon(){
+    [0,60,180,400,900].forEach(function(ms){ setTimeout(frCleanAll,ms); });
+  }
+  ['showStarJar','_updateStarOverlay','showCrystalJar','_updateCrystalOverlay','showStreakOverlay','showReport','showParentQR','showShare','showShopRoom','shopRenderItems','showKelime','buildGrid'].forEach(function(name){
+    var old=window[name];
+    if(typeof old==='function' && !old.__frValuesClean){
+      window[name]=function(){ var r=old.apply(this,arguments); frSoon(); return r; };
+      window[name].__frValuesClean=true;
+    }
+  });
+  if(typeof buildReportHTML==='function' && !buildReportHTML.__frValuesClean){
+    var oldBuildReportHTML=buildReportHTML;
+    buildReportHTML=function(){ return frCleanText(oldBuildReportHTML.apply(this,arguments)); };
+    buildReportHTML.__frValuesClean=true;
+    window.buildReportHTML=buildReportHTML;
+  }
+  document.addEventListener('DOMContentLoaded',frSoon);
+  setInterval(function(){ if(frOn()) frCleanAll(); },1200);
+  window.evCleanFrenchValuesText=frCleanText;
 })();
 
 // ════════════════════════════════════════════════
@@ -9113,7 +11011,7 @@ function renderFoodButton(){
     btn.style.opacity='0.5';
     btn.style.cursor='default';
   } else {
-    btn.textContent=evValuesOn()&&evValuesLang()==='en'?'Feed: '+evEnglishFoodName(food.name):(evValuesOn()&&evValuesLang()==='de'?'Fuettern: '+evGermanFoodName(food.name):food.ico+' '+food.name+' ver!');
+    btn.textContent=evValuesOn()&&evValuesLang()==='en'?'Feed: '+evEnglishFoodName(food.name):(evValuesOn()&&evValuesLang()==='fr'?'Nourrir: '+evEnglishFoodName(food.name):(evValuesOn()&&evValuesLang()==='de'?'Fuettern: '+evGermanFoodName(food.name):food.ico+' '+food.name+' ver!'));
     btn.style.opacity='1';
     btn.style.cursor='pointer';
   }
@@ -9126,7 +11024,7 @@ function renderFoodButton(){
   var el=document.getElementById('oki-name');
   if(el){
     var stage=getOkiStage();
-    el.textContent=evEnglishOkiStageName(stage)+' '+(evValuesOn()&&evValuesLang()==='en'?(days>0?'('+days+' days old)':'(newborn)'):(evValuesOn()&&evValuesLang()==='de'?(days>0?'('+days+' Tage alt)':'(neu geboren)'):(days>0?'('+(days)+' gunluk)':'(yeni dogdu!)')));
+    el.textContent=evEnglishOkiStageName(stage)+' '+(evValuesOn()&&evValuesLang()==='en'?(days>0?'('+days+' days old)':'(newborn)'):(evValuesOn()&&evValuesLang()==='fr'?(days>0?'('+days+' jours)':'(tout petit)'):(evValuesOn()&&evValuesLang()==='de'?(days>0?'('+days+' Tage alt)':'(neu geboren)'):(days>0?'('+(days)+' gunluk)':'(yeni dogdu!)'))));
   }
 }
 
@@ -9198,6 +11096,9 @@ var PSYCH_PROFILES={
 // ══════════════════════════════════════
 
 function buildReportData(){
+  var reportLang = (evValuesOn&&evValuesOn()&&evValuesLang) ? evValuesLang() : '';
+  var modernValuesReport = !!(evValuesOn&&evValuesOn()&&/^(tr|en|de|fr)$/.test(reportLang));
+  var arReport = evArabicActive&&evArabicActive();
   var today = new Date().toDateString();
   var todayWords = 0;
   try{ todayWords = JSON.parse(localStorage.getItem('dei_wday_'+today)||'[]').length; }catch(e){}
@@ -9218,7 +11119,7 @@ function buildReportData(){
     var dw = 0; try{ dw=JSON.parse(localStorage.getItem('dei_wday_'+dk)||'[]').length; }catch(e){}
     var fed = JSON.parse(localStorage.getItem(_fedKey())||'{}');
     weekData.push({
-      date: d.toLocaleDateString((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en')?'en-US':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de')?'de-DE':'tr-TR'),{weekday:'short'}),
+      date: d.toLocaleDateString(arReport?'ar-SA':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en')?'en-US':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de')?'de-DE':(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr')?'fr-FR':'tr-TR')),{weekday:'short'}),
       words: dw,
       fed: !!fed[dk],
       isToday: i===0
@@ -9237,24 +11138,124 @@ function buildReportData(){
     para:'Ekonomik farkındalık',bilgisayar:'Teknolojiye ilgili',
     atlas:'Dünyayı keşfetmek istiyor',arapca:'Manevi köklere bağlı',
   };
+  if(modernValuesReport){
+    profiles.ibadet='Sakinlik ve iç huzur gelişiyor';
+    profiles.arapca='Farklı harflere ve dillere meraklı';
+    profiles.sifa='Sağlıklı alışkanlıklara ilgili';
+  }
+  if(modernValuesReport && reportLang==='en'){
+    profiles.ibadet='Calm and reflective';
+    profiles.ders='Curious and open to learning';
+    profiles.oyuncak='Social and energetic';
+    profiles.cevre='Interested in nature';
+    profiles.caliskan='Goal-focused';
+    profiles.sanat='Creative';
+    profiles.aile='Family-oriented';
+    profiles.yalnizlik='Thoughtful and quiet';
+    profiles.nefes='Practicing calm';
+    profiles.dopamin='Highly motivated';
+    profiles.para='Money awareness';
+    profiles.bilgisayar='Interested in technology';
+    profiles.atlas='Wants to explore the world';
+    profiles.arapca='Interested in letters and languages';
+    profiles.sifa='Interested in healthy habits';
+  }
+  if(modernValuesReport && reportLang==='de'){
+    profiles.ibadet='Ruhig und ausgeglichen';
+    profiles.ders='Neugierig und lernbereit';
+    profiles.oyuncak='Sozial und aktiv';
+    profiles.cevre='Naturverbunden';
+    profiles.caliskan='Zielorientiert';
+    profiles.sanat='Kreativ';
+    profiles.aile='Familienorientiert';
+    profiles.nefes='Lernt Achtsamkeit';
+    profiles.para='Bewusstsein fuer Werte';
+    profiles.bilgisayar='Technikinteressiert';
+    profiles.atlas='Moechte die Welt entdecken';
+    profiles.arapca='Interesse an Buchstaben und Sprachen';
+    profiles.sifa='Gesundheitsbewusst';
+    profiles.muzik='Musikalisch';
+    profiles.puzzle='Logisch und geduldig';
+    profiles.refleks='Reaktionsschnell';
+    profiles.boyama='Kreativ und geduldig';
+    profiles.mutfak='Bewusst und haushaltsorientiert';
+    profiles.ada='Ruhebeduertig';
+    profiles.ilkbahar='Hoffnungsvoll und offen fuer Neues';
+    profiles.kumanda='Fokussiert und reaktionsschnell';
+    profiles.hayvanat='Tierliebend und fuersorglich';
+    profiles.lazer='Aufmerksam und konzentriert';
+    profiles.deutsch='Sprachinteressiert';
+    profiles.english='Sprachinteressiert';
+  }
+  if(modernValuesReport && reportLang==='fr'){
+    profiles.ibadet='Calme et reflechi';
+    profiles.ders='Curieux et ouvert a l apprentissage';
+    profiles.oyuncak='Social et energique';
+    profiles.cevre='Amoureux de la nature';
+    profiles.caliskan='Oriente vers les objectifs';
+    profiles.sanat='Creatif';
+    profiles.aile='Attache a la famille';
+    profiles.nefes='Pratique la pleine conscience';
+    profiles.para='Conscience des valeurs';
+    profiles.bilgisayar='Interesse par la technologie';
+    profiles.atlas='Curieux du monde';
+    profiles.arapca='Interesse par les lettres et les langues';
+    profiles.sifa='Attentif a sa sante';
+    profiles.muzik='Musical';
+    profiles.puzzle='Logique et patient';
+    profiles.refleks='Reactions rapides';
+    profiles.boyama='Creatif et patient';
+    profiles.mutfak='Attentif a ses habitudes';
+    profiles.ada='Besoin de calme';
+    profiles.ilkbahar='Plein d espoir et ouvert au changement';
+    profiles.kumanda='Concentre et reactif';
+    profiles.hayvanat='Amoureux des animaux';
+    profiles.lazer='Attentif et concentre';
+    profiles.deutsch='Interesse par les langues';
+    profiles.english='Interesse par les langues';
+  }
+  if(arReport){
+    profiles={
+      ibadet:'\u0645\u064A\u0644 \u0625\u0644\u0649 \u0627\u0644\u0639\u0628\u0627\u062F\u0629 \u0648\u0627\u0644\u0633\u0643\u064A\u0646\u0629',
+      ders:'\u0645\u062D\u0628 \u0644\u0644\u062A\u0639\u0644\u0645 \u0648\u0641\u0636\u0648\u0644\u064A',
+      oyuncak:'\u0627\u062C\u062A\u0645\u0627\u0639\u064A \u0648\u0646\u0634\u064A\u0637',
+      cevre:'\u0645\u062D\u0628 \u0644\u0644\u0637\u0628\u064A\u0639\u0629 \u0648\u0631\u062D\u064A\u0645',
+      caliskan:'\u0645\u062C\u062A\u0647\u062F \u0648\u0645\u0631\u0643\u0632 \u0639\u0644\u0649 \u0627\u0644\u0647\u062F\u0641',
+      sanat:'\u0645\u0628\u062F\u0639 \u0648\u0645\u062D\u0628 \u0644\u0644\u062C\u0645\u0627\u0644',
+      aile:'\u0645\u062A\u0639\u0644\u0642 \u0628\u0627\u0644\u0623\u0633\u0631\u0629',
+      nefes:'\u064A\u062A\u0639\u0644\u0645 \u0627\u0644\u0647\u062F\u0648\u0621 \u0648\u0636\u0628\u0637 \u0627\u0644\u0646\u0641\u0633',
+      para:'\u064A\u0637\u0648\u0631 \u0648\u0639\u064A\u0627 \u0628\u0627\u0644\u0625\u0646\u0641\u0627\u0642 \u0648\u0627\u0644\u0627\u062F\u062E\u0627\u0631',
+      arapca:'\u0645\u062A\u0639\u0644\u0642 \u0628\u0644\u063A\u0629 \u0627\u0644\u0642\u0631\u0622\u0646'
+    };
+  }
   allR.slice(0,3).forEach(function(r){ if(profiles[r]) psych.push(profiles[r]); });
   
   // Dualar
   var dualar = JSON.parse(localStorage.getItem('niyaz_cocuk')||'[]');
+  var lastDua = dualar[0] ? dualar[0].text : null;
+  if(modernValuesReport && lastDua && /(Dua Evi|İslami Eğitim Platformu|SON DUA|dua gönderildi|\bdua\b|namaz|sure|Allah|kabir)/i.test(lastDua)){
+    lastDua = null;
+  }
+  var modernRoomNames = {
+    tr:{ ibadet:'Sakinlik Odası', arapca:'Dünya Harfleri', sifa:'Sağlık Odası' },
+    en:{ ibadet:'Calm Room', arapca:'World Letters', sifa:'Wellness Room' },
+    de:{ ibadet:'Ruhe-Raum', arapca:'Welt-Buchstaben', sifa:'Wellness-Raum' },
+    fr:{ ibadet:'Salle calme', arapca:'Lettres du monde', sifa:'Salle du bien-être' }
+  };
   
   return {
     name: playerName,
-    date: new Date().toLocaleDateString((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en')?'en-US':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de')?'de-DE':'tr-TR')),
+    date: new Date().toLocaleDateString(arReport?'ar-SA':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en')?'en-US':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de')?'de-DE':(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr')?'fr-FR':'tr-TR'))),
     totalScore: totalScore,
     todayWords: todayWords,
     totalWords: totalWords,
     streak: streak,
     rooms: rooms,
-    topRoom: topRoomObj ? topRoomObj.name : '-',
+    topRoom: topRoomObj ? (arReport ? evArRoomName(topRoom,topRoomObj.name) : (modernValuesReport && modernRoomNames[reportLang] && modernRoomNames[reportLang][topRoom] ? modernRoomNames[reportLang][topRoom] : topRoomObj.name)) : '-',
     weekData: weekData,
     psych: psych,
     duaCount: dualar.length,
-    lastDua: dualar[0] ? dualar[0].text : null,
+    lastDua: lastDua,
     melekFed: !!(JSON.parse(localStorage.getItem(_fedKey())||'{}'))[new Date().toDateString()],
   };
 }
@@ -9272,7 +11273,53 @@ function showParentQR(){
 }
 
 function buildReportHTML(data){
-  var today=new Date().toLocaleDateString((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en')?'en-US':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de')?'de-DE':'tr-TR'),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  var reportValuesOn = !!(evValuesOn&&evValuesOn());
+  var reportLang = (reportValuesOn&&evValuesLang) ? evValuesLang() : '';
+  var modernValuesReport = reportValuesOn && /^(tr|en|de|fr)$/.test(reportLang);
+  var arReport = evArabicActive&&evArabicActive();
+  var reportTexts = {
+    tr:{title:'EduVerse Değerler Raporu',subtitle:'Evrensel Gelişim Raporu',todayStatus:'Bugünkü Durum',psychLabel:'Gelişim Profili',guideTitle:'Bu Akşam Ne Konuşalım?',lastDuaTitle:'Son Düşünce',duaCountLabel:'düşünce gönderildi',footerLine1:'EduVerse · Değer gelişimi ve öğrenme raporu'},
+    en:{title:'EduVerse Values Report',subtitle:'Universal Growth Report',todayStatus:'Today Status',psychLabel:'Growth Profile',guideTitle:'What Should We Talk About Tonight?',lastDuaTitle:'Latest Reflection',duaCountLabel:'reflections sent',footerLine1:'EduVerse · Values growth and learning report'},
+    de:{title:'EduVerse Wertebericht',subtitle:'Universeller Entwicklungsbericht',todayStatus:'Heutiger Stand',psychLabel:'Entwicklungsprofil',guideTitle:'Worüber sprechen wir heute Abend?',lastDuaTitle:'Letzte Reflexion',duaCountLabel:'Reflexionen gesendet',footerLine1:'EduVerse · Werteentwicklung und Lernbericht'},
+    fr:{title:'Rapport Valeurs EduVerse',subtitle:'Rapport de développement universel',todayStatus:'État du jour',psychLabel:'Profil de développement',guideTitle:'De quoi parler ce soir ?',lastDuaTitle:'Dernière réflexion',duaCountLabel:'réflexions envoyées',footerLine1:'EduVerse · Rapport valeurs et apprentissage'}
+  };
+  var normalReportText = {title:'Dua Evi',subtitle:'* Ebeveyn Takip Raporu *',todayStatus:'BUGÜNKÜ DURUM',psychLabel:'PSİKOLOJİ PROFİLİ',guideTitle:'BU AKŞAM NE KONUŞSAM?',lastDuaTitle:'SON DUA',duaCountLabel:'dua gönderildi',footerLine1:'Dua Evi · Çocuklar için İslami Eğitim Platformu'};
+  var reportText = modernValuesReport ? reportTexts[reportLang] : normalReportText;
+  if(arReport){
+    reportText={title:'\u0628\u064A\u062A \u0627\u0644\u062F\u0639\u0627\u0621',subtitle:'* \u062A\u0642\u0631\u064A\u0631 \u0645\u062A\u0627\u0628\u0639\u0629 \u0627\u0644\u0648\u0627\u0644\u062F\u064A\u0646 *',todayStatus:'\u062D\u0627\u0644\u0629 \u0627\u0644\u064A\u0648\u0645',psychLabel:'\u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u0646\u0641\u0633\u064A',guideTitle:'\u0645\u0627\u0630\u0627 \u0646\u062A\u062D\u062F\u062B \u0647\u0630\u0627 \u0627\u0644\u0645\u0633\u0627\u0621\u061F',lastDuaTitle:'\u0622\u062E\u0631 \u062F\u0639\u0627\u0621',duaCountLabel:'\u062F\u0639\u0627\u0621 \u0645\u0631\u0633\u0644',footerLine1:'\u0628\u064A\u062A \u0627\u0644\u062F\u0639\u0627\u0621 \u00B7 \u0645\u0646\u0635\u0629 \u062A\u0639\u0644\u064A\u0645 \u0625\u0633\u0644\u0627\u0645\u064A\u0629 \u0644\u0644\u0623\u0637\u0641\u0627\u0644'};
+  }
+  reportText.footerLine2 = 'eduverse.club';
+  var enReport = modernValuesReport && reportLang==='en';
+  var rptLabels = (modernValuesReport && reportLang==='en') ? {
+    points:'POINTS', streak:'STREAK', words:'WORDS', rooms:'ROOMS',
+    last7:'LAST 7 DAYS', today:'Today', otherDays:'Other days',
+    fed:'Oki was fed', bestPerformance:'BEST PERFORMANCE',
+    fedNow:'Fed!', noRoom:'No room visit has been recorded today.',
+    noData:'No data yet', total:'Total ', complete:'complete',
+    maxLevel:'Maximum level!'
+  } : (modernValuesReport && reportLang==='de') ? {
+    points:'PUNKTE', streak:'SERIE', words:'WOERTER', rooms:'RAEUME',
+    last7:'LETZTE 7 TAGE', today:'Heute', otherDays:'Andere Tage',
+    fed:'Oki wurde gefuettert', bestPerformance:'BESTE LEISTUNG',
+    fedNow:'Gefuettert!', noRoom:'Heute wurde noch kein Raum besucht.',
+    noData:'Noch keine Daten', total:'Gesamt ', complete:'abgeschlossen',
+    maxLevel:'Maximales Level!'
+  } : (modernValuesReport && reportLang==='fr') ? {
+    points:'POINTS', streak:'SERIE', words:'MOTS', rooms:'SALLES',
+    last7:'7 DERNIERS JOURS', today:'Aujourd hui', otherDays:'Autres jours',
+    fed:'Oki nourri', bestPerformance:'MEILLEURE PERFORMANCE',
+    fedNow:'Nourri !', noRoom:'Aucune salle visitee aujourd hui.',
+    noData:'Pas encore de donnees', total:'Total ', complete:'termine',
+    maxLevel:'Niveau maximum !'
+  } : {
+    points:'PUAN', streak:'STREAK', words:'KELİME', rooms:'ODA',
+    last7:'SON 7 GÜN AKTİVİTESİ', today:'Bugün', otherDays:'Diğer günler',
+    fed:'Melek beslendi', bestPerformance:'EN İYİ PERFORMANS',
+    fedNow:'Beslendi!', noRoom:'Bugün henüz bir oda ziyaret edilmedi.',
+    noData:'Henüz veri yok', total:'Toplam ', complete:'tamamlandı',
+    maxLevel:'Maksimum seviye!'
+  };
+  var today=new Date().toLocaleDateString(arReport?'ar-SA':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en')?'en-US':((evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de')?'de-DE':(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr')?'fr-FR':'tr-TR')),{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   var today2=new Date().toDateString();
   var rv2=JSON.parse(localStorage.getItem('dei_visited')||'{}');
   var rooms=(rv2[today2]||data.roomsVisited||[]);
@@ -9298,6 +11345,129 @@ function buildReportHTML(data){
     ada:     {ico:'🏝️', text:'Ada odasında dinlendi ve hayal kurdu. Ona boş zaman verin — bu da gelişimdir.'},
     caliskan:{ico:'💪', text:'Çalışkan odasında üretken vakit geçirdi. "Bugün ne başardın?" diye sorun.'},
   };
+  if(modernValuesReport){
+    var modernGuidance = {
+      en:{
+        ibadet:{ico:'🧘', text:'Your child spent time in the Calm Room today. Tonight ask: "What helped you feel calm today?"'},
+        ders:{ico:'📚', text:'Your child worked in the Learning Room. Ask: "What did you enjoy learning today?"'},
+        oyuncak:{ico:'🧸', text:'Your child played in the Toy Room. Ask: "How did you and your friends take turns today?"'},
+        cevre:{ico:'🌱', text:'Your child explored the Nature Room. Ask: "What small thing did you do for the planet today?"'},
+        nefes:{ico:'💨', text:'Your child practiced breathing today. Ask: "When did you use calm breathing today?"'},
+        para:{ico:'🤝', text:'Your child visited the Sharing Room. Ask: "What does it mean to share something valuable?"'},
+        puzzle:{ico:'🧩', text:'Your child solved puzzles today. Ask: "Which piece was the hardest to find?"'},
+        lazer:{ico:'🔴', text:'Your child practiced focus today. Ask: "What helped you concentrate?"'},
+        hayvanat:{ico:'🐾', text:'Your child explored the Animal World. Ask: "Which animal was your favorite today?"'},
+        refleks:{ico:'⚡', text:'Your child trained their reflexes today. Ask: "Which mode was the most fun?"'},
+        boyama:{ico:'🎨', text:'Your child did some art today. Ask: "What did you choose to draw and why?"'},
+        sanat:{ico:'🖌️', text:'Your child was creative today. Ask: "What idea did you express in your art?"'},
+        atlas:{ico:'🌍', text:'Your child explored the world today. Ask: "Which place did you find most interesting?"'},
+        caliskan:{ico:'💪', text:'Your child practiced effort today. Ask: "What did you work hardest on today?"'},
+        mutfak:{ico:'🍳', text:'Your child visited the Kitchen Room. Ask: "What healthy food would you like to try?"'},
+        aile:{ico:'❤️', text:'Your child spent time in the Family Room. Ask: "What made you feel loved today?"'},
+        ada:{ico:'🏝️', text:'Your child had a quiet moment today. Ask: "What did you think about in the quiet?"'},
+        sifa:{ico:'🌿', text:'Your child explored healthy habits. Ask: "What was good for your body today?"'},
+        ilkbahar:{ico:'🌸', text:'Your child visited the Spring Garden. Ask: "What new thing started for you today?"'},
+        muzik:{ico:'🎵', text:'Your child made music today. Ask: "What rhythm did you feel today?"'},
+        kumanda:{ico:'🕹️', text:'Your child practiced in the Game Arena. Ask: "How did you stay focused during the game?"'},
+        bilgisayar:{ico:'💻', text:'Your child explored the Computer Room. Ask: "What did you create or discover today?"'},
+        english:{ico:'🇬🇧', text:'Your child practiced English today. Ask: "What new word did you learn today?"'},
+        deutsch:{ico:'🇩🇪', text:'Your child practiced German today. Ask: "What new German word did you discover?"'},
+        arapca:{ico:'✍️', text:'Your child explored World Letters. Ask: "Which letter was most interesting today?"'}
+      },
+      de:{
+        ibadet:{ico:'🧘', text:'Ihr Kind war heute im Ruhe-Raum. Fragen Sie heute Abend: "Was hat dich heute beruhigt?"'},
+        ders:{ico:'📚', text:'Ihr Kind hat gelernt. Fragen Sie: "Was hat dich heute am meisten interessiert?"'},
+        oyuncak:{ico:'🧸', text:'Ihr Kind hat heute gespielt. Fragen Sie: "Wie habt ihr heute abgewechselt?"'},
+        cevre:{ico:'🌱', text:'Ihr Kind hat die Natur erkundet. Fragen Sie: "Was hast du heute fuer die Erde getan?"'},
+        nefes:{ico:'💨', text:'Ihr Kind hat Atemübungen gemacht. Fragen Sie: "Wann hast du heute ruhig geatmet?"'},
+        para:{ico:'🤝', text:'Ihr Kind war im Teilraum. Fragen Sie: "Was bedeutet es, etwas Wertvolles zu teilen?"'},
+        puzzle:{ico:'🧩', text:'Ihr Kind hat Puzzle gespielt. Fragen Sie: "Welches Teil war am schwierigsten?"'},
+        lazer:{ico:'🔴', text:'Ihr Kind hat heute Fokus geuebt. Fragen Sie: "Was hat dir geholfen, dich zu konzentrieren?"'},
+        hayvanat:{ico:'🐾', text:'Ihr Kind hat Tiere erkundet. Fragen Sie: "Welches Tier war heute dein Liebling?"'},
+        refleks:{ico:'⚡', text:'Ihr Kind hat Reflexe trainiert. Fragen Sie: "Welcher Modus hat am meisten Spass gemacht?"'},
+        boyama:{ico:'🎨', text:'Ihr Kind hat heute gemalt. Fragen Sie: "Was hast du gemalt und warum?"'},
+        sanat:{ico:'🖌️', text:'Ihr Kind war heute kreativ. Fragen Sie: "Welche Idee hast du in deiner Kunst ausgedrueckt?"'},
+        atlas:{ico:'🌍', text:'Ihr Kind hat die Welt erkundet. Fragen Sie: "Welchen Ort fandest du heute am interessantesten?"'},
+        caliskan:{ico:'💪', text:'Ihr Kind hat heute Fleiss geuebt. Fragen Sie: "Woran hast du heute am haertesten gearbeitet?"'},
+        mutfak:{ico:'🍳', text:'Ihr Kind war in der Kueche. Fragen Sie: "Welches gesunde Essen moechtest du ausprobieren?"'},
+        aile:{ico:'❤️', text:'Ihr Kind war im Familienraum. Fragen Sie: "Was hat dich heute geliebt gefuehlt?"'},
+        ada:{ico:'🏝️', text:'Ihr Kind hatte einen ruhigen Moment. Fragen Sie: "Woran hast du in der Stille gedacht?"'},
+        sifa:{ico:'🌿', text:'Ihr Kind hat gesunde Gewohnheiten erkundet. Fragen Sie: "Was war heute gut fuer deinen Koerper?"'},
+        ilkbahar:{ico:'🌸', text:'Ihr Kind war im Frühlingsgarten. Fragen Sie: "Was hat heute neu begonnen?"'},
+        muzik:{ico:'🎵', text:'Ihr Kind hat heute Musik gemacht. Fragen Sie: "Welchen Rhythmus hast du heute gespuert?"'},
+        kumanda:{ico:'🕹️', text:'Ihr Kind hat in der Spielarena geuebt. Fragen Sie: "Wie bist du konzentriert geblieben?"'},
+        bilgisayar:{ico:'💻', text:'Ihr Kind hat den Computerraum erkundet. Fragen Sie: "Was hast du heute erstellt oder entdeckt?"'},
+        english:{ico:'🇬🇧', text:'Ihr Kind hat heute Englisch geuebt. Fragen Sie: "Welches neue englische Wort hast du gelernt?"'},
+        deutsch:{ico:'🇩🇪', text:'Ihr Kind hat heute Deutsch geuebt. Fragen Sie: "Welches neue deutsche Wort hast du entdeckt?"'},
+        arapca:{ico:'✍️', text:'Ihr Kind hat verschiedene Buchstaben erkundet. Fragen Sie: "Welcher Buchstabe war heute am interessantesten?"'}
+      },
+      fr:{
+        ibadet:{ico:'🧘', text:'Votre enfant a passe du temps dans la Salle calme. Ce soir, demandez : Qu est-ce qui t a aide a te calmer aujourd hui ?'},
+        ders:{ico:'📚', text:'Votre enfant a travaille dans la Salle d apprentissage. Demandez : Qu est-ce que tu as aime apprendre aujourd hui ?'},
+        oyuncak:{ico:'🧸', text:'Votre enfant a joue dans la Salle de jeux. Demandez : Comment vous etes-vous partage les tours aujourd hui ?'},
+        cevre:{ico:'🌱', text:'Votre enfant a explore la nature. Demandez : Qu as-tu fait de petit pour la planete aujourd hui ?'},
+        nefes:{ico:'💨', text:'Votre enfant a pratique la respiration. Demandez : Quand as-tu respire calmement aujourd hui ?'},
+        para:{ico:'🤝', text:'Votre enfant a visite la Salle partage. Demandez : Que signifie partager quelque chose de precieux ?'},
+        puzzle:{ico:'🧩', text:'Votre enfant a resolu des puzzles. Demandez : Quelle piece etait la plus difficile a trouver ?'},
+        lazer:{ico:'🔴', text:'Votre enfant a pratique la concentration. Demandez : Qu est-ce qui t a aide a te concentrer ?'},
+        hayvanat:{ico:'🐾', text:'Votre enfant a explore le monde animal. Demandez : Quel animal etait ton prefere aujourd hui ?'},
+        refleks:{ico:'⚡', text:'Votre enfant a entraine ses reflexes. Demandez : Quel mode etait le plus amusant ?'},
+        boyama:{ico:'🎨', text:'Votre enfant a fait du coloriage. Demandez : Qu as-tu choisi de dessiner et pourquoi ?'},
+        sanat:{ico:'🖌️', text:'Votre enfant a ete creatif aujourd hui. Demandez : Quelle idee as-tu exprimee dans ton art ?'},
+        atlas:{ico:'🌍', text:'Votre enfant a explore le monde. Demandez : Quel endroit t a le plus interesse ?'},
+        caliskan:{ico:'💪', text:'Votre enfant a pratique l effort aujourd hui. Demandez : Sur quoi as-tu travaille le plus dur ?'},
+        mutfak:{ico:'🍳', text:'Votre enfant a visite la Cuisine. Demandez : Quel aliment sain voudrais-tu essayer ?'},
+        aile:{ico:'❤️', text:'Votre enfant a passe du temps dans la Salle famille. Demandez : Qu est-ce qui t a fait te sentir aime aujourd hui ?'},
+        ada:{ico:'🏝️', text:'Votre enfant a eu un moment calme. Demandez : A quoi as-tu pense pendant le silence ?'},
+        sifa:{ico:'🌿', text:'Votre enfant a explore de bonnes habitudes. Demandez : Qu as-tu fait de bon pour ton corps aujourd hui ?'},
+        ilkbahar:{ico:'🌸', text:'Votre enfant a visite le Jardin printemps. Demandez : Qu est-ce qui a commence de nouveau pour toi aujourd hui ?'},
+        muzik:{ico:'🎵', text:'Votre enfant a fait de la musique. Demandez : Quel rythme as-tu ressenti aujourd hui ?'},
+        kumanda:{ico:'🕹️', text:'Votre enfant a pratique dans la Salle jeux video. Demandez : Comment es-tu reste concentre pendant le jeu ?'},
+        bilgisayar:{ico:'💻', text:'Votre enfant a explore la Salle informatique. Demandez : Qu as-tu cree ou decouvert aujourd hui ?'},
+        english:{ico:'🇬🇧', text:'Votre enfant a pratique l anglais. Demandez : Quel nouveau mot anglais as-tu appris ?'},
+        deutsch:{ico:'🇩🇪', text:'Votre enfant a pratique l allemand. Demandez : Quel nouveau mot allemand as-tu decouvert ?'},
+        arapca:{ico:'✍️', text:'Votre enfant a explore les Lettres du monde. Demandez : Quelle lettre etait la plus interessante aujourd hui ?'}
+      },
+      tr:{
+        ibadet:{ico:'🧘', text:'Cocugunuz bugun Sakinlik Odasi nda vakit gecirdi. Aksam ona "Bugun seni ne sakinlestirdi?" diye sorabilirsiniz.'},
+        ders:{ico:'📚', text:'Cocugunuz Ogrenme Odasi nda calisit. "Bugun en cok neyi ogrenmeyi sevdin?" diye sorabilirsiniz.'},
+        oyuncak:{ico:'🧸', text:'Cocugunuz bugun Oyuncak Odasinda oynadi. "Arkadaslarinla bugun nasil siraya girdiniz?" diye sorabilirsiniz.'},
+        cevre:{ico:'🌱', text:'Cocugunuz Doga Odasini kesfetti. "Bugun gezegen icin kucuk bir sey yaptin mi?" diye sorabilirsiniz.'},
+        nefes:{ico:'💨', text:'Cocugunuz bugun nefes calisti. "Bugun ne zaman sakin nefes aldin?" diye sorabilirsiniz.'},
+        para:{ico:'🤝', text:'Cocugunuz Paylasim Odasini ziyaret etti. "Degerli bir seyi paylasmak ne demektir?" diye sorabilirsiniz.'},
+        puzzle:{ico:'🧩', text:'Cocugunuz bugun bulmaca cozdu. "En zor parca hangisiydi?" diye sorabilirsiniz.'},
+        lazer:{ico:'🔴', text:'Cocugunuz bugun odaklanma calisti. "Konsantre olmana ne yardim etti?" diye sorabilirsiniz.'},
+        hayvanat:{ico:'🐾', text:'Cocugunuz Hayvanat Dunyasini kesfetti. "Bugun en sevdigin hayvan hangisiydi?" diye sorabilirsiniz.'},
+        refleks:{ico:'⚡', text:'Cocugunuz bugun refleks antremani yapti. "Hangi mod en eglenceli oldu?" diye sorabilirsiniz.'},
+        boyama:{ico:'🎨', text:'Cocugunuz bugun boyama yapti. "Ne cizmeyi sectin ve neden?" diye sorabilirsiniz.'},
+        sanat:{ico:'🖌️', text:'Cocugunuz bugun yaratici oldu. "Sanatinda hangi fikri anlattın?" diye sorabilirsiniz.'},
+        atlas:{ico:'🌍', text:'Cocugunuz bugun dunyayi kesfetti. "Hangi yer seni en cok ilgilendirdi?" diye sorabilirsiniz.'},
+        caliskan:{ico:'💪', text:'Cocugunuz bugun caba gosterdi. "Bugun en cok neyin uzerinde calistin?" diye sorabilirsiniz.'},
+        mutfak:{ico:'🍳', text:'Cocugunuz Mutfak Odasini ziyaret etti. "Hangi saglikli yiyecegi denemek istersin?" diye sorabilirsiniz.'},
+        aile:{ico:'❤️', text:'Cocugunuz Aile Odasinda vakit gecirdi. "Bugun seni ne mutlu etti?" diye sorabilirsiniz.'},
+        ada:{ico:'🏝️', text:'Cocugunuz bugun sessiz bir an yasadi. "Sessizlikte ne dusundun?" diye sorabilirsiniz.'},
+        sifa:{ico:'🌿', text:'Cocugunuz saglikli aliskanliklar kesfetti. "Bugun bedenin icin iyi olan ne yaptin?" diye sorabilirsiniz.'},
+        ilkbahar:{ico:'🌸', text:'Cocugunuz Bahar Bahcesini ziyaret etti. "Senin icin bugun ne yeni basladi?" diye sorabilirsiniz.'},
+        muzik:{ico:'🎵', text:'Cocugunuz bugun muzik yapti. "Bugun hangi ritmi hissettin?" diye sorabilirsiniz.'},
+        kumanda:{ico:'🕹️', text:'Cocugunuz bugun oyun alaninda calisti. "Oyun sirasinda nasil odakli kaldin?" diye sorabilirsiniz.'},
+        bilgisayar:{ico:'💻', text:'Cocugunuz Bilgisayar Odasini kesfetti. "Bugun ne yarattın ya da ne kesfettin?" diye sorabilirsiniz.'},
+        english:{ico:'🇬🇧', text:'Cocugunuz bugun Ingilizce calisti. "Bugun hangi yeni kelimeyi ogrendin?" diye sorabilirsiniz.'},
+        deutsch:{ico:'🇩🇪', text:'Cocugunuz bugun Almanca calisti. "Hangi yeni Almanca kelimeyi kesfettin?" diye sorabilirsiniz.'},
+        arapca:{ico:'✍️', text:'Cocugunuz Dunya Harfleri odasinda farkli harfleri kesfetti. "Hangi harf bugun en ilginc geldi?" diye sorabilirsiniz.'}
+      }
+    };
+    var gLang=modernGuidance[reportLang]||modernGuidance.tr;
+    Object.keys(gLang).forEach(function(rid){ guidance[rid]=gLang[rid]; });
+  }
+  if(arReport){
+    guidance={
+      ibadet:{ico:'\uD83E\uDD32', text:'\u0642\u0636\u0649 \u0637\u0641\u0644\u0643 \u0648\u0642\u062A\u0627 \u0641\u064A \u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0628\u0627\u062F\u0629. \u0627\u0633\u0623\u0644\u0647 \u0647\u0630\u0627 \u0627\u0644\u0645\u0633\u0627\u0621: \u0645\u0627\u0630\u0627 \u062A\u0639\u0644\u0645\u062A \u0639\u0646 \u0627\u0644\u0635\u0644\u0627\u0629 \u0648\u0627\u0644\u062F\u0639\u0627\u0621\u061F'},
+      ders:{ico:'\uD83D\uDCDA', text:'\u062F\u0631\u0633 \u0637\u0641\u0644\u0643 \u0641\u064A \u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0644\u0645. \u0627\u0633\u0623\u0644\u0647: \u0645\u0627 \u0623\u0643\u062B\u0631 \u0634\u064A\u0621 \u0623\u062B\u0627\u0631 \u0641\u0636\u0648\u0644\u0643 \u0627\u0644\u064A\u0648\u0645\u061F'},
+      sifa:{ico:'\uD83C\uDF3F', text:'\u0627\u0643\u062A\u0634\u0641 \u0637\u0641\u0644\u0643 \u063A\u0631\u0641\u0629 \u0627\u0644\u0634\u0641\u0627\u0621. \u062A\u062D\u062F\u062B\u0627 \u0639\u0646 \u0646\u0639\u0645\u0629 \u0627\u0644\u0635\u062D\u0629 \u0648\u0643\u064A\u0641 \u0646\u062D\u0627\u0641\u0638 \u0639\u0644\u064A\u0647\u0627.'},
+      arapca:{ico:'\uD83D\uDCD6', text:'\u062A\u0639\u0644\u0645 \u0637\u0641\u0644\u0643 \u0641\u064A \u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629. \u062C\u0631\u0628\u0627 \u0645\u0639\u0627 \u0646\u0637\u0642 \u062D\u0631\u0641 \u062C\u062F\u064A\u062F \u0623\u0648 \u062F\u0639\u0627\u0621 \u0642\u0635\u064A\u0631.'},
+      aile:{ico:'\u2764\uFE0F', text:'\u062F\u062E\u0644 \u0637\u0641\u0644\u0643 \u063A\u0631\u0641\u0629 \u0627\u0644\u0639\u0627\u0626\u0644\u0629. \u0627\u062C\u0644\u0633\u0648\u0627 \u0645\u0639\u0627 \u0648\u0627\u0633\u0623\u0644\u0647: \u0645\u0627 \u0627\u0644\u0634\u064A\u0621 \u0627\u0644\u0630\u064A \u064A\u0641\u0631\u062D\u0643\u061F'}
+    };
+  }
 
   var guideLines='';
   var usedRooms=[];
@@ -9310,7 +11480,7 @@ function buildReportHTML(data){
         +'</div>';
     }
   });
-  if(!guideLines) guideLines='<div style="padding:16px;text-align:center;color:#aaa;font-size:.82rem;font-style:italic;">Bugün henüz bir oda ziyaret edilmedi.</div>';
+  if(!guideLines) guideLines='<div style="padding:16px;text-align:center;color:#aaa;font-size:.82rem;font-style:italic;">'+(modernValuesReport&&reportLang==='fr'?'Aucune salle visitee aujourd hui.':(modernValuesReport&&reportLang==='de'?'Heute wurde noch kein Raum besucht.':(modernValuesReport&&reportLang==='en'?'No room visit has been recorded today.':rptLabels.noRoom)))+'</div>';
 
   // Week chart bars
   var maxW=1;
@@ -9334,17 +11504,27 @@ function buildReportHTML(data){
   (data.psych||[]).forEach(function(p){
     psychTags+='<span style="display:inline-block;background:linear-gradient(135deg,rgba(100,50,200,.1),rgba(50,100,200,.1));border:1px solid rgba(120,80,220,.25);border-radius:20px;padding:5px 12px;font-size:.72rem;font-weight:700;color:#5533AA;margin:3px 3px 0 0;">'+p+'</span>';
   });
-  if(!psychTags) psychTags='<span style="font-size:.78rem;color:#bbb;font-style:italic;">Henüz veri yok</span>';
+  if(!psychTags) psychTags='<span style="font-size:.78rem;color:#bbb;font-style:italic;">'+rptLabels.noData+'</span>';
 
   var pct=Math.min(100,Math.round((data.totalScore||0)/500*100));
   var stageName=getOkiStage().name;
   var nextStage=null;
-  var OKI_S=[{min:0,name:'Bebek Okişi'},{min:100,name:'Küçük Okişi'},{min:300,name:'Okul Okişi'},{min:600,name:'Kahraman Okişi'},{min:1000,name:'Yıldız Okişi'},{min:2000,name:'Melek Okişi'}];
+  var _rLang=modernValuesReport?reportLang:'tr';
+  var OKI_S=_rLang==='en'
+    ? [{min:0,name:'Baby Oki'},{min:100,name:'Little Oki'},{min:300,name:'School Oki'},{min:600,name:'Hero Oki'},{min:1000,name:'Star Oki'},{min:2000,name:'Angel Oki'}]
+    : _rLang==='de'
+    ? [{min:0,name:'Baby Oki'},{min:100,name:'Kleines Oki'},{min:300,name:'Schul-Oki'},{min:600,name:'Held Oki'},{min:1000,name:'Stern-Oki'},{min:2000,name:'Engel Oki'}]
+    : _rLang==='fr'
+    ? [{min:0,name:'Bebe Oki'},{min:100,name:'Petit Oki'},{min:300,name:'Oki Ecole'},{min:600,name:'Oki Heros'},{min:1000,name:'Oki Etoile'},{min:2000,name:'Oki Ange'}]
+    : [{min:0,name:'Bebek Okisi'},{min:100,name:'Kucuk Okisi'},{min:300,name:'Okul Okisi'},{min:600,name:'Kahraman Okisi'},{min:1000,name:'Yildiz Okisi'},{min:2000,name:'Melek Okisi'}];
+  if(modernValuesReport){
+    for(var esi=OKI_S.length-1;esi>=0;esi--){ if((data.totalScore||0)>=OKI_S[esi].min){ stageName=OKI_S[esi].name; break; } }
+  }
   for(var i=0;i<OKI_S.length-1;i++){if(data.totalScore>=OKI_S[i].min&&data.totalScore<OKI_S[i+1].min){nextStage=OKI_S[i+1];break;}}
   var toNext=nextStage?nextStage.min-data.totalScore:0;
   var levelPct=nextStage?Math.round(((data.totalScore-OKI_S.filter(function(s){return s.min<=data.totalScore;}).slice(-1)[0].min)/(nextStage.min-OKI_S.filter(function(s){return s.min<=data.totalScore;}).slice(-1)[0].min))*100):100;
 
-  return '<div style="font-family:Nunito,Arial,sans-serif;color:#1a1a2e;background:#fff;margin:0;">'
+  var _reportHtml = '<div style="font-family:Nunito,Arial,sans-serif;color:#1a1a2e;background:#fff;margin:0;">'
 
     // ── HEADER ──
     +'<div style="background:linear-gradient(135deg,#1a1060 0%,#2a4096 55%,#1a6a3a 100%);padding:22px 22px 18px;position:relative;overflow:hidden;">'
@@ -9353,8 +11533,8 @@ function buildReportHTML(data){
       +'<div style="display:flex;align-items:center;gap:14px;">'
         +'<div style="width:50px;height:50px;background:rgba(255,255,255,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;">🏡</div>'
         +'<div>'
-          +'<div style="font-family:Fredoka One,Georgia,serif;font-size:1.5rem;color:#FFD700;letter-spacing:.02em;">'+(evValuesOn()&&evValuesLang()==='en'?'EduVerse Values':(evValuesOn()&&evValuesLang()==='de'?'EduVerse Werte':'Dua Evi'))+'</div>'
-          +'<div style="font-size:.72rem;color:rgba(255,255,255,.65);font-weight:700;margin-top:1px;">'+(evValuesOn()&&evValuesLang()==='en'?'* Parent Progress Report *':(evValuesOn()&&evValuesLang()==='de'?'* Lernbericht *':'* Ebeveyn Takip Raporu *'))+'</div>'
+          +'<div style="font-family:Fredoka One,Georgia,serif;font-size:1.5rem;color:#FFD700;letter-spacing:.02em;">'+reportText.title+'</div>'
+          +'<div style="font-size:.72rem;color:rgba(255,255,255,.65);font-weight:700;margin-top:1px;">'+reportText.subtitle+'</div>'
         +'</div>'
         +'<div style="margin-left:auto;text-align:right;">'
           +'<div style="font-size:.65rem;color:rgba(255,255,255,.5);font-weight:700;line-height:1.7;">'+today+'</div>'
@@ -9370,24 +11550,24 @@ function buildReportHTML(data){
         +'<div style="flex:1;">'
           +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">'
             +'<span style="font-family:Fredoka One;font-size:.9rem;color:#3949ab;">'+stageName+'</span>'
-            +(nextStage?'<span style="font-size:.65rem;color:#888;font-weight:700;">'+toNext+' puan → '+nextStage.name+'</span>':'<span style="font-size:.65rem;color:#43a047;font-weight:700;">✅ Maksimum seviye!</span>')
+            +(nextStage?'<span style="font-size:.65rem;color:#888;font-weight:700;">'+toNext+' '+(_rLang==='en'?'points':_rLang==='de'?'Punkte':_rLang==='fr'?'points':'puan')+' → '+nextStage.name+'</span>':'<span style="font-size:.65rem;color:#43a047;font-weight:700;">✅ '+rptLabels.maxLevel+'</span>')
           +'</div>'
           +'<div style="background:#c5cae9;border-radius:30px;height:9px;overflow:hidden;">'
             +'<div style="background:linear-gradient(90deg,#3949AB,#7986CB,#64B5F6);width:'+levelPct+'%;height:100%;border-radius:30px;transition:width .8s;"></div>'
           +'</div>'
-          +'<div style="font-size:.6rem;color:#9fa8da;font-weight:700;margin-top:3px;">'+levelPct+'% tamamlandı</div>'
+          +'<div style="font-size:.6rem;color:#9fa8da;font-weight:700;margin-top:3px;">'+levelPct+'% '+rptLabels.complete+'</div>'
         +'</div>'
       +'</div>'
     +'</div>'
 
     // ── İSTATİSTİK KARTLARI ──
     +'<div style="padding:14px 16px;background:#fff;border-bottom:1px solid #f0f0f8;">'
-      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:10px;">BUGÜNKÜ DURUM</div>'
+      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:10px;">'+reportText.todayStatus+'</div>'
       +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">'
         +'<div style="background:linear-gradient(135deg,#fff8e1,#fff3cd);border:1px solid #ffe082;border-radius:14px;padding:11px 6px;text-align:center;">'
           +'<div style="font-size:1.2rem;margin-bottom:2px;">⭐</div>'
           +'<div style="font-family:Fredoka One;font-size:1.1rem;color:#F57F17;">'+(data.totalScore||0)+'</div>'
-          +'<div style="font-size:.54rem;font-weight:800;color:#F9A825;margin-top:1px;">PUAN</div>'
+          +'<div style="font-size:.54rem;font-weight:800;color:#F9A825;margin-top:1px;">'+rptLabels.points+'</div>'
         +'</div>'
         +'<div style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);border:1px solid #f48fb1;border-radius:14px;padding:11px 6px;text-align:center;">'
           +'<div style="font-size:1.2rem;margin-bottom:2px;">\uD83D\uDD25</div>'
@@ -9397,30 +11577,30 @@ function buildReportHTML(data){
         +'<div style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border:1px solid #a5d6a7;border-radius:14px;padding:11px 6px;text-align:center;">'
           +'<div style="font-size:1.2rem;margin-bottom:2px;">📚</div>'
           +'<div style="font-family:Fredoka One;font-size:1.1rem;color:#2E7D32;">'+(data.totalWords||0)+'</div>'
-          +'<div style="font-size:.54rem;font-weight:800;color:#43A047;margin-top:1px;">KELİME</div>'
+          +'<div style="font-size:.54rem;font-weight:800;color:#43A047;margin-top:1px;">'+rptLabels.words+'</div>'
         +'</div>'
         +'<div style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);border:1px solid #90caf9;border-radius:14px;padding:11px 6px;text-align:center;">'
           +'<div style="font-size:1.2rem;margin-bottom:2px;">🏠</div>'
           +'<div style="font-family:Fredoka One;font-size:1.1rem;color:#1565C0;">'+(data.rooms||0)+'</div>'
-          +'<div style="font-size:.54rem;font-weight:800;color:#1976D2;margin-top:1px;">ODA</div>'
+          +'<div style="font-size:.54rem;font-weight:800;color:#1976D2;margin-top:1px;">'+rptLabels.rooms+'</div>'
         +'</div>'
       +'</div>'
     +'</div>'
 
     // ── HAFTALIK GRAFİK ──
     +'<div style="padding:14px 16px;background:#fafbff;border-bottom:1px solid #f0f0f8;">'
-      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:12px;">📅 SON 7 GÜN AKTİVİTESİ</div>'
+      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:12px;">📅 '+rptLabels.last7+'</div>'
       +'<div style="display:flex;gap:4px;align-items:flex-end;">'+weekBars+'</div>'
       +'<div style="margin-top:8px;display:flex;align-items:center;gap:12px;">'
-        +'<div style="display:flex;align-items:center;gap:4px;font-size:.6rem;font-weight:700;color:#999;"><div style="width:10px;height:10px;border-radius:2px;background:#FFD700;"></div>Bugün</div>'
-        +'<div style="display:flex;align-items:center;gap:4px;font-size:.6rem;font-weight:700;color:#999;"><div style="width:10px;height:10px;border-radius:2px;background:rgba(100,180,255,.5);"></div>Diğer günler</div>'
-        +'<div style="display:flex;align-items:center;gap:4px;font-size:.6rem;font-weight:700;color:#999;">✅ Melek beslendi</div>'
+        +'<div style="display:flex;align-items:center;gap:4px;font-size:.6rem;font-weight:700;color:#999;"><div style="width:10px;height:10px;border-radius:2px;background:#FFD700;"></div>'+rptLabels.today+'</div>'
+        +'<div style="display:flex;align-items:center;gap:4px;font-size:.6rem;font-weight:700;color:#999;"><div style="width:10px;height:10px;border-radius:2px;background:rgba(100,180,255,.5);"></div>'+rptLabels.otherDays+'</div>'
+        +'<div style="display:flex;align-items:center;gap:4px;font-size:.6rem;font-weight:700;color:#999;">✅ '+rptLabels.fed+'</div>'
       +'</div>'
     +'</div>'
 
     // ── PSİKOLOJİ PROFİLİ ──
     +(psychTags?'<div style="padding:14px 16px;background:#fff;border-bottom:1px solid #f0f0f8;">'
-      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:10px;">🧠 PSİKOLOJİ PROFİLİ</div>'
+      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:10px;">🧠 '+reportText.psychLabel+'</div>'
       +'<div>'+psychTags+'</div>'
     +'</div>':'')
 
@@ -9428,34 +11608,54 @@ function buildReportHTML(data){
     +(data.topRoom&&data.topRoom!=='-'?'<div style="padding:12px 16px;background:linear-gradient(135deg,#fffde7,#fff8e1);border-bottom:1px solid #ffe082;">'
       +'<div style="display:flex;align-items:center;gap:10px;">'
         +'<div style="font-size:1.4rem;">🏆</div>'
-        +'<div><div style="font-size:.65rem;font-weight:800;color:#F9A825;">EN İYİ PERFORMANS</div>'
+        +'<div><div style="font-size:.65rem;font-weight:800;color:#F9A825;">'+rptLabels.bestPerformance+'</div>'
         +'<div style="font-family:Fredoka One;font-size:.9rem;color:#E65100;">'+data.topRoom+'</div></div>'
-        +(data.melekFed?'<div style="margin-left:auto;background:linear-gradient(135deg,#43A047,#66BB6A);border-radius:20px;padding:5px 12px;font-size:.7rem;font-weight:800;color:#fff;">🌱 Beslendi!</div>':'')
+        +(data.melekFed?'<div style="margin-left:auto;background:linear-gradient(135deg,#43A047,#66BB6A);border-radius:20px;padding:5px 12px;font-size:.7rem;font-weight:800;color:#fff;">🌱 '+rptLabels.fedNow+'</div>':'')
       +'</div>'
     +'</div>':'')
 
     // ── EBEVEYN REHBERİ ──
     +'<div style="padding:14px 16px;background:#fff;border-bottom:1px solid #f0f0f8;">'
-      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:10px;">💬 BU AKŞAM NE KONUŞSAM?</div>'
+      +'<div style="font-size:.72rem;font-weight:800;color:#aaa;letter-spacing:.06em;margin-bottom:10px;">💬 '+reportText.guideTitle+'</div>'
       +guideLines
     +'</div>'
 
-    // ── DUA NOTU ──
-    +(data.lastDua?'<div style="padding:14px 16px;background:linear-gradient(135deg,#f3e5f5,#ede7f6);border-bottom:1px solid #e1bee7;">'
-      +'<div style="font-size:.72rem;font-weight:800;color:#9C27B0;letter-spacing:.06em;margin-bottom:8px;">🤲 SON DUA</div>'
-      +'<div style="background:rgba(255,255,255,.6);border-radius:12px;padding:12px 14px;border-left:3px solid #9C27B0;">'
-        +'<div style="font-size:.8rem;color:#4a148c;font-style:italic;line-height:1.6;">\''+data.lastDua+'\'</div>'
-        +'<div style="font-size:.62rem;color:#ab47bc;font-weight:700;margin-top:4px;">Toplam '+data.duaCount+' dua gönderildi 💫</div>'
-      +'</div>'
-    +'</div>':'')
+    // ── DUA NOTU ── (Kaldırıldı - hiçbir raporda gösterilmez)
+    +''
 
     // ── ALT BİLGİ ──
     +'<div style="padding:14px 20px;background:linear-gradient(135deg,#f8f9ff,#eef2ff);text-align:center;border-top:1px solid #e8eaf6;">'
-      +'<div style="font-size:.68rem;color:#bbb;font-weight:700;">Dua Evi · Çocuklar için İslami Eğitim Platformu</div>'
-      +'<div style="font-size:.6rem;color:#ddd;margin-top:2px;">eduverse.club</div>'
+      +'<div style="font-size:.68rem;color:#bbb;font-weight:700;">'+reportText.footerLine1+'</div>'
+      +'<div style="font-size:.6rem;color:#ddd;margin-top:2px;">'+reportText.footerLine2+'</div>'
     +'</div>'
 
   +'</div>';
+  if(arReport){
+    _reportHtml = _reportHtml
+      .replace(/Kahraman Okişi/g,'\u0623\u0648\u0643\u064A \u0627\u0644\u0628\u0637\u0644')
+      .replace(/Okul Okişi/g,'\u0623\u0648\u0643\u064A \u0627\u0644\u0645\u062A\u0639\u0644\u0645')
+      .replace(/Küçük Okişi/g,'\u0623\u0648\u0643\u064A \u0627\u0644\u0635\u063A\u064A\u0631')
+      .replace(/Bebek Okişi/g,'\u0623\u0648\u0643\u064A \u0627\u0644\u0637\u0641\u0644')
+      .replace(/Yıldız Okişi/g,'\u0623\u0648\u0643\u064A \u0627\u0644\u0646\u062C\u0645')
+      .replace(/Melek Okişi/g,'\u0623\u0648\u0643\u064A \u0627\u0644\u0645\u0644\u0627\u0643')
+      .replace(/puan/g,'\u0646\u0642\u0637\u0629')
+      .replace(/PUAN/g,'\u0646\u0642\u0627\u0637')
+      .replace(/KELİME/g,'\u0643\u0644\u0645\u0627\u062A')
+      .replace(/STREAK/g,'\u0633\u0644\u0633\u0644\u0629')
+      .replace(/ODA/g,'\u063A\u0631\u0641')
+      .replace(/tamamlandı/g,'\u0627\u0643\u062A\u0645\u0644')
+      .replace(/Maksimum seviye!/g,'\u0623\u0642\u0635\u0649 \u0645\u0633\u062A\u0648\u0649!')
+      .replace(/SON 7 GÜN AKTİVİTESİ/g,'\u0646\u0634\u0627\u0637 \u0622\u062E\u0631 7 \u0623\u064A\u0627\u0645')
+      .replace(/Bugün/g,'\u0627\u0644\u064A\u0648\u0645')
+      .replace(/Diğer günler/g,'\u0623\u064A\u0627\u0645 \u0623\u062E\u0631\u0649')
+      .replace(/Melek beslendi/g,'\u062A\u0645 \u0625\u0637\u0639\u0627\u0645 \u0627\u0644\u0645\u0644\u0627\u0643')
+      .replace(/EN İYİ PERFORMANS/g,'\u0623\u0641\u0636\u0644 \u0623\u062F\u0627\u0621')
+      .replace(/Beslendi!/g,'\u062A\u0645 \u0625\u0637\u0639\u0627\u0645\u0647!')
+      .replace(/Henüz veri yok/g,'\u0644\u0627 \u062A\u0648\u062C\u062F \u0628\u064A\u0627\u0646\u0627\u062A \u0628\u0639\u062F')
+      .replace(/Bugün henüz bir oda ziyaret edilmedi\./g,'\u0644\u0645 \u062A\u062A\u0645 \u0632\u064A\u0627\u0631\u0629 \u0623\u064A \u063A\u0631\u0641\u0629 \u0627\u0644\u064A\u0648\u0645.')
+      .replace(/Toplam /g,'\u0627\u0644\u0645\u062C\u0645\u0648\u0639 ');
+  }
+  return _reportHtml;
 }
 
 function miniStat(ico,lbl,val,bg,col){
@@ -9533,17 +11733,22 @@ function drawSimpleQR(data){
 // ── PDF DOWNLOAD ──
 function downloadPDF(){
   var d = buildReportData();
+  var reportBody = buildReportHTML(d,true);
+  if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en'&&typeof window.evCleanEnglishValuesReportHtml==='function'){
+    reportBody = window.evCleanEnglishValuesReportHtml(reportBody);
+  }
   var html = '<!DOCTYPE html><html><head><meta charset="UTF-8">'
     +'<style>'+
       '*{box-sizing:border-box;margin:0;padding:0;}'+
       'body{font-family:Arial,sans-serif;max-width:640px;margin:0 auto;background:#fff;}'+
       '@media print{@page{margin:10mm;} body{max-width:100%;}}'+
     '</style>'
-    +'</head><body>'+buildReportHTML(d,true)+'</body></html>';
+    +'</head><body>'+reportBody+'</body></html>';
   var blob=new Blob([html],{type:'text/html'});
   var a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
-  a.download='EduVerse-Rapor.html';
+  var pdfLang = (evValuesOn&&evValuesOn()&&evValuesLang) ? evValuesLang() : '';
+  a.download=(evValuesOn&&evValuesOn()&&pdfLang==='en')?'EduVerse-Values-Report.html':((evValuesOn&&evValuesOn()&&/^(tr|de|fr)$/.test(pdfLang))?'EduVerse-Degerler-Raporu.html':'EduVerse-Rapor.html');
   a.click();
 }
 
@@ -9983,7 +12188,7 @@ function _applyTheme(idx, silent){
     '#hm-title{text-shadow:0 2px 24px '+th.acc+'88 !important; color:'+th.acc+' !important;}'+
     '#hsc{color:'+th.acc+' !important;}';
   try{ localStorage.setItem('dei_theme', idx); }catch(e){}
-  if(!silent) _themeToast(th.emoji+' '+evThemeName(th.id,th.name)+(evValuesOn()&&evValuesLang()==='en'?' Theme':(evValuesOn()&&evValuesLang()==='de'?' Design':(evValuesOn()&&evValuesLang()==='ar'?' السمة':' Temasi'))));
+  if(!silent) _themeToast(th.emoji+' '+evThemeName(th.id,th.name)+(evValuesOn()&&evValuesLang()==='en'?' Theme':(evValuesOn()&&evValuesLang()==='fr'?' Theme':(evValuesOn()&&evValuesLang()==='de'?' Design':(evValuesOn()&&evValuesLang()==='ar'?' السمة':' Temasi')))));
 }
 
 var _galaxyAnim=null;
@@ -10404,6 +12609,20 @@ function getFrenchDailyTasks(){
 
 function getArabicDailyTasks(){
   return [
+    {id:'namaz1', icon:'\uD83D\uDD4C', name:'\u0635\u0644\u0627\u0629 \u0627\u0644\u0641\u062C\u0631', desc:'\u0635\u0644\u064A\u062A \u0635\u0644\u0627\u0629 \u0627\u0644\u0641\u062C\u0631', xp:50, cat:'namaz'},
+    {id:'namaz2', icon:'\uD83D\uDD4C', name:'\u0635\u0644\u0627\u0629 \u0627\u0644\u0638\u0647\u0631', desc:'\u0635\u0644\u064A\u062A \u0635\u0644\u0627\u0629 \u0627\u0644\u0638\u0647\u0631', xp:50, cat:'namaz'},
+    {id:'namaz3', icon:'\uD83D\uDD4C', name:'\u0635\u0644\u0627\u0629 \u0627\u0644\u0639\u0635\u0631', desc:'\u0635\u0644\u064A\u062A \u0635\u0644\u0627\u0629 \u0627\u0644\u0639\u0635\u0631', xp:50, cat:'namaz'},
+    {id:'namaz4', icon:'\uD83D\uDD4C', name:'\u0635\u0644\u0627\u0629 \u0627\u0644\u0645\u063A\u0631\u0628', desc:'\u0635\u0644\u064A\u062A \u0635\u0644\u0627\u0629 \u0627\u0644\u0645\u063A\u0631\u0628', xp:50, cat:'namaz'},
+    {id:'namaz5', icon:'\uD83D\uDD4C', name:'\u0635\u0644\u0627\u0629 \u0627\u0644\u0639\u0634\u0627\u0621', desc:'\u0635\u0644\u064A\u062A \u0635\u0644\u0627\u0629 \u0627\u0644\u0639\u0634\u0627\u0621', xp:50, cat:'namaz'},
+    {id:'okul', icon:'\uD83C\uDFEB', name:'\u0630\u0647\u0628\u062A \u0625\u0644\u0649 \u0627\u0644\u0645\u062F\u0631\u0633\u0629', desc:'\u0630\u0647\u0628\u062A \u0625\u0644\u0649 \u0627\u0644\u0645\u062F\u0631\u0633\u0629 \u0627\u0644\u064A\u0648\u0645', xp:80, cat:'okul'},
+    {id:'ders', icon:'\uD83D\uDCDA', name:'\u062F\u0631\u0633\u062A', desc:'\u062F\u0631\u0633\u062A \u0645\u062F\u0629 30 \u062F\u0642\u064A\u0642\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644', xp:60, cat:'ders'},
+    {id:'muzik', icon:'\uD83C\uDFB5', name:'\u0627\u0633\u062A\u0645\u0639\u062A \u0625\u0644\u0649 \u0635\u0648\u062A \u062C\u0645\u064A\u0644', desc:'\u0627\u0633\u062A\u0645\u0639\u062A \u0628\u0627\u0646\u062A\u0628\u0627\u0647', xp:30, cat:'muzik'},
+    {id:'yemek', icon:'\uD83E\uDD57', name:'\u0623\u0643\u0644\u062A \u0637\u0639\u0627\u0645\u0627 \u0635\u062D\u064A\u0627', desc:'\u0623\u0643\u0644\u062A \u0641\u0627\u0643\u0647\u0629 \u0623\u0648 \u062E\u0636\u0631\u0627\u0648\u0627\u062A', xp:30, cat:'saglik'},
+    {id:'kitap', icon:'\uD83D\uDCD6', name:'\u0642\u0631\u0623\u062A \u0643\u062A\u0627\u0628\u0627', desc:'\u0642\u0631\u0623\u062A \u0639\u0634\u0631 \u0635\u0641\u062D\u0627\u062A \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644', xp:40, cat:'ders'},
+    {id:'iyi', icon:'\uD83D\uDC9D', name:'\u0641\u0639\u0644\u062A \u062E\u064A\u0631\u0627', desc:'\u0633\u0627\u0639\u062F\u062A \u0634\u062E\u0635\u0627', xp:70, cat:'ahlak'},
+    {id:'dua', icon:'\uD83E\uDD32', name:'\u062F\u0639\u0648\u062A \u0627\u0644\u0644\u0647', desc:'\u062F\u0639\u0648\u062A \u0627\u0644\u0644\u0647 \u0628\u0642\u0644\u0628 \u0635\u0627\u062F\u0642', xp:40, cat:'namaz'}
+  ];
+  return [
     {id:'school_ar', icon:'\uD83C\uDFEB', name:'الذهاب إلى المدرسة', desc:'تعلمت وشاركت اليوم', xp:80, cat:'okul'},
     {id:'learn_ar', icon:'\uD83D\uDCDA', name:'تعلم شيء جديد', desc:'تدربت لمدة 30 دقيقة على الأقل', xp:60, cat:'ders'},
     {id:'read_ar', icon:'\uD83D\uDCD6', name:'القراءة', desc:'قرأت بضع صفحات', xp:40, cat:'ders'},
@@ -10490,7 +12709,7 @@ function showTasks(){
   
   // XP bar
   var done = getTodayTasks();
-  var taskList=taskLang==='en'?getEnglishDailyTasks():(taskLang==='de'?getValuesDailyTasks():(taskLang==='fr'?getFrenchDailyTasks():(taskLang==='ar'?getArabicDailyTasks():getTurkishValuesDailyTasks())));
+  var taskList=!evValuesOn()?DAILY_TASKS:(taskLang==='ar'?getArabicDailyTasks():(taskLang==='en'?getEnglishDailyTasks():(taskLang==='de'?getValuesDailyTasks():(taskLang==='fr'?getFrenchDailyTasks():getTurkishValuesDailyTasks()))));
   var todayXP = taskList.reduce(function(s,t){return done[t.id]?s+t.xp:s;},0);
   var maxXP = taskList.reduce(function(s,t){return s+t.xp;},0);
   var xpEl = document.getElementById('tasks-xp-earned');
@@ -10501,6 +12720,7 @@ function showTasks(){
   else if(taskLang==='fr' && xpEl && xpEl.parentNode){ xpEl.parentNode.innerHTML='Aujourd’hui <span id="tasks-xp-earned" style="color:#FFD700;font-weight:700;">'+todayXP+'</span> XP gagnes'; xpEl=document.getElementById('tasks-xp-earned'); }
   else if(taskLang==='ar' && xpEl && xpEl.parentNode){ xpEl.parentNode.innerHTML='تم كسب <span id="tasks-xp-earned" style="color:#FFD700;font-weight:700;">'+todayXP+'</span> XP اليوم'; xpEl=document.getElementById('tasks-xp-earned'); }
   else if(taskLang==='tr' && xpEl && xpEl.parentNode){ xpEl.parentNode.innerHTML='Bugun <span id="tasks-xp-earned" style="color:#FFD700;font-weight:700;">'+todayXP+'</span> XP kazanildi'; xpEl=document.getElementById('tasks-xp-earned'); }
+  if(taskLang==='ar' && xpEl && xpEl.parentNode){ xpEl.parentNode.innerHTML='\u062A\u0645 \u0643\u0633\u0628 <span id="tasks-xp-earned" style="color:#FFD700;font-weight:700;">'+todayXP+'</span> \u0646\u0642\u0637\u0629 \u0627\u0644\u064A\u0648\u0645'; xpEl=document.getElementById('tasks-xp-earned'); }
   if(barEl) barEl.style.width = Math.min(100,(todayXP/maxXP)*100)+'%';
   
   // Task list
@@ -10526,6 +12746,7 @@ function showTasks(){
         '<div style="font-size:.65rem;color:rgba(255,255,255,.4);">XP</div>'+
       '</div>'+
 '<div style="font-size:1.6rem;flex-shrink:0;">'+(completed?'\u2713':'\u25CB')+'</div>';
+    if(taskLang==='ar') div.innerHTML = div.innerHTML.replace('>XP<','>'+evAr('point')+'<');
     
     div.onclick = (function(t, el){
       return function(){
@@ -11222,6 +13443,87 @@ var _starBigAnim=null, _crystalBigAnim=null, _goldBigAnim=null;
 
 function showStarJar(){
   document.getElementById('star-ov').style.display='block';
+  if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en'){
+    var starOvEn=document.getElementById('star-ov');
+    if(starOvEn){
+      starOvEn.removeAttribute('dir');
+      starOvEn.setAttribute('lang','en');
+      var dsEn=starOvEn.querySelectorAll('div');
+      if(dsEn[1]) dsEn[1].textContent='Star Points';
+      if(dsEn[2]) dsEn[2].textContent='Points earned from mini games';
+      var starTodayEn=document.getElementById('star-today');
+      if(starTodayEn&&starTodayEn.parentElement&&starTodayEn.parentElement.firstElementChild){
+        starTodayEn.parentElement.firstElementChild.textContent='Today Earned';
+      }
+      var starCoinBarEn=document.getElementById('star-to-coin-bar');
+      if(starCoinBarEn&&starCoinBarEn.parentElement&&starCoinBarEn.parentElement.parentElement&&starCoinBarEn.parentElement.parentElement.firstElementChild){
+        starCoinBarEn.parentElement.parentElement.firstElementChild.textContent='100 stars = 1 coin';
+      }
+      var closeEn=starOvEn.querySelector('button'); if(closeEn) closeEn.textContent='Close';
+    }
+  }else if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de'){
+    var starOvDe=document.getElementById('star-ov');
+    if(starOvDe){
+      starOvDe.removeAttribute('dir');
+      starOvDe.setAttribute('lang','de');
+      var dsDe=starOvDe.querySelectorAll('div');
+      if(dsDe[1]) dsDe[1].textContent='Sternpunkte';
+      if(dsDe[2]) dsDe[2].textContent='Punkte aus Minispielen';
+      var starTodayDe=document.getElementById('star-today');
+      if(starTodayDe&&starTodayDe.parentElement&&starTodayDe.parentElement.firstElementChild){
+        starTodayDe.parentElement.firstElementChild.textContent='Heute verdient';
+      }
+      var starCoinBarDe=document.getElementById('star-to-coin-bar');
+      if(starCoinBarDe&&starCoinBarDe.parentElement&&starCoinBarDe.parentElement.parentElement&&starCoinBarDe.parentElement.parentElement.firstElementChild){
+        starCoinBarDe.parentElement.parentElement.firstElementChild.textContent='100 Sterne = 1 Muenze';
+      }
+      var closeDe=starOvDe.querySelector('button'); if(closeDe) closeDe.textContent='Schliessen';
+    }
+  }else if(evArabicActive()){
+    var starOv=document.getElementById('star-ov');
+    if(starOv){
+      starOv.setAttribute('dir','rtl');
+      starOv.setAttribute('lang','ar');
+      var ds=starOv.querySelectorAll('div');
+      if(ds[1]) ds[1].textContent=evAr('starTitle');
+      if(ds[2]) ds[2].textContent=evAr('starSub');
+      var starToday=document.getElementById('star-today');
+      if(starToday&&starToday.parentElement&&starToday.parentElement.firstElementChild){
+        starToday.parentElement.firstElementChild.textContent='\u0627\u0644\u0645\u0643\u062A\u0633\u0628 \u0627\u0644\u064A\u0648\u0645';
+      }
+      var starCoinBar=document.getElementById('star-to-coin-bar');
+      if(starCoinBar&&starCoinBar.parentElement&&starCoinBar.parentElement.parentElement&&starCoinBar.parentElement.parentElement.firstElementChild){
+        starCoinBar.parentElement.parentElement.firstElementChild.textContent='100 \u0646\u062C\u0645\u0629 = \u0646\u0642\u062F \u0648\u0627\u062D\u062F';
+      }
+      var close=starOv.querySelector('button'); if(close) close.textContent=evAr('close');
+    }
+  }else if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr'){
+    var starOvFr=document.getElementById('star-ov');
+    if(starOvFr){
+      starOvFr.removeAttribute('dir');starOvFr.setAttribute('lang','fr');
+      var dsFr=starOvFr.querySelectorAll('div');
+      if(dsFr[1]) dsFr[1].textContent='Points d\u2019\u00e9toiles';
+      if(dsFr[2]) dsFr[2].textContent='Points gagn\u00e9s dans les mini-jeux';
+      var stFr=document.getElementById('star-today');
+      if(stFr&&stFr.parentElement&&stFr.parentElement.firstElementChild) stFr.parentElement.firstElementChild.textContent='Gagn\u00e9 aujourd\u2019hui';
+      var scbFr=document.getElementById('star-to-coin-bar');
+      if(scbFr&&scbFr.parentElement&&scbFr.parentElement.parentElement&&scbFr.parentElement.parentElement.firstElementChild) scbFr.parentElement.parentElement.firstElementChild.textContent='100 \u00e9toiles = 1 pi\u00e8ce';
+      var closeFr=starOvFr.querySelector('button'); if(closeFr) closeFr.textContent='Fermer';
+    }
+  }else if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='tr'){
+    var starOvTr=document.getElementById('star-ov');
+    if(starOvTr){
+      starOvTr.removeAttribute('dir');starOvTr.setAttribute('lang','tr');
+      var dsTr=starOvTr.querySelectorAll('div');
+      if(dsTr[1]) dsTr[1].textContent='Y\u0131ld\u0131z Puanlar\u0131';
+      if(dsTr[2]) dsTr[2].textContent='Mini oyunlardan kazan\u0131lan puanlar';
+      var stTr=document.getElementById('star-today');
+      if(stTr&&stTr.parentElement&&stTr.parentElement.firstElementChild) stTr.parentElement.firstElementChild.textContent='Bug\u00fcn Kazan\u0131lan';
+      var scbTr=document.getElementById('star-to-coin-bar');
+      if(scbTr&&scbTr.parentElement&&scbTr.parentElement.parentElement&&scbTr.parentElement.parentElement.firstElementChild) scbTr.parentElement.parentElement.firstElementChild.textContent='100 Y\u0131ld\u0131z = 1 Para';
+      var closeTr=starOvTr.querySelector('button'); if(closeTr) closeTr.textContent='Kapat';
+    }
+  }
   _updateStarOverlay();
   function tick(ts){
     _drawHeartBig(document.getElementById('star-big'),ts);
@@ -11263,14 +13565,98 @@ function _drawHeartBig(c,ts){
 function _updateStarOverlay(){
   var total=getTotalStars(), today=getTodayStars();
   var rem=total%100;
-  var ce=document.getElementById('star-count'); if(ce) ce.textContent=total+' '+evJarText('stars');
-  var te=document.getElementById('star-today'); if(te) te.textContent='+'+today+' '+evJarText('today');
+  var arJar=evArabicActive();
+  var deJar=evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de';
+  var enJar=evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en';
+  var ce=document.getElementById('star-count'); if(ce) ce.textContent=arJar?(total+' '+evAr('stars')):(deJar?(total+' Sterne'):(enJar?(total+' stars'):(total+' '+evJarText('stars'))));
+  var te=document.getElementById('star-today'); if(te) te.textContent=arJar?('+'+today+' '+evAr('today')):(deJar?('+'+today+' heute'):(enJar?('+'+today+' today'):('+'+today+' '+evJarText('today'))));
   var bar=document.getElementById('star-to-coin-bar'); if(bar) bar.style.width=rem+'%';
-  var txt=document.getElementById('star-to-coin-txt'); if(txt) txt.textContent=(100-rem)+' '+evJarText('moreStarsCoin');
+  var txt=document.getElementById('star-to-coin-txt'); if(txt) txt.textContent=arJar?('\u0628\u0627\u0642\u064A '+(100-rem)+' \u0646\u062C\u0645\u0629 \u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u0646\u0642\u062F \u0648\u0627\u062D\u062F'):(deJar?((100-rem)+' Sterne bis 1 Muenze'):(enJar?((100-rem)+' more stars = 1 coin'):((100-rem)+' '+evJarText('moreStarsCoin'))));
 }
 
 function showCrystalJar(){
   document.getElementById('crystal-ov').style.display='block';
+  if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en'){
+    var crystalOvEn=document.getElementById('crystal-ov');
+    if(crystalOvEn){
+      crystalOvEn.removeAttribute('dir');
+      crystalOvEn.setAttribute('lang','en');
+      var dsEn=crystalOvEn.querySelectorAll('div');
+      if(dsEn[1]) dsEn[1].textContent='Happiness Coins';
+      if(dsEn[2]) dsEn[2].textContent='Oki grows with these coins';
+      var rewardBoxEn=document.getElementById('crystal-stage-box');
+      rewardBoxEn=rewardBoxEn&&rewardBoxEn.nextElementSibling;
+      if(rewardBoxEn&&rewardBoxEn.children&&rewardBoxEn.children[0]){
+        rewardBoxEn.children[0].textContent='Parents can turn this into a real reward';
+      }
+      if(rewardBoxEn&&rewardBoxEn.children&&rewardBoxEn.children[1]){
+        rewardBoxEn.children[1].textContent='10 coins = 1 reward right';
+      }
+      var closeEn=crystalOvEn.querySelector('button'); if(closeEn) closeEn.textContent='Close';
+    }
+  }else if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de'){
+    var crystalOvDe=document.getElementById('crystal-ov');
+    if(crystalOvDe){
+      crystalOvDe.removeAttribute('dir');
+      crystalOvDe.setAttribute('lang','de');
+      var dsDe=crystalOvDe.querySelectorAll('div');
+      if(dsDe[1]) dsDe[1].textContent='Gluecks-Muenzen';
+      if(dsDe[2]) dsDe[2].textContent='Oki waechst mit diesen Muenzen';
+      var rewardBoxDe=document.getElementById('crystal-stage-box');
+      rewardBoxDe=rewardBoxDe&&rewardBoxDe.nextElementSibling;
+      if(rewardBoxDe&&rewardBoxDe.children&&rewardBoxDe.children[0]){
+        rewardBoxDe.children[0].textContent='Eltern koennen dies in eine echte Belohnung umwandeln';
+      }
+      if(rewardBoxDe&&rewardBoxDe.children&&rewardBoxDe.children[1]){
+        rewardBoxDe.children[1].textContent='10 Muenzen = 1 Belohnungsrecht';
+      }
+      var closeDe=crystalOvDe.querySelector('button'); if(closeDe) closeDe.textContent='Schliessen';
+    }
+  }else if(evArabicActive()){
+    var crystalOv=document.getElementById('crystal-ov');
+    if(crystalOv){
+      crystalOv.setAttribute('dir','rtl');
+      crystalOv.setAttribute('lang','ar');
+      var ds=crystalOv.querySelectorAll('div');
+      if(ds[1]) ds[1].textContent=evAr('coinTitle');
+      if(ds[2]) ds[2].textContent=evAr('coinSub');
+      var rewardBox=document.getElementById('crystal-stage-box');
+      rewardBox=rewardBox&&rewardBox.nextElementSibling;
+      if(rewardBox&&rewardBox.children&&rewardBox.children[0]){
+        rewardBox.children[0].textContent='\u064A\u0645\u0643\u0646 \u0644\u0644\u0648\u0627\u0644\u062F \u062A\u062D\u0648\u064A\u0644 \u0647\u0630\u0627 \u0625\u0644\u0649 \u0645\u0643\u0627\u0641\u0623\u0629 \u062D\u0642\u064A\u0642\u064A\u0629';
+      }
+      if(rewardBox&&rewardBox.children&&rewardBox.children[1]){
+        rewardBox.children[1].textContent='10 \u0646\u0642\u0648\u062F = \u062D\u0642 \u0645\u0643\u0627\u0641\u0623\u0629 \u0648\u0627\u062D\u062F';
+      }
+      var close=crystalOv.querySelector('button'); if(close) close.textContent=evAr('close');
+    }
+  }else if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr'){
+    var crystalOvFr=document.getElementById('crystal-ov');
+    if(crystalOvFr){
+      crystalOvFr.removeAttribute('dir');crystalOvFr.setAttribute('lang','fr');
+      var dsFr=crystalOvFr.querySelectorAll('div');
+      if(dsFr[1]) dsFr[1].textContent='Pi\u00e8ces de bonheur';
+      if(dsFr[2]) dsFr[2].textContent='Oki grandit avec ces pi\u00e8ces';
+      var rbFr=document.getElementById('crystal-stage-box');
+      rbFr=rbFr&&rbFr.nextElementSibling;
+      if(rbFr&&rbFr.children&&rbFr.children[0]) rbFr.children[0].textContent='Le parent peut transformer cela en vraie r\u00e9compense';
+      if(rbFr&&rbFr.children&&rbFr.children[1]) rbFr.children[1].textContent='10 pi\u00e8ces = 1 droit de r\u00e9compense';
+      var closeFr=crystalOvFr.querySelector('button'); if(closeFr) closeFr.textContent='Fermer';
+    }
+  }else if(evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='tr'){
+    var crystalOvTr=document.getElementById('crystal-ov');
+    if(crystalOvTr){
+      crystalOvTr.removeAttribute('dir');crystalOvTr.setAttribute('lang','tr');
+      var dsTr=crystalOvTr.querySelectorAll('div');
+      if(dsTr[1]) dsTr[1].textContent='Mutluluk Paralar\u0131';
+      if(dsTr[2]) dsTr[2].textContent='Oki bu paralarla b\u00fcy\u00fcyor';
+      var rbTr=document.getElementById('crystal-stage-box');
+      rbTr=rbTr&&rbTr.nextElementSibling;
+      if(rbTr&&rbTr.children&&rbTr.children[0]) rbTr.children[0].textContent='Ebeveynler bunu ger\u00e7ek bir \u00f6d\u00fcle d\u00f6n\u00fc\u015ft\u00fcrebilir';
+      if(rbTr&&rbTr.children&&rbTr.children[1]) rbTr.children[1].textContent='10 jeton = 1 \u00f6d\u00fcl hakk\u0131';
+      var closeTr=crystalOvTr.querySelector('button'); if(closeTr) closeTr.textContent='Kapat';
+    }
+  }
   _updateCrystalOverlay();
   function tick(ts){
     _drawCrystalBig(document.getElementById('crystal-big'),ts);
@@ -11330,17 +13716,30 @@ function _drawCrystalBig(c,ts){
 }
 function _updateCrystalOverlay(){
   var coins=getCoins(), stage=getCoinStage();
-  var ce=document.getElementById('crystal-count'); if(ce) ce.textContent=coins+' '+evJarText('coins');
-  var sn=document.getElementById('crystal-stage'); if(sn) sn.textContent=stage.name;
+  var arJar=evArabicActive();
+  var deJar=evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de';
+  var enJar=evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en';
+  var ce=document.getElementById('crystal-count'); if(ce) ce.textContent=arJar?(coins+' '+evAr('coins')):(deJar?(coins+' Muenzen'):(enJar?(coins+' coins'):(coins+' '+evJarText('coins'))));
   var idx=OKI_COIN_STAGES.indexOf(stage), next=OKI_COIN_STAGES[idx+1];
+  var arStageNames=[evAr('egg'),evAr('baby'),evAr('child'),evAr('young'),evAr('big'),evAr('angel')];
+  var deStageNames=['Ei','Baby','Klein','Jung','Gross','Engel'];
+  var enStageNames=['Egg','Baby','Little','Young','Big','Angel'];
+  var sn=document.getElementById('crystal-stage'); if(sn) sn.textContent=arJar?(stage.emoji+' '+(arStageNames[idx]||stage.name)):(deJar?(stage.emoji+' '+(deStageNames[idx]||stage.name)):(enJar?(stage.emoji+' '+(enStageNames[idx]||stage.name)):stage.name));
   var pct=next?((coins-stage.min)/(next.min-stage.min))*100:100;
   var bar=document.getElementById('crystal-bar'); if(bar) bar.style.width=Math.min(100,pct)+'%';
   var nt=document.getElementById('crystal-next');
-  if(nt) nt.textContent=next?(next.min-coins)+' '+evJarText('moreCoins')+' -> '+next.name:evJarText('max');
+  if(nt) nt.textContent=arJar?(next?('\u0628\u0627\u0642\u064A '+(next.min-coins)+' \u0646\u0642\u0648\u062F \u0644\u0644\u0648\u0635\u0648\u0644 \u0625\u0644\u0649 '+(arStageNames[idx+1]||next.name)):evAr('maxLevel')):(deJar?(next?((next.min-coins)+' Muenzen bis '+(deStageNames[idx+1]||next.name)):'Maximales Level!'):(enJar?(next?((next.min-coins)+' more coins to '+(enStageNames[idx+1]||next.name)):'Maximum level!'):(next?(next.min-coins)+' '+evJarText('moreCoins')+' -> '+next.name:evJarText('max'))));
 }
 
 function showDailyJar(){
   document.getElementById('daily-ov').style.display='block';
+  if(evArabicActive()){
+    var dailyOv=document.getElementById('daily-ov');
+    if(dailyOv){
+      var title=dailyOv.querySelector('div[style*="font-size:1.6rem"]'); if(title) title.textContent=evAr('dailyReport');
+      var close=dailyOv.querySelector('button'); if(close) close.textContent=evAr('close');
+    }
+  }
   _updateDailyOverlay();
   function tick(ts){
     _drawGoldBig(document.getElementById('gold-big'),ts);
@@ -11396,16 +13795,35 @@ function _drawGoldBig(c,ts){
 function _updateDailyOverlay(){
   var today=getTodayStars(), scores=get7DayScores();
   var avg=Math.round(scores.reduce(function(a,b){return a+b;},0)/7);
+  var dailyLang=evValuesOn() ? (evValuesLang() || 'tr') : 'tr';
+  var dailyLabels={
+    tr:{earned:'Kazanilan',today:'bugun',average:'Ortalama',days:'7 gun',chart:'Son 7 gun'},
+    en:{earned:'Earned',today:'today',average:'Average',days:'7 days',chart:'Last 7 days'},
+    de:{earned:'Verdient',today:'heute',average:'Durchschnitt',days:'7 Tage',chart:'Letzte 7 Tage'},
+    fr:{earned:'Gagne',today:'aujourd hui',average:'Moyenne',days:'7 jours',chart:'7 derniers jours'},
+    ar:{earned:'\u0627\u0644\u0645\u0643\u062A\u0633\u0628',today:'\u0627\u0644\u064A\u0648\u0645',average:'\u0627\u0644\u0645\u062A\u0648\u0633\u0637',days:'7 \u0623\u064A\u0627\u0645',chart:'\u0622\u062E\u0631 7 \u0623\u064A\u0627\u0645'}
+  };
+  var dl=dailyLabels[dailyLang]||dailyLabels.tr;
+  var del=document.getElementById('daily-earned-label'); if(del) del.textContent=dl.earned;
+  var dtl=document.getElementById('daily-today-label'); if(dtl) dtl.textContent=dl.today;
+  var dal=document.getElementById('daily-average-label'); if(dal) dal.textContent=dl.average;
+  var ddl=document.getElementById('daily-days-label'); if(ddl) ddl.textContent=dl.days;
+  var dcl=document.getElementById('daily-chart-label'); if(dcl) dcl.textContent=dl.chart;
   var de=document.getElementById('daily-in'); if(de) de.textContent='+'+today;
   var ae=document.getElementById('daily-avg'); if(ae) ae.textContent=avg;
   var dd=document.getElementById('daily-date');
-  if(dd) dd.textContent=new Date().toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long'});
+  var dailyLocales={tr:'tr-TR',de:'de-DE',en:'en-US',fr:'fr-FR',ar:'ar-SA'};
+  if(dd) dd.textContent=new Date().toLocaleDateString(dailyLocales[dailyLang]||'tr-TR',{weekday:'long',day:'numeric',month:'long'});
   // Mini tasks
   var tl=document.getElementById('daily-tasks-mini');
   if(tl&&typeof DAILY_TASKS!=='undefined'&&typeof getTodayTasks==='function'){
     var done=getTodayTasks();
+    var dailyTaskLang=evValuesOn()?evValuesLang():'';
+    var dailyTasks=evValuesOn()
+      ? (dailyTaskLang==='ar'?getArabicDailyTasks():(dailyTaskLang==='en'?getEnglishDailyTasks():(dailyTaskLang==='de'?getValuesDailyTasks():(dailyTaskLang==='fr'?getFrenchDailyTasks():getTurkishValuesDailyTasks()))))
+      : DAILY_TASKS;
     var html='';
-    DAILY_TASKS.slice(0,6).forEach(function(t){
+    dailyTasks.slice(0,6).forEach(function(t){
       var ok=!!done[t.id];
       html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">'+
         '<span style="font-size:1rem;">'+t.icon+'</span>'+
@@ -11437,7 +13855,14 @@ function _updateDailyOverlay(){
       }
     });
     // Day labels
-    var days=['Pt','Sa','Ca','Pe','Cu','Ct','Pz'];
+    var dayLabelMap={
+      tr:['Pz','Pt','Sa','Ca','Pe','Cu','Ct'],
+      en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+      de:['So','Mo','Di','Mi','Do','Fr','Sa'],
+      fr:['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+      ar:['\u0623\u062D','\u0627\u062B','\u062B\u0644','\u0623\u0631','\u062E\u0645','\u062C\u0645','\u0633\u0628']
+    };
+    var days=dayLabelMap[dailyLang]||dayLabelMap.tr;
     var today=new Date().getDay();
     ctx.font='8px Arial'; ctx.fillStyle='rgba(255,255,255,.35)'; ctx.textAlign='center';
     scores.forEach(function(_,i){
@@ -12645,7 +15070,58 @@ var _shopRoomOwned   = [];
 var _shopRoomWearing = {};
 var _shopBubTimer = null;
 
+function evShopRoomIsAr(){
+  return typeof evValuesOn==='function' && typeof evValuesLang==='function' && evValuesOn() && evValuesLang()==='ar';
+}
+var SHOP_ROOM_AR_ITEMS = {
+  n1:{name:'تاج الأوراق',desc:'تاج من الطبيعة'}, n2:{name:'سوار الزهرة',desc:'لطيف كالزهور'}, n3:{name:'قبعة الفطر',desc:'من الغابة'}, n4:{name:'جناح الفراشة',desc:'جاهز للطيران'},
+  k1:{name:'درع',desc:'شجاعة وحماية'}, k2:{name:'سيف',desc:'مغامرة شجاعة'}, k3:{name:'عباءة البطل',desc:'مظهر الأبطال'}, k4:{name:'خوذة',desc:'حماية للرأس'},
+  s1:{name:'عصا سحرية',desc:'خيال جميل'}, s2:{name:'قبعة النجوم',desc:'غامضة ولامعة'}, s3:{name:'كرة بلورية',desc:'تركيز لامع'}, s4:{name:'رداء أزرق',desc:'مظهر ساحر'},
+  u1:{name:'خوذة رائد الفضاء',desc:'إلى الفضاء'}, u2:{name:'حقيبة الصاروخ',desc:'٣ ٢ ١ انطلاق'}, u3:{name:'نظارة النجوم',desc:'لامعة جدا'}, u4:{name:'حجر القمر',desc:'مستوحى من القمر'},
+  a1:{name:'قبعة الرسام',desc:'روح مبدعة'}, a2:{name:'فرشاة الرسم',desc:'لوّن العالم'}, a3:{name:'قلادة المرجان',desc:'من البحر'}, a4:{name:'نغمة موسيقية',desc:'إيقاع جميل'},
+  c1:{name:'كأس ذهبي',desc:'جائزة الفائز'}, c2:{name:'ميدالية',desc:'المركز الأول'}, c3:{name:'شارة الفائز',desc:'أنت تستطيع'}, c4:{name:'قصاصات احتفال',desc:'وقت الفرح'}
+};
+var SHOP_ROOM_AR_CATS = {Tumu:'الكل',Doga:'🌿 الطبيعة',Kahraman:'⚔️ البطل',Sihirbaz:'🔮 السحر',Uzay:'🚀 الفضاء',Akvaryum:'🐠 البحر والفن',Sampion:'🏆 الأبطال'};
+var SHOP_ROOM_AR_FX = {Doga:'روح الطبيعة!',Kahraman:'روح الشجاعة!',Sihirbaz:'وقت الخيال!',Uzay:'إلى الفضاء!',Akvaryum:'ألوان البحر!',Sampion:'بطل اليوم!',Tumu:'اختر منتجا!'};
+function evShopRoomUi(key){
+  if(evShopRoomIsAr()){
+    return {
+      title:'- غرفة الشخصية',
+      choose:'اختر منتجا!',
+      wearing:'يرتدي',
+      nothing:'لا شيء',
+      worn:'مُرتدى',
+      owned:'مملوك',
+      wear:'ارتدِ',
+      takeOff:'اخلع',
+      coins:'نقود',
+      removed:'خلعته. ما رأيك؟',
+      looksGood:'يبدو جميلا عليك!',
+      bought:'اشتريت',
+      notEnough:'النقود لا تكفي. أحتاج',
+      goodChoice:'اختيار جميل!',
+      askAgain:'اختر شيئا يعجبك.'
+    }[key]||'';
+  }
+  return '';
+}
+function evApplyShopRoomArabic(){
+  if(!evShopRoomIsAr()) return;
+  var lbl=document.getElementById('shop-fx-label');
+  if(lbl && !lbl.textContent) lbl.textContent=evShopRoomUi('choose');
+  var title=document.querySelector('#shop-ov span[style*="font-size:.75rem"]');
+  if(title) title.textContent=evShopRoomUi('title');
+  var wt=document.getElementById('shop-wearing-txt');
+  if(wt && wt.parentNode){
+    wt.parentNode.innerHTML=evShopRoomUi('wearing')+': <span id="shop-wearing-txt">'+(wt.textContent&&wt.textContent!=='Yok'&&wt.textContent!=='Nothing'&&wt.textContent!=='Nichts'?wt.textContent:evShopRoomUi('nothing'))+'</span>';
+  }
+}
+
 function evShopRoomItemText(item, field){
+  if(evShopRoomIsAr() && item){
+    return (SHOP_ROOM_AR_ITEMS[item.id]&&SHOP_ROOM_AR_ITEMS[item.id][field])||item[field]||'';
+  }
+  if(evValuesOn()&&evValuesLang()==='fr'&&item){ var fmap={n1:{name:'Couronne de feuilles',desc:'Couronne de la nature'},n2:{name:'Bracelet de fleurs',desc:'Leger et amical'},n3:{name:'Chapeau champignon',desc:'De la foret'},n4:{name:'Ailes de papillon',desc:'Pret a voler'},k1:{name:'Bouclier',desc:'Brave et juste'},k2:{name:'Epee',desc:'Pret a l aventure'},k3:{name:'Cape',desc:'Style de heros'},k4:{name:'Casque',desc:'Bien protege'},s1:{name:'Baguette magique',desc:'Imagination activee'},s2:{name:'Chapeau etoile',desc:'Mysterieux'},s3:{name:'Boule de cristal',desc:'Concentration brillante'},s4:{name:'Manteau bleu',desc:'Look magique'},u1:{name:'Casque astronaute',desc:'Vers la galaxie'},u2:{name:'Sac fusee',desc:'3 2 1 depart'},u3:{name:'Lunettes etoiles',desc:'Brillant fort'},u4:{name:'Pierre de lune',desc:'Inspire par la lune'},a1:{name:'Beret artiste',desc:'Esprit creatif'},a2:{name:'Pinceau',desc:'Peins le monde'},a3:{name:'Collier corail',desc:'De la mer'},a4:{name:'Note de musique',desc:'Rythme interieur'},c1:{name:'Trophe or',desc:'Recompense du gagnant'},c2:{name:'Medaille',desc:'Premiere place'},c3:{name:'Ruban gagnant',desc:'Tu peux le faire'},c4:{name:'Confettis',desc:'Heure de feter'}}; return (fmap[item.id]&&fmap[item.id][field])||item[field]; }
   if(!(evValuesOn()&&(evValuesLang()==='de'||evValuesLang()==='en'))||!item) return item ? item[field] : '';
   var map={
     n1:{name:'Blattkrone',desc:'Krone der Natur'},n2:{name:'Blumenarmband',desc:'Leicht und freundlich'},n3:{name:'Pilzhut',desc:'Aus dem Wald'},n4:{name:'Schmetterlingsfluegel',desc:'Bereit zum Fliegen'},
@@ -12659,11 +15135,29 @@ function evShopRoomItemText(item, field){
   return (map[item.id]&&map[item.id][field])||item[field];
 }
 function evShopRoomCatText(c){
-  if(!(evValuesOn()&&(evValuesLang()==='de'||evValuesLang()==='en'))) return SHOP_ROOM_LABELS[c]||c;
+  if(evShopRoomIsAr()) return SHOP_ROOM_AR_CATS[c]||c;
+  if(!(evValuesOn()&&(evValuesLang()==='de'||evValuesLang()==='en'||evValuesLang()==='fr'))) return SHOP_ROOM_LABELS[c]||c;
+  if(evValuesLang()==='fr') return {Tumu:'Tout',Doga:'Nature',Kahraman:'Heros',Sihirbaz:'Magie',Uzay:'Espace',Akvaryum:'Art & Mer',Sampion:'Champion'}[c]||c;
   if(evValuesLang()==='en') return {Tumu:'All',Doga:'Nature',Kahraman:'Hero',Sihirbaz:'Magic',Uzay:'Space',Akvaryum:'Art & Sea',Sampion:'Champion'}[c]||c;
   return {Tumu:'Alle',Doga:'Natur',Kahraman:'Held',Sihirbaz:'Magie',Uzay:'Weltall',Akvaryum:'Kunst & Meer',Sampion:'Champion'}[c]||c;
 }
 function evApplyShopRoomGerman(){
+  evApplyShopRoomArabic();
+  if(evShopRoomIsAr()) return;
+  if(evValuesOn()&&evValuesLang()==='fr'){
+    var lblFr=document.getElementById('shop-fx-label'); if(lblFr) lblFr.textContent='Choisis un article !';
+    var wtFr=document.getElementById('shop-wearing-txt');
+    if(wtFr && wtFr.parentNode){ wtFr.parentNode.innerHTML='Porte : <span id="shop-wearing-txt">'+(wtFr.textContent&&wtFr.textContent!=='Yok'&&wtFr.textContent!=='Nichts'&&wtFr.textContent!=='Nothing'?wtFr.textContent:'Rien')+'</span>'; }
+    var titleFr=document.querySelector('#shop-ov span[style*="font-size:.75rem"]'); if(titleFr) titleFr.textContent='- Salle du personnage';
+    return;
+  }
+  if(evValuesOn()&&evValuesLang()==='en'){
+    var lblEn=document.getElementById('shop-fx-label'); if(lblEn) lblEn.textContent='Select an item!';
+    var wtEn=document.getElementById('shop-wearing-txt');
+    if(wtEn && wtEn.parentNode){ wtEn.parentNode.innerHTML='Wearing: <span id="shop-wearing-txt">'+(wtEn.textContent&&wtEn.textContent!=='Yok'&&wtEn.textContent!=='Nichts'?wtEn.textContent:'Nothing')+'</span>'; }
+    var titleEn=document.querySelector('#shop-ov span[style*="font-size:.75rem"]'); if(titleEn) titleEn.textContent='- Character Room';
+    return;
+  }
   if(!(evValuesOn()&&evValuesLang()==='de')) return;
   var lbl=document.getElementById('shop-fx-label'); if(lbl) lbl.textContent='Waehle ein Produkt!';
   var wt=document.getElementById('shop-wearing-txt');
@@ -12708,6 +15202,22 @@ var SHOP_CAT_MSGS = {
 };
 
 function evShopRoomMsg(cat, idx){
+  if(evShopRoomIsAr()){
+    var ar={
+      Tumu:['لننظر إلى كل شيء!','خيارات جميلة كثيرة!','ماذا نختار؟'],
+      Doga:['أسلوب الطبيعة جميل!','الأوراق تناسب أوكي!','أجنحة الفراشة ممتعة!'],
+      Kahraman:['أدوات البطل جاهزة!','الدرع الشجاع قوي!','هيا إلى المغامرة!'],
+      Sihirbaz:['الخيال يلمع هنا!','العصا السحرية جميلة!','الكرة البلورية تتألق!'],
+      Uzay:['إلى الفضاء!','معدات الفضاء رائعة!','٣ ٢ ١ انطلاق!'],
+      Akvaryum:['ألوان البحر هادئة!','الفن والبحر جميلان!','طاقة الإبداع هنا!'],
+      Sampion:['طاقة الأبطال!','الكأس ينادينا!','وقت الاحتفال!']
+    };
+    var arArr=ar[cat]||ar.Tumu;
+    return arArr[idx%arArr.length];
+  }
+  if(evValuesOn()&&evValuesLang()==='fr'){
+    var fr={Tumu:['Voyons tout !','Tant de choix !','Lequel choisir ?'],Doga:['Style nature !','Ces feuilles sont belles !','Ailes de papillon !'],Kahraman:['Equipement heros pret !','Bouclier courageux !','Mode aventure !'],Sihirbaz:['La magie brille !','Imagination activee !','Cristal scintillant !'],Uzay:['Vers la galaxie !','Vetements spatiaux !','3 2 1 depart !'],Akvaryum:['Style art et mer !','Couleurs ocean !','Energie creative !'],Sampion:['Energie champion !','Le trophee appelle !','C est la fete!']}; var frArr=fr[cat]||fr.Tumu; return frArr[idx%frArr.length];
+  }
   if(evValuesOn()&&evValuesLang()==='en'){
     var en={Tumu:['Let us look at everything!','So many great choices!','Which one should I choose?'],Doga:['Nature style looks fresh!','These leaves feel alive!','Butterfly wings would be fun!'],Kahraman:['Hero gear is ready!','A brave shield looks strong!','Adventure mode on!'],Sihirbaz:['Magic style is glowing!','Imagination makes it special!','The crystal shines!'],Uzay:['To the galaxy!','Space gear looks amazing!','3 2 1 launch!'],Akvaryum:['Art and sea style!','Ocean colors look calm!','Creative energy is here!'],Sampion:['Champion energy!','The trophy is calling!','Time to celebrate!']};
     var arr=en[cat]||en.Tumu; return arr[idx%arr.length];
@@ -12752,7 +15262,7 @@ function shopUpdateWearing(){
     return it?it.emoji:'';
   }).join(' ');
   var el=document.getElementById('shop-wearing-txt');
-  if(el) el.textContent=txt||((evValuesOn()&&evValuesLang()==='en')?'Nothing':((evValuesOn()&&evValuesLang()==='de')?'Nichts':'Yok'));
+  if(el) el.textContent=txt||(evShopRoomIsAr()?evShopRoomUi('nothing'):((evValuesOn()&&evValuesLang()==='fr')?'Rien':((evValuesOn()&&evValuesLang()==='en')?'Nothing':((evValuesOn()&&evValuesLang()==='de')?'Nichts':'Yok'))));
   evApplyShopRoomGerman();
   var ce=document.getElementById('shop-coin-count');
   if(ce) ce.textContent=getRealCoins();
@@ -12792,10 +15302,10 @@ function shopRenderItems(){
     var canBuy=coins>=item.price;
     var card=document.createElement('div');
     card.style.cssText='background:rgba(10,20,60,'+(worn?'.7':'.5')+');border:1.5px solid rgba('+(worn?'255,215,0,.5':owned?'100,255,100,.25':'100,180,255,.1')+');border-radius:18px;padding:14px 10px;text-align:center;position:relative;transition:all .2s;backdrop-filter:blur(4px);box-shadow:'+(worn?'0 0 16px rgba(255,215,0,.25)':'none')+';';
-    var badge=worn?'<span style="position:absolute;top:6px;right:8px;font-size:.55rem;padding:2px 6px;border-radius:8px;background:rgba(255,215,0,.2);color:#FFD700;font-family:Fredoka One;">&#9989; '+((evValuesOn()&&evValuesLang()==='en')?'Wearing':((evValuesOn()&&evValuesLang()==='de')?'Wird getragen':'Giyili'))+'</span>':
-               owned?'<span style="position:absolute;top:6px;right:8px;font-size:.55rem;padding:2px 6px;border-radius:8px;background:rgba(100,255,100,.15);color:#88FF88;font-family:Fredoka One;">&#10003; '+((evValuesOn()&&evValuesLang()==='en')?'Owned':((evValuesOn()&&evValuesLang()==='de')?'Gekauft':'Sahip'))+'</span>':'';
+    var badge=worn?'<span style="position:absolute;top:6px;right:8px;font-size:.55rem;padding:2px 6px;border-radius:8px;background:rgba(255,215,0,.2);color:#FFD700;font-family:Fredoka One;">&#9989; '+(evShopRoomIsAr()?evShopRoomUi('worn'):((evValuesOn()&&evValuesLang()==='fr')?'Porte':((evValuesOn()&&evValuesLang()==='en')?'Wearing':((evValuesOn()&&evValuesLang()==='de')?'Wird getragen':'Giyili'))))+'</span>':
+               owned?'<span style="position:absolute;top:6px;right:8px;font-size:.55rem;padding:2px 6px;border-radius:8px;background:rgba(100,255,100,.15);color:#88FF88;font-family:Fredoka One;">&#10003; '+(evShopRoomIsAr()?evShopRoomUi('owned'):((evValuesOn()&&evValuesLang()==='fr')?'Possede':((evValuesOn()&&evValuesLang()==='en')?'Owned':((evValuesOn()&&evValuesLang()==='de')?'Gekauft':'Sahip'))))+'</span>':'';
     var btnStyle='width:100%;padding:7px;border-radius:11px;font-size:.78rem;cursor:pointer;font-family:Nunito;font-weight:700;transition:all .2s;border:1px solid rgba('+(worn?'255,215,0,.5':owned?'100,255,100,.3':'255,215,0,.3')+');background:rgba('+(worn?'255,215,0,.15':owned?'100,255,100,.1':'255,215,0,.08')+');color:'+(worn?'#FFD700':owned?'#88FF88':'#FFD700')+'+'+((!owned&&!canBuy)?';opacity:.4;cursor:default':'')+'";';
-    var btnTxt=(evValuesOn()&&evValuesLang()==='en')?(worn?'Take off':owned?'Wear':('Coins: '+item.price)):((evValuesOn()&&evValuesLang()==='de')?(worn?'Ausziehen':owned?'Anziehen':('?? '+item.price)):(worn?'??kar':owned?'Giy':('?? '+item.price)));
+    var btnTxt=evShopRoomIsAr()?(worn?evShopRoomUi('takeOff'):owned?evShopRoomUi('wear'):(item.price+' '+evShopRoomUi('coins'))):((evValuesOn()&&evValuesLang()==='fr')?(worn?'Enlever':owned?'Porter':('Pieces: '+item.price)):((evValuesOn()&&evValuesLang()==='en')?(worn?'Take off':owned?'Wear':('Coins: '+item.price)):((evValuesOn()&&evValuesLang()==='de')?(worn?'Ausziehen':owned?'Anziehen':('?? '+item.price)):(worn?'Cikar':owned?'Giy':('?? '+item.price)))));
     card.innerHTML=badge+
       '<div style="font-size:2.2rem;margin-bottom:6px;">'+item.emoji+'</div>'+
       '<div style="font-family:Fredoka One;font-size:.85rem;color:#E8C8FF;margin-bottom:3px;">'+evShopRoomItemText(item,'name')+'</div>'+
@@ -12816,12 +15326,12 @@ function shopItemAction(id){
   if(worn){
     _shopRoomWearing[_shopRoomChar]=w.filter(function(i){return i!==id;});
     saveWearingItems(_shopRoomChar, _shopRoomWearing[_shopRoomChar]);
-    shopRoomSave(); shopRenderItems(); shopSetPose('sad', 2000); showOkiBubble((evValuesOn()&&evValuesLang()==='en')?'Removed. How does it look?':((evValuesOn()&&evValuesLang()==='de')?'Ausgezogen. Wie sieht das aus?':'Cikardim! Nasil?'));
+    shopRoomSave(); shopRenderItems(); shopSetPose('sad', 2000); showOkiBubble(evShopRoomIsAr()?evShopRoomUi('removed'):((evValuesOn()&&evValuesLang()==='fr')?'Enleve. Ca te va ?':((evValuesOn()&&evValuesLang()==='en')?'Removed. How does it look?':((evValuesOn()&&evValuesLang()==='de')?'Ausgezogen. Wie sieht das aus?':'Cikardim! Nasil?'))));
   } else if(owned){
     if(!_shopRoomWearing[_shopRoomChar]) _shopRoomWearing[_shopRoomChar]=[];
     _shopRoomWearing[_shopRoomChar].push(id);
     saveWearingItems(_shopRoomChar, _shopRoomWearing[_shopRoomChar]);
-    shopRoomSave(); shopRenderItems(); shopSetPose('wave', 2500); showOkiBubble((evValuesOn()&&evValuesLang()==='en')?(item.emoji+' Looks great on you!'):(evValuesOn()&&evValuesLang()==='de'?(item.emoji+' Das steht dir gut!'):item.emoji+' cok yakisti! ?'));
+    shopRoomSave(); shopRenderItems(); shopSetPose('wave', 2500); showOkiBubble(evShopRoomIsAr()?(item.emoji+' '+evShopRoomUi('looksGood')):((evValuesOn()&&evValuesLang()==='fr')?(item.emoji+' Ca te va bien !'):((evValuesOn()&&evValuesLang()==='en')?(item.emoji+' Looks great on you!'):(evValuesOn()&&evValuesLang()==='de'?(item.emoji+' Das steht dir gut!'):item.emoji+' cok yakisti!'))));
   } else if(coins>=item.price){
     if(typeof spendCoins==='function') spendCoins(item.price);
     _shopRoomOwned.push(id);
@@ -12830,9 +15340,9 @@ function shopItemAction(id){
     _shopRoomWearing[_shopRoomChar].push(id);
     saveWearingItems(_shopRoomChar, _shopRoomWearing[_shopRoomChar]); // sr_wearing'e de kaydet
     shopRoomSave(); shopRenderItems(); shopCharClick();
-    playShopSound(_shopRoomCat); shopSetPose('jump', 3000); showOkiBubble((evValuesOn()&&evValuesLang()==='en')?('Yes! I got '+evShopRoomItemText(item,'name')+'!'):(evValuesOn()&&evValuesLang()==='de'?('Ja! '+evShopRoomItemText(item,'name')+' gekauft!'):'Yess! '+item.emoji+' aldim! ??'));
+    playShopSound(_shopRoomCat); shopSetPose('jump', 3000); showOkiBubble(evShopRoomIsAr()?(evShopRoomUi('bought')+' '+evShopRoomItemText(item,'name')+'!'):((evValuesOn()&&evValuesLang()==='fr')?('Super ! '+evShopRoomItemText(item,'name')+' !'):((evValuesOn()&&evValuesLang()==='en')?('Yes! I got '+evShopRoomItemText(item,'name')+'!'):(evValuesOn()&&evValuesLang()==='de'?('Ja! '+evShopRoomItemText(item,'name')+' gekauft!'):'Yess! '+item.emoji+' aldim!'))));
   } else {
-    shopSetPose('sad', 3000); showOkiBubble((evValuesOn()&&evValuesLang()==='en')?('Not enough coins. I need '+item.price+'.'):(evValuesOn()&&evValuesLang()==='de'?('Nicht genug Muenzen. Ich brauche '+item.price+'.'):'Param yetmedi! ?? '+item.price+' lazim!'));
+    shopSetPose('sad', 3000); showOkiBubble(evShopRoomIsAr()?(evShopRoomUi('notEnough')+' '+item.price+'.'):((evValuesOn()&&evValuesLang()==='fr')?('Pas assez de pieces. Il me faut '+item.price+'.'):((evValuesOn()&&evValuesLang()==='en')?('Not enough coins. I need '+item.price+'.'):(evValuesOn()&&evValuesLang()==='de'?('Nicht genug Muenzen. Ich brauche '+item.price+'.'):'Param yetmedi! '+item.price+' lazim!'))));
   }
 }
 
@@ -12916,8 +15426,9 @@ function shopStartEffect(item){
     setTimeout(function(){icon.style.opacity='.55';icon.style.fontSize='5rem';
       setTimeout(function(){icon.style.fontSize='4.5rem';},300);},50);
   }
-  if(nm)   nm.textContent   = item.name;
-  if(lbl)  lbl.textContent  = cfg.label;
+  if(nm)   nm.textContent   = evShopRoomItemText(item,'name');
+  var enFxLabels = {Doga:'Nature spirit!',Kahraman:'Hero spirit!',Sihirbaz:'Magic time!',Uzay:'To the galaxy!',Akvaryum:'Art and sea!',Sampion:'Champion!',Tumu:'Select an item!'};
+  if(lbl)  lbl.textContent  = evShopRoomIsAr()?(SHOP_ROOM_AR_FX[item.cat]||SHOP_ROOM_AR_FX.Tumu):((evValuesOn()&&evValuesLang()==='en')?(enFxLabels[item.cat]||enFxLabels.Tumu):cfg.label);
 
   // Stage background
   var stage = document.getElementById('shop-effect-stage');
@@ -12961,7 +15472,7 @@ function shopStopEffect(){
   var icon = document.getElementById('shop-fx-icon');
   var lbl  = document.getElementById('shop-fx-label');
   if(icon) icon.textContent = '✨';
-  if(lbl)  lbl.textContent  = 'Bir ürün seç!';
+  if(lbl)  lbl.textContent  = evShopRoomIsAr()?evShopRoomUi('choose'):((evValuesOn()&&evValuesLang()==='en')?'Select an item!':((evValuesOn()&&evValuesLang()==='fr')?'Choisis un article !':((evValuesOn()&&evValuesLang()==='de')?'Waehle ein Produkt!':'Bir urun sec!')));
   var charImg = document.getElementById('shop-char-img');
   if(charImg) charImg.style.filter = 'drop-shadow(0 4px 16px rgba(0,200,100,.4))';
   var glow = document.getElementById('shop-char-glow');
@@ -13192,7 +15703,7 @@ function shopRenderSplit(){
       '<div style="position:absolute;top:3px;right:3px;font-size:.48rem;background:rgba(255,215,0,.2);color:#FFD700;padding:1px 4px;border-radius:5px;">✅</div>':
       owned?'<div style="position:absolute;top:3px;right:3px;font-size:.48rem;background:rgba(100,255,100,.15);color:#88FF88;padding:1px 4px;border-radius:5px;">✓</div>':'';
 
-    var btnTxt = (evValuesOn()&&evValuesLang()==='de')?(worn?'Ausziehen':owned?'Anziehen':('🪙'+item.price)):(worn?'\u00C7\u0131kar':owned?'Giy':('🪙'+item.price));
+    var btnTxt = evShopRoomIsAr()?(worn?evShopRoomUi('takeOff'):owned?evShopRoomUi('wear'):(item.price+' '+evShopRoomUi('coins'))):((evValuesOn()&&evValuesLang()==='en')?(worn?'Take off':owned?'Wear':('Coins: '+item.price)):((evValuesOn()&&evValuesLang()==='de')?(worn?'Ausziehen':owned?'Anziehen':('🪙'+item.price)):(worn?'\u00C7\u0131kar':owned?'Giy':('🪙'+item.price))));
     var btnCol = worn?'#FFD700':owned?'#88FF88':canBuy?'#FFD700':'rgba(255,255,255,.3)';
 
     card.innerHTML = badge +
@@ -13345,7 +15856,9 @@ function updateGrowthUI(){
   var barLabel = document.getElementById('growth-bar-label');
   if(barLabel){
     var next = GROWTH_STAGES.find(function(s){ return s.minStars > stars; });
-    if(typeof evValuesOn==='function' && evValuesOn() && typeof evValuesLang==='function' && evValuesLang()==='en'){
+    if(typeof evValuesOn==='function' && evValuesOn() && typeof evValuesLang==='function' && evValuesLang()==='ar'){
+      barLabel.textContent = next ? ('بذرة أوكي: بقي '+(next.minStars - stars)+' نجمة') : 'المستوى الأقصى!';
+    } else if(typeof evValuesOn==='function' && evValuesOn() && typeof evValuesLang==='function' && evValuesLang()==='en'){
       barLabel.textContent = next ? (evEnglishOkiStageName(stage)+' -> '+(next.minStars - stars)+' stars left') : 'Maximum level!';
     } else if(!(typeof evValuesOn==='function' && evValuesOn())){
       var trStageNames={tohum:'Tohum Oki',fidan:'Fidan Oki',agac:'A\u011fa\u00e7 Oki',cicek:'\u00c7i\u00e7ek Oki',yildiz:'Y\u0131ld\u0131z Oki'};
@@ -13516,6 +16029,25 @@ function showStreakOverlay(){
 
   var broke = data.broke && data.broke > 1;
   var deStreak = evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='de';
+  var enStreak = evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='en';
+  var frStreak = evValuesOn&&evValuesOn()&&evValuesLang&&evValuesLang()==='fr';
+  var arStreak = evArabicActive&&evArabicActive();
+  var arDayWord = displayCount === 1 ? '\u064A\u0648\u0645' : '\u0623\u064A\u0627\u0645';
+  if(arStreak){
+    ov.setAttribute('dir','rtl');
+    ov.setAttribute('lang','ar');
+    var _stTitle = document.getElementById('streak-title');
+    if(_stTitle) _stTitle.textContent = '\u0633\u0644\u0633\u0644\u0629 \u0627\u0644\u0623\u064A\u0627\u0645';
+    var _stGoalLabel = document.getElementById('streak-goal-label');
+    if(_stGoalLabel) _stGoalLabel.textContent = '\u062A\u0642\u062F\u0645 \u0627\u0644\u063A\u0631\u0641\u0629 \u0627\u0644\u0633\u0631\u064A\u0629';
+  }else{
+    ov.removeAttribute('dir');
+    ov.setAttribute('lang', enStreak ? 'en' : (deStreak ? 'de' : 'tr'));
+    var _stTitleDefault = document.getElementById('streak-title');
+    if(_stTitleDefault) _stTitleDefault.textContent = enStreak ? 'DAY STREAK' : (deStreak ? 'TAGES-SERIE' : (frStreak ? 'S\u00c9RIE DE JOURS' : 'G\u00dcN SER\u0130S\u0130'));
+    var _stGoalLabelDefault = document.getElementById('streak-goal-label');
+    if(_stGoalLabelDefault) _stGoalLabelDefault.textContent = enStreak ? 'Mystery Room progress' : (deStreak ? 'Geheimraum-Fortschritt' : (frStreak ? 'Progression de la salle myst\u00e8re' : 'Gizli oda ilerlemesi'));
+  }
 
   // İçeriği doldur
   // Sayaç animasyonlu artış
@@ -13531,15 +16063,38 @@ function showStreakOverlay(){
     if(_stCur >= _stTarget){ clearInterval(_stTimer); }
   }, 60);
 
-  document.getElementById('streak-best').textContent = deStreak ? ('🏆 Beste Serie: ' + ((data.best||displayCount)) + ' Tage') : ('🏆 En iyi: ' + ((data.best||displayCount)) + ' g\u00fcn');
+  document.getElementById('streak-best').textContent = deStreak ? ('\uD83C\uDFC6 Beste Serie: '+((data.best||displayCount))+' Tage') : (enStreak ? ('\uD83C\uDFC6 Best streak: '+(data.best||displayCount)+' '+((data.best||displayCount)===1?'day':'days')) : (frStreak ? ('\uD83C\uDFC6 Meilleure s\u00e9rie : '+(data.best||displayCount)+' jours') : ('\uD83C\uDFC6 En iyi: '+((data.best||displayCount))+' g\u00fcn')));
 
   // Hedef çubuğu
+  if(arStreak){
+    if(enStreak){
+      var _enBestVal = data.best||displayCount;
+      document.getElementById('streak-best').textContent = '\uD83C\uDFC6 Best streak: ' + _enBestVal + ' ' + (_enBestVal===1?'day':'days');
+    }
+    var _stBestVal = data.best||displayCount;
+    var _stBestWord = _stBestVal === 1 ? '\u064A\u0648\u0645' : '\u0623\u064A\u0627\u0645';
+    document.getElementById('streak-best').textContent = '\uD83C\uDFC6 \u0623\u0641\u0636\u0644 \u0633\u0644\u0633\u0644\u0629: ' + _stBestVal + ' ' + _stBestWord;
+  }
+  if(enStreak){
+    var _enBestVal2 = data.best||displayCount;
+    document.getElementById('streak-best').textContent = '\uD83C\uDFC6 Best streak: ' + _enBestVal2 + ' ' + (_enBestVal2===1?'day':'days');
+  }
   var _goalBar = document.getElementById('streak-goal-bar');
   var _goalTxt = document.getElementById('streak-goal-txt');
   if(_goalBar){
     var _goalPct = Math.min(100, Math.round((displayCount/5)*100));
     setTimeout(function(){ _goalBar.style.width = _goalPct + '%'; }, 400);
-    if(_goalTxt) _goalTxt.textContent = deStreak ? (displayCount >= 5 ? '🔓 Offen!' : 'Noch ' + (5 - displayCount) + ' Tage') : (displayCount >= 5 ? '🔓 A\u00c7ILDI!' : (5 - displayCount) + ' g\u00fcn kald\u0131');
+    if(_goalTxt) _goalTxt.textContent = deStreak ? (displayCount >= 5 ? '\uD83D\uDD13 Offen!' : 'Noch '+(5-displayCount)+' Tage') : (frStreak ? (displayCount >= 5 ? '\uD83D\uDD13 Ouvert !' : (5-displayCount)+' jours restants') : (enStreak ? (displayCount >= 5 ? '\uD83D\uDD13 Open!' : (5-displayCount)+' days left') : (displayCount >= 5 ? '\uD83D\uDD13 A\u00c7ILDI!' : (5-displayCount)+' g\u00fcn kald\u0131')));
+  }
+
+  if(arStreak && _goalTxt){
+    var _stLeft = Math.max(0, 5 - displayCount);
+    _goalTxt.textContent = displayCount >= 5 ? '\uD83D\uDD13 \u0641\u064F\u062A\u062D\u062A!' : '\u0628\u0627\u0642\u064A ' + _stLeft + ' ' + (_stLeft === 1 ? '\u064A\u0648\u0645' : '\u0623\u064A\u0627\u0645');
+  }
+
+  if(enStreak && _goalTxt){
+    var _enLeft = Math.max(0, 5 - displayCount);
+    _goalTxt.textContent = displayCount >= 5 ? '\uD83D\uDD13 Open!' : _enLeft + ' ' + (_enLeft===1?'day':'days') + ' left';
   }
 
   // Fire canvas
@@ -13604,7 +16159,32 @@ function showStreakOverlay(){
     14: 'İKİ HAFTA! Sen artık bir efsanesin! 🏆',
     30: 'TAM BİR AY! TARİHE GEÇTİN! 🌟',
   };
-  var msg = msgs[displayCount] || (deStreak ? (displayCount + ' Tage in Folge! \uD83D\uDD25 Weiter so!') : (data.count + ' gün üst üste! \uD83D\uDD25 Devam et!'));
+  var frMsgs={1:broke?'S\u00e9rie bris\u00e9e! On recommence.':'Bienvenue ! La s\u00e9rie commence !',2:'2 jours de suite ! Tu es g\u00e9nial !',3:'3 jours ! Une habitude se forme !',5:'5 jours ! Tu es en feu !',7:'UNE SEMAINE ! Incroyable !',14:'Deux semaines !',30:'UN MOIS ENTIER !'};
+  var msg = frStreak ? (frMsgs[displayCount]||(displayCount+' jours de suite !')) : (msgs[displayCount] || (deStreak ? (displayCount + ' Tage in Folge! Weiter so!') : (data.count + ' g\u00fcn \u00fcst \u00fcste! Devam et!')));
+  if(arStreak){
+    var arMsgs = {
+      1: broke ? '\u0627\u0646\u0642\u0637\u0639\u062A \u0627\u0644\u0633\u0644\u0633\u0644\u0629\u060C \u0648\u0646\u0628\u062F\u0623 \u0645\u0646 \u062C\u062F\u064A\u062F.' : '\u0623\u0647\u0644\u0627 \u0628\u0643! \u0646\u0628\u062F\u0623 \u0627\u0644\u0633\u0644\u0633\u0644\u0629 \u0627\u0644\u064A\u0648\u0645!',
+      2: '\u064A\u0648\u0645\u0627\u0646 \u0645\u062A\u062A\u0627\u0644\u064A\u0627\u0646! \u0623\u062D\u0633\u0646\u062A!',
+      3: '\u062B\u0644\u0627\u062B\u0629 \u0623\u064A\u0627\u0645 \u0645\u062A\u062A\u0627\u0644\u064A\u0629! \u0639\u0627\u062F\u0629 \u062C\u0645\u064A\u0644\u0629 \u062A\u0643\u0628\u0631!',
+      5: '\u062E\u0645\u0633\u0629 \u0623\u064A\u0627\u0645! \u0623\u0646\u062A \u062B\u0627\u0628\u062A \u0648\u0645\u062C\u062A\u0647\u062F!',
+      7: '\u0623\u0633\u0628\u0648\u0639 \u0643\u0627\u0645\u0644! \u0631\u0627\u0626\u0639!',
+      14: '\u0623\u0633\u0628\u0648\u0639\u0627\u0646! \u0625\u0646\u062C\u0627\u0632 \u062C\u0645\u064A\u0644!',
+      30: '\u0634\u0647\u0631 \u0643\u0627\u0645\u0644! \u0625\u0646\u062C\u0627\u0632 \u0643\u0628\u064A\u0631!'
+    };
+    msg = arMsgs[displayCount] || (displayCount + ' ' + arDayWord + ' \u0645\u062A\u062A\u0627\u0644\u064A\u0629! \u062A\u0627\u0628\u0639!');
+  }
+  if(enStreak){
+    var enMsgs = {
+      1: broke ? 'The streak broke, but we start again. You had ' + data.broke + ' days.' : 'Welcome! Your streak starts today!',
+      2: '2 days in a row! Great progress! \uD83D\uDD25',
+      3: '3 days in a row! A strong habit is forming! \uD83D\uDD25\uD83D\uDD25',
+      5: '5 days! You are really determined! \uD83D\uDD25\uD83D\uDD25\uD83D\uDD25',
+      7: 'A full week! Amazing!',
+      14: '2 weeks! That is strong!',
+      30: 'A full month! Incredible!'
+    };
+    msg = enMsgs[displayCount] || (displayCount + ' days in a row! Keep going!');
+  }
   var _smEl = document.getElementById('streak-msg-ov') || document.getElementById('streak-msg');
   if(_smEl) _smEl.textContent = msg;
 
@@ -13623,6 +16203,12 @@ function showStreakOverlay(){
         (done ? 'background:linear-gradient(135deg,#FF6600,#FFD700);color:#fff;box-shadow:0 0 10px rgba(255,150,0,.5);' :
                 'background:rgba(255,255,255,.1);color:rgba(255,255,255,.3);');
       dot.textContent = done ? '\uD83D\uDD25' : (deStreak ? ['Mo','Di','Mi','Do','Fr','Sa','So'] : ['Pzt','Sal','\u00c7ar','Per','Cum','Cmt','Paz'])[d.getDay()===0?6:d.getDay()-1];
+      if(enStreak && !done){
+        dot.textContent = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][d.getDay()===0?6:d.getDay()-1];
+      }
+      if(arStreak && !done){
+        dot.textContent = ['\u0625\u062B','\u062B\u0644','\u0623\u0631','\u062E\u0645','\u062C\u0645','\u0633\u0628','\u0623\u062D'][d.getDay()===0?6:d.getDay()-1];
+      }
       cal.appendChild(dot);
     }
   }
@@ -15033,6 +17619,36 @@ function _adaStop(){
   function cleanEnHtml(html){
     if(!enOn()) return html;
     return String(html)
+      .replace(/Henüz yok/g,'Not yet')
+      .replace(/Henuz yok/g,'Not yet')
+      .replace(/Learning odas[ıi]nda çalıştı\.[\s\S]*?merakını besleyin\./g,'Your child worked in the Learning Room. Tonight you can ask, "What did you enjoy learning today?"')
+      .replace(/Learning odasinda calisti\.[\s\S]*?merakini besleyin\./g,'Your child worked in the Learning Room. Tonight you can ask, "What did you enjoy learning today?"')
+      .replace(/Learning odasÄ±nda Ã§alÄ±ÅŸtÄ±\.[\s\S]*?merakÄ±nÄ± besleyin\./g,'Your child worked in the Learning Room. Tonight you can ask, "What did you enjoy learning today?"')
+      .replace(/Toplam Puan/g,'Total Points')
+      .replace(/Bugün Öğrenilen/g,'Learned Today')
+      .replace(/BugÃ¼n Ã–ÄŸrenilen/g,'Learned Today')
+      .replace(/Today Öğrenilen/g,'Learned Today')
+      .replace(/Today Ã–ÄŸrenilen/g,'Learned Today')
+      .replace(/Toplam Kelime/g,'Total Words')
+      .replace(/Daily Seri/g,'Daily Streak')
+      .replace(/Günlük Seri/g,'Daily Streak')
+      .replace(/GÃ¼nlÃ¼k Seri/g,'Daily Streak')
+      .replace(/(\d+)\s*Gün/g,'$1 days')
+      .replace(/(\d+)\s*GÃ¼n/g,'$1 days')
+      .replace(/Keşfedilen Room/g,'Discovered Rooms')
+      .replace(/KeÅŸfedilen Room/g,'Discovered Rooms')
+      .replace(/Keşfedilen Oda/g,'Discovered Rooms')
+      .replace(/KeÅŸfedilen Oda/g,'Discovered Rooms')
+      .replace(/En İyi Room/g,'Best Room')
+      .replace(/En Ä°yi Room/g,'Best Room')
+      .replace(/En İyi Oda/g,'Best Room')
+      .replace(/En Ä°yi Oda/g,'Best Room')
+      .replace(/Soru Doğruluk Oranı/g,'Question Accuracy')
+      .replace(/Soru DoÄŸruluk Oranı/g,'Question Accuracy')
+      .replace(/Çalışılması gerekenler:/g,'Needs practice:')
+      .replace(/Ã‡alÄ±ÅŸÄ±lmasÄ± gerekenler:/g,'Needs practice:')
+      .replace(/\bdoğru\b/g,'correct')
+      .replace(/\bdoÄŸru\b/g,'correct')
       .replace(/Dua Evi/g,'EduVerse Values')
       .replace(/Ebeveyn Takip Raporu/g,'Parent Progress Report')
       .replace(/Ebeveyn Raporu/g,'Parent Report')
@@ -15092,9 +17708,18 @@ function _adaStop(){
       .replace(/Manevi k[?öo]klere ba[?ğg]l[?ıi]|Manevi köklere bağlı/g,'Interested in heritage')
       .replace(/Namaz|Bismillah|Allahu|Subhanallah|Elhamd[?u]lillah/g,'Reflection');
   }
+  window.evCleanEnglishValuesReportHtml = cleanEnHtml;
+  function cleanTextNodes(root){
+    if(!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var nodes = [], node;
+    while((node = walker.nextNode())) nodes.push(node);
+    nodes.forEach(function(n){ n.nodeValue = cleanEnHtml(n.nodeValue); });
+  }
   function cleanOpenOverlays(){
     if(!enOn()) return;
-    document.querySelectorAll('#report-ov,#qr-ov,#share-ov').forEach(function(root){ root.innerHTML=cleanEnHtml(root.innerHTML); });
+    document.querySelectorAll('#report-ov,#share-ov,#rov').forEach(function(root){ root.innerHTML=cleanEnHtml(root.innerHTML); });
+    cleanTextNodes(document.getElementById('qr-ov'));
   }
   function cleanSoon(){ [20,80,180,400,800].forEach(function(ms){ setTimeout(cleanOpenOverlays,ms); }); }
   var oldReport = window.showReport;

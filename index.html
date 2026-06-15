@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -11,7 +11,7 @@
 <script id="eduverse-language-state">
   try {
     if (localStorage.getItem('eduverse_values_mode') === null) localStorage.setItem('eduverse_values_mode', '0');
-    if (localStorage.getItem('ev_values_lang') === null) localStorage.setItem('ev_values_lang', 'en');
+    if (localStorage.getItem('ev_values_lang') === null) localStorage.setItem('ev_values_lang', 'tr');
   } catch (e) {}
 </script>
 <link rel="manifest" href="data:application/json;charset=utf-8,{%22name%22:%22EduVerse%22,%22short_name%22:%22EduVerse%22,%22display%22:%22standalone%22,%22background_color%22:%22%23000510%22,%22theme_color%22:%22%23F4C430%22}">
@@ -43,30 +43,30 @@
       <div style="font-family:'Fredoka One',Arial;font-size:2.8rem;letter-spacing:2px;line-height:1.1;filter:drop-shadow(0 0 18px rgba(100,180,255,.8));">
         <span style="color:#FFD700;text-shadow:0 0 20px #FFaa00,0 0 40px #FF8800;">Edu</span><span style="color:#88CCFF;text-shadow:0 0 20px #4488FF,0 0 40px #0044FF;">Verse</span>
       </div>
-      <div id="ev-login-motto" style="font-size:.75rem;color:rgba(150,200,255,.7);letter-spacing:4px;margin-top:2px;font-family:Nunito;">LEARN - GROW - DISCOVER</div>
+      <div id="ev-login-motto" style="font-size:.75rem;color:rgba(150,200,255,.7);letter-spacing:4px;margin-top:2px;font-family:Nunito;">OGREN - BUYU - KESFET</div>
     </div>
     <!-- Figürler -->
     <div style="display:flex;justify-content:center;align-items:flex-end;gap:14px;margin-bottom:16px;">
       <div style="text-align:center;opacity:.9;">
         <div style="font-size:2rem;filter:drop-shadow(0 0 8px #FF8800);">&#128118;</div>
-        <div style="font-size:.55rem;color:#FFaa44;margin-top:2px;" id="ev-login-baby">BABY</div>
+        <div style="font-size:.55rem;color:#FFaa44;margin-top:2px;" id="ev-login-baby">BEBEK</div>
       </div>
       <div style="color:rgba(255,200,80,.4);font-size:1.2rem;margin-bottom:8px;">&rarr;</div>
       <div style="text-align:center;opacity:.9;">
         <div style="font-size:2.2rem;filter:drop-shadow(0 0 8px #4488FF);">&#127891;</div>
-        <div style="font-size:.55rem;color:#88AAFF;margin-top:2px;" id="ev-login-student">STUDENT</div>
+        <div style="font-size:.55rem;color:#88AAFF;margin-top:2px;" id="ev-login-student">OGRENCI</div>
       </div>
       <div style="color:rgba(255,200,80,.4);font-size:1.2rem;margin-bottom:8px;">&rarr;</div>
       <div style="text-align:center;opacity:.9;">
         <div style="font-size:2.4rem;filter:drop-shadow(0 0 8px #88FFAA);">&#128188;</div>
-        <div style="font-size:.55rem;color:#88FFAA;margin-top:2px;" id="ev-login-future">FUTURE</div>
+        <div style="font-size:.55rem;color:#88FFAA;margin-top:2px;" id="ev-login-future">GELECEK</div>
       </div>
     </div>
     <!-- Giriş -->
-    <p id="ev-login-subtitle" style="color:rgba(180,210,255,.8);font-size:.9rem;margin-bottom:14px;">Write your name and enter the galaxy!</p>
+    <p id="ev-login-subtitle" style="color:rgba(180,210,255,.8);font-size:.9rem;margin-bottom:14px;">Adini yaz ve galaksiye gir!</p>
     <!-- Karakter Seçimi -->
     <div style="margin-bottom:14px;">
-      <div id="ev-character-title" style="font-size:.7rem;color:rgba(150,200,255,.6);margin-bottom:8px;text-align:center;letter-spacing:2px;">CHOOSE YOUR CHARACTER</div>
+      <div id="ev-character-title" style="font-size:.7rem;color:rgba(150,200,255,.6);margin-bottom:8px;text-align:center;letter-spacing:2px;">KARAKTERINI SEC</div>
       <div style="display:flex;gap:10px;justify-content:center;">
         <div id="char-sel-erkek" onclick="selectChar('erkek')"
           style="cursor:pointer;border-radius:14px;border:2px solid rgba(100,200,100,.5);
@@ -82,9 +82,9 @@
         </div>
       </div>
     </div>
-    <input id="ni" type="text" placeholder="What is your name?" maxlength="14" autocomplete="off"
+    <input id="ni" type="text" placeholder="Adin nedir?" maxlength="14" autocomplete="off"
       style="background:rgba(20,40,120,.4);border:1.5px solid rgba(100,180,255,.4);color:#fff;border-radius:22px;padding:12px 20px;font-family:Nunito;font-size:1rem;width:100%;box-sizing:border-box;outline:none;text-align:center;backdrop-filter:blur(4px);">
-    <button id="nb" style="margin-top:12px;width:100%;background:linear-gradient(135deg,#FF8800,#FFD700);border:none;border-radius:22px;padding:13px;font-family:'Fredoka One';font-size:1.1rem;color:#1a0a00;cursor:pointer;box-shadow:0 4px 20px rgba(255,150,0,.4);">Enter EduVerse</button>
+    <button id="nb" style="margin-top:12px;width:100%;background:linear-gradient(135deg,#FF8800,#FFD700);border:none;border-radius:22px;padding:13px;font-family:'Fredoka One';font-size:1.1rem;color:#1a0a00;cursor:pointer;box-shadow:0 4px 20px rgba(255,150,0,.4);">EduVerse'e Gir</button>
   </div>
 </div>
 
@@ -95,7 +95,7 @@
   <button id="streak-btn" onclick="showStreakOverlay()" style="position:absolute;right:8px;top:8px;
     background:rgba(255,100,0,.15);border:1px solid rgba(255,150,0,.3);border-radius:20px;
     padding:4px 12px;font-family:'Fredoka One';font-size:.85rem;color:#FF8800;cursor:pointer;">&#128293; 0</button>
-  <button id="values-toggle-btn" onclick="_toggleValuesMode()" title="Values Mode" style="position:absolute;left:8px;top:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50%;width:28px;height:28px;font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);padding:0;transition:all .3s;">EN</button>
+  <button id="values-toggle-btn" onclick="_toggleValuesMode()" title="Values Mode" style="position:absolute;left:8px;top:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50%;width:28px;height:28px;font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);padding:0;transition:all .3s;">TR</button>
   <h1 id="hm-title">EduVerse</h1></div>
     <div style="display:flex;flex-direction:column;align-items:center">
       <!-- KARAKTER -->
@@ -187,7 +187,7 @@
 
 </div>
 </div>
-<script src="game.js?v=five-languages-20260605-4"></script>
+<script src="game.js?v=fr-values-clean-20260613-1"></script>
 
 <!-- ══ REFLEKS ODASI ══ -->
 <div id="refleks-ov" style="display:none;position:fixed;inset:0;z-index:80;background:linear-gradient(180deg,#060d1a,#0a1628);">
@@ -529,7 +529,7 @@ function _adaMarkActive(idx){
       <div id="streak-ring" style="position:absolute;inset:-8px;border-radius:50%;border:3px solid transparent;background:linear-gradient(#000,#000) padding-box,linear-gradient(0deg,#FF4400,#FFD700,#FF4400) border-box;animation:streakRingRotate 2s linear infinite;"></div>
       <div id="streak-emoji" style="font-size:3.8rem;display:block;position:relative;z-index:1;animation:streakEmojiPop 0s;filter:drop-shadow(0 0 12px rgba(255,150,0,.8));">&#128293;</div>
     </div>
-    <div style="font-family:'Fredoka One';font-size:.82rem;color:rgba(255,180,60,.7);letter-spacing:3px;margin-bottom:6px;text-shadow:0 0 10px rgba(255,120,0,.4);">DAY STREAK</div>
+    <div id="streak-title" style="font-family:'Fredoka One';font-size:.82rem;color:rgba(255,180,60,.7);letter-spacing:3px;margin-bottom:6px;text-shadow:0 0 10px rgba(255,120,0,.4);">GUN SERISI</div>
     <!-- Animasyonlu sayaç -->
     <div id="streak-count" style="font-family:'Fredoka One';font-size:5rem;color:#FFD700;line-height:1;text-shadow:0 0 30px rgba(255,200,0,.6),0 0 60px rgba(255,150,0,.3);animation:streakCountPop .6s cubic-bezier(.34,1.56,.64,1);">1</div>
     <div id="streak-best" style="font-size:.7rem;color:rgba(255,180,60,.5);margin-bottom:10px;">Best streak: 0 days</div>
@@ -538,12 +538,12 @@ function _adaMarkActive(idx){
     <div id="streak-cal" style="display:flex;gap:5px;justify-content:center;margin-bottom:18px;"></div>
     <!-- İlerleme çubuğu — 5 günde gizli oda -->
     <div style="margin-bottom:18px;">
-      <div style="font-size:.68rem;color:rgba(255,180,60,.5);margin-bottom:5px;font-weight:700;">Secret room progress</div>
+      <div id="streak-goal-label" style="font-size:.68rem;color:rgba(255,180,60,.5);margin-bottom:5px;font-weight:700;">Gizli oda ilerlemesi</div>
       <div style="height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;">
         <div id="streak-goal-bar" style="height:100%;background:linear-gradient(90deg,#FF4400,#FFD700);border-radius:3px;width:0%;transition:width 1s ease;"></div>
       </div>
     </div>
-    <button onclick="hideStreakOv()" style="width:100%;padding:14px;border-radius:22px;background:linear-gradient(135deg,#FF5500,#FFD700);border:none;font-family:'Fredoka One';font-size:1.15rem;color:#1a0500;cursor:pointer;box-shadow:0 4px 20px rgba(255,120,0,.4);letter-spacing:.5px;">Continue</button>
+    <button id="streak-close-btn" onclick="hideStreakOv()" style="width:100%;padding:14px;border-radius:22px;background:linear-gradient(135deg,#FF5500,#FFD700);border:none;font-family:'Fredoka One';font-size:1.15rem;color:#1a0500;cursor:pointer;box-shadow:0 4px 20px rgba(255,120,0,.4);letter-spacing:.5px;">Devam</button>
   </div>
 </div>
 
@@ -667,8 +667,8 @@ function _adaMarkActive(idx){
     <!-- Action Buttons -->
     <div style="padding:14px 20px 18px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,.06);">
       <div style="display:flex;gap:8px;">
-        <button onclick="downloadPDF()" style="flex:1;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:none;border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;box-shadow:0 4px 14px rgba(26,106,58,.4);">Download PDF</button>
-        <button onclick="sendMailReport()" style="flex:1;background:linear-gradient(135deg,#1a3a8a,#2a5aCA);border:none;border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;box-shadow:0 4px 14px rgba(26,58,138,.4);">Send Mail</button>
+        <button onclick="downloadPDF()" style="flex:1;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:none;border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;box-shadow:0 4px 14px rgba(26,106,58,.4);">PDF İndir</button>
+        <button onclick="sendMailReport()" style="flex:1;background:linear-gradient(135deg,#1a3a8a,#2a5aCA);border:none;border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;box-shadow:0 4px 14px rgba(26,58,138,.4);">E-posta Gönder</button>
       </div>
       <button onclick="document.getElementById('qr-ov').style.display='none'" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:10px;font-family:'Nunito';font-size:.78rem;font-weight:700;color:rgba(255,255,255,.35);cursor:pointer;">Kapat</button>
     </div>
@@ -930,14 +930,14 @@ function _adaMarkActive(idx){
   <div style="max-width:380px;margin:0 auto;padding:24px 16px 40px;text-align:center;">
     <canvas id="star-big" width="160" height="180" style="margin:0 auto 12px;display:block;"></canvas>
     <div style="font-family:'Fredoka One';font-size:1.6rem;color:#FF88AA;">Yildiz Puanlari</div>
-    <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin:4px 0 16px;">Points earned by playing mini games</div>
+    <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin:4px 0 16px;">Mini oyunlardan kazanilan puanlar</div>
     <div style="font-family:'Fredoka One';font-size:2.2rem;color:#FF88AA;" id="star-count">0 ⭐</div>
     <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin:14px 0;">
-      <div style="font-size:.8rem;color:rgba(255,255,255,.5);">Earned today</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.5);">Bugun kazanilan</div>
       <div style="font-family:'Fredoka One';font-size:1.3rem;color:#FF88AA;" id="star-today">+0 ⭐</div>
     </div>
     <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin:0 0 16px;">
-      <div style="font-size:.8rem;color:rgba(255,255,255,.5);">100 stars = 1 coin</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.5);">100 yildiz = 1 para</div>
       <div style="background:rgba(255,255,255,.1);border-radius:6px;height:8px;margin-top:8px;overflow:hidden;">
         <div id="star-to-coin-bar" style="background:linear-gradient(90deg,#FF88AA,#FF44AA);height:100%;width:0%;border-radius:6px;transition:width .5s;"></div>
       </div>
@@ -952,7 +952,7 @@ function _adaMarkActive(idx){
   <div style="max-width:380px;margin:0 auto;padding:24px 16px 40px;text-align:center;">
     <canvas id="crystal-big" width="160" height="180" style="margin:0 auto 12px;display:block;"></canvas>
     <div style="font-family:'Fredoka One';font-size:1.6rem;color:#CC88FF;">Mutluluk Paralari</div>
-    <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin:4px 0 16px;">Oki grows with these coins</div>
+    <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin:4px 0 16px;">Oki bu paralarla buyur</div>
     <div style="font-family:'Fredoka One';font-size:2.2rem;color:#CC88FF;" id="crystal-count">0 🪙</div>
     <div id="crystal-stage-box" style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin:14px 0;">
       <div style="font-family:'Fredoka One';font-size:1rem;color:#E8C8FF;" id="crystal-stage">Egg Oki</div>
@@ -962,8 +962,8 @@ function _adaMarkActive(idx){
       <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:6px;" id="crystal-next"></div>
     </div>
     <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:12px;margin:0 0 16px;">
-      <div style="font-size:.75rem;color:rgba(255,255,255,.5);">Parent can turn this into a real reward</div>
-      <div style="font-size:.8rem;color:#CC88FF;margin-top:4px;">10 coins = 1 reward right</div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.5);">Ebeveyn bunu gercek bir odulu cevirebilir</div>
+      <div style="font-size:.8rem;color:#CC88FF;margin-top:4px;">10 para = 1 odul hakki</div>
     </div>
     <button onclick="document.getElementById('crystal-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;">Kapat</button>
   </div>
@@ -978,14 +978,14 @@ function _adaMarkActive(idx){
     <!-- Giriş / Çıkış -->
     <div style="display:flex;gap:10px;margin-bottom:14px;">
       <div style="flex:1;background:rgba(100,255,100,.08);border:1px solid rgba(100,255,100,.2);border-radius:14px;padding:14px;">
-        <div style="font-size:.75rem;color:rgba(255,255,255,.5);">Earned</div>
+        <div id="daily-earned-label" style="font-size:.75rem;color:rgba(255,255,255,.5);">Kazanilan</div>
         <div style="font-family:'Fredoka One';font-size:1.4rem;color:#66FF88;" id="daily-in">+0</div>
-        <div style="font-size:.65rem;color:rgba(255,255,255,.35);">today</div>
+        <div id="daily-today-label" style="font-size:.65rem;color:rgba(255,255,255,.35);">bugun</div>
       </div>
       <div style="flex:1;background:rgba(255,100,100,.08);border:1px solid rgba(255,100,100,.2);border-radius:14px;padding:14px;">
-        <div style="font-size:.75rem;color:rgba(255,255,255,.5);">Average</div>
+        <div id="daily-average-label" style="font-size:.75rem;color:rgba(255,255,255,.5);">Ortalama</div>
         <div style="font-family:'Fredoka One';font-size:1.4rem;color:#FFD700;" id="daily-avg">0</div>
-        <div style="font-size:.65rem;color:rgba(255,255,255,.35);">7 days</div>
+        <div id="daily-days-label" style="font-size:.65rem;color:rgba(255,255,255,.35);">7 gun</div>
       </div>
     </div>
     <!-- Görev takibi -->
@@ -995,7 +995,7 @@ function _adaMarkActive(idx){
     </div>
     <!-- 7 günlük grafik -->
     <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin-bottom:16px;">
-      <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:8px;">Last 7 days</div>
+      <div id="daily-chart-label" style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:8px;">Son 7 gun</div>
       <canvas id="daily-chart" width="320" height="60" style="width:100%;"></canvas>
     </div>
     <button onclick="document.getElementById('daily-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;">Kapat</button>
@@ -1168,7 +1168,7 @@ function _adaMarkActive(idx){
 <script src="room-music.js?v=investor-final-en-20260605-34"></script>
 <script src="invite.js"></script>
 <script src="chest.js"></script>
-<script src="values-i18n.js?v=five-languages-20260605-1"></script>
+<script src="values-i18n.js?v=fr-values-clean-20260613-1"></script>
 <script src="english-values-fix.js?v=investor-final-en-20260605-38"></script>
 <script src="english-hard-clean.js?v=investor-final-en-20260605-38"></script>
 </body>
