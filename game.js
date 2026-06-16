@@ -8056,7 +8056,7 @@ function buildGrid(){
   } else { sm.style.display='none'; }
   ROOMS.forEach(function(room){
     var _vOn2=!!(evValuesOn&&evValuesOn())||localStorage.getItem('eduverse_values_mode')==='1';
-    var locked=room.id==='sinema'?false:(_vOn2?false:(totalScore<room.unlock));
+  var locked=room.id==='sinema'?false:(room.id==='gizli'?!(streak>=5 || room.unlock===0):(_vOn2?false:(totalScore<room.unlock)));
     var best=roomBests[room.id]||0;
     var btn=document.createElement('button');
     btn.className='rb'+(locked&&room.id!=='sinema'?' locked':'');
