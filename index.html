@@ -84,7 +84,7 @@
     </div>
     <input id="ni" type="text" placeholder="Adin nedir?" maxlength="14" autocomplete="off"
       style="background:rgba(20,40,120,.4);border:1.5px solid rgba(100,180,255,.4);color:#fff;border-radius:22px;padding:12px 20px;font-family:Nunito;font-size:1rem;width:100%;box-sizing:border-box;outline:none;text-align:center;backdrop-filter:blur(4px);">
-    <button id="nb" style="margin-top:12px;width:100%;background:linear-gradient(135deg,#FF8800,#FFD700);border:none;border-radius:22px;padding:13px;font-family:'Fredoka One';font-size:1.1rem;color:#1a0a00;cursor:pointer;box-shadow:0 4px 20px rgba(255,150,0,.4);">EduVerse'e Gir</button>
+    <button id="nb" style="margin-top:12px;width:100%;background:linear-gradient(135deg,rgba(255,200,40,.88),rgba(255,160,10,.82));border:1px solid rgba(255,230,100,.45);border-radius:22px;padding:14px;font-family:'Fredoka One';font-size:1.1rem;color:#1a0a00;cursor:pointer;box-shadow:0 6px 24px rgba(255,160,0,.45),inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(10px);">EduVerse'e Gir</button>
   </div>
 </div>
 
@@ -93,9 +93,9 @@
   <div id="hm-inner" style="position:relative;z-index:1;">
     <div id="hm-head" style="position:relative;">
   <button id="streak-btn" onclick="showStreakOverlay()" style="position:absolute;right:8px;top:8px;
-    background:rgba(255,100,0,.15);border:1px solid rgba(255,150,0,.3);border-radius:20px;
-    padding:4px 12px;font-family:'Fredoka One';font-size:.85rem;color:#FF8800;cursor:pointer;">&#128293; 0</button>
-  <button id="values-toggle-btn" onclick="_toggleValuesMode()" title="Values Mode" style="position:absolute;left:8px;top:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50%;width:28px;height:28px;font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);padding:0;transition:all .3s;">TR</button>
+    background:rgba(255,90,20,.18);border:1px solid rgba(255,130,50,.42);border-radius:20px;
+    padding:5px 13px;font-family:'Fredoka One';font-size:.85rem;color:rgba(255,160,60,.95);cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(255,80,0,.2),inset 0 1px 0 rgba(255,200,100,.15);">&#128293; 0</button>
+  <button id="values-toggle-btn" onclick="_toggleValuesMode()" title="Values Mode" style="position:absolute;left:8px;top:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50%;width:28px;height:28px;font-size:.75rem;cursor:pointer;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);padding:0;transition:all .3s;">TR</button>
   <h1 id="hm-title">EduVerse</h1></div>
     <div style="display:flex;flex-direction:column;align-items:center">
       <!-- KARAKTER -->
@@ -121,7 +121,7 @@
         </div>
       </div>
       <div id="oki-name" style="font-family:Fredoka One;font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:4px;text-align:center;"></div>
-      <button id="feed-btn" onclick="feedMelek()" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,200,100,.4);border-radius:20px;padding:5px 16px;font-family:Fredoka One;font-size:.72rem;color:#FFD700;cursor:pointer;margin-bottom:6px;">Oki'yi Besle</button>
+      <button id="feed-btn" onclick="feedMelek()" style="background:rgba(255,200,80,.12);border:1px solid rgba(255,200,80,.38);border-radius:20px;padding:6px 17px;font-family:Fredoka One;font-size:.72rem;color:#FFD700;cursor:pointer;margin-bottom:6px;backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(255,150,0,.18),inset 0 1px 0 rgba(255,255,255,.1);">Oki'yi Besle</button>
       <!-- 3 Animasyonlu Konteyner -->
       <div style="display:flex;gap:12px;justify-content:center;margin:10px 0 4px;">
         <div style="text-align:center;cursor:pointer;" onclick="showStarJar()">
@@ -212,7 +212,7 @@
     <div class="rmb" onclick="rBasla('kaybolan')"><div class="rmb-ico">&#128123;</div><div><div class="rmb-name">Kaybolan Hedef</div><div class="rmb-desc">Kisa bir an gorunur - hizlica kaybolur</div></div></div>
     <div class="rmb" onclick="rBasla('bomba')"><div class="rmb-ico">&#128163;</div><div><div class="rmb-name">Bombayi Etkisizlestir</div><div class="rmb-desc">Bombaya dokun - yildizlardan kac</div></div></div>
     <div class="rmb" onclick="rBasla('buyuk')"><div class="rmb-ico">&#127919;</div><div><div class="rmb-name">En Buyugu Bul</div><div class="rmb-desc">En buyuk daireye dokun - dikkatli ol</div></div></div>
-    <button onclick="closeRefleks()" style="margin-top:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:8px 24px;font-family:'Fredoka One';font-size:.8rem;color:rgba(255,255,255,.4);cursor:pointer;">Geri</button>
+    <button onclick="closeRefleks()" style="margin-top:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:8px 24px;font-family:'Fredoka One';font-size:.8rem;color:rgba(255,255,255,.4);cursor:pointer;backdrop-filter:blur(8px);">Geri</button>
   </div>
 
   <!-- HUD -->
@@ -220,7 +220,7 @@
     <div class="rhb" id="rh-skor">0</div>
     <div class="rhb" style="font-size:.72rem;color:rgba(135,206,235,.6);" id="rh-mod"></div>
     <div class="rhb" style="color:#FF6B6B;" id="rh-sure">60</div>
-    <button onclick="rMenuye()" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:5px 10px;font-family:'Fredoka One';font-size:.7rem;color:rgba(255,255,255,.4);cursor:pointer;z-index:25;position:relative;">&times;</button>
+    <button onclick="rMenuye()" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:5px 10px;font-family:'Fredoka One';font-size:.7rem;color:rgba(255,255,255,.4);cursor:pointer;backdrop-filter:blur(8px);z-index:25;position:relative;">&times;</button>
   </div>
 
   <div id="refleks-talimat" style="position:absolute;top:14%;left:50%;transform:translateX(-50%);z-index:20;display:none;pointer-events:none;text-align:center;"></div>
@@ -312,7 +312,7 @@
   ">
     <!-- Kapat -->
     <div style="background:rgba(8,4,24,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,80,80,.25);border-radius:14px;padding:4px 10px;">
-      <button onclick="_adaStop()" style="border:none;background:transparent;color:rgba(255,100,100,.7);font-size:.68rem;cursor:pointer;font-family:Nunito,sans-serif;white-space:nowrap;padding:0;">&#10005; Kapat</button>
+      <button onclick="_adaStop()" style="border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,100,100,.7);font-size:.68rem;cursor:pointer;backdrop-filter:blur(8px);font-family:Nunito,sans-serif;white-space:nowrap;padding:0;">&#10005; Kapat</button>
     </div>
     <!-- Track list -->
     <div style="background:rgba(8,4,24,.62);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(180,130,255,.22);border-radius:16px;padding:6px 6px;min-width:155px;max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:2px;scrollbar-width:thin;scrollbar-color:rgba(180,130,255,.3) transparent;">
@@ -327,7 +327,7 @@
     </div>
     <!-- Play/Pause + isim -->
     <div style="background:rgba(8,4,24,.58);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(180,130,255,.2);border-radius:14px;padding:4px 10px 4px 6px;display:flex;align-items:center;gap:6px;">
-      <button id="adaPlayBtn" onclick="_adaToggle()" style="width:28px;height:28px;border:none;border-radius:50%;background:rgba(160,100,255,.35);color:white;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&#9654;</button>
+      <button id="adaPlayBtn" onclick="_adaToggle()" style="width:28px;height:28px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(160,100,255,.35);color:white;font-size:.8rem;cursor:pointer;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;">&#9654;</button>
       <span id="ada-track-name" style="font-family:'Fredoka One',sans-serif;font-size:.62rem;color:rgba(210,190,255,.85);white-space:nowrap;max-width:90px;overflow:hidden;text-overflow:ellipsis;">&#127925; Muzik</span>
     </div>
   </div>
@@ -421,7 +421,7 @@ function _adaMarkActive(idx){
   <div style="width:100%;height:34px;background:#120006;display:flex;align-items:center;justify-content:center;gap:14px;flex-shrink:0;">
     <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s infinite;"></div>
     <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s .6s infinite;"></div>
-    <span style="font-family:'Fredoka One',sans-serif;font-size:.82rem;color:rgba(255,110,110,.8);">🎬 SİNEMA ODASI</span><button onclick="_snPlayAudio()" style="border:none;background:rgba(255,255,255,.15);color:white;border-radius:10px;padding:2px 8px;font-size:.75rem;cursor:pointer;margin-left:8px;">🎵</button>
+    <span style="font-family:'Fredoka One',sans-serif;font-size:.82rem;color:rgba(255,110,110,.8);">🎬 SİNEMA ODASI</span><button onclick="_snPlayAudio()" style="border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.15);color:white;border-radius:10px;padding:2px 8px;font-size:.75rem;cursor:pointer;backdrop-filter:blur(8px);margin-left:8px;">🎵</button>
     <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s 1.2s infinite;"></div>
     <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s 1.8s infinite;"></div>
   </div>
@@ -458,9 +458,9 @@ function _adaMarkActive(idx){
     </div>
   </div>
   <div style="display:flex;gap:8px;justify-content:center;padding:6px 0 10px;flex-shrink:0;">
-    <button onclick="_snGo((_snSC-1+5)%5)" style="padding:7px 18px;border-radius:20px;border:none;font-family:'Fredoka One',sans-serif;font-size:.85rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.55);cursor:pointer;">◀</button>
-    <button onclick="closeSinema()" style="padding:7px 18px;border-radius:20px;border:none;font-family:'Fredoka One',sans-serif;font-size:.85rem;background:rgba(255,255,255,.05);color:rgba(255,255,255,.35);cursor:pointer;">✕</button>
-    <button onclick="_snGo((_snSC+1)%5)" style="padding:7px 18px;border-radius:20px;border:none;font-family:'Fredoka One',sans-serif;font-size:.85rem;background:linear-gradient(135deg,#FF3366,#CC0033);color:white;cursor:pointer;">▶</button>
+    <button onclick="_snGo((_snSC-1+5)%5)" style="padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.2);font-family:'Fredoka One',sans-serif;font-size:.85rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.55);cursor:pointer;backdrop-filter:blur(8px);">◀</button>
+    <button onclick="closeSinema()" style="padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.2);font-family:'Fredoka One',sans-serif;font-size:.85rem;background:rgba(255,255,255,.05);color:rgba(255,255,255,.35);cursor:pointer;backdrop-filter:blur(8px);">✕</button>
+    <button onclick="_snGo((_snSC+1)%5)" style="padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.2);font-family:'Fredoka One',sans-serif;font-size:.85rem;background:linear-gradient(135deg,#FF3366,#CC0033);color:white;cursor:pointer;backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">▶</button>
   </div>
   <div id="sn-rn" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:90;"></div>
 </div>
@@ -513,8 +513,8 @@ function _adaMarkActive(idx){
     
     <!-- Devam butonu -->
     <button onclick="hideBigGrowthScene()" style="width:100%;padding:16px;border-radius:24px;
-      background:linear-gradient(135deg,#44FF88,#00AA44);border:none;
-      font-family:'Fredoka One';font-size:1.2rem;color:#001a00;cursor:pointer;
+      background:linear-gradient(135deg,#44FF88,#00AA44);border:1px solid rgba(80,220,120,.35);
+      font-family:'Fredoka One';font-size:1.2rem;color:#001a00;cursor:pointer;backdrop-filter:blur(8px);
       animation:gbigBtnPop .8s cubic-bezier(.34,1.56,.64,1) 1.5s both;
       box-shadow:0 4px 24px rgba(50,200,100,.4);">Continue</button>
   </div>
@@ -543,30 +543,30 @@ function _adaMarkActive(idx){
         <div id="streak-goal-bar" style="height:100%;background:linear-gradient(90deg,#FF4400,#FFD700);border-radius:3px;width:0%;transition:width 1s ease;"></div>
       </div>
     </div>
-    <button id="streak-close-btn" onclick="hideStreakOv()" style="width:100%;padding:14px;border-radius:22px;background:linear-gradient(135deg,#FF5500,#FFD700);border:none;font-family:'Fredoka One';font-size:1.15rem;color:#1a0500;cursor:pointer;box-shadow:0 4px 20px rgba(255,120,0,.4);letter-spacing:.5px;">Devam</button>
+    <button id="streak-close-btn" onclick="hideStreakOv()" style="width:100%;padding:14px;border-radius:22px;background:linear-gradient(135deg,#FF5500,#FFD700);border:1px solid rgba(255,230,100,.4);font-family:'Fredoka One';font-size:1.15rem;color:#1a0500;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(255,120,0,.4);letter-spacing:.5px;">Devam</button>
   </div>
 </div>
 
 <div id="boyama-ov" style="position:fixed;inset:0;z-index:96;display:none;flex-direction:column;align-items:center;background:linear-gradient(160deg,#0a180a,#0d200d,#081408);overflow-y:auto;">
   <div style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;max-width:500px;flex-shrink:0;">
     <div style="font-family:Fredoka One;font-size:1.35rem;color:#FFD700">Boyama Odasi</div>
-    <button onclick="clearBoyama()" style="background:rgba(255,100,50,.2);border:1px solid rgba(255,100,50,.3);border-radius:14px;padding:5px 12px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,100,.8);cursor:pointer;">Clear</button>
-    <button onclick="closeBoyama()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:5px 14px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;">&times;</button>
+    <button onclick="clearBoyama()" style="background:rgba(255,100,50,.2);border:1px solid rgba(255,100,50,.3);border-radius:14px;padding:5px 12px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,100,.8);cursor:pointer;backdrop-filter:blur(8px);">Clear</button>
+    <button onclick="closeBoyama()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:5px 14px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">&times;</button>
   </div>
   <div style="display:flex;gap:8px;padding:0 14px 10px;flex-wrap:wrap;justify-content:center;flex-shrink:0;">
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:100%;max-width:460px;">
-    <button onclick="setBoyamaTemplate(0)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;">Yildiz</button>
-    <button onclick="setBoyamaTemplate(1)" style="background:rgba(255,100,150,.15);border:2px solid rgba(255,100,150,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,190,.9);cursor:pointer;">Heart</button>
-    <button onclick="setBoyamaTemplate(2)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;">Sun</button>
-    <button onclick="setBoyamaTemplate(3)" style="background:rgba(255,100,150,.15);border:2px solid rgba(255,100,150,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,190,.9);cursor:pointer;">Flower</button>
-    <button onclick="setBoyamaTemplate(4)" style="background:rgba(100,200,255,.15);border:2px solid rgba(100,200,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,220,255,.9);cursor:pointer;">Butterfly</button>
-    <button onclick="setBoyamaTemplate(5)" style="background:rgba(255,150,50,.15);border:2px solid rgba(255,150,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,190,100,.9);cursor:pointer;">Car</button>
-    <button onclick="setBoyamaTemplate(6)" style="background:rgba(100,200,100,.15);border:2px solid rgba(100,200,100,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,240,150,.9);cursor:pointer;">Ev</button>
-    <button onclick="setBoyamaTemplate(7)" style="background:rgba(150,150,255,.15);border:2px solid rgba(150,150,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(180,180,255,.9);cursor:pointer;">Moon</button>
-    <button onclick="setBoyamaTemplate(8)" style="background:rgba(100,200,255,.15);border:2px solid rgba(100,200,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,220,255,.9);cursor:pointer;">Fish</button>
-    <button onclick="setBoyamaTemplate(9)" style="background:rgba(150,150,255,.15);border:2px solid rgba(150,150,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(180,180,255,.9);cursor:pointer;">Robot</button>
-    <button onclick="setBoyamaTemplate(10)" style="background:rgba(100,200,100,.15);border:2px solid rgba(100,200,100,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,240,150,.9);cursor:pointer;">Tree</button>
-    <button onclick="setBoyamaTemplate(11)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;">Plane</button>
+    <button onclick="setBoyamaTemplate(0)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;backdrop-filter:blur(8px);">Yildiz</button>
+    <button onclick="setBoyamaTemplate(1)" style="background:rgba(255,100,150,.15);border:2px solid rgba(255,100,150,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,190,.9);cursor:pointer;backdrop-filter:blur(8px);">Heart</button>
+    <button onclick="setBoyamaTemplate(2)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;backdrop-filter:blur(8px);">Sun</button>
+    <button onclick="setBoyamaTemplate(3)" style="background:rgba(255,100,150,.15);border:2px solid rgba(255,100,150,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,190,.9);cursor:pointer;backdrop-filter:blur(8px);">Flower</button>
+    <button onclick="setBoyamaTemplate(4)" style="background:rgba(100,200,255,.15);border:2px solid rgba(100,200,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,220,255,.9);cursor:pointer;backdrop-filter:blur(8px);">Butterfly</button>
+    <button onclick="setBoyamaTemplate(5)" style="background:rgba(255,150,50,.15);border:2px solid rgba(255,150,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,190,100,.9);cursor:pointer;backdrop-filter:blur(8px);">Car</button>
+    <button onclick="setBoyamaTemplate(6)" style="background:rgba(100,200,100,.15);border:2px solid rgba(100,200,100,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,240,150,.9);cursor:pointer;backdrop-filter:blur(8px);">Ev</button>
+    <button onclick="setBoyamaTemplate(7)" style="background:rgba(150,150,255,.15);border:2px solid rgba(150,150,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(180,180,255,.9);cursor:pointer;backdrop-filter:blur(8px);">Moon</button>
+    <button onclick="setBoyamaTemplate(8)" style="background:rgba(100,200,255,.15);border:2px solid rgba(100,200,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,220,255,.9);cursor:pointer;backdrop-filter:blur(8px);">Fish</button>
+    <button onclick="setBoyamaTemplate(9)" style="background:rgba(150,150,255,.15);border:2px solid rgba(150,150,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(180,180,255,.9);cursor:pointer;backdrop-filter:blur(8px);">Robot</button>
+    <button onclick="setBoyamaTemplate(10)" style="background:rgba(100,200,100,.15);border:2px solid rgba(100,200,100,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,240,150,.9);cursor:pointer;backdrop-filter:blur(8px);">Tree</button>
+    <button onclick="setBoyamaTemplate(11)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;backdrop-filter:blur(8px);">Plane</button>
     </div>
   </div>
   <canvas id="boy-canvas" style="border-radius:14px;border:2px solid rgba(255,200,50,.2);box-shadow:0 0 20px rgba(255,180,0,.1);flex-shrink:0;touch-action:none;max-width:95vw;"></canvas>
@@ -582,7 +582,7 @@ function _adaMarkActive(idx){
   <div style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;flex-shrink:0;max-width:500px;">
     <div style="font-family:'Fredoka One';font-size:1.5rem;color:#FFD700;text-shadow:0 0 20px rgba(255,200,0,.7)">Puzzle Odasi</div>
     <div id="pz-daily" style="font-family:'Fredoka One';font-size:.82rem;color:#44FF88">3/3 tries</div>
-    <button onclick="closePuzzle()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:6px 16px;font-family:'Fredoka One';font-size:.8rem;color:rgba(255,255,255,.5);cursor:pointer;">&times;</button>
+    <button onclick="closePuzzle()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:6px 16px;font-family:'Fredoka One';font-size:.8rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">&times;</button>
   </div>
 
   <!-- MENU -->
@@ -598,7 +598,7 @@ function _adaMarkActive(idx){
       <div style="font-family:'Fredoka One';font-size:.9rem;color:rgba(255,200,50,.8)">
         Parca: <span id="pz-progress" style="color:#44FF88;font-size:1.1rem">0/16</span>
       </div>
-      <button onclick="showPuzzleMenu()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:5px 12px;font-family:'Fredoka One';font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;">Geri</button>
+      <button onclick="showPuzzleMenu()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:5px 12px;font-family:'Fredoka One';font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">Geri</button>
     </div>
     <canvas id="pz-canvas" style="border-radius:12px;border:2px solid rgba(255,200,50,.2);box-shadow:0 0 30px rgba(255,180,0,.15);touch-action:none;max-width:100%;"></canvas>
     <div style="font-family:'Fredoka One';font-size:.78rem;color:rgba(255,200,100,.5);text-align:center">Her parcayi dogru yere surukle</div>
@@ -610,7 +610,7 @@ function _adaMarkActive(idx){
     <div style="font-family:'Fredoka One';font-size:2rem;color:#FFD700;text-shadow:0 0 30px rgba(255,200,0,.8)">Dusunce Odasi</div>
     <div style="font-family:'Fredoka One';font-size:1.1rem;color:rgba(255,220,120,.8)">Puzzle completed!<br>+500 stars earned</div>
     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-      <button onclick="showPuzzleMenu()" style="background:linear-gradient(135deg,#FFD700,#F4A020);border:none;border-radius:24px;padding:11px 28px;font-family:'Fredoka One';font-size:1rem;color:#1a0800;cursor:pointer;box-shadow:0 4px 20px rgba(255,180,0,.5)">Continue</button>
+      <button onclick="showPuzzleMenu()" style="background:linear-gradient(135deg,#FFD700,#F4A020);border:1px solid rgba(255,230,100,.4);border-radius:24px;padding:11px 28px;font-family:'Fredoka One';font-size:1rem;color:#1a0800;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(255,180,0,.5)">Continue</button>
       <button onclick="closePuzzle()" style="background:rgba(255,255,255,.08);border:2px solid rgba(255,200,50,.25);border-radius:24px;padding:11px 22px;font-family:'Fredoka One';font-size:.9rem;color:rgba(255,200,50,.7);cursor:pointer">Home</button>
     </div>
   </div>
@@ -648,7 +648,7 @@ function _adaMarkActive(idx){
           <div id="qr-title" style="font-family:'Fredoka One';font-size:1.15rem;color:#FFD700;">Parent Report</div>
           <div id="qr-subtitle" style="font-size:.68rem;color:rgba(255,255,255,.5);font-weight:700;">Gunluk ogrenme ozeti</div>
         </div>
-        <button onclick="document.getElementById('qr-ov').style.display='none'" style="margin-left:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;width:32px;height:32px;color:rgba(255,255,255,.5);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">Kapat</button>
+        <button onclick="document.getElementById('qr-ov').style.display='none'" style="margin-left:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;width:32px;height:32px;color:rgba(255,255,255,.5);font-size:1rem;cursor:pointer;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;">Kapat</button>
       </div>
     </div>
 
@@ -667,10 +667,10 @@ function _adaMarkActive(idx){
     <!-- Action Buttons -->
     <div style="padding:14px 20px 18px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,.06);">
       <div style="display:flex;gap:8px;">
-        <button onclick="downloadPDF()" style="flex:1;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:none;border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;box-shadow:0 4px 14px rgba(26,106,58,.4);">PDF İndir</button>
-        <button onclick="sendMailReport()" style="flex:1;background:linear-gradient(135deg,#1a3a8a,#2a5aCA);border:none;border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;box-shadow:0 4px 14px rgba(26,58,138,.4);">E-posta Gönder</button>
+        <button onclick="downloadPDF()" style="flex:1;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:1px solid rgba(80,200,120,.3);border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(26,106,58,.4);">PDF İndir</button>
+        <button onclick="sendMailReport()" style="flex:1;background:linear-gradient(135deg,#1a3a8a,#2a5aCA);border:1px solid rgba(80,140,255,.3);border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(26,58,138,.4);">E-posta Gönder</button>
       </div>
-      <button onclick="document.getElementById('qr-ov').style.display='none'" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:10px;font-family:'Nunito';font-size:.78rem;font-weight:700;color:rgba(255,255,255,.35);cursor:pointer;">Kapat</button>
+      <button onclick="document.getElementById('qr-ov').style.display='none'" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:10px;font-family:'Nunito';font-size:.78rem;font-weight:700;color:rgba(255,255,255,.35);cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
     </div>
 
   </div>
@@ -683,8 +683,8 @@ function _adaMarkActive(idx){
     <div style="font-family:Fredoka One;font-size:1.2rem;color:#1a3a6a;margin-bottom:6px">Gunluk Rapor E-postasi</div>
     <div style="font-size:.78rem;color:#aaa;font-weight:700;margin-bottom:16px;line-height:1.5">Enter your email address.<br>Receive the child report every day.</div>
     <input id="mail-input" type="email" placeholder="ornek@mail.com" style="width:100%;border:2px solid #e0f0e8;border-radius:12px;padding:12px;font-family:Nunito;font-size:.95rem;outline:none;margin-bottom:12px;text-align:center;">
-    <button onclick="confirmMail()" style="width:100%;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:none;border-radius:20px;padding:13px;font-family:Fredoka One;font-size:1rem;color:white;cursor:pointer;margin-bottom:8px;">Save</button>
-    <button onclick="document.getElementById('mail-ov').style.display='none'" style="width:100%;background:transparent;border:1px solid #ddd;border-radius:20px;padding:10px;font-family:Nunito;font-size:.8rem;font-weight:700;color:#aaa;cursor:pointer;">Cancel</button>
+    <button onclick="confirmMail()" style="width:100%;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:1px solid rgba(80,200,120,.3);border-radius:20px;padding:13px;font-family:Fredoka One;font-size:1rem;color:white;cursor:pointer;backdrop-filter:blur(8px);margin-bottom:8px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">Save</button>
+    <button onclick="document.getElementById('mail-ov').style.display='none'" style="width:100%;background:transparent;border:1px solid #ddd;border-radius:20px;padding:10px;font-family:Nunito;font-size:.8rem;font-weight:700;color:#aaa;cursor:pointer;backdrop-filter:blur(8px);">Cancel</button>
   </div>
 </div>
 
@@ -709,7 +709,7 @@ function _adaMarkActive(idx){
 
   <!-- Üst bar -->
   <div style="position:fixed;top:0;left:0;right:0;height:52px;z-index:60;display:flex;align-items:center;padding:0 10px;gap:8px;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,transparent 100%);pointer-events:none;">
-    <button id="gbk" style="pointer-events:all;background:rgba(255,255,255,.12);border:none;border-radius:20px;padding:6px 14px;font-family:'Fredoka One';font-size:.78rem;color:rgba(255,255,255,.7);cursor:pointer;">Geri</button>
+    <button id="gbk" style="pointer-events:all;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 14px;font-family:'Fredoka One';font-size:.78rem;color:rgba(255,255,255,.7);cursor:pointer;backdrop-filter:blur(8px);">Geri</button>
     <div style="display:flex;align-items:center;gap:6px;flex:1;">
       <span id="gri" style="font-size:1.3rem;">&#127775;</span>
       <span id="grn" style="font-family:'Fredoka One';font-size:.88rem;color:rgba(255,255,255,.8);">Oda</span>
@@ -718,8 +718,8 @@ function _adaMarkActive(idx){
       <span style="font-family:'Fredoka One';font-size:.82rem;color:#FFD700;">⭐</span>
       <span id="gsn" style="font-family:'Fredoka One';font-size:1rem;color:#FFD700;min-width:36px;text-align:right;">0</span>
     </div>
-    <button id="_room-theme-btn" onclick="_cycleRoomTheme()" title="Change theme" style="pointer-events:all;background:rgba(255,255,255,.1);border:none;border-radius:16px;padding:5px 10px;font-size:.88rem;cursor:pointer;display:none;">&#127912;</button>
-    <button id="gfs" onclick="toggleFullscreen()" style="pointer-events:all;background:rgba(255,255,255,.1);border:none;border-radius:16px;padding:5px 10px;font-size:.8rem;color:rgba(255,255,255,.5);cursor:pointer;">&#9974;</button>
+    <button id="_room-theme-btn" onclick="_cycleRoomTheme()" title="Change theme" style="pointer-events:all;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:5px 10px;font-size:.88rem;cursor:pointer;backdrop-filter:blur(8px);display:none;">&#127912;</button>
+    <button id="gfs" onclick="toggleFullscreen()" style="pointer-events:all;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:5px 10px;font-size:.8rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">&#9974;</button>
   </div>
 
   <!-- Progress bar -->
@@ -744,7 +744,7 @@ function _adaMarkActive(idx){
       <div id="ach-ico" style="font-size:3rem;margin-bottom:8px;">🏆</div>
       <div id="ach-title" style="font-family:'Fredoka One';font-size:1.4rem;color:#FFD700;margin-bottom:4px;">Başarım!</div>
       <div id="ach-desc" style="font-size:.85rem;color:rgba(255,255,255,.75);margin-bottom:16px;"></div>
-      <button id="acok" style="background:linear-gradient(135deg,#F4C430,#FFD700);border:none;border-radius:20px;padding:10px 28px;font-family:'Fredoka One';font-size:1rem;color:#1a0a00;cursor:pointer;">Süper! ⭐</button>
+      <button id="acok" style="background:linear-gradient(135deg,rgba(244,196,48,.9),rgba(255,215,0,.87));border:1px solid rgba(255,230,100,.4);border-radius:20px;padding:11px 30px;font-family:'Fredoka One';font-size:1rem;color:#1a0a00;cursor:pointer;box-shadow:0 5px 18px rgba(200,140,0,.4),inset 0 1px 0 rgba(255,255,255,.3);backdrop-filter:blur(8px);">Süper! ⭐</button>
     </div>
   </div>
 
@@ -753,8 +753,8 @@ function _adaMarkActive(idx){
     <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;padding:24px;text-align:center;max-width:280px;">
       <div style="font-family:'Fredoka One';font-size:1.1rem;color:white;margin-bottom:16px;">Eve dönmek istiyor musun?</div>
       <div style="display:flex;gap:10px;justify-content:center;">
-        <button id="bcyes" style="background:linear-gradient(135deg,#F4C430,#FFD700);border:none;border-radius:20px;padding:10px 24px;font-family:'Fredoka One';font-size:.9rem;color:#1a0800;cursor:pointer;">Evet</button>
-        <button id="bcno" style="background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:10px 24px;font-family:'Fredoka One';font-size:.9rem;color:white;cursor:pointer;">Hayır</button>
+        <button id="bcyes" style="background:linear-gradient(135deg,#F4C430,#FFD700);border:1px solid rgba(255,230,100,.4);border-radius:20px;padding:10px 24px;font-family:'Fredoka One';font-size:.9rem;color:#1a0800;cursor:pointer;backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">Evet</button>
+        <button id="bcno" style="background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:10px 24px;font-family:'Fredoka One';font-size:.9rem;color:white;cursor:pointer;backdrop-filter:blur(8px);">Hayır</button>
       </div>
     </div>
   </div>
@@ -805,8 +805,8 @@ function _adaMarkActive(idx){
       <div style="font-size:.85rem;color:rgba(220,190,255,.7);">Bir dusunce sec, muhurle ve gokyuzune yolla</div>
     </div>
     <div id="dua-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:440px;"></div>
-    <button onclick="duaKendiYaz()" style="margin-top:8px;flex-shrink:0;width:100%;max-width:440px;background:rgba(100,30,180,.3);border:2px dashed rgba(200,140,255,.4);border-radius:18px;padding:11px;cursor:pointer;color:#E8C8FF;font-family:Fredoka One;font-size:.95rem;">&#9998; Write your own reflection</button>
-    <button onclick="closeDuaOv()" style="margin-top:8px;background:rgba(255,255,255,.07);border:1px solid rgba(200,150,255,.25);border-radius:22px;padding:9px 28px;color:rgba(200,160,255,.6);font-family:Nunito;font-size:.85rem;cursor:pointer;">&#8592; Geri</button>
+    <button onclick="duaKendiYaz()" style="margin-top:8px;flex-shrink:0;width:100%;max-width:440px;background:rgba(100,30,180,.3);border:2px dashed rgba(200,140,255,.4);border-radius:18px;padding:11px;cursor:pointer;backdrop-filter:blur(8px);color:#E8C8FF;font-family:Fredoka One;font-size:.95rem;">&#9998; Write your own reflection</button>
+    <button onclick="closeDuaOv()" style="margin-top:8px;background:rgba(255,255,255,.07);border:1px solid rgba(200,150,255,.25);border-radius:22px;padding:9px 28px;color:rgba(200,160,255,.6);font-family:Nunito;font-size:.85rem;cursor:pointer;backdrop-filter:blur(8px);">&#8592; Geri</button>
   </div>
   <div id="dua-e2" style="display:none;position:absolute;inset:0;z-index:3;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
     <div id="dua-card-main" style="width:min(340px,92%);background:linear-gradient(155deg,#160630,#2a0d5e);border:2px solid rgba(220,150,255,.45);border-radius:26px;padding:22px 20px 18px;text-align:center;box-shadow:0 0 60px rgba(180,80,255,.3);position:relative;">
@@ -815,8 +815,8 @@ function _adaMarkActive(idx){
       <div id="dc-ar" style="font-size:1rem;color:rgba(255,255,255,.92);direction:rtl;line-height:2;margin-bottom:10px;"></div>
       <div id="dc-tr" style="font-size:.8rem;color:rgba(210,180,255,.65);font-style:italic;line-height:1.6;"></div>
     </div>
-    <button id="dua-send-btn" onclick="duaGonder()" style="margin-top:22px;background:linear-gradient(135deg,#5500BB,#AA33FF);border:none;border-radius:32px;padding:15px 42px;color:#fff;font-family:'Fredoka One';font-size:1.15rem;cursor:pointer;box-shadow:0 4px 28px rgba(170,50,255,.55);">Seal and send</button>
-    <button onclick="duaGeri()" style="margin-top:8px;background:transparent;border:none;color:rgba(200,160,255,.5);font-size:.8rem;cursor:pointer;padding:6px;">&#8592; Baska bir dusunce sec</button>
+    <button id="dua-send-btn" onclick="duaGonder()" style="margin-top:22px;background:linear-gradient(135deg,#5500BB,#AA33FF);border:1px solid rgba(180,100,255,.35);border-radius:32px;padding:15px 42px;color:#fff;font-family:'Fredoka One';font-size:1.15rem;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 28px rgba(170,50,255,.55);">Seal and send</button>
+    <button onclick="duaGeri()" style="margin-top:8px;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(200,160,255,.5);font-size:.8rem;cursor:pointer;backdrop-filter:blur(8px);padding:6px;">&#8592; Baska bir dusunce sec</button>
   </div>
   <div id="dua-e3" style="display:none;position:absolute;inset:0;z-index:4;flex-direction:column;align-items:center;justify-content:center;">
     <div id="dua-zarf-wrap" style="text-align:center;">
@@ -835,7 +835,7 @@ function _adaMarkActive(idx){
     <div id="dua-kabul-txt" style="font-family:'Fredoka One';font-size:1.6rem;color:#FFD700;text-shadow:0 0 30px rgba(255,215,0,.6);margin:12px 0 6px;">Your reflection was sent!</div>
     <div style="font-size:.95rem;color:rgba(255,255,255,.85);max-width:260px;line-height:1.7;"><span id="dua-kabul-sub">A calm thought goes with you</span><br><span id="dua-kabul-note" style="font-size:.82rem;color:rgba(220,180,255,.6);">Thank you for your mindful moment</span></div>
     <div id="dua-burst" style="font-size:2rem;letter-spacing:6px;margin:16px 0;">&#10024; &#11088; &#10024;</div>
-    <button id="dua-back-btn" onclick="closeDuaOv()" style="background:linear-gradient(135deg,#5500BB,#AA33FF);border:none;border-radius:32px;padding:13px 34px;color:#fff;font-family:'Fredoka One';font-size:1rem;cursor:pointer;">Home</button>
+    <button id="dua-back-btn" onclick="closeDuaOv()" style="background:linear-gradient(135deg,#5500BB,#AA33FF);border:1px solid rgba(180,100,255,.35);border-radius:32px;padding:13px 34px;color:#fff;font-family:'Fredoka One';font-size:1rem;cursor:pointer;backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">Home</button>
   </div>
 </div>
 
@@ -856,7 +856,7 @@ function _adaMarkActive(idx){
       <div id="prayer-time-txt" style="font-size:.8rem;color:rgba(255,255,255,.8);margin-top:2px;">Mindful moment</div>
     </div>
     <button onclick="document.getElementById('prayer-banner').style.display='none'" 
-      style="background:rgba(255,255,255,.15);border:none;border-radius:50%;width:32px;height:32px;color:white;font-size:1.1rem;cursor:pointer;">✕</button>
+      style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:50%;width:32px;height:32px;color:white;font-size:1.1rem;cursor:pointer;backdrop-filter:blur(8px);">✕</button>
   </div>
 </div>
 <style>
@@ -921,7 +921,7 @@ function _adaMarkActive(idx){
     <div id="tasks-list" style="display:flex;flex-direction:column;gap:10px;"></div>
 
     <button onclick="document.getElementById('tasks-ov').style.display='none'" 
-      style="width:100%;margin-top:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;">Kapat</button>
+      style="width:100%;margin-top:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
   </div>
 </div>
 
@@ -943,7 +943,7 @@ function _adaMarkActive(idx){
       </div>
       <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:6px;" id="star-to-coin-txt"></div>
     </div>
-    <button onclick="document.getElementById('star-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;">Kapat</button>
+    <button onclick="document.getElementById('star-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
   </div>
 </div>
 
@@ -965,7 +965,7 @@ function _adaMarkActive(idx){
       <div style="font-size:.75rem;color:rgba(255,255,255,.5);">Ebeveyn bunu gercek bir odulu cevirebilir</div>
       <div style="font-size:.8rem;color:#CC88FF;margin-top:4px;">10 para = 1 odul hakki</div>
     </div>
-    <button onclick="document.getElementById('crystal-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;">Kapat</button>
+    <button onclick="document.getElementById('crystal-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
   </div>
 </div>
 
@@ -998,7 +998,7 @@ function _adaMarkActive(idx){
       <div id="daily-chart-label" style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:8px;">Son 7 gun</div>
       <canvas id="daily-chart" width="320" height="60" style="width:100%;"></canvas>
     </div>
-    <button onclick="document.getElementById('daily-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;">Kapat</button>
+    <button onclick="document.getElementById('daily-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
   </div>
 </div>
 </body>
@@ -1027,7 +1027,7 @@ function _adaMarkActive(idx){
   <!-- Kapat butonu -->
   <button onclick="hideShop()" style="position:absolute;top:14px;right:14px;z-index:300;
     background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50%;
-    width:36px;height:36px;font-size:1rem;cursor:pointer;color:white;line-height:36px;text-align:center;">✕</button>
+    width:36px;height:36px;font-size:1rem;cursor:pointer;backdrop-filter:blur(8px);color:white;line-height:36px;text-align:center;">✕</button>
 
   <!-- ANA LAYOUT: Sol ürünler | Merkez karakter | Sağ ürünler -->
   <div style="position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;">

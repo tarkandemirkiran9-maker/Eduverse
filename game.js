@@ -7627,7 +7627,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   e.preventDefault(); deferredPrompt=e;
   // Show install button
   var btn=document.createElement('button');
-  btn.style.cssText='position:fixed;bottom:16px;right:16px;z-index:200;background:linear-gradient(135deg,#F4C430,#FFD700);border:none;border-radius:30px;padding:10px 18px;font-family:Fredoka One;font-size:.82rem;color:#1a0a00;cursor:pointer;box-shadow:0 4px 16px rgba(244,196,48,.4);display:flex;align-items:center;gap:6px;';
+  btn.style.cssText='position:fixed;bottom:16px;right:16px;z-index:200;background:linear-gradient(135deg,#F4C430,#FFD700);border:1px solid rgba(255,230,100,.38);border-radius:30px;padding:10px 18px;font-family:Fredoka One;font-size:.82rem;color:#1a0a00;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(244,196,48,.4);display:flex;align-items:center;gap:6px;box-shadow:inset 0 1px 0 rgba(255,255,255,.15);';
   btn.innerHTML='📲 Uygulamayı Yükle';
   btn.onclick=function(){
     deferredPrompt.prompt();
@@ -9055,7 +9055,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   e.preventDefault(); deferredPrompt=e;
   // Show install button
   var btn=document.createElement('button');
-  btn.style.cssText='position:fixed;bottom:16px;right:16px;z-index:200;background:linear-gradient(135deg,#F4C430,#FFD700);border:none;border-radius:30px;padding:10px 18px;font-family:Fredoka One;font-size:.82rem;color:#1a0a00;cursor:pointer;box-shadow:0 4px 16px rgba(244,196,48,.4);display:flex;align-items:center;gap:6px;';
+  btn.style.cssText='position:fixed;bottom:16px;right:16px;z-index:200;background:linear-gradient(135deg,#F4C430,#FFD700);border:1px solid rgba(255,230,100,.38);border-radius:30px;padding:10px 18px;font-family:Fredoka One;font-size:.82rem;color:#1a0a00;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(244,196,48,.4);display:flex;align-items:center;gap:6px;box-shadow:inset 0 1px 0 rgba(255,255,255,.15);';
   btn.innerHTML='📲 Uygulamayı Yükle';
   btn.onclick=function(){
     deferredPrompt.prompt();
@@ -10904,7 +10904,7 @@ function checkPrayerTime(){
 function showPrayerAlert(name){
   if(evValuesOn()) return;
   var el=document.createElement('div');
-  el.style.cssText='position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(135deg,#1a3a6a,#2a5a9a);padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,.3);';
+  el.style.cssText='position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(135deg,#1a3a6a,#2a5a9a);padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.15);';
   el.innerHTML='<span style="font-size:1.6rem">🕌</span><div style="flex:1"><div style="font-family:Fredoka One;font-size:.95rem;color:#FFD700">'+name+' Namazı Vakti!</div><div style="font-size:.72rem;color:rgba(255,255,255,.7);font-weight:700">Namaz kılmayı unutma! 🤲</div></div><button style="background:rgba(255,255,255,.2);border:none;border-radius:20px;padding:5px 12px;font-family:Nunito;font-size:.75rem;font-weight:700;color:white;cursor:pointer;" id="pray-ok">Tamam</button>';
   document.body.appendChild(el);
   document.getElementById('pray-ok').onclick=function(){el.remove();};
@@ -11856,7 +11856,7 @@ function showDuaOv(){
   DUAS.forEach(function(d,i){
     var loc = _getDuaLocal(d);
     var btn=document.createElement('button');
-    btn.style.cssText='background:rgba(80,20,160,.2);border:1.5px solid rgba(180,100,255,.2);border-radius:18px;padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;transition:all .18s;';
+    btn.style.cssText='background:rgba(80,20,160,.2);border:1.5px solid rgba(180,100,255,.2);border-radius:18px;padding:14px 10px;cursor:pointer;backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;gap:5px;transition:all .18s;';
     btn.innerHTML='<span style="font-size:2rem;">'+loc.ico+'</span><span style="font-family:Fredoka One;font-size:.85rem;color:#E8C8FF;line-height:1.2;">'+loc.name+'</span>';
     btn.onmouseenter=function(){this.style.borderColor='rgba(220,140,255,.7)';this.style.background='rgba(120,40,220,.3)';};
     btn.onmouseleave=function(){this.style.borderColor='rgba(180,100,255,.2)';this.style.background='rgba(80,20,160,.2)';};
@@ -14124,7 +14124,7 @@ function _renderShop(){
     cats.forEach(function(cat){
       var btn=document.createElement('button');
       btn.textContent=evShopCatLabel(cat);
-      btn.style.cssText='padding:5px 14px;border-radius:20px;font-size:.75rem;cursor:pointer;font-family:Nunito;font-weight:700;'+
+      btn.style.cssText='padding:5px 14px;border-radius:20px;font-size:.75rem;cursor:pointer;backdrop-filter:blur(8px);font-family:Nunito;font-weight:700;'+
         'border:1px solid rgba(100,180,255,'+(cat===_shopCat?'.7':'.2')+');'+
         'background:'+(cat===_shopCat?'rgba(30,60,150,.6)':'rgba(10,20,60,.4)')+';'+
         'color:'+(cat===_shopCat?'#88CCFF':'rgba(150,200,255,.55)')+';'+
@@ -15242,7 +15242,7 @@ function shopRenderCats(){
   el.innerHTML='';
   SHOP_ROOM_CATS.forEach(function(c){
     var btn=document.createElement('button');
-    btn.style.cssText='padding:5px 14px;border-radius:20px;font-size:.75rem;cursor:pointer;font-family:Nunito;font-weight:700;border:1.5px solid rgba(100,180,255,'+( c===_shopRoomCat?'.7':'.2')+');background:'+(c===_shopRoomCat?'rgba(30,60,150,.6)':'rgba(10,20,60,.4)')+';color:'+(c===_shopRoomCat?'#88CCFF':'rgba(150,200,255,.6)')+';transition:all .2s;margin:2px;';
+    btn.style.cssText='padding:5px 14px;border-radius:20px;font-size:.75rem;cursor:pointer;backdrop-filter:blur(8px);font-family:Nunito;font-weight:700;border:1.5px solid rgba(100,180,255,'+( c===_shopRoomCat?'.7':'.2')+');background:'+(c===_shopRoomCat?'rgba(30,60,150,.6)':'rgba(10,20,60,.4)')+';color:'+(c===_shopRoomCat?'#88CCFF':'rgba(150,200,255,.6)')+';transition:all .2s;margin:2px;';
     btn.textContent=evShopRoomCatText(c);
     btn.onclick=function(){
       _shopRoomCat=c; shopRenderCats(); shopRenderItems();

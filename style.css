@@ -392,3 +392,520 @@ body { --t-bg1:#1a0a3e; --t-bg2:#0d1248; --t-bg3:#280a6e; --t-accent:#AA88FF; --
 @keyframes snpc{0%{opacity:1;transform:translateY(0) scale(1);}100%{opacity:0;transform:translateY(95vh) scale(0.8);}}100%{opacity:0;transform:translateY(110vh) rotate(360deg);}}
 @keyframes snfl{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 .sndot{width:9px;height:9px;border-radius:50%;border:none;padding:0;cursor:pointer;display:inline-block;margin:0 3px;background:rgba(255,255,255,.3);transition:background .3s;}
+
+/* ══════════════════════════════════════════════
+   FAZ 1 — LIQUID GLASS UI PATCH
+   Sadece görsel override. Mantık/ID/onclick yok.
+   ══════════════════════════════════════════════ */
+
+/* ── TASARIM TOKEN'LARI ── */
+:root {
+  --lg-bg:         rgba(255,255,255,0.07);
+  --lg-bg-hover:   rgba(255,255,255,0.13);
+  --lg-bg-active:  rgba(255,255,255,0.18);
+  --lg-border:     rgba(255,255,255,0.18);
+  --lg-border-glow:rgba(255,255,255,0.35);
+  --lg-shadow:     0 4px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+  --lg-shadow-hover:0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
+  --lg-blur:       blur(10px);
+  --neon-gold:     rgba(255,210,50,0.75);
+  --neon-blue:     rgba(100,180,255,0.75);
+  --neon-purple:   rgba(170,100,255,0.75);
+  --neon-green:    rgba(80,220,120,0.75);
+  --press-scale:   scale(0.95);
+  --lift-scale:    translateY(-3px);
+  --transition-ui: all 0.18s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+/* ── #nb — Giriş butonu ── */
+#nb {
+  background: linear-gradient(135deg,
+    rgba(255,210,50,0.9) 0%,
+    rgba(255,180,20,0.85) 100%
+  );
+  border: 1px solid rgba(255,230,100,0.5);
+  border-radius: 30px;
+  padding: 15px 52px;
+  font-family: 'Fredoka One';
+  font-size: 1.2rem;
+  color: #1a0a00;
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  box-shadow:
+    0 6px 24px rgba(255,180,0,0.45),
+    0 2px 8px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  transition: var(--transition-ui);
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+}
+#nb:hover {
+  transform: var(--lift-scale);
+  box-shadow:
+    0 12px 36px rgba(255,180,0,0.6),
+    0 4px 12px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+  background: linear-gradient(135deg,
+    rgba(255,225,70,0.95) 0%,
+    rgba(255,200,30,0.9) 100%
+  );
+}
+#nb:active {
+  transform: var(--press-scale);
+  box-shadow:
+    0 2px 10px rgba(255,180,0,0.35),
+    inset 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* ── .hm-btn — Ana menü butonları ── */
+.hm-btn {
+  background: var(--lg-bg);
+  border: 1px solid var(--lg-border);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-family: 'Fredoka One';
+  font-size: .78rem;
+  color: rgba(220,235,255,0.85);
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  box-shadow: var(--lg-shadow);
+  transition: var(--transition-ui);
+  letter-spacing: 0.02em;
+  min-height: 36px;
+}
+.hm-btn:hover {
+  background: var(--lg-bg-hover);
+  border-color: var(--lg-border-glow);
+  color: white;
+  transform: var(--lift-scale);
+  box-shadow: var(--lg-shadow-hover);
+}
+.hm-btn:active {
+  transform: var(--press-scale);
+  background: var(--lg-bg-active);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.3), inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Rapor ve Share butonları — hafif aksan rengi */
+#rapor-btn {
+  border-color: rgba(100,180,255,0.35);
+  color: rgba(160,210,255,0.9);
+}
+#rapor-btn:hover {
+  border-color: rgba(100,180,255,0.65);
+  box-shadow: var(--lg-shadow-hover), 0 0 14px rgba(100,180,255,0.25);
+}
+#qr-btn {
+  border-color: rgba(80,220,120,0.35);
+  color: rgba(150,255,180,0.9);
+}
+#qr-btn:hover {
+  border-color: rgba(80,220,120,0.65);
+  box-shadow: var(--lg-shadow-hover), 0 0 14px rgba(80,220,120,0.25);
+}
+
+/* ── .rb — Oda grid kartları ── */
+.rb {
+  background: linear-gradient(145deg,
+    rgba(255,255,255,0.10) 0%,
+    rgba(255,255,255,0.05) 100%
+  );
+  border: 1px solid var(--lg-border);
+  border-radius: 20px;
+  padding: 14px 8px;
+  text-align: center;
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 -1px 0 rgba(0,0,0,0.15);
+  transition: var(--transition-ui);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cam yansıma efekti — üst kenar şeridi */
+.rb::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.rb:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(145deg,
+    rgba(255,255,255,0.16) 0%,
+    rgba(255,255,255,0.09) 100%
+  );
+  border-color: var(--t-accent, rgba(255,255,255,0.35));
+  box-shadow:
+    0 10px 32px rgba(0,0,0,0.4),
+    0 0 18px rgba(170,136,255,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.rb:active {
+  transform: scale(0.96);
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.3),
+    inset 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Kilitli oda kartı */
+.rb.locked {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: saturate(0.4) brightness(0.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.rb.locked:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-color: var(--lg-border);
+}
+.rb.locked:active { transform: none; }
+
+/* Oda kartı metinleri — koyu zemin üzerine parlak */
+.rb-ico {
+  font-size: 2.2rem;
+  margin-bottom: 6px;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+.rb-name {
+  font-family: 'Fredoka One';
+  font-size: .70rem;
+  color: rgba(220,235,255,0.9);
+  line-height: 1.3;
+}
+.rb-info {
+  font-size: .60rem;
+  color: var(--neon-gold);
+  margin-top: 3px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255,210,50,0.5);
+}
+
+/* ── #streak-btn — Ateş / seri butonu ── */
+#streak-btn {
+  background: linear-gradient(135deg,
+    rgba(255,100,30,0.25) 0%,
+    rgba(255,60,10,0.15) 100%
+  );
+  border: 1px solid rgba(255,120,40,0.45);
+  border-radius: 20px;
+  backdrop-filter: var(--lg-blur);
+  box-shadow:
+    0 3px 14px rgba(255,80,20,0.25),
+    inset 0 1px 0 rgba(255,200,100,0.2);
+  transition: var(--transition-ui);
+  color: #FFAA55;
+  font-family: 'Fredoka One';
+  cursor: pointer;
+  padding: 6px 12px;
+  min-height: 34px;
+}
+#streak-btn:hover {
+  background: linear-gradient(135deg,
+    rgba(255,120,40,0.35) 0%,
+    rgba(255,80,20,0.25) 100%
+  );
+  border-color: rgba(255,150,60,0.7);
+  transform: var(--lift-scale);
+  box-shadow:
+    0 8px 22px rgba(255,80,20,0.35),
+    0 0 14px rgba(255,100,30,0.3),
+    inset 0 1px 0 rgba(255,220,120,0.3);
+}
+#streak-btn:active {
+  transform: var(--press-scale);
+}
+
+/* ── .ov-close — Overlay kapat butonları ── */
+.ov-close {
+  display: block;
+  margin: 16px auto 0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 30px;
+  padding: 9px 28px;
+  font-family: 'Nunito';
+  font-size: .82rem;
+  font-weight: 700;
+  color: rgba(200,220,255,0.6);
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  transition: var(--transition-ui);
+  min-height: 40px;
+  letter-spacing: 0.04em;
+}
+.ov-close:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.35);
+  color: rgba(220,235,255,0.9);
+  transform: var(--lift-scale);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.ov-close:active {
+  transform: var(--press-scale);
+  background: rgba(255,255,255,0.16);
+}
+
+/* ── .kd-tab — Kelimeler filtre sekmeleri ── */
+.kd-tab {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-family: 'Fredoka One';
+  font-size: .76rem;
+  color: rgba(200,220,255,0.55);
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  transition: var(--transition-ui);
+  min-height: 34px;
+}
+.kd-tab:hover {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(255,255,255,0.28);
+  color: rgba(220,235,255,0.8);
+  transform: var(--lift-scale);
+}
+.kd-tab:active {
+  transform: var(--press-scale);
+}
+.kd-tab.active {
+  background: rgba(100,180,255,0.18);
+  border-color: rgba(100,180,255,0.55);
+  color: #A0D0FF;
+  box-shadow:
+    0 0 14px rgba(100,180,255,0.2),
+    inset 0 1px 0 rgba(100,180,255,0.15);
+  font-weight: 700;
+}
+
+/* ── .back-btn — Anı defteri geri butonu ── */
+.back-btn {
+  position: fixed;
+  bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 28px;
+  padding: 12px 32px;
+  font-family: 'Fredoka One';
+  font-size: .88rem;
+  color: rgba(200,220,255,0.65);
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  transition: var(--transition-ui);
+  box-shadow: var(--lg-shadow);
+  min-height: 44px;
+  white-space: nowrap;
+}
+.back-btn:hover {
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(255,255,255,0.32);
+  color: white;
+  transform: translateX(-50%) var(--lift-scale);
+  box-shadow: var(--lg-shadow-hover);
+}
+.back-btn:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+/* ── .fb-close-btn — Flashback kapat butonu ── */
+.fb-close-btn {
+  position: absolute;
+  bottom: 52px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 24px;
+  padding: 11px 28px;
+  font-family: 'Fredoka One';
+  font-size: .82rem;
+  color: rgba(200,220,255,0.7);
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  transition: var(--transition-ui);
+  white-space: nowrap;
+  animation: titleIn .8s ease 1.8s both;
+  min-height: 42px;
+  box-shadow: var(--lg-shadow);
+}
+.fb-close-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.35);
+  color: white;
+  transform: translateX(-50%) var(--lift-scale);
+  box-shadow: var(--lg-shadow-hover);
+}
+.fb-close-btn:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+/* ── #acok — Başarı popup butonu ── */
+#acok {
+  background: linear-gradient(135deg,
+    rgba(255,210,50,0.9) 0%,
+    rgba(255,180,20,0.85) 100%
+  );
+  border: 1px solid rgba(255,230,100,0.5);
+  border-radius: 30px;
+  padding: 12px 40px;
+  font-family: 'Fredoka One';
+  font-size: 1.08rem;
+  color: #1a0a00;
+  cursor: pointer;
+  backdrop-filter: var(--lg-blur);
+  box-shadow:
+    0 6px 22px rgba(255,180,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  transition: var(--transition-ui);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.25);
+  min-height: 44px;
+}
+#acok:hover {
+  transform: var(--lift-scale);
+  box-shadow:
+    0 10px 30px rgba(255,180,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+#acok:active {
+  transform: var(--press-scale);
+  box-shadow: 0 2px 8px rgba(255,180,0,0.3);
+}
+
+/* ── MOBİL DÜZELTMELER ── */
+/* Butonlar dokunma dostu minimum boyuta ulaşsın */
+@media (max-width: 480px) {
+  .hm-btn {
+    padding: 9px 18px;
+    font-size: .80rem;
+    min-height: 40px;
+    border-radius: 22px;
+  }
+  .hm-btns {
+    gap: 7px;
+  }
+  .rb {
+    padding: 14px 6px;
+    border-radius: 18px;
+  }
+  .rb-ico {
+    font-size: 2rem;
+  }
+  .rb-name {
+    font-size: .66rem;
+  }
+  .ov-close {
+    padding: 11px 32px;
+    font-size: .85rem;
+    min-height: 44px;
+  }
+  .kd-tab {
+    padding: 9px 18px;
+    font-size: .78rem;
+    min-height: 38px;
+  }
+  #nb {
+    padding: 16px 56px;
+    font-size: 1.25rem;
+    min-height: 52px;
+  }
+  #acok {
+    padding: 14px 44px;
+    min-height: 48px;
+  }
+  #streak-btn {
+    min-height: 38px;
+    padding: 7px 14px;
+  }
+}
+
+/* ── ODA KART TEMA RENK UYUMU ── */
+/* Tema değiştiğinde .rb border glow rengi tema aksentine uyar */
+body[data-theme="purple"] .rb:hover { box-shadow: 0 10px 32px rgba(0,0,0,.4), 0 0 18px rgba(170,100,255,.3), inset 0 1px 0 rgba(255,255,255,.18); }
+body[data-theme="teal"]   .rb:hover { box-shadow: 0 10px 32px rgba(0,0,0,.4), 0 0 18px rgba(68,200,180,.3), inset 0 1px 0 rgba(255,255,255,.18); }
+body[data-theme="rose"]   .rb:hover { box-shadow: 0 10px 32px rgba(0,0,0,.4), 0 0 18px rgba(255,100,150,.3), inset 0 1px 0 rgba(255,255,255,.18); }
+body[data-theme="forest"] .rb:hover { box-shadow: 0 10px 32px rgba(0,0,0,.4), 0 0 18px rgba(80,200,100,.3),  inset 0 1px 0 rgba(255,255,255,.18); }
+body[data-theme="night"]  .rb:hover { box-shadow: 0 10px 32px rgba(0,0,0,.4), 0 0 18px rgba(100,150,255,.3), inset 0 1px 0 rgba(255,255,255,.18); }
+
+
+/* ── FAZ 2/3 EK SINIFLARI ── */
+
+/* Ada müzik track satırları */
+.ada-trk-row {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: var(--lg-blur);
+  transition: var(--transition-ui);
+  box-shadow: var(--lg-shadow);
+}
+.ada-trk-row:hover {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(255,255,255,0.26);
+  transform: var(--lift-scale);
+  box-shadow: var(--lg-shadow-hover);
+}
+.ada-trk-row:active { transform: var(--press-scale); }
+
+/* Refleks sonuç butonları */
+.rbbtn {
+  backdrop-filter: var(--lg-blur);
+  box-shadow: var(--lg-shadow);
+  transition: var(--transition-ui);
+  border-radius: 22px;
+  font-family: 'Fredoka One';
+  cursor: pointer;
+}
+.rbbtn:hover {
+  transform: var(--lift-scale);
+  box-shadow: var(--lg-shadow-hover);
+}
+.rbbtn:active { transform: var(--press-scale); }
+.rbbtn1 {
+  background: linear-gradient(135deg, rgba(100,200,255,0.35), rgba(60,150,255,0.28));
+  border: 1px solid rgba(100,180,255,0.4);
+  color: rgba(200,230,255,0.95);
+}
+.rbbtn2 {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(200,220,255,0.75);
+}
+
+/* Sinema nokta nav */
+.sndot {
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+.sndot:hover {
+  background: rgba(255,255,255,0.55) !important;
+  transform: scale(1.3);
+}
+
+/* sq2 - Oda soru "Odaya Gir" butonu */
+.sq2-next {
+  backdrop-filter: var(--lg-blur);
+  transition: var(--transition-ui);
+  box-shadow: 0 6px 20px rgba(100,180,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.sq2-next:hover {
+  transform: var(--lift-scale);
+  box-shadow: 0 10px 28px rgba(100,180,0,0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.sq2-next:active { transform: var(--press-scale); }
+
+/* ── SON ── */
+
