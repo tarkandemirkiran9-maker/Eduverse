@@ -31723,3 +31723,112 @@ body[data-v48s22-meteor="1"]{overflow:hidden!important;}\
     }catch(e){}
   });
 })();
+
+// V48S26_OKI_MOBILE_GAME_STAGE_FIT_FIX_START
+(function(){
+  /*
+    EV_OKI_MOBILE_FIX:
+    - Mobile-only responsive fit for Oki Akil Parkuru and Oki Galaksi Koruyucusu.
+    - Does not change gameplay logic, robot assets, music, Shop, Values, KME, or i18n.
+    - Fixes iPhone/Instagram webview overlap by using 100dvh and inner scrolling.
+  */
+  if(window.__v48s26OkiMobileStageFitFix) return;
+  window.__v48s26OkiMobileStageFitFix=true;
+  function inject(){
+    if(document.getElementById('v48s26-oki-mobile-fit-style')) return;
+    var s=document.createElement('style');
+    s.id='v48s26-oki-mobile-fit-style';
+    s.textContent='\
+@media (max-width: 760px), (max-height: 560px){\
+  body[data-v48s18-oki="1"],body[data-v48s22-meteor="1"],body[data-v48s23-center="1"]{overflow:hidden!important;touch-action:manipulation;}\
+  #v48s18-oki,#v48s22-meteor,#v48s23-oki-center{align-items:stretch!important;justify-content:center!important;padding:0!important;box-sizing:border-box!important;overflow:hidden!important;}\
+  #v18-shell{width:100vw!important;height:100dvh!important;max-width:100vw!important;max-height:100dvh!important;border-radius:0!important;padding:8px!important;overflow-x:hidden!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;box-sizing:border-box!important;}\
+  .v18-head{height:auto!important;min-height:0!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:6px!important;margin-bottom:6px!important;}\
+  .v18-title{gap:6px!important;align-items:flex-start!important;}\
+  .v18-title .ico{font-size:22px!important;line-height:1!important;}\
+  .v18-title h2{font-size:clamp(22px,7.5vw,30px)!important;line-height:.95!important;letter-spacing:-.3px!important;white-space:normal!important;overflow:visible!important;text-shadow:0 2px 10px rgba(0,0,0,.22)!important;}\
+  .v18-sub{font-size:clamp(11px,3.5vw,14px)!important;line-height:1.15!important;padding:4px 8px!important;max-width:100%!important;white-space:normal!important;display:block!important;}\
+  .v18-stats{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:5px!important;justify-content:stretch!important;}\
+  .v18-pill{font-size:11px!important;line-height:1.05!important;padding:6px 7px!important;text-align:center!important;min-width:0!important;white-space:normal!important;}\
+  .v18-main{height:auto!important;min-height:0!important;display:flex!important;flex-direction:column!important;gap:8px!important;overflow:visible!important;}\
+  .v18-play,.v18-panel{width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;overflow:visible!important;border-radius:16px!important;}\
+  .v18-play{padding:8px!important;min-height:42dvh!important;}\
+  .v18-panel{padding:8px!important;gap:6px!important;}\
+  .v18-tag{font-size:12px!important;padding:5px 8px!important;max-width:100%!important;white-space:normal!important;}\
+  .v18-board{height:auto!important;min-height:35dvh!important;max-height:none!important;padding:4px 0!important;overflow:hidden!important;}\
+  .v18-grid{width:92vw!important;max-width:340px!important;height:220px!important;max-height:38dvh!important;gap:5px!important;padding:9px!important;transform:skewY(-4deg) rotate(-2deg) scale(.88)!important;box-shadow:8px 12px 0 rgba(0,0,0,.20)!important;}\
+  .v18-cell{border-radius:10px!important;font-size:18px!important;}\
+  .v18-oki{font-size:24px!important;}\
+  .v18-label{font-size:10px!important;bottom:-18px!important;padding:2px 6px!important;}\
+  .v18-seqstage{width:100%!important;min-height:150px!important;padding:10px!important;gap:8px!important;box-sizing:border-box!important;}\
+  .v18-runway{gap:6px!important;}\
+  .v18-token{min-width:40px!important;min-height:36px!important;font-size:16px!important;padding:4px 6px!important;border-radius:12px!important;}\
+  .v18-token.small{font-size:12px!important;}\
+  .v18-pattern{grid-template-columns:repeat(4,1fr)!important;width:100%!important;max-width:300px!important;grid-auto-rows:36px!important;gap:5px!important;}\
+  .v18-patcell{font-size:18px!important;border-radius:10px!important;}\
+  .v18-paneltop{font-size:13px!important;line-height:1.15!important;padding:6px 8px!important;}\
+  .v18-panel h3{font-size:clamp(20px,6.2vw,27px)!important;line-height:1.02!important;}\
+  .v18-panel p{font-size:13px!important;line-height:1.18!important;}\
+  .v18-steps{gap:5px!important;}\
+  .v18-step{font-size:12px!important;padding:5px 0!important;}\
+  .v18-msg,.v18-reward{font-size:12px!important;line-height:1.15!important;padding:6px 8px!important;}\
+  .v18-options{grid-template-columns:1fr 1fr!important;gap:6px!important;}\
+  .v18-choice,.v18-btn{font-size:12px!important;line-height:1.05!important;padding:7px!important;border-radius:11px!important;}\
+  .v18-choice{min-height:34px!important;}\
+  .v18-actions{gap:6px!important;}\
+  .v18-dpad{grid-template-columns:48px 48px 48px!important;gap:5px!important;}\
+  .v18-dpad .v18-btn{min-height:44px!important;font-size:20px!important;padding:5px!important;}\
+  .v18-bottom{position:sticky!important;bottom:0!important;background:linear-gradient(180deg,rgba(6,78,59,0),rgba(6,78,59,.88) 20%,rgba(6,78,59,.96))!important;padding-top:8px!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;z-index:4!important;}\
+  .v18-bottom .v18-btn{min-height:42px!important;font-size:12px!important;}\
+  .v18-progress{font-size:11px!important;}\
+  #v48s22-meteor{overflow:hidden!important;}\
+  .m20-shell{width:100vw!important;height:100dvh!important;max-width:100vw!important;max-height:100dvh!important;border-radius:0!important;padding:8px!important;box-sizing:border-box!important;display:flex!important;flex-direction:column!important;gap:8px!important;overflow-x:hidden!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;}\
+  .m20-sky{width:100%!important;min-height:42dvh!important;height:42dvh!important;border-radius:18px!important;flex:0 0 auto!important;}\
+  .m20-ground{height:62px!important;}\
+  .m20-oki{width:62px!important;height:62px!important;font-size:34px!important;bottom:28px!important;border-radius:18px!important;}\
+  .m20-fall{width:44px!important;height:44px!important;border-radius:14px!important;font-size:22px!important;}\
+  .m20-side{width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;border-radius:18px!important;padding:8px!important;gap:7px!important;overflow:visible!important;flex:0 0 auto!important;}\
+  .m20-title{font-size:clamp(21px,6.5vw,29px)!important;line-height:1.02!important;}\
+  .m20-sub{font-size:12px!important;line-height:1.15!important;}\
+  .m20-sector{font-size:12px!important;line-height:1.12!important;}\
+  .m20-stats{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:5px!important;}\
+  .m20-stat{font-size:10px!important;padding:6px 3px!important;border-radius:10px!important;}\
+  .m20-stat b{font-size:16px!important;}\
+  .m20-goal{padding:8px!important;border-radius:14px!important;}\
+  .m20-goal h3{font-size:17px!important;line-height:1.05!important;}\
+  .m20-goal p{font-size:12px!important;line-height:1.18!important;}\
+  .m20-msg{min-height:26px!important;font-size:12px!important;line-height:1.15!important;padding:7px!important;}\
+  .m20-controls{gap:6px!important;}\
+  .m20-row{gap:6px!important;}\
+  .m20-btn{font-size:11px!important;line-height:1.05!important;padding:8px 4px!important;border-radius:12px!important;min-height:38px!important;}\
+  .m20-complete,.m20-over{inset:8px!important;border-radius:18px!important;padding:10px!important;}\
+  .m20-complete-card .big{font-size:42px!important;}\
+  .m20-complete-card h2{font-size:clamp(24px,7vw,36px)!important;line-height:1.06!important;}\
+  .m20-complete-card p{font-size:14px!important;line-height:1.2!important;}\
+  #v23c-shell{width:100vw!important;max-width:100vw!important;height:100dvh!important;max-height:100dvh!important;border-radius:0!important;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch!important;box-sizing:border-box!important;padding:10px!important;}\
+  .v23c-head{align-items:flex-start!important;gap:8px!important;}\
+  .v23c-title h2{font-size:clamp(30px,9vw,44px)!important;line-height:.95!important;}\
+  .v23c-title p{font-size:clamp(16px,4.4vw,22px)!important;line-height:1.15!important;}\
+  .v23c-grid{display:flex!important;flex-direction:column!important;gap:10px!important;}\
+  .v23c-card{min-height:auto!important;padding:18px!important;}\
+  .v23c-card h3{font-size:clamp(30px,8vw,42px)!important;line-height:1!important;}\
+  .v23c-card p{font-size:clamp(16px,4.3vw,21px)!important;line-height:1.14!important;}\
+}\
+@media (max-width: 380px){\
+  .v18-grid{height:200px!important;transform:skewY(-3deg) rotate(-1deg) scale(.82)!important;}\
+  .v18-dpad{grid-template-columns:44px 44px 44px!important;}\
+  .v18-dpad .v18-btn{min-height:40px!important;}\
+  .m20-sky{height:38dvh!important;min-height:38dvh!important;}\
+  .m20-btn{font-size:10px!important;padding:7px 3px!important;}\
+}\
+@supports not (height: 100dvh){\
+  @media (max-width: 760px), (max-height: 560px){#v18-shell,.m20-shell,#v23c-shell{height:100vh!important;max-height:100vh!important;}}\
+}\
+';
+    document.head.appendChild(s);
+  }
+  function patch(){ inject(); }
+  patch();
+  try{ window.addEventListener('load',patch); window.addEventListener('resize',patch); window.addEventListener('orientationchange',function(){ setTimeout(patch,120); }); }catch(e){}
+})();
+// V48S26_OKI_MOBILE_GAME_STAGE_FIT_FIX_END
