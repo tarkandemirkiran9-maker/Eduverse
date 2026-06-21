@@ -76,6 +76,17 @@
   function $(id){ return document.getElementById(id); }
   function D(){ return dict[lang] || dict.en; }
 
+  function evI18nDiscoveryTitle(){
+    if(window.evDiscoveryPlanetTitle) return window.evDiscoveryPlanetTitle(window.playerName||'Kahraman');
+    var n=String(window.playerName||'Kahraman').trim()||'Kahraman';
+    var low=n.toLowerCase(), vowels='aıoueiöü', last='', lastChar='';
+    for(var c=low.length-1;c>=0;c--){ if(/[a-zçğıöşü]/i.test(low.charAt(c))){ lastChar=low.charAt(c); break; } }
+    for(var i=low.length-1;i>=0;i--){ if(vowels.indexOf(low.charAt(i))>=0){ last=low.charAt(i); break; } }
+    var base=(last==='a'||last==='ı')?'ın':((last==='o'||last==='u')?'un':((last==='ö'||last==='ü')?'ün':'in'));
+    var suf=(vowels.indexOf(lastChar)>=0?'n':'')+base;
+    return n+"'"+suf+' Keşif Gezegeni';
+  }
+
   function lockBrowserTranslate(){
     try{
       document.documentElement.setAttribute('translate','no');
@@ -191,7 +202,7 @@
     if(valuesOn()) return;
     var set=function(id,text){var el=$(id);if(el)el.textContent=text;};
     var title=$('hm-title');
-    if(title && window.playerName) title.textContent=window.playerName+"'in Dua Evi";
+    if(title && window.playerName) title.textContent=evI18nDiscoveryTitle();
 
     set('feed-btn','\ud83c\udf4e Oki\u2019yi Besle');
     applyHeroProgressText();
@@ -410,7 +421,7 @@
       restoreGlobalTranslations();
       document.documentElement.dir = 'ltr';
       document.documentElement.lang = 'tr';
-      var trTitle=$('hm-title'); if(trTitle && window.playerName) trTitle.textContent=window.playerName+"'\u0131n Dua Evi";
+      var trTitle=$('hm-title'); if(trTitle && window.playerName) trTitle.textContent=evI18nDiscoveryTitle();
       var trFeed=$('feed-btn'); if(trFeed) trFeed.textContent='\ud83c\udf4e Oki\u2019yi Besle';
       setAllByOnclick('showShopRoom', 'D\u00fckkan', '\ud83d\uded1');
       setAllByOnclick('showTasks', 'G\u00f6revler', '\u2b50');

@@ -1,0 +1,22 @@
+EV_CARD_PHASE2_REAL QA RAPORU
+Kaynak: EV_CARD_PHASE1_REAL
+Amaç: Faz 1 dışındaki öncelikli balonlu odalara oda-temalı 50 Türkçe kart bağlama.
+
+caliskan: 50 özel Türkçe kart
+odulodasi: 50 özel Türkçe kart
+ilkbahar: 50 özel Türkçe kart
+arapca: 50 özel Türkçe kart
+kucukmelekler: 50 özel Türkçe kart
+gizli: 50 özel Türkçe kart
+english: 50 özel Türkçe kart
+deutsch: 50 özel Türkçe kart
+francais: 50 özel Türkçe kart
+okyanus: 50 özel Türkçe kart
+atlas: 50 özel Türkçe kart
+muzik: 50 özel Türkçe kart
+kumanda: 50 özel Türkçe kart
+bilgisayar: 50 özel Türkçe kart
+hayvanat: 50 özel Türkçe kart
+
+Dokunulmayanlar: robot, müzik, Shop, Oki mobil, Keşif Gezegeni, Küçük Melekler özel akışı, skor/dil motoru.
+Not: Bu paket Faz 2 Türkçe içerik paketidir. Çok dil tam çeviri Faz 3 olarak yapılmalıdır.

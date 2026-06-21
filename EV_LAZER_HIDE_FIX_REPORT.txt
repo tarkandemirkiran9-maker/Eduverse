@@ -1,0 +1,6 @@
+EV_LAZER_HIDE_FIX
+- Lazer oda kartı ana ROOMS görünür listesinden çıkarıldı.
+- Lazer deep legacy code silinmedi.
+- Runtime guard: ROOMS, V48JG_ROOMS, V48O_VALUES_ROOMS, EV_V48S45_MISSION_ROOMS, V48H_WITH_INNER ve dynamic gate üzerinden lazer erişimi kapatıldı.
+- enterRoom ve _doEnterRoom lazer id gelirse false döndürür.
+- Robot, müzik, Shop, Oki mobil, Keşif Gezegeni, kart sistemleri ve dil motoru değiştirilmedi.

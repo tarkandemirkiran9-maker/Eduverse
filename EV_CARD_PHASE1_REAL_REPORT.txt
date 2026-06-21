@@ -1,0 +1,16 @@
+EV_CARD_PHASE1_REAL QA REPORT
+Base: EV_DISCOVERY_NAME_GUN_FIX.zip
+Scope: 10 priority balloon rooms only, Turkish room-specific 50-card pools.
+Rooms: ders, ibadet/sakinlik, oyuncak, cevre, aile, mutfak, sifa, sanat, nefes, para.
+ders: 50 cards, unique=50
+ibadet: 50 cards, unique=50
+oyuncak: 50 cards, unique=50
+cevre: 50 cards, unique=50
+aile: 50 cards, unique=50
+mutfak: 50 cards, unique=50
+sifa: 50 cards, unique=50
+sanat: 50 cards, unique=50
+nefes: 50 cards, unique=50
+para: 50 cards, unique=50
+Aliases: {"ada": "ibadet", "sessiz": "ibadet", "sakinlik": "ibadet", "ogrenme": "ders", "oyun": "oyuncak", "doga": "cevre", "saglik": "sifa", "paylasim": "para"}
+Not touched: robot, music, Shop, Oki mobile, KME, language engine, score systems.

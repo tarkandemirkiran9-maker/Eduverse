@@ -1,0 +1,13 @@
+EV_CARD_PHASE3_MULTILANG_REAL_REPORT
+Source: EV_CARD_PHASE2_REAL
+Scope: active getNextMsg balloon/card flow only
+Rooms: 26
+Languages: TR, EN, DE, FR, AR
+Cards: 50 per room per language
+Total card entries: 6500
+Rooms: ders, ibadet, oyuncak, cevre, caliskan, sanat, mutfak, aile, ada, sifa, nefes, para, odulodasi, ilkbahar, arapca, kucukmelekler, gizli, english, deutsch, francais, okyanus, atlas, muzik, kumanda, bilgisayar, hayvanat
+TR: OK 26x50
+EN: OK 26x50
+DE: OK 26x50
+FR: OK 26x50
+AR: OK 26x50

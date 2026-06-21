@@ -1,0 +1,20 @@
+EV_CARD_PHASE4_CLAUDIA_MERGE_REPORT
+
+Kaynak dosya: Yapıştırılan metin(6).txt / EV_BALLOON_CARDS_PATCH.js
+Kaynakta bulunan oda anahtarları: ders, oyuncak, cevre, caliskan, sanat, mutfak, aile, nefes, ada, refleks, bilgisayar, hayvanat, lazer, sinema, puzzle
+Her kaynak odada: TR/EN/DE/FR/AR için 20 kart.
+
+İÇERİ ALINAN ODA ANAHTARLARI:
+ders, oyuncak, cevre, caliskan, sanat, mutfak, aile, nefes, ada, bilgisayar, hayvanat
+
+BİLEREK DIŞARIDA BIRAKILANLAR:
+refleks, lazer, sinema, puzzle
+Sebep: Kullanıcının kuralına göre Sinema, Refleks, Puzzle/Bulmaca ve Lazer gibi alanlara balon kart sistemi zorlanmayacak.
+
+Yapılan işlem:
+- Phase3 çok dilli 50 kart sistemi korundu.
+- Claudia kaynaklı daha iyi oda-temalı 20 kart, uygun 11 odaya her dilde eklendi.
+- Her oda/dil 50 kart olarak tamamlandı.
+- Toplam yeni override: 11 oda x 5 dil x 50 kart = 2750 kart girdisi.
+- Diğer Phase3 odaları korunuyor.
+- Robot, müzik, Shop, Oki mobil, Keşif Gezegeni, Küçük Melekler ana akışı ve skor sistemi değiştirilmedi.
