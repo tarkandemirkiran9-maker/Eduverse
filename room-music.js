@@ -7,7 +7,8 @@
     {name:'Ilkbahar Ormani', src:'music/spring-forest.mp3'},
     {name:'Huzurlu Fon', src:'music/islamic-soft.mp3'},
     {name:'Arap Ezgisi', src:'music/arabian-lounge.mp3'},
-    {name:'Muzik Kutusu', src:'music/music-box.mp3'}
+    {name:'Muzik Kutusu', src:'music/music-box.mp3'},
+    {name:'Sakinlik Tender Loop', src:'music/sonican-calm-tender-loop.mp3'}
   ];
 
   var baseNames = [
@@ -19,27 +20,27 @@
     'Cairo Melody', 'Golden Sand Oud', 'Elegant Oud', 'Eastern Melody',
     'Peaceful Background', 'Birdsong', 'Happy Children', "Children's Music",
     'Happy Children 15s', "Children's Music 54s", 'Cheerful Orchestra', 'Nature Morning',
-    'Spring Forest', 'Peaceful Background', 'Arabian Melody', 'Music Box'
+    'Spring Forest', 'Peaceful Background', 'Arabian Melody', 'Music Box', 'Calm Tender Loop'
   ];
   var frenchTrackNames = [
     'Melodie du Caire', 'Oud des sables dores', 'Oud elegant', 'Melodie orientale',
     'Fond paisible', 'Chant des oiseaux', 'Enfants joyeux', 'Musique pour enfants',
     'Enfants joyeux 15 s', 'Musique pour enfants 54 s', 'Orchestre joyeux', 'Matin dans la nature',
-    'Foret printaniere', 'Fond paisible', 'Melodie arabe', 'Boite a musique'
+    'Foret printaniere', 'Fond paisible', 'Melodie arabe', 'Boite a musique', 'Boucle calme tendre'
   ];
   var arabicTrackNames = [
     'لحن القاهرة', 'عود الرمال الذهبية', 'عود أنيق', 'لحن شرقي',
     'خلفية هادئة', 'أصوات الطيور', 'أطفال سعداء', 'موسيقى الأطفال',
     'أطفال سعداء 15 ثانية', 'موسيقى الأطفال 54 ثانية', 'أوركسترا مرحة', 'صباح الطبيعة',
-    'غابة الربيع', 'خلفية هادئة', 'لحن عربي', 'صندوق الموسيقى'
+    'غابة الربيع', 'خلفية هادئة', 'لحن عربي', 'صندوق الموسيقى', 'حلقة هادئة لطيفة'
   ];
 
   var roomMap = {
-    ibadet:13, arapca:13, dua:13, sifa:13, nefes:12,
-    ada:14, sinema:10, atlas:10, okyanus:11, cevre:12, ilkbahar:12, hayvanat:12,
+    ibadet:13, arapca:13, dua:13, sifa:13, nefes:16,
+    ada:16, sinema:10, atlas:10, okyanus:11, cevre:12, ilkbahar:12, hayvanat:12,
     ders:15, caliskan:15, english:15, deutsch:15, bilgisayar:9,
     oyuncak:8, odulodasi:8, kumanda:9, refleks:9, puzzle:9, lazer:10,
-    sanat:15, boyama:15, muzik:9, mutfak:14, aile:15, para:15, gizli:10
+    sanat:15, boyama:15, muzik:9, mutfak:14, aile:15, para:15, gizli:10, bilgitoplari:9, hikayestudio:10, oki3dbahce:12
   };
 
   var labels = {
@@ -58,7 +59,8 @@
     12:'Orman ve ilkbahar sesi',
     13:'Huzurlu islami fon',
     14:'Oud ve sicak aile havasi',
-    15:'Yumusak muzik kutusu havasi'
+    15:'Yumusak muzik kutusu havasi',
+    16:'Sakinlik ve nefes icin tender fon'
   };
 
   var lastRoomId = '';
@@ -180,11 +182,66 @@
     }
   }
 
+
+  function forcePanelVisible(force){
+    var m = $('ada-muzik');
+    if (m) {
+      var show = !!force;
+      try{
+        var hm = $('hm'), gs = $('gs'), vp = $('v48p-arena'), vq = $('v48q-story'), vs = $('v48s-oki3d');
+        if((hm && getComputedStyle(hm).display !== 'none') || (gs && getComputedStyle(gs).display !== 'none')) show = true;
+        if((vp && getComputedStyle(vp).display !== 'none') || (vq && getComputedStyle(vq).display !== 'none') || (vs && getComputedStyle(vs).display !== 'none')) show = true;
+        if(m.style.display && m.style.display !== 'none') show = true;
+      }catch(e){}
+      if(show) m.style.display = 'flex';
+      m.style.position = 'fixed';
+      m.style.zIndex = '1000005';
+    }
+    var layers = $('ada-layers');
+    if (layers) layers.style.zIndex = '1000006';
+  }
+
+  function wrapSpecialNewRooms(){
+    if (typeof window.openBilgiToplariArena === 'function' && !window.openBilgiToplariArena.__roomMusicSpecialWrapped) {
+      var oldTop = window.openBilgiToplariArena;
+      window.openBilgiToplariArena = function(){
+        var res = oldTop.apply(this, arguments);
+        setTimeout(function(){ forcePanelVisible(true); pickForRoom({id:'bilgitoplari', name:'Bilgi Topları Arenası'}); }, 120);
+        setTimeout(function(){ forcePanelVisible(true); }, 500);
+        return res;
+      };
+      window.openBilgiToplariArena.__roomMusicSpecialWrapped = true;
+    }
+    if (typeof window.openHikayeStudyosu === 'function' && !window.openHikayeStudyosu.__roomMusicSpecialWrapped) {
+      var oldStory = window.openHikayeStudyosu;
+      window.openHikayeStudyosu = function(){
+        var res = oldStory.apply(this, arguments);
+        setTimeout(function(){ forcePanelVisible(true); pickForRoom({id:'hikayestudio', name:'Hikaye Stüdyosu'}); }, 120);
+        setTimeout(function(){ forcePanelVisible(true); }, 500);
+        return res;
+      };
+      window.openHikayeStudyosu.__roomMusicSpecialWrapped = true;
+    }
+
+    if (typeof window.openOki3DBahcesi === 'function' && !window.openOki3DBahcesi.__roomMusicSpecialWrapped) {
+      var oldGarden = window.openOki3DBahcesi;
+      window.openOki3DBahcesi = function(){
+        var res = oldGarden.apply(this, arguments);
+        setTimeout(function(){ forcePanelVisible(true); pickForRoom({id:'oki3dbahce', name:'Oki\'nin 3D Bahçesi'}); }, 120);
+        setTimeout(function(){ forcePanelVisible(true); }, 500);
+        return res;
+      };
+      window.openOki3DBahcesi.__roomMusicSpecialWrapped = true;
+    }
+  }
+
   function boot(){
     addExtraTracks();
     ensurePanelRows();
     wrapEnterRoom();
     wrapAdaPanel();
+    wrapSpecialNewRooms();
+    forcePanelVisible(false);
     setTimeout(function(){
       try { if (window.currentRoom) pickForRoom(window.currentRoom); } catch(e) {}
     }, 1200);

@@ -1,0 +1,16 @@
+EduVerse music trial report
+Base package: V48S81 robot mascot remove human/Oki assets trial.
+Change type: music-size and calm-room trial.
+
+Applied:
+- Added uploaded Pixabay/Sonican calm tender loop as music/sonican-calm-tender-loop.mp3.
+- Mapped Nefes and Sessiz Ada room music to the new calm tender loop through room-music.js index 16.
+- Compressed existing music and embedded music MP3s to 64 kbps.
+- Trimmed very long background tracks over 120 seconds to 90 seconds for lighter loop playback.
+
+Not changed:
+- Game logic, scoring, player isolation, Shop, Story Studio, Bilgi Topları, robot rooms, KME logic and language engine.
+- Portable music panel remains the same system; it now has one added calm track.
+
+License note:
+- The uploaded music file came from the user. Keep the Pixabay license certificate outside the game package for store/YouTube proof.

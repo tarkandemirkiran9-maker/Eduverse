@@ -30,7 +30,7 @@
       ]
     },
     en:{
-      btn:'Chest', title:'Surprise Chest', readyName:'Open the chest', readySub:'Your values reward is waiting.', open:'Open', opened:'Opened', close:'Close', note:'Test mode: you can try it again and again.',
+      btn:'Chest', title:'Surprise Chest', readyName:'Open the chest', readySub:'Your values reward is waiting.', open:'Open', opened:'Opened', close:'Close', note:'',
       rewards:[
         {type:'stars', amount:25, name:'+25 Stars', sub:'Extra stars for your effort today.'},
         {type:'stars', amount:50, name:'+50 Stars', sub:'Great! Your values journey gained more stars.'},
@@ -43,7 +43,7 @@
       ]
     },
     de:{
-      btn:'Truhe', title:'Ueberraschungs-Truhe', readyName:'Truhe oeffnen', readySub:'Deine Werte-Belohnung wartet.', open:'Oeffnen', opened:'Geoeffnet', close:'Schliessen', note:'Testmodus: Du kannst es immer wieder versuchen.',
+      btn:'Truhe', title:'Ueberraschungs-Truhe', readyName:'Truhe oeffnen', readySub:'Deine Werte-Belohnung wartet.', open:'Oeffnen', opened:'Geoeffnet', close:'Schliessen', note:'',
       rewards:[
         {type:'stars', amount:25, name:'+25 Sterne', sub:'Extra Sterne fuer deine Muehe heute.'},
         {type:'stars', amount:50, name:'+50 Sterne', sub:'Super! Deine Werte-Reise bekommt mehr Sterne.'},
@@ -56,7 +56,7 @@
       ]
     },
     ar:{
-      btn:'صندوق', title:'صندوق المفاجأة', readyName:'افتح الصندوق', readySub:'مكافأة القيم تنتظرك.', open:'افتح', opened:'تم الفتح', close:'اغلاق', note:'وضع الاختبار: يمكنك التجربة مرة أخرى.',
+      btn:'صندوق', title:'صندوق المفاجأة', readyName:'افتح الصندوق', readySub:'مكافأة القيم تنتظرك.', open:'افتح', opened:'تم الفتح', close:'اغلاق', note:'',
       rewards:[
         {type:'stars', amount:25, name:'+25 نجمة', sub:'نجوم اضافية لجهدك اليوم.'},
         {type:'stars', amount:50, name:'+50 نجمة', sub:'رائع! رحلة القيم حصلت على نجوم اكثر.'},

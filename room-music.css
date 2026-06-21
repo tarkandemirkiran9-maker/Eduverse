@@ -4,3 +4,7 @@
 .ev-rm-sub{font-size:.68rem;font-weight:800;color:rgba(255,255,255,.74);line-height:1.25}
 @keyframes evMusicTip{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:430px){#ev-room-music-tip{right:10px;bottom:132px;max-width:190px;padding:8px 10px}.ev-rm-title{font-size:.68rem}.ev-rm-sub{font-size:.62rem}}
+/* V48R2: keep existing portable music panel above special room overlays */
+#ada-muzik{z-index:1000005!important;}
+#ada-layers{z-index:1000006!important;}
+@media(max-width:560px){#ada-muzik{right:10px!important;bottom:78px!important;transform:scale(.92);transform-origin:bottom right;}}

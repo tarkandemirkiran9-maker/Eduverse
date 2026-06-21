@@ -1,0 +1,11 @@
+EDGE TEST ICIN ONEMLI:
+
+index.html dosyasina cift tiklama.
+Edge'de file:/// hatasi ve gec acilma yapabilir.
+
+1) EDGE_ILE_AC.bat dosyasina cift tikla.
+2) Siyah pencere acik kalsin.
+3) Edge adres cubugunda su yazmali:
+   http://127.0.0.1:8080/index.html
+
+Durdurmak icin siyah pencerede CTRL+C bas veya pencereyi kapat.
