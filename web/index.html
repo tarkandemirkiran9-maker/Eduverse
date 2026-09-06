@@ -1,0 +1,2886 @@
+<!DOCTYPE html>
+<html lang="tr" translate="no" class="notranslate">
+<head>
+<!-- V48S36_CACHE_HYGIENE: reduce stale mixed-language loads during local/demo testing -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="google" content="notranslate">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EduVerse Values">
+<meta name="theme-color" content="#F4C430">
+<script id="v48s81-edge-file-protocol-safety">
+(function(){
+  window.__EDUVERSE_FILE_MODE__ = (String(location.protocol||'') === 'file:');
+  window.addEventListener('unhandledrejection', function(e){
+    try{
+      if(window.__EDUVERSE_FILE_MODE__){
+        console.warn('EduVerse local file promise blocked safely:', e && e.reason ? e.reason : e);
+        if(e && e.preventDefault) e.preventDefault();
+      }
+    }catch(_){}
+  });
+  window.addEventListener('error', function(e){
+    try{
+      if(window.__EDUVERSE_FILE_MODE__ && e && /serviceWorker|geolocation|Notification|file:/i.test(String(e.message||''))){
+        console.warn('EduVerse local file browser warning handled:', e.message);
+      }
+    }catch(_){}
+  });
+})();
+</script>
+<script id="v48s81-edge-file-absolute-blocker">
+(function(){
+  try{
+    if(String(location.protocol||'')==='file:'){
+      window.__EDUVERSE_LOCAL_EDGE_FAST__=true;
+      /* Local file tests must not request browser permissions, service workers, manifest, GA, or early audio. */
+      if(navigator.serviceWorker){ try{ navigator.serviceWorker.register=function(){ return Promise.resolve({unregister:function(){}}); }; }catch(_sw){} }
+      if(window.Notification && Notification.requestPermission){ try{ Notification.requestPermission=function(){ return Promise.resolve('default'); }; }catch(_n){} }
+    }
+  }catch(e){}
+})();
+</script>
+
+<script id="v48s62-edge-language-boot">
+(function(){
+  var VERSION='V48S62_EDGE_GATE_LANG_STABLE_20260621';
+  var keys=['ev_values_lang','edu_values_lang','eduverse_lang','app_lang','edu_lang','lang'];
+  var good={tr:1,en:1,de:1,fr:1,ar:1};
+  function norm(x){ x=String(x||'').toLowerCase().slice(0,2); return good[x]?x:'tr'; }
+  function setAll(l){
+    var i; l=norm(l);
+    try{ localStorage.setItem('eduverse_values_mode','1'); }catch(e){}
+    for(i=0;i<keys.length;i++){ try{ localStorage.setItem(keys[i],l); }catch(e2){} }
+    try{ document.documentElement.lang=l; document.documentElement.dir=(l==='ar')?'rtl':'ltr'; }catch(e3){}
+  }
+  try{
+    if(localStorage.getItem('eduverse_lang_boot_version')!==VERSION){
+      setAll('tr');
+      localStorage.setItem('eduverse_lang_boot_version',VERSION);
+    }else{
+      setAll(norm(localStorage.getItem('ev_values_lang')||'tr'));
+    }
+  }catch(e4){ setAll('tr'); }
+  window.evV48S62SyncLang=function(l){
+    try{ setAll(l||localStorage.getItem('ev_values_lang')||'tr'); }catch(e){}
+  };
+})();
+</script>
+<script id="eduverse-language-state">
+  try {
+    if (localStorage.getItem('eduverse_values_mode') === null) localStorage.setItem('eduverse_values_mode', '0');
+    if (localStorage.getItem('ev_values_lang') === null) localStorage.setItem('ev_values_lang', 'tr');
+  } catch (e) {}
+</script>
+<script id="v48s60-cache-hygiene">
+(function(){
+  try{
+    if(location.protocol!=='file:' && 'serviceWorker' in navigator && navigator.serviceWorker.getRegistrations){
+      window.addEventListener('load',function(){
+        try{ navigator.serviceWorker.getRegistrations().then(function(rs){ rs.forEach(function(r){ try{ r.unregister(); }catch(e){} }); }); }catch(e){}
+      });
+    }
+  }catch(e){}
+  try{
+    if(location.protocol!=='file:' && window.caches && caches.keys){
+      window.addEventListener('load',function(){
+        try{ caches.keys().then(function(keys){ keys.forEach(function(k){ try{ caches.delete(k); }catch(e){} }); }); }catch(e){}
+      });
+    }
+  }catch(e){}
+})();
+</script>
+<!-- LOCAL_EDGE_FIX: manifest disabled for file:// local tests; HTTPS deploy can restore if needed -->
+<title>EduVerse Values</title>
+<!-- Child-directed build: external font network loader disabled. -->
+<link rel="stylesheet" href="style.css?v=V48S62-edge-gate-lang-stable-20260621">
+<!-- Child-directed build: external telemetry disabled. -->
+
+<link rel="stylesheet" href="share-card.css?v=V48S62-edge-gate-lang-stable-20260621">
+<link rel="stylesheet" href="room-music.css?v=V48S62-edge-gate-lang-stable-20260621">
+<link rel="stylesheet" href="invite.css?v=V48S62-edge-gate-lang-stable-20260621">
+<link rel="stylesheet" href="chest.css?v=V48S62-edge-gate-lang-stable-20260621">
+<link rel="stylesheet" href="values-i18n.css?v=V48S62-edge-gate-lang-stable-20260621">
+</head>
+<body translate="no" class="notranslate">
+
+<div id="ns">
+  <canvas id="ns-stars" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"></canvas>
+  <div class="nc" style="position:relative;z-index:1;">
+    <!-- EduVerse Logo -->
+    <div style="margin-bottom:18px;text-align:center;">
+      <div style="font-family:'Fredoka One',Arial;font-size:2.8rem;letter-spacing:2px;line-height:1.1;filter:drop-shadow(0 0 18px rgba(100,180,255,.8));">
+        <span style="color:#FFD700;text-shadow:0 0 20px #FFaa00,0 0 40px #FF8800;">Edu</span><span style="color:#88CCFF;text-shadow:0 0 20px #4488FF,0 0 40px #0044FF;">Verse</span>
+      </div>
+      <div id="ev-login-motto" style="font-size:.75rem;color:rgba(150,200,255,.7);letter-spacing:4px;margin-top:2px;font-family:Nunito;">OGREN - BUYU - KESFET</div>
+    </div>
+    <!-- FigÃ¼rler -->
+    <div style="display:flex;justify-content:center;align-items:flex-end;gap:14px;margin-bottom:16px;">
+      <div style="text-align:center;opacity:.9;">
+        <div class="ev-login-liquid-icon ev-login-liquid-baby" style="font-size:2rem;filter:drop-shadow(0 0 8px #FF8800);">&#128118;</div>
+        <div style="font-size:.55rem;color:#FFaa44;margin-top:2px;" id="ev-login-baby">BEBEK</div>
+      </div>
+      <div style="color:rgba(255,200,80,.4);font-size:1.2rem;margin-bottom:8px;">&rarr;</div>
+      <div style="text-align:center;opacity:.9;">
+        <div class="ev-login-liquid-icon ev-login-liquid-student" style="font-size:2.2rem;filter:drop-shadow(0 0 8px #4488FF);">&#127891;</div>
+        <div style="font-size:.55rem;color:#88AAFF;margin-top:2px;" id="ev-login-student">OGRENCI</div>
+      </div>
+      <div style="color:rgba(255,200,80,.4);font-size:1.2rem;margin-bottom:8px;">&rarr;</div>
+      <div style="text-align:center;opacity:.9;">
+        <div class="ev-login-liquid-icon ev-login-liquid-future" style="font-size:2.4rem;filter:drop-shadow(0 0 8px #88FFAA);">&#128188;</div>
+        <div style="font-size:.55rem;color:#88FFAA;margin-top:2px;" id="ev-login-future">GELECEK</div>
+      </div>
+    </div>
+    <!-- GiriÅŸ -->
+    <p id="ev-login-subtitle" style="color:rgba(180,210,255,.8);font-size:.9rem;margin-bottom:14px;">Adini yaz ve galaksiye gir!</p>
+    <!-- Karakter SeÃ§imi -->
+    <div style="margin-bottom:14px;">
+      <div id="ev-character-title" style="font-size:.7rem;color:rgba(150,200,255,.6);margin-bottom:8px;text-align:center;letter-spacing:2px;">KARAKTERINI SEC</div>
+      <div style="display:flex;gap:10px;justify-content:center;">
+        <div id="char-sel-erkek" onclick="selectChar('erkek')"
+          style="cursor:pointer;border-radius:14px;border:2px solid rgba(100,200,100,.5);
+          padding:8px;background:rgba(20,60,20,.4);transition:all .2s;text-align:center;flex:1;max-width:130px;">
+          <img id="char-prev-erkek" src="assets/mascot_robot_trial/boy_robot.png" style="width:80px;height:90px;object-fit:contain;display:block;margin:0 auto;">
+          <div style="font-family:'Fredoka One';font-size:.8rem;color:#88FF88;margin-top:4px;">Edu</div>
+        </div>
+        <div id="char-sel-kiz" onclick="selectChar('kiz')"
+          style="cursor:pointer;border-radius:14px;border:2px solid rgba(200,100,150,.3);
+          padding:8px;background:rgba(40,10,30,.4);transition:all .2s;text-align:center;flex:1;max-width:130px;">
+          <img id="char-prev-kiz" src="assets/mascot_robot_trial/girl_robot.png" style="width:80px;height:90px;object-fit:contain;display:block;margin:0 auto;">
+          <div style="font-family:'Fredoka One';font-size:.8rem;color:#FF88CC;margin-top:4px;">Verse</div>
+        </div>
+      </div>
+    </div>
+    <input id="ni" type="text" placeholder="Adin nedir?" maxlength="14" autocomplete="off"
+      style="background:rgba(20,40,120,.4);border:1.5px solid rgba(100,180,255,.4);color:#fff;border-radius:22px;padding:12px 20px;font-family:Nunito;font-size:1rem;width:100%;box-sizing:border-box;outline:none;text-align:center;backdrop-filter:blur(4px);">
+    <button id="nb" style="margin-top:12px;width:100%;background:linear-gradient(135deg,rgba(255,200,40,.88),rgba(255,160,10,.82));border:1px solid rgba(255,230,100,.45);border-radius:22px;padding:14px;font-family:'Fredoka One';font-size:1.1rem;color:#1a0a00;cursor:pointer;box-shadow:0 6px 24px rgba(255,160,0,.45),inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(10px);">EduVerse'e Gir</button>
+  </div>
+</div>
+
+<div id="hm" style="display:none;">
+  <canvas id="hm-space-c" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+  <div id="hm-inner" style="position:relative;z-index:1;">
+    <div id="hm-head" style="position:relative;">
+  <button id="streak-btn" onclick="showStreakOverlay()" style="position:absolute;right:8px;top:8px;
+    background:rgba(255,90,20,.18);border:1px solid rgba(255,130,50,.42);border-radius:20px;
+    padding:5px 13px;font-family:'Fredoka One';font-size:.85rem;color:rgba(255,160,60,.95);cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(255,80,0,.2),inset 0 1px 0 rgba(255,200,100,.15);">&#128293; 0</button>
+  <button id="values-toggle-btn" onclick="_toggleValuesMode()" title="Values Mode" style="position:absolute;left:8px;top:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50%;width:28px;height:28px;font-size:.75rem;cursor:pointer;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);padding:0;transition:all .3s;">TR</button>
+  <h1 id="hm-title">EduVerse</h1></div>
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <!-- KARAKTER -->
+      <div style="position:relative;margin-bottom:4px;cursor:pointer;" onclick="charSpeak()">
+        <!-- IÅŸÄ±k halkasÄ± -->
+        <div id="char-glow" style="position:absolute;inset:-15px;border-radius:50%;
+          background:radial-gradient(circle,rgba(100,255,150,.18) 0%,transparent 70%);
+          animation:charGlow 3s ease-in-out infinite;pointer-events:none;z-index:0;"></div>
+        <img id="char-main-img" src="" alt="Oki"
+          style="width:120px;height:140px;object-fit:contain;display:block;margin:0 auto;
+          filter:drop-shadow(0 4px 20px rgba(0,200,100,.45)) brightness(1.02) saturate(1.1);
+          animation:charFloat 3s ease-in-out infinite;">
+        <div id="oki-bubble" style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:16px;padding:6px 12px;font-family:Fredoka One;font-size:.72rem;color:#6622CC;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.15);opacity:0;transition:opacity .3s;pointer-events:none;max-width:200px;text-align:center;"></div>
+      </div>
+      <!-- BÃ¼yÃ¼me Bar -->
+      <div style="margin:4px auto 0;width:130px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
+          <span id="growth-stage-emoji" style="font-size:1rem;">&#127793;</span>
+          <span style="font-size:.58rem;color:rgba(255,255,255,.35);" id="growth-bar-label">Buyuyor...</span>
+        </div>
+        <div style="height:5px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;">
+          <div id="growth-bar-fill" style="height:100%;background:linear-gradient(90deg,#44FF88,#FFD700);border-radius:3px;width:0%;transition:width 1s ease;"></div>
+        </div>
+      </div>
+      <div id="oki-name" style="font-family:Fredoka One;font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:4px;text-align:center;"></div>
+      <button id="feed-btn" onclick="feedMelek()" style="background:rgba(255,200,80,.12);border:1px solid rgba(255,200,80,.38);border-radius:20px;padding:6px 17px;font-family:Fredoka One;font-size:.72rem;color:#FFD700;cursor:pointer;margin-bottom:6px;backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(255,150,0,.18),inset 0 1px 0 rgba(255,255,255,.1);">Oki'yi Besle</button>
+      <!-- 3 Animasyonlu Konteyner -->
+      <div style="display:flex;gap:12px;justify-content:center;margin:10px 0 4px;">
+        <div style="text-align:center;cursor:pointer;" onclick="showStarJar()">
+          <canvas id="jar-heart" width="70" height="80" style="display:block;margin:0 auto;"></canvas>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.4);margin-top:1px;">Yıldızlar</div>
+          <div id="jar-heart-val" style="font-size:.7rem;color:#FF88AA;font-weight:700;">0</div>
+        </div>
+        <div style="text-align:center;cursor:pointer;" onclick="showCrystalJar()">
+          <canvas id="jar-crystal" width="70" height="80" style="display:block;margin:0 auto;"></canvas>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.4);margin-top:1px;">Paralar</div>
+          <div id="jar-crystal-val" style="font-size:.7rem;color:#CC88FF;font-weight:700;">0</div>
+        </div>
+        <div style="text-align:center;cursor:pointer;" onclick="showDailyJar()">
+          <canvas id="jar-gold" width="70" height="80" style="display:block;margin:0 auto;"></canvas>
+          <div style="font-size:.6rem;color:rgba(255,255,255,.4);margin-top:1px;">Bugün</div>
+          <div id="jar-gold-val" style="font-size:.7rem;color:#FFD700;font-weight:700;">0</div>
+        </div>
+      </div>
+      <div id="hm-score">Yıldız <span id="hsc">0</span> &nbsp;|&nbsp; <em id="hlv">Başlangıç</em></div>
+      <div id="streak-msg"></div>
+      <!-- GÃ¼nlÃ¼k gÃ¶rev Ã¶zeti ÅŸeridi -->
+      <div id="daily-strip" onclick="showTasks()" style="
+        display:flex;align-items:center;gap:8px;
+        background:rgba(255,255,255,.07);
+        border:1px solid rgba(255,255,255,.12);
+        border-radius:20px;padding:8px 16px;
+        margin:0 12px 10px;cursor:pointer;
+        font-family:'Fredoka One';transition:.2s;
+        max-width:456px;box-sizing:border-box;
+      ">
+        <span style="font-size:1.1rem;">&#128203;</span>
+        <div style="flex:1;text-align:left;">
+          <div style="font-size:.72rem;color:rgba(255,255,255,.5);letter-spacing:1px;">BUGUNUN GOREVLERI</div>
+          <div id="daily-strip-text" style="font-size:.8rem;color:rgba(255,255,255,.85);">Yukleniyor...</div>
+        </div>
+        <div id="daily-strip-bar" style="width:48px;height:6px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden;">
+          <div id="daily-strip-fill" style="height:100%;background:linear-gradient(90deg,#FFD700,#FF8C00);width:0%;border-radius:3px;transition:width .5s;"></div>
+        </div>
+        <span style="font-size:.7rem;color:rgba(255,255,255,.35)">&rsaquo;</span>
+      </div>
+      <div id="rgrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 12px 16px;width:100%;max-width:480px;margin:0 auto;box-sizing:border-box;"></div>
+      <div class="hm-btns">
+        <button class="hm-btn" onclick="showShopRoom()">Shop</button>
+        <button class="hm-btn" id="home-tasks-btn" onclick="showTasks()">&#11088; Bugünün Görevleri</button>
+        <button class="hm-btn" onclick="showKelime()">Words</button>
+        
+        <button class="hm-btn" onclick="showChamp()">Championship</button>
+        <button class="hm-btn" onclick="cycleTheme()">Theme</button>
+        <button class="hm-btn" onclick="showDua()" style="border-color:rgba(170,102,255,.4);color:rgba(200,150,255,.9);">Reflections</button>
+        <button class="hm-btn" id="rapor-btn" onclick="_raporTap()">Report</button>
+        <button class="hm-btn" id="qr-btn" onclick="_qrTap()" style="border-color:rgba(100,255,150,.4);color:rgba(150,255,180,.9);">Share</button>
+      </div>
+    </div>
+    <div class="story-banner" onclick="showDuaOv()" style="background:rgba(136,68,238,.12);border-color:rgba(170,102,255,.3);">
+      <div class="sb-ico">&#128161;</div>
+      <div class="sb-info">
+        <div class="sb-title" style="color:#CC88FF">Reflection</div>
+        <div class="sb-sub">Write, seal, and send your reflection to the sky</div>
+      </div>
+      <div style="font-family:'Fredoka One';font-size:.8rem;color:rgba(170,102,255,.6)">&#9654;</div>
+    </div>
+    
+
+</div>
+</div>
+<script src="android-tts-bridge.js?v=3"></script>
+<!-- EV_CROSS_PLATFORM_FOUNDATION_V1_START -->
+<script src="ev-platform/ev-config.js"></script>
+<script src="ev-platform/ev-core.js"></script>
+<script src="ev-platform/ev-ios-store.js"></script>
+<script src="ev-platform/ev-api.js"></script>
+<script src="ev-platform/ev-family.js"></script>
+<script src="ev-platform/ev-session-contract.js"></script>
+<script src="ev-platform/ev-account.js"></script>
+<script src="ev-platform/ev-session-bootstrap.js"></script>
+<script src="ev-platform/ev-entitlements.js"></script>
+<script src="ev-platform/ev-store.js"></script>
+<script src="ev-platform/ev-router.js"></script>
+<script src="ev-platform/ev-deeplink.js"></script>
+<script src="ev-platform/ev-purchase-handoff.js"></script>
+<script src="ev-platform/ev-telemetry.js"></script>
+<!-- EV_CROSS_PLATFORM_FOUNDATION_V1_END -->
+<script src="game.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+<script src="ev-platform/ev-ios-parent-gate.js"></script>
+<script src="ev-platform/ev-room-route-bridge.js?v=WEB4"></script>
+<script src="oki-voice-layer.js"></script>
+<script src="ev_balloon_cards_v50_final.js"></script>
+
+<!-- â•â• REFLEKS ODASI â•â• -->
+<div id="refleks-ov" style="display:none;position:fixed;inset:0;z-index:80;background:linear-gradient(180deg,#060d1a,#0a1628);">
+  <canvas id="refleks-gc" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;"></canvas>
+  <div id="refleks-flash" style="position:absolute;inset:0;z-index:8;pointer-events:none;opacity:0;transition:opacity .1s;"></div>
+  <div id="refleks-pb" style="position:absolute;top:0;left:0;height:3px;background:linear-gradient(90deg,#FFD700,#FF6B6B);z-index:6;width:100%;transition:width .5s linear;"></div>
+  <!-- Oki refleks bubble -->
+  <div id="refleks-oki-wrap" style="position:absolute;bottom:70px;left:10px;z-index:90;pointer-events:none;">
+    <div id="refleks-oki-bubble" style="display:none;background:rgba(255,255,255,.95);color:#333;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700;padding:7px 12px;border-radius:14px;border-bottom-left-radius:3px;margin-bottom:4px;max-width:170px;box-shadow:0 2px 10px rgba(0,0,0,.4);animation:oki-fadein .3s ease;"></div>
+    <img id="refleks-oki-img" src="" style="width:60px;height:80px;object-fit:contain;display:block;" alt="">
+  </div>
+
+  <!-- MenÃ¼ -->
+    <div id="refleks-menu" style="position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;overflow-y:auto;">
+    <div style="font-size:2rem;margin-bottom:6px;">&#9889;</div>
+    <div style="font-family:'Fredoka One';font-size:1.8rem;color:#FFD700;text-shadow:0 0 20px rgba(255,215,0,.4);margin-bottom:2px;">Refleks Odasi</div>
+    <div style="font-size:.7rem;color:rgba(135,206,235,.35);letter-spacing:2px;margin-bottom:18px;">MOD SEC</div>
+    <div class="rmb" onclick="rBasla('isik')"><div class="rmb-ico">&#128165;</div><div><div class="rmb-name">Isigi Yakala</div><div class="rmb-desc">Parlayan daireye hizlica dokun</div></div></div>
+    <div class="rmb" onclick="rBasla('renk')"><div class="rmb-ico">&#127912;</div><div><div class="rmb-name">Dogru Rengi Bul</div><div class="rmb-desc">Istenen renge dokun - odak ve hiz</div></div></div>
+    <div class="rmb" onclick="rBasla('hayvan')"><div class="rmb-ico">&#127919;</div><div><div class="rmb-name">Hedefi Yakala</div><div class="rmb-desc">Kacmadan dokun - gittikce hizlanir</div></div></div>
+    <div class="rmb" onclick="rBasla('sira')"><div class="rmb-ico">&#128290;</div><div><div class="rmb-name">Sirayi Takip Et</div><div class="rmb-desc">1-2-3 sirasiyla dokun - hafiza ve hiz</div></div></div>
+    <div class="rmb" onclick="rBasla('kaybolan')"><div class="rmb-ico">&#128123;</div><div><div class="rmb-name">Kaybolan Hedef</div><div class="rmb-desc">Kisa bir an gorunur - hizlica kaybolur</div></div></div>
+    <div class="rmb" onclick="rBasla('bomba')"><div class="rmb-ico">&#128163;</div><div><div class="rmb-name">Bombayi Etkisizlestir</div><div class="rmb-desc">Bombaya dokun - yildizlardan kac</div></div></div>
+    <div class="rmb" onclick="rBasla('buyuk')"><div class="rmb-ico">&#127919;</div><div><div class="rmb-name">En Buyugu Bul</div><div class="rmb-desc">En buyuk daireye dokun - dikkatli ol</div></div></div>
+    <button onclick="closeRefleks()" style="margin-top:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:8px 24px;font-family:'Fredoka One';font-size:.8rem;color:rgba(255,255,255,.4);cursor:pointer;backdrop-filter:blur(8px);">Geri</button>
+  </div>
+
+  <!-- HUD -->
+  <div id="refleks-hud" style="position:absolute;top:0;left:0;right:0;z-index:20;display:none;justify-content:space-between;align-items:center;padding:8px 12px;">
+    <div class="rhb" id="rh-skor">0</div>
+    <div class="rhb" style="font-size:.72rem;color:rgba(135,206,235,.6);" id="rh-mod"></div>
+    <div class="rhb" style="color:#FF6B6B;" id="rh-sure">60</div>
+    <button onclick="rMenuye()" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:5px 10px;font-family:'Fredoka One';font-size:.7rem;color:rgba(255,255,255,.4);cursor:pointer;backdrop-filter:blur(8px);z-index:25;position:relative;">&times;</button>
+  </div>
+
+  <div id="refleks-talimat" style="position:absolute;top:14%;left:50%;transform:translateX(-50%);z-index:20;display:none;pointer-events:none;text-align:center;"></div>
+  <div id="refleks-sira-wrap" style="position:absolute;bottom:10%;left:50%;transform:translateX(-50%);z-index:20;display:none;flex-direction:row;gap:10px;"></div>
+
+  <!-- BitiÅŸ -->
+  <div id="refleks-bitis" style="position:absolute;inset:0;z-index:25;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(4,8,20,.9);backdrop-filter:blur(10px);">
+    <div class="rbk">
+      <div class="rb-label">TOTAL SCORE</div>
+      <div class="rb-skor" id="rb-skor">0</div>
+      <div class="rb-yorum" id="rb-yorum"></div>
+      <button class="rbbtn rbbtn1" onclick="rTekrar()">Play Again</button>
+      <button class="rbbtn rbbtn2" onclick="rMenuye()">Mod Sec</button>
+      <button class="rbbtn rbbtn2" onclick="closeRefleks()" style="margin-top:4px;">Home</button>
+    </div>
+  </div>
+</div>
+
+<!-- â•â•â• ODA GÄ°RÄ°Å SORUSU â•â•â• -->
+<style>
+.ov-soru2{position:fixed;inset:0;z-index:250;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0);backdrop-filter:blur(0px);padding:16px;transition:background .3s,backdrop-filter .3s;}
+.ov-soru2.show{display:flex;background:rgba(8,12,24,.18);backdrop-filter:blur(2px);}
+@keyframes sq2CardIn{from{opacity:0;transform:scale(.85) translateY(30px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.sq2-card{background:linear-gradient(145deg,#0d0828,#180c40);border:1.5px solid rgba(180,130,255,.3);border-radius:26px;padding:22px 18px;width:min(340px,100%);text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:sq2CardIn .35s cubic-bezier(.34,1.56,.64,1);}
+.sq2-head{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:10px;}
+.sq2-room-ico{font-size:1.8rem;}
+.sq2-room-name{font-family:'Fredoka One';font-size:.85rem;color:rgba(180,140,255,.7);}
+.sq2-tag{font-family:'Fredoka One';font-size:.65rem;color:#88CCFF;background:rgba(100,180,255,.12);border:1px solid rgba(100,180,255,.2);border-radius:12px;padding:3px 10px;margin-bottom:8px;display:inline-block;letter-spacing:1px;}
+.sq2-text{font-size:.9rem;font-weight:800;color:rgba(255,255,255,.9);line-height:1.5;margin-bottom:14px;}
+.sq2-opts{display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+.sq2-opt{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 14px;font-family:'Fredoka One';font-size:.82rem;color:rgba(255,255,255,.8);cursor:pointer;transition:.18s;text-align:left;}
+.sq2-opt:active{transform:scale(.97);}
+.sq2-feedback{font-size:.76rem;min-height:28px;margin-bottom:10px;line-height:1.4;}
+.sq2-next{background:linear-gradient(135deg,#8844FF,#AA66FF);border:none;border-radius:24px;padding:10px 32px;font-family:'Fredoka One';font-size:.9rem;color:white;cursor:pointer;width:100%;margin-bottom:6px;}
+.sq2-skip{font-size:.68rem;color:rgba(255,255,255,.25);cursor:pointer;text-decoration:underline;}
+</style>
+<!-- â”€â”€ ROOM HOOK OVERLAY â”€â”€ -->
+<div id="room-hook-ov" style="position:fixed;inset:0;z-index:95;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0);pointer-events:none;transition:background .3s;">
+  <div id="room-hook-card" style="text-align:center;transform:scale(0);opacity:0;transition:transform .4s cubic-bezier(.34,1.56,.64,1),opacity .3s;">
+    <div id="room-hook-ico" style="font-size:5rem;line-height:1;margin-bottom:12px;filter:drop-shadow(0 0 20px rgba(255,200,50,.6));animation:hookIcoPulse 1s ease-in-out infinite;"></div>
+    <div id="room-hook-name" style="font-family:'Fredoka One';font-size:1.8rem;color:#FFD700;text-shadow:0 0 20px rgba(255,200,50,.5);margin-bottom:8px;"></div>
+    <div id="room-hook-sub" style="font-family:'Nunito';font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:2px;"></div>
+    <div id="room-hook-bar-wrap" style="width:180px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;margin:16px auto 0;overflow:hidden;">
+      <div id="room-hook-bar" style="height:100%;background:linear-gradient(90deg,#F4C430,#FFD700);border-radius:2px;width:0%;transition:width 2s linear;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="ov-soru2" id="ov-soru2">
+  <div class="sq2-card">
+    <div class="sq2-head">
+      <span class="sq2-room-ico" id="sq2-emoji"></span>
+      <span class="sq2-room-name" id="sq2-room">Oda</span>
+    </div>
+    <div class="sq2-tag">DID YOU KNOW?</div>
+    <div class="sq2-text" id="sq2-text">Soru yÃ¼kleniyor...</div>
+    <div class="sq2-opts" id="sq2-opts"></div>
+    <div class="sq2-feedback" id="sq2-feedback"></div>
+    <button class="sq2-next" id="sq2-next" style="display:none" onclick="closeSoru2AndEnter()">Odaya Gir</button>
+    <span class="sq2-skip" onclick="skipRoomSoru()">I do not know, skip</span>
+  </div>
+</div>
+
+<style>
+#ada-muzik{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;}
+#ada-muzik:active{cursor:grabbing;}
+@keyframes adaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes adaPulse{0%,100%{box-shadow:0 0 0 0 rgba(160,100,255,.5)}70%{box-shadow:0 0 0 8px rgba(160,100,255,0)}}
+@keyframes adaNoteUp{0%{opacity:0;transform:translateY(2px) scale(.7)}40%{opacity:1}100%{opacity:0;transform:translateY(-18px) scale(1)}}
+.ada-float-note{display:none;position:absolute;pointer-events:none;font-size:.8rem;animation:none;}
+.ada-trk-row{display:flex;align-items:center;gap:6px;border:none;border-radius:10px;background:transparent;color:rgba(230,210,255,.85);font-size:.7rem;cursor:pointer;font-family:Nunito,sans-serif;text-align:left;padding:5px 8px;transition:background .18s;width:100%;}
+.ada-trk-row:active,.ada-trk-row.ada-active{background:rgba(160,100,255,.22);color:#fff;}
+</style>
+
+<div id="ada-muzik" style="display:none;position:fixed;bottom:100px;right:20px;z-index:300;width:44px;height:44px;">
+
+  <!-- Floating notes -->
+  <span class="ada-float-note" style="left:-4px;top:-18px;animation-delay:0s;">&#9834;</span>
+  <span class="ada-float-note" style="left:14px;top:-24px;animation-delay:.6s;">&#9835;</span>
+  <span class="ada-float-note" style="left:28px;top:-16px;animation-delay:1.1s;">&#9833;</span>
+
+  <!-- Open panel -->
+  <div id="ada-layers" style="
+    position:absolute; bottom:50px; right:0;
+    display:flex; flex-direction:column; align-items:flex-end; gap:5px;
+    pointer-events:none; opacity:0;
+    transform:translateY(8px) scale(.95);
+    transition:opacity .25s, transform .25s;
+  ">
+    <!-- Kapat -->
+    <div style="background:rgba(8,4,24,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,80,80,.25);border-radius:14px;padding:4px 10px;">
+      <button onclick="_adaStop()" style="border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,100,100,.7);font-size:.68rem;cursor:pointer;backdrop-filter:blur(8px);font-family:Nunito,sans-serif;white-space:nowrap;padding:0;">&#10005; Kapat</button>
+    </div>
+    <!-- Track list -->
+    <div style="background:rgba(8,4,24,.62);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(180,130,255,.22);border-radius:16px;padding:6px 6px;min-width:155px;max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:2px;scrollbar-width:thin;scrollbar-color:rgba(180,130,255,.3) transparent;">
+      <button id="adaTrk0" class="ada-trk-row" onclick="_adaPlay(0)">&#127925; Kahire Ezgisi</button>
+      <button id="adaTrk1" class="ada-trk-row" onclick="_adaPlay(1)">&#127926; Altin Kum Ud</button>
+      <button id="adaTrk2" class="ada-trk-row" onclick="_adaPlay(2)">&#127926; Zarif Ud</button>
+      <button id="adaTrk3" class="ada-trk-row" onclick="_adaPlay(3)">&#127925; Dogu Ezgisi</button>
+      <button id="adaTrk4" class="ada-trk-row" onclick="_adaPlay(4)">&#127925; Huzurlu Fon</button>
+      <button id="adaTrk5" class="ada-trk-row" onclick="_adaPlay(5)">&#127925; Kus Sesleri</button>
+      <button id="adaTrk6" class="ada-trk-row" onclick="_adaPlay(6)">&#127925; Neseli Cocuklar</button>
+      <button id="adaTrk7" class="ada-trk-row" onclick="_adaPlay(7)">&#127925; Cocuk Muzigi</button>
+    </div>
+    <!-- Play/Pause + isim -->
+    <div style="background:rgba(8,4,24,.58);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(180,130,255,.2);border-radius:14px;padding:4px 10px 4px 6px;display:flex;align-items:center;gap:6px;">
+      <button id="adaPlayBtn" onclick="_adaToggle()" style="width:28px;height:28px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(160,100,255,.35);color:white;font-size:.8rem;cursor:pointer;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;">&#9654;</button>
+      <span id="ada-track-name" style="font-family:'Fredoka One',sans-serif;font-size:.62rem;color:rgba(210,190,255,.85);white-space:nowrap;max-width:90px;overflow:hidden;text-overflow:ellipsis;">&#127925; Muzik</span>
+    </div>
+  </div>
+
+  <!-- Ana top buton -->
+  <div id="ada-bubble" onclick="_adaTogglePanel()" style="
+    width:44px;height:44px;border-radius:50%;
+    background:rgba(12,6,32,.55);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border:1.5px solid rgba(180,130,255,.35);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.2rem;
+    box-shadow:0 2px 14px rgba(120,60,220,.3);
+    animation:none;
+    position:relative;
+  ">&#127925;</div>
+
+</div>
+
+<script>
+(function(){
+  var _panel=false;
+  window._adaTogglePanel=function(){
+    _panel=!_panel;
+    var l=document.getElementById('ada-layers');
+    if(!l)return;
+    if(_panel){
+      l.style.pointerEvents='auto';
+      l.style.opacity='1';
+      l.style.transform='translateY(0) scale(1)';
+    } else {
+      l.style.pointerEvents='none';
+      l.style.opacity='0';
+      l.style.transform='translateY(8px) scale(.95)';
+    }
+  };
+  // Dragging
+  var el=null,dragging=false,startX=0,startY=0,elX=0,elY=0,moved=false;
+  function init(){
+    el=document.getElementById('ada-muzik');
+    if(!el)return;
+    el.addEventListener('mousedown',onDown);
+    el.addEventListener('touchstart',onDown,{passive:true});
+  }
+  function onDown(e){
+    if(e.target.tagName==='BUTTON'||e.target.closest('button'))return;
+    dragging=true; moved=false;
+    var t=e.touches?e.touches[0]:e;
+    startX=t.clientX; startY=t.clientY;
+    var r=el.getBoundingClientRect();
+    elX=r.left; elY=r.top;
+    el.style.animation='none';
+    document.getElementById('ada-bubble').style.animation='none';
+    document.addEventListener('mousemove',onMove);
+    document.addEventListener('mouseup',onUp);
+    document.addEventListener('touchmove',onMove,{passive:false});
+    document.addEventListener('touchend',onUp);
+  }
+  function onMove(e){
+    if(!dragging)return;
+    if(e.cancelable)e.preventDefault();
+    var t=e.touches?e.touches[0]:e;
+    var dx=t.clientX-startX, dy=t.clientY-startY;
+    if(Math.abs(dx)>4||Math.abs(dy)>4) moved=true;
+    var nx=elX+dx, ny=elY+dy;
+    nx=Math.max(0,Math.min(window.innerWidth-50,nx));
+    ny=Math.max(0,Math.min(window.innerHeight-50,ny));
+    el.style.left=nx+'px'; el.style.top=ny+'px';
+    el.style.right='auto'; el.style.bottom='auto';
+  }
+  function onUp(){
+    dragging=false;
+    document.removeEventListener('mousemove',onMove);
+    document.removeEventListener('mouseup',onUp);
+    document.removeEventListener('touchmove',onMove);
+    document.removeEventListener('touchend',onUp);
+    if(!moved){/* click toggles panel */}
+    el.style.animation='';
+    document.getElementById('ada-bubble').style.animation='adaFloat 3s ease-in-out infinite';
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
+// adaTrk active highlight
+function _adaMarkActive(idx){
+  for(var i=0;i<8;i++){var b=document.getElementById('adaTrk'+i);if(b)b.classList.toggle('ada-active',i===idx);}
+}
+</script>
+<audio id="sn-audio" src="assets/embedded/v48s34/audio_068_687ac512e99a9e6e.mp3" preload="none" loop></audio>
+<div id="sn-ov" style="display:none;position:fixed;inset:0;z-index:80;flex-direction:column;align-items:center;background:#080004;">
+  <div style="width:100%;height:34px;background:#120006;display:flex;align-items:center;justify-content:center;gap:14px;flex-shrink:0;">
+    <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s infinite;"></div>
+    <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s .6s infinite;"></div>
+    <span style="font-family:'Fredoka One',sans-serif;font-size:.82rem;color:rgba(255,110,110,.8);">ğŸ¬ SÄ°NEMA ODASI</span><button onclick="_snPlayAudio()" style="border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.15);color:white;border-radius:10px;padding:2px 8px;font-size:.75rem;cursor:pointer;backdrop-filter:blur(8px);margin-left:8px;">ğŸµ</button>
+    <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s 1.2s infinite;"></div>
+    <div style="width:7px;height:7px;border-radius:50%;background:#FF3366;animation:lightBlink 2s 1.8s infinite;"></div>
+  </div>
+  <div style="width:92%;max-width:360px;margin:8px auto 4px;flex-shrink:0;">
+    <div style="background:#180006;border:3px solid #600000;border-radius:8px;padding:4px;box-shadow:0 0 30px rgba(150,0,20,.4);">
+      <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:5px;overflow:hidden;background:#000;">
+        <div id="sn-bg" style="position:absolute;inset:0;background:#001a05;transition:background 1s;"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+          <img id="sn-ch" src="" alt="" style="width:85px;height:100px;object-fit:contain;z-index:2;filter:drop-shadow(0 5px 16px rgba(255,200,100,.5));animation:snfl 2.6s ease-in-out infinite;transition:opacity .35s;">
+        </div>
+        <div id="sn-tx" style="position:absolute;bottom:8px;left:8px;right:8px;font-family:'Fredoka One',sans-serif;font-size:clamp(10px,2.8vw,13px);color:#fff;background:rgba(0,0,0,.75);padding:8px 12px;text-align:center;z-index:3;border-radius:12px;border:1px solid rgba(255,200,100,.3);line-height:1.5;"></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:7px;">
+      <button class="sndot" onclick="_snGo(0);_snPlayNote(0);"></button>
+      <button class="sndot" onclick="_snGo(1);_snPlayNote(1);"></button>
+      <button class="sndot" onclick="_snGo(2);_snPlayNote(2);"></button>
+      <button class="sndot" onclick="_snGo(3);_snPlayNote(3);"></button>
+      <button class="sndot" onclick="_snGo(4);_snPlayNote(4);"></button>
+      <button class="sndot" onclick="_snGo(5);_snPlayNote(5);"></button>
+      <button class="sndot" onclick="_snGo(6);_snPlayNote(6);"></button>
+      <button class="sndot" onclick="_snGo(7);_snPlayNote(7);"></button>
+    </div>
+  </div>
+  <div style="width:92%;max-width:360px;flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:3px;padding-bottom:5px;overflow:hidden;">
+    <div style="display:flex;gap:3px;justify-content:center;transform:perspective(300px) rotateX(8deg) scale(.95);">
+      <div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div>
+    </div>
+    <div style="display:flex;gap:3px;justify-content:center;transform:perspective(300px) rotateX(4deg) scale(.97);">
+      <div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#1a8a44;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8a1a5a;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div>
+    </div>
+    <div style="display:flex;gap:3px;justify-content:center;">
+      <div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#8B0000;flex-shrink:0;"></div><div style="width:24px;height:17px;border-radius:3px 3px 0 0;background:#AA1111;flex-shrink:0;"></div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;justify-content:center;padding:6px 0 10px;flex-shrink:0;">
+    <button onclick="_snGo((_snSC-1+5)%5)" style="padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.2);font-family:'Fredoka One',sans-serif;font-size:.85rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.55);cursor:pointer;backdrop-filter:blur(8px);">â—€</button>
+    <button onclick="closeSinema()" style="padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.2);font-family:'Fredoka One',sans-serif;font-size:.85rem;background:rgba(255,255,255,.05);color:rgba(255,255,255,.35);cursor:pointer;backdrop-filter:blur(8px);">âœ•</button>
+    <button onclick="_snGo((_snSC+1)%5)" style="padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.2);font-family:'Fredoka One',sans-serif;font-size:.85rem;background:linear-gradient(135deg,#FF3366,#CC0033);color:white;cursor:pointer;backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">â–¶</button>
+  </div>
+  <div id="sn-rn" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:90;"></div>
+</div>
+
+<div id="growth-big-ov" style="display:none;position:fixed;inset:0;z-index:600;
+  flex-direction:column;align-items:center;justify-content:center;padding:24px;
+  background:linear-gradient(160deg,#001a00,#002a00);">
+  
+  <!-- Konfeti -->
+  <div id="gbig-conf" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"></div>
+
+  <!-- Ä°Ã§erik -->
+  <div style="position:relative;z-index:2;text-align:center;width:100%;max-width:320px;">
+    
+    <!-- BÃ¼yÃ¼k emoji -->
+    <div id="gbig-emoji" style="font-size:7rem;margin-bottom:8px;
+      animation:gbigEmojiPop 1s cubic-bezier(.34,1.56,.64,1);">ğŸŒ¿</div>
+    
+    <!-- BaÅŸlÄ±k -->
+    <div id="gbig-title" style="font-family:'Fredoka One';font-size:2.5rem;
+      color:#44FF88;text-shadow:0 0 30px rgba(50,220,100,.8);margin-bottom:6px;
+      animation:gbigTitleIn .8s ease .5s both;">FÄ°DAN OLDUN!</div>
+    
+    <div id="gbig-subtitle" style="font-size:.9rem;color:rgba(255,255,255,.6);
+      margin-bottom:16px;animation:gbigTitleIn .8s ease .7s both;">ArtÄ±k bÃ¼yÃ¼dÃ¼n!</div>
+    
+    <!-- Karakter -->
+    <div style="position:relative;margin-bottom:8px;">
+      <div style="position:absolute;inset:-20px;border-radius:50%;
+        background:radial-gradient(circle,rgba(50,220,100,.2),transparent 70%);
+        animation:gbigGlow 2s ease-in-out infinite;"></div>
+      <img id="gbig-char" src="" style="width:150px;height:178px;object-fit:contain;
+        position:relative;z-index:1;filter:drop-shadow(0 0 20px rgba(50,220,100,.6));
+        animation:gbigCharPop 1s cubic-bezier(.34,1.56,.64,1) .3s both;">
+    </div>
+    
+    <!-- KonuÅŸma balonu -->
+    <div id="gbig-bubble" style="background:white;color:#333;border-radius:20px;
+      padding:10px 20px;font-family:'Fredoka One';font-size:.9rem;
+      box-shadow:0 4px 20px rgba(0,0,0,.3);margin-bottom:16px;
+      animation:gbigTitleIn .8s ease 1s both;display:inline-block;">
+      BÃ¼yÃ¼dÃ¼m! ğŸŒ¿
+    </div>
+    
+    <!-- Ã–dÃ¼l -->
+    <div id="gbig-stars" style="background:rgba(255,215,0,.15);border:2px solid rgba(255,215,0,.4);
+      border-radius:16px;padding:10px 24px;font-family:'Fredoka One';font-size:1rem;
+      color:#FFD700;margin-bottom:20px;animation:gbigTitleIn .8s ease 1.2s both;
+      display:block;">+50 â­ BÃ¼yÃ¼me Ã–dÃ¼lÃ¼!</div>
+    
+    <!-- Devam butonu -->
+    <button onclick="hideBigGrowthScene()" style="width:100%;padding:16px;border-radius:24px;
+      background:linear-gradient(135deg,#44FF88,#00AA44);border:1px solid rgba(80,220,120,.35);
+      font-family:'Fredoka One';font-size:1.2rem;color:#001a00;cursor:pointer;backdrop-filter:blur(8px);
+      animation:gbigBtnPop .8s cubic-bezier(.34,1.56,.64,1) 1.5s both;
+      box-shadow:0 4px 24px rgba(50,200,100,.4);">Continue</button>
+  </div>
+</div>
+
+<div id="streak-ov" style="display:none;position:fixed;inset:0;z-index:490;background:rgba(0,0,0,.9);align-items:center;justify-content:center;flex-direction:column;padding:20px;overflow:hidden;">
+  <!-- Alev partikÃ¼lleri canvas -->
+  <canvas id="streak-fire-c" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+  <div style="position:relative;z-index:1;background:linear-gradient(180deg,#1a0500,#2a0e00,#1a0500);border:2px solid rgba(255,120,0,.5);border-radius:32px;padding:30px 24px;max-width:320px;width:100%;text-align:center;box-shadow:0 0 60px rgba(255,100,0,.3),0 0 120px rgba(255,60,0,.15);">
+    <!-- Alev halkasÄ± -->
+    <div style="position:relative;display:inline-block;margin-bottom:8px;">
+      <div id="streak-ring" style="position:absolute;inset:-8px;border-radius:50%;border:3px solid transparent;background:linear-gradient(#000,#000) padding-box,linear-gradient(0deg,#FF4400,#FFD700,#FF4400) border-box;animation:streakRingRotate 2s linear infinite;"></div>
+      <div id="streak-emoji" style="font-size:3.8rem;display:block;position:relative;z-index:1;animation:streakEmojiPop 0s;filter:drop-shadow(0 0 12px rgba(255,150,0,.8));">ğŸ”¥</div>
+    </div>
+    <div id="streak-title" translate="no" style="font-family:'Fredoka One';font-size:.82rem;color:rgba(255,180,60,.7);letter-spacing:3px;margin-bottom:6px;text-shadow:0 0 10px rgba(255,120,0,.4);">GÃœN SERÄ°SÄ°</div>
+    <!-- Animasyonlu sayaÃ§ -->
+    <div id="streak-count" style="font-family:'Fredoka One';font-size:5rem;color:#FFD700;line-height:1;text-shadow:0 0 30px rgba(255,200,0,.6),0 0 60px rgba(255,150,0,.3);animation:streakCountPop .6s cubic-bezier(.34,1.56,.64,1);">1</div>
+    <div id="streak-best" style="font-size:.7rem;color:rgba(255,180,60,.5);margin-bottom:10px;">ğŸ† En iyi: 1 gÃ¼n</div>
+    <div id="streak-msg-ov" style="font-size:.88rem;color:rgba(255,255,255,.85);margin-bottom:14px;line-height:1.5;font-weight:700;min-height:40px;"></div>
+    <!-- 7 gÃ¼nlÃ¼k takvim -->
+    <div id="streak-cal" style="display:flex;gap:5px;justify-content:center;margin-bottom:18px;"></div>
+    <!-- Ä°lerleme Ã§ubuÄŸu â€” 5 gÃ¼nde gizli oda -->
+    <div style="margin-bottom:18px;">
+      <div id="streak-goal-label" translate="no" style="font-size:.68rem;color:rgba(255,180,60,.5);margin-bottom:5px;font-weight:700;">ğŸ”® Gizli Oda: <span id="streak-goal-txt" translate="no">5 gÃ¼nde aÃ§Ä±lÄ±r</span></div>
+      <div style="height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;">
+        <div id="streak-goal-bar" style="height:100%;background:linear-gradient(90deg,#FF4400,#FFD700);border-radius:3px;width:0%;transition:width 1s ease;"></div>
+      </div>
+    </div>
+    <button id="streak-continue-btn" translate="no" onclick="hideStreakOv()" style="width:100%;padding:14px;border-radius:22px;background:linear-gradient(135deg,#FF5500,#FFD700);border:none;font-family:'Fredoka One';font-size:1.15rem;color:#1a0500;cursor:pointer;box-shadow:0 4px 20px rgba(255,120,0,.4);letter-spacing:.5px;">Devam</button>
+  </div>
+</div>
+
+<div id="boyama-ov" translate="no" style="position:fixed;inset:0;z-index:96;display:none;flex-direction:column;align-items:center;background:linear-gradient(160deg,#0a180a,#0d200d,#081408);overflow-y:auto;">
+  <div style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;max-width:500px;flex-shrink:0;">
+    <div id="boyama-title" translate="no" style="font-family:Fredoka One;font-size:1.35rem;color:#FFD700">Boyama OdasÄ±</div>
+    <button id="boyama-clear-btn" translate="no" onclick="clearBoyama()" style="background:rgba(255,100,50,.2);border:1px solid rgba(255,100,50,.3);border-radius:14px;padding:5px 12px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,100,.8);cursor:pointer;backdrop-filter:blur(8px);">Temizle</button>
+    <button onclick="closeBoyama()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:5px 14px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">&times;</button>
+  </div>
+  <div style="display:flex;gap:8px;padding:0 14px 10px;flex-wrap:wrap;justify-content:center;flex-shrink:0;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:100%;max-width:460px;">
+    <button translate="no" onclick="setBoyamaTemplate(0)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;backdrop-filter:blur(8px);">YÄ±ldÄ±z</button>
+    <button translate="no" onclick="setBoyamaTemplate(1)" style="background:rgba(255,100,150,.15);border:2px solid rgba(255,100,150,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,190,.9);cursor:pointer;backdrop-filter:blur(8px);">Kalp</button>
+    <button translate="no" onclick="setBoyamaTemplate(2)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;backdrop-filter:blur(8px);">GÃ¼neÅŸ</button>
+    <button translate="no" onclick="setBoyamaTemplate(3)" style="background:rgba(255,100,150,.15);border:2px solid rgba(255,100,150,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,160,190,.9);cursor:pointer;backdrop-filter:blur(8px);">Ã‡iÃ§ek</button>
+    <button translate="no" onclick="setBoyamaTemplate(4)" style="background:rgba(100,200,255,.15);border:2px solid rgba(100,200,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,220,255,.9);cursor:pointer;backdrop-filter:blur(8px);">Kelebek</button>
+    <button translate="no" onclick="setBoyamaTemplate(5)" style="background:rgba(255,150,50,.15);border:2px solid rgba(255,150,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,190,100,.9);cursor:pointer;backdrop-filter:blur(8px);">Araba</button>
+    <button translate="no" onclick="setBoyamaTemplate(6)" style="background:rgba(100,200,100,.15);border:2px solid rgba(100,200,100,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,240,150,.9);cursor:pointer;backdrop-filter:blur(8px);">Ev</button>
+    <button translate="no" onclick="setBoyamaTemplate(7)" style="background:rgba(150,150,255,.15);border:2px solid rgba(150,150,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(180,180,255,.9);cursor:pointer;backdrop-filter:blur(8px);">Ay</button>
+    <button translate="no" onclick="setBoyamaTemplate(8)" style="background:rgba(100,200,255,.15);border:2px solid rgba(100,200,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,220,255,.9);cursor:pointer;backdrop-filter:blur(8px);">BalÄ±k</button>
+    <button translate="no" onclick="setBoyamaTemplate(9)" style="background:rgba(150,150,255,.15);border:2px solid rgba(150,150,255,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(180,180,255,.9);cursor:pointer;backdrop-filter:blur(8px);">Robot</button>
+    <button translate="no" onclick="setBoyamaTemplate(10)" style="background:rgba(100,200,100,.15);border:2px solid rgba(100,200,100,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(150,240,150,.9);cursor:pointer;backdrop-filter:blur(8px);">AÄŸaÃ§</button>
+    <button translate="no" onclick="setBoyamaTemplate(11)" style="background:rgba(255,200,50,.15);border:2px solid rgba(255,200,50,.3);border-radius:10px;padding:8px 4px;font-family:Fredoka One;font-size:.78rem;color:rgba(255,220,120,.9);cursor:pointer;backdrop-filter:blur(8px);">UÃ§ak</button>
+    </div>
+  </div>
+  <canvas id="boy-canvas" style="border-radius:14px;border:2px solid rgba(255,200,50,.2);box-shadow:0 0 20px rgba(255,180,0,.1);flex-shrink:0;touch-action:none;max-width:95vw;"></canvas>
+  <div style="padding:10px 14px;width:100%;max-width:460px;flex-shrink:0;">
+    <div style="font-family:Fredoka One;font-size:.75rem;color:rgba(255,200,100,.6);text-align:center;margin-bottom:6px"><span id="boy-brush-label" translate="no">FÄ±rÃ§a KalÄ±nlÄ±ÄŸÄ±: </span><span id="boy-bsz">10</span>px</div>
+    <input type="range" min="3" max="35" value="10" style="width:100%;accent-color:#FFD700;" oninput="boyaBrushSize=parseInt(this.value);document.getElementById('boy-bsz').textContent=this.value">
+  </div>
+  <div id="boy-colors" style="display:flex;gap:7px;padding:0 14px 20px;flex-wrap:wrap;justify-content:center;flex-shrink:0;"></div>
+</div>
+<div id="puzzle-ov" style="position:fixed;inset:0;z-index:96;display:none;flex-direction:column;align-items:center;background:radial-gradient(ellipse at 50% 30%,rgba(10,25,45,.98) 0%,rgba(3,8,18,.99) 100%);overflow-y:auto;">
+
+  <!-- HEADER -->
+  <div style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;flex-shrink:0;max-width:500px;">
+    <div style="font-family:'Fredoka One';font-size:1.5rem;color:#FFD700;text-shadow:0 0 20px rgba(255,200,0,.7)">Puzzle OdasÄ±</div>
+    <div id="pz-daily" style="font-family:'Fredoka One';font-size:.82rem;color:#44FF88">3/3 Ã¶dÃ¼l hakkÄ±</div>
+    <button onclick="closePuzzle()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:6px 16px;font-family:'Fredoka One';font-size:.8rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">&times;</button>
+  </div>
+
+  <!-- MENU -->
+  <div id="pz-menu" style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:500px;padding:0 16px 20px;">
+    <div style="font-family:'Fredoka One';font-size:.9rem;color:rgba(255,220,100,.7);text-align:center">Bir resim seÃ§ - 16 parÃ§ayÄ± tamamla</div>
+    <div id="pz-cats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;"></div>
+  </div>
+
+  <!-- GAME -->
+  <div id="pz-game" style="display:none;flex-direction:column;align-items:center;gap:10px;width:100%;max-width:500px;padding:0 8px 16px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 4px;">
+      <div id="pz-title" style="font-family:'Fredoka One';font-size:1rem;color:#FFD700">Puzzle</div>
+      <div style="font-family:'Fredoka One';font-size:.9rem;color:rgba(255,200,50,.8)">
+        ParÃ§a: <span id="pz-progress" style="color:#44FF88;font-size:1.1rem">0/16</span>
+      </div>
+      <button onclick="showPuzzleMenu()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:5px 12px;font-family:'Fredoka One';font-size:.78rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">Geri</button>
+    </div>
+    <canvas id="pz-canvas" style="border-radius:12px;border:2px solid rgba(255,200,50,.2);box-shadow:0 0 30px rgba(255,180,0,.15);touch-action:none;max-width:100%;"></canvas>
+    <div style="font-family:'Fredoka One';font-size:.78rem;color:rgba(255,200,100,.5);text-align:center">Her parcayi dogru yere surukle</div>
+  </div>
+
+  <!-- WIN -->
+  <div id="pz-win" style="display:none;flex-direction:column;align-items:center;gap:14px;padding:20px;text-align:center;max-width:400px;">
+    <div style="font-size:4rem">&#127942;</div>
+    <div style="font-family:'Fredoka One';font-size:2rem;color:#FFD700;text-shadow:0 0 30px rgba(255,200,0,.8)">Puzzle OdasÄ±</div>
+    <div style="font-family:'Fredoka One';font-size:1.1rem;color:rgba(255,220,120,.8)">Puzzle completed!<br>+500 stars earned</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <button onclick="showPuzzleMenu()" style="background:linear-gradient(135deg,#FFD700,#F4A020);border:1px solid rgba(255,230,100,.4);border-radius:24px;padding:11px 28px;font-family:'Fredoka One';font-size:1rem;color:#1a0800;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(255,180,0,.5)">Continue</button>
+      <button onclick="closePuzzle()" style="background:rgba(255,255,255,.08);border:2px solid rgba(255,200,50,.25);border-radius:24px;padding:11px 22px;font-family:'Fredoka One';font-size:.9rem;color:rgba(255,200,50,.7);cursor:pointer">Home</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="wheel-ov" style="position:fixed;inset:0;z-index:96;display:none;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at 30% 40%, rgba(80,0,120,.9) 0%, rgba(10,5,30,.97) 60%);backdrop-filter:blur(20px);padding:18px;box-sizing:border-box;">
+  
+  <!-- Header -->
+  <div style="text-align:center;margin-bottom:10px;position:relative;z-index:2;max-width:420px;width:100%;">
+    <button onclick="document.getElementById('wheel-ov').style.display='none'" aria-label="Kapat" style="position:absolute;right:0;top:-4px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.10);color:white;font-size:1.3rem;line-height:1;cursor:pointer;backdrop-filter:blur(8px);">Ã—</button>
+    <div style="font-family:'Fredoka One';font-size:2rem;color:#FFD700;text-shadow:0 0 30px rgba(255,200,0,.9),0 2px 0 rgba(0,0,0,.5);letter-spacing:1px">Ã‡arkÄ±felek OdasÄ±</div>
+    <div id="w-toast" style="font-family:'Fredoka One';font-size:.9rem;color:#FF8844;opacity:1;transition:opacity .4s;margin-top:4px;min-height:20px">Ã‡arkÄ± Ã§evir, sÃ¼rprizini gÃ¶r.</div>
+  </div>
+
+  <!-- Main section (wheel + buttons) -->
+  <div id="wheel-stage" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;width:min(420px,96vw);padding:18px;border-radius:26px;border:1px solid rgba(255,215,0,.24);background:rgba(255,255,255,.07);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 40px rgba(160,80,255,.18) inset;">
+    <div style="position:relative;width:min(260px,72vw);aspect-ratio:1/1;display:grid;place-items:center;">
+      <div id="wheel-disk" style="width:100%;height:100%;border-radius:50%;background:conic-gradient(#FFD54A 0 45deg,#FF8A40 45deg 90deg,#8E6CFF 90deg 135deg,#4AD2FF 135deg 180deg,#52E39C 180deg 225deg,#FF5FC8 225deg 270deg,#FFE28A 270deg 315deg,#7AF0FF 315deg 360deg);border:8px solid rgba(255,255,255,.22);box-shadow:0 0 35px rgba(255,215,0,.28),0 12px 36px rgba(0,0,0,.45);transition:transform 1.1s cubic-bezier(.18,.9,.22,1);"></div>
+      <div style="position:absolute;top:-7px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:24px solid #fff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45));"></div>
+      <div style="position:absolute;width:76px;height:76px;border-radius:50%;background:radial-gradient(circle,#fff 0,#FFD700 48%,#B87500 100%);display:grid;place-items:center;font-size:2rem;box-shadow:0 0 18px rgba(255,220,90,.75);">â­</div>
+    </div>
+    <button onclick="_evSpinWheelSafe()" style="background:linear-gradient(135deg,#FFD700,#FF8A00);border:1px solid rgba(255,235,120,.55);border-radius:24px;padding:12px 28px;font-family:'Fredoka One';font-size:1rem;color:#1a0800;cursor:pointer;box-shadow:0 10px 24px rgba(255,150,0,.32);">Ã‡arkÄ± Ã‡evir</button>
+  </div>
+
+  <!-- Win Result overlay -->
+  <div id="w-result" style="display:none;flex-direction:column;align-items:center;gap:6px;padding:16px 18px;margin-top:12px;text-align:center;position:relative;z-index:3;border-radius:20px;background:rgba(255,255,255,.10);border:1px solid rgba(255,215,0,.22);font-family:'Fredoka One';color:#FFD700;box-shadow:0 14px 36px rgba(0,0,0,.28);">
+  </div>
+
+  <script>
+  function _evSpinWheelSafe(){
+    var disk=document.getElementById('wheel-disk');
+    var res=document.getElementById('w-result');
+    var toast=document.getElementById('w-toast');
+    if(!disk || !res) return;
+    var gifts=['+10 yÄ±ldÄ±z','+25 yÄ±ldÄ±z','Bonus deneme','Harika Ã§aba','Oki alkÄ±ÅŸÄ±','Yeni hedef','Cesaret puanÄ±','Mutluluk parasÄ±'];
+    var pick=gifts[Math.floor(Math.random()*gifts.length)];
+    var deg=720+Math.floor(Math.random()*720);
+    disk.style.transform='rotate('+deg+'deg)';
+    if(toast) toast.textContent='Ã‡ark dÃ¶nÃ¼yor...';
+    setTimeout(function(){
+      res.style.display='flex';
+      res.innerHTML='<div style="font-size:2rem">ğŸ</div><div>KazandÄ±n!</div><div style="font-family:Nunito;font-weight:900;color:white">'+pick+'</div>';
+      if(toast) toast.textContent='Tebrikler!';
+    },850);
+  }
+  </script>
+</div>
+
+
+<!-- EBEVEYN QR OVERLAY -->
+<div id="qr-ov" style="position:fixed;inset:0;z-index:96;display:none;align-items:center;justify-content:center;background:rgba(5,2,20,.95);backdrop-filter:blur(18px);padding:12px;">
+  <div style="background:linear-gradient(165deg,#0d1b3e,#081028,#061a14);border:1.5px solid rgba(255,215,0,.2);border-radius:28px;width:min(400px,100%);max-height:92vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(100,200,100,.06);">
+
+    <!-- Modal Header -->
+    <div style="background:linear-gradient(135deg,#1a1060,#2a4096 55%,#1a6a3a);border-radius:26px 26px 0 0;padding:18px 20px 14px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-20px;right:-10px;width:80px;height:80px;background:rgba(255,255,255,.04);border-radius:50%;"></div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:40px;height:40px;background:rgba(255,255,255,.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">&#128202;</div>
+        <div>
+          <div id="qr-title" style="font-family:'Fredoka One';font-size:1.15rem;color:#FFD700;">Ebeveyn Raporu</div>
+          <div id="qr-subtitle" style="font-size:.68rem;color:rgba(255,255,255,.5);font-weight:700;">GÃ¼nlÃ¼k Ã¶ÄŸrenme Ã¶zeti</div>
+        </div>
+        <button onclick="document.getElementById('qr-ov').style.display='none'" data-qr-close-icon="1" aria-label="Kapat" title="Kapat" style="margin-left:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;width:32px;height:32px;color:rgba(255,255,255,.5);font-size:1.15rem;line-height:1;cursor:pointer;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;">Ã—</button>
+      </div>
+    </div>
+
+    <!-- QR Section -->
+    <div style="padding:16px 20px;text-align:center;border-bottom:1px solid rgba(255,255,255,.06);">
+      <div style="display:inline-block;background:white;border-radius:18px;padding:12px;box-shadow:0 8px 30px rgba(0,0,0,.4);">
+        <canvas id="qr-canvas" width="160" height="160" style="display:block;border-radius:8px;"></canvas>
+      </div>
+      <div style="margin-top:10px;font-size:.65rem;color:rgba(255,215,0,.45);font-weight:700;letter-spacing:.04em;" id="qr-url-txt">Rapor hazÄ±rlanÄ±yor...</div>
+      <div id="qr-scan-hint" style="font-size:.68rem;color:rgba(255,255,255,.3);font-weight:600;margin-top:3px;">QR kodu telefonla tara</div>
+    </div>
+
+    <!-- Report Preview -->
+    <div id="qr-preview" style="margin:0;"></div>
+
+    <!-- Action Buttons -->
+    <div style="padding:14px 20px 18px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,.06);">
+      <div style="display:flex;gap:8px;">
+        <button onclick="downloadPDF()" style="flex:1;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:1px solid rgba(80,200,120,.3);border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(26,106,58,.4);">PDF İndir</button>
+        <button onclick="sendMailReport()" style="flex:1;background:linear-gradient(135deg,#1a3a8a,#2a5aCA);border:1px solid rgba(80,140,255,.3);border-radius:14px;padding:12px 8px;font-family:'Fredoka One';font-size:.85rem;color:white;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(26,58,138,.4);">E-posta</button>
+      </div>
+      <button onclick="document.getElementById('qr-ov').style.display='none'" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:10px;font-family:'Nunito';font-size:.78rem;font-weight:700;color:rgba(255,255,255,.35);cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIL INPUT OVERLAY -->
+<div id="mail-ov" style="position:fixed;inset:0;z-index:97;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);padding:20px;">
+  <div style="background:white;border-radius:22px;padding:28px 22px;width:min(340px,100%);text-align:center;">
+    <div style="font-size:2rem;margin-bottom:8px">&#128231;</div>
+    <div style="font-family:Fredoka One;font-size:1.2rem;color:#1a3a6a;margin-bottom:6px">GÃ¼nlÃ¼k Rapor E-postasÄ±</div>
+    <div style="font-size:.78rem;color:#aaa;font-weight:700;margin-bottom:16px;line-height:1.5">E-posta adresini yaz.<br>Ã‡ocuk raporunu her gÃ¼n al.</div>
+    <input id="mail-input" type="email" placeholder="ornek@mail.com" style="width:100%;border:2px solid #e0f0e8;border-radius:12px;padding:12px;font-family:Nunito;font-size:.95rem;outline:none;margin-bottom:12px;text-align:center;">
+    <button onclick="confirmMail()" style="width:100%;background:linear-gradient(135deg,#1a6a3a,#2a9a5a);border:1px solid rgba(80,200,120,.3);border-radius:20px;padding:13px;font-family:Fredoka One;font-size:1rem;color:white;cursor:pointer;backdrop-filter:blur(8px);margin-bottom:8px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">Kaydet</button>
+    <button onclick="document.getElementById('mail-ov').style.display='none'" style="width:100%;background:transparent;border:1px solid #ddd;border-radius:20px;padding:10px;font-family:Nunito;font-size:.8rem;font-weight:700;color:#aaa;cursor:pointer;backdrop-filter:blur(8px);">Cancel</button>
+  </div>
+</div>
+
+
+
+<!-- â”€â”€ OYUN EKRANI â”€â”€ -->
+<div id="gs" style="display:none;position:fixed;inset:0;z-index:50;background:#000;">
+  <canvas id="gc" style="display:block;width:100%;height:100%;touch-action:none;"></canvas>
+
+  <!-- Oki oyun iÃ§i -->
+  <div id="oki-game" style="position:fixed;bottom:70px;left:10px;z-index:70;cursor:pointer;" onclick="okiGameTapped()">
+    <div id="oki-game-bubble" style="display:none;background:rgba(255,255,255,.95);color:#333;font-family:Nunito;font-size:.8rem;font-weight:700;padding:7px 12px;border-radius:14px;border-bottom-left-radius:3px;margin-bottom:4px;max-width:170px;box-shadow:0 2px 10px rgba(0,0,0,.3);">
+      ğŸ’¬
+    </div>
+    <img id="char-game-img" src="" style="width:52px;height:60px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));transition:transform .15s;display:block;">
+  </div>
+  <style>
+  @keyframes oki-fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  </style>
+
+  <div id="rgrid-hidden" style="display:none;"></div>
+
+  <!-- Ãœst bar -->
+  <div style="position:fixed;top:0;left:0;right:0;height:52px;z-index:60;display:flex;align-items:center;padding:0 10px;gap:8px;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,transparent 100%);pointer-events:none;">
+    <button id="gbk" style="pointer-events:all;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 14px;font-family:'Fredoka One';font-size:.78rem;color:rgba(255,255,255,.7);cursor:pointer;backdrop-filter:blur(8px);">Geri</button>
+    <div style="display:flex;align-items:center;gap:6px;flex:1;">
+      <span id="gri" style="font-size:1.3rem;">&#127775;</span>
+      <span id="grn" style="font-family:'Fredoka One';font-size:.88rem;color:rgba(255,255,255,.8);">Oda</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:4px;">
+      <span style="font-family:'Fredoka One';font-size:.82rem;color:#FFD700;">&#11088;</span>
+      <span id="gsn" style="font-family:'Fredoka One';font-size:1rem;color:#FFD700;min-width:36px;text-align:right;">0</span>
+    </div>
+    <button id="_room-theme-btn" onclick="_cycleRoomTheme()" title="Change theme" style="pointer-events:all;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:5px 10px;font-size:.88rem;cursor:pointer;backdrop-filter:blur(8px);display:none;">&#127912;</button>
+    <button id="gfs" onclick="toggleFullscreen()" style="pointer-events:all;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:5px 10px;font-size:.8rem;color:rgba(255,255,255,.5);cursor:pointer;backdrop-filter:blur(8px);">&#9974;</button>
+  </div>
+
+  <!-- Progress bar -->
+  <div id="gpb" style="position:fixed;top:52px;left:10px;right:10px;height:6px;background:rgba(255,255,255,.18);border-radius:4px;z-index:60;overflow:hidden;">
+    <div id="gp" style="height:100%;background:linear-gradient(90deg,#F4C430,#FFD700);border-radius:4px;width:0%;transition:width .4s;"></div>
+  </div>
+
+  <!-- Oki -->
+  <div id="oki-c" style="position:fixed;bottom:0;left:0;z-index:62;pointer-events:none;">
+    <canvas id="oki-game-c" width="110" height="160" style="display:block;"></canvas>
+    <div id="oki-game-bubble-inner" style="display:none;position:absolute;bottom:155px;left:10px;background:white;border-radius:14px;padding:7px 12px;font-family:'Nunito';font-size:.75rem;font-weight:800;color:#333;max-width:180px;box-shadow:0 4px 16px rgba(0,0,0,.2);"></div>
+  </div>
+
+  <!-- Ders mesajÄ± -->
+  <div id="gles" style="display:none;">
+    <p id="glest" style="font-size:.76rem;font-weight:800;color:rgba(255,255,255,.9);margin:0;"></p>
+  </div>
+
+  <!-- Achievement -->
+  <div id="ach" style="position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);">
+    <div style="background:linear-gradient(135deg,#1a1a3e,#2a2a5e);border-radius:24px;padding:28px 32px;text-align:center;max-width:300px;box-shadow:0 16px 48px rgba(0,0,0,.5);">
+      <div id="ach-ico" style="font-size:3rem;margin-bottom:8px;">ğŸ†</div>
+      <div id="ach-title" style="font-family:'Fredoka One';font-size:1.4rem;color:#FFD700;margin-bottom:4px;">BaÅŸarÄ±m!</div>
+      <div id="ach-desc" style="font-size:.85rem;color:rgba(255,255,255,.75);margin-bottom:16px;"></div>
+      <button id="acok" style="background:linear-gradient(135deg,rgba(244,196,48,.9),rgba(255,215,0,.87));border:1px solid rgba(255,230,100,.4);border-radius:20px;padding:11px 30px;font-family:'Fredoka One';font-size:1rem;color:#1a0a00;cursor:pointer;box-shadow:0 5px 18px rgba(200,140,0,.4),inset 0 1px 0 rgba(255,255,255,.3);backdrop-filter:blur(8px);">SÃ¼per! â­</button>
+    </div>
+  </div>
+
+  <!-- Geri onay -->
+  <div id="bc" style="position:fixed;inset:0;z-index:85;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;">
+    <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;padding:24px;text-align:center;max-width:280px;">
+      <div style="font-family:'Fredoka One';font-size:1.1rem;color:white;margin-bottom:16px;">Eve dÃ¶nmek istiyor musun?</div>
+      <div style="display:flex;gap:10px;justify-content:center;">
+        <button id="bcyes" style="background:linear-gradient(135deg,#F4C430,#FFD700);border:1px solid rgba(255,230,100,.4);border-radius:20px;padding:10px 24px;font-family:'Fredoka One';font-size:.9rem;color:#1a0800;cursor:pointer;backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">Evet</button>
+        <button id="bcno" style="background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:20px;padding:10px 24px;font-family:'Fredoka One';font-size:.9rem;color:white;cursor:pointer;backdrop-filter:blur(8px);">HayÄ±r</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Kelimeler Overlay -->
+<div id="kov" class="overlay">
+  <div class="ov-card dark" style="max-width:420px;">
+    <h2 style="color:#7BBCFF;font-family:'Fredoka One'">ğŸ““ Ã–ÄŸrenilen Kelimeler</h2>
+    <div id="k-count" style="text-align:center;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:10px;"></div>
+    <div class="kd-tabs">
+      <button class="kd-tab active" onclick="filterK('all',this)">TÃ¼mÃ¼</button>
+      <button class="kd-tab" onclick="filterK('en',this)">ğŸ‡¬ğŸ‡§ Ä°ngilizce</button>
+      <button class="kd-tab" onclick="filterK('de',this)">ğŸ‡©ğŸ‡ª Almanca</button>
+    </div>
+    <div id="k-grid" class="kd-grid"></div>
+    <button class="ov-close" onclick="document.getElementById('kov').classList.remove('show')">Kapat</button>
+  </div>
+</div>
+
+<!-- Rapor Overlay -->
+<div id="rov" class="overlay">
+  <div class="ov-card light" style="max-width:400px;">
+    <h2 id="report-title" style="color:#6622CC;font-family:'Fredoka One'">ğŸ“Š Rapor</h2>
+    <div id="r-date" style="text-align:center;font-size:.75rem;color:#aaa;margin-bottom:14px;"></div>
+    <div id="r-content"></div>
+    <button class="ov-close" style="border-color:rgba(0,0,0,.15);color:#aaa;" onclick="document.getElementById('rov').classList.remove('show')">Kapat</button>
+  </div>
+</div>
+
+<!-- Åampiyona Overlay -->
+<div id="cov" class="overlay">
+  <div class="ov-card dark" style="max-width:400px;">
+    <h2 style="color:#FFD700;font-family:'Fredoka One'">&#127942; Championship</h2>
+    <div id="c-list"></div>
+    <button class="ov-close" onclick="document.getElementById('cov').classList.remove('show')">Kapat</button>
+  </div>
+</div>
+
+<!-- Dua Overlay -->
+<div id="dua-ov" style="display:none;position:fixed;inset:0;z-index:120;overflow:hidden;">
+  <canvas id="dua-sky-c" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+  <div id="dua-e1" style="position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px 20px;overflow-y:auto;">
+    <div style="text-align:center;padding:20px 0 14px;">
+      <div id="dua-top-angel" style="font-size:4rem;display:inline-block;">&#10024;</div>
+      <div style="font-family:'Fredoka One';font-size:2rem;color:#fff;text-shadow:0 0 30px rgba(220,180,255,.9);margin-top:4px;">DÃ¼ÅŸÃ¼nce OdasÄ±</div>
+      <div style="font-size:.85rem;color:rgba(220,190,255,.7);">Bir dÃ¼ÅŸÃ¼nce seÃ§, mÃ¼hÃ¼rle ve gÃ¶kyÃ¼zÃ¼ne yolla</div>
+    </div>
+    <div id="dua-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:440px;"></div>
+    <button onclick="duaKendiYaz()" style="margin-top:8px;flex-shrink:0;width:100%;max-width:440px;background:rgba(100,30,180,.3);border:2px dashed rgba(200,140,255,.4);border-radius:18px;padding:11px;cursor:pointer;backdrop-filter:blur(8px);color:#E8C8FF;font-family:Fredoka One;font-size:.95rem;">&#9998; Kendi dÃ¼ÅŸÃ¼nceni yaz</button>
+    <button onclick="closeDuaOv()" style="margin-top:8px;background:rgba(255,255,255,.07);border:1px solid rgba(200,150,255,.25);border-radius:22px;padding:9px 28px;color:rgba(200,160,255,.6);font-family:Nunito;font-size:.85rem;cursor:pointer;backdrop-filter:blur(8px);">&#8592; Geri</button>
+  </div>
+  <div id="dua-e2" style="display:none;position:absolute;inset:0;z-index:3;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+    <div id="dua-card-main" style="width:min(340px,92%);background:linear-gradient(155deg,#160630,#2a0d5e);border:2px solid rgba(220,150,255,.45);border-radius:26px;padding:22px 20px 18px;text-align:center;box-shadow:0 0 60px rgba(180,80,255,.3);position:relative;">
+      <div id="dc-ico" style="font-size:3rem;margin-bottom:6px;"></div>
+      <div id="dc-name" style="font-family:'Fredoka One';font-size:1.2rem;color:#E8C8FF;margin-bottom:12px;"></div>
+      <div id="dc-ar" style="font-size:1rem;color:rgba(255,255,255,.92);direction:rtl;line-height:2;margin-bottom:10px;"></div>
+      <div id="dc-tr" style="font-size:.8rem;color:rgba(210,180,255,.65);font-style:italic;line-height:1.6;"></div>
+    </div>
+    <button id="dua-send-btn" onclick="duaGonder()" style="margin-top:22px;background:linear-gradient(135deg,#5500BB,#AA33FF);border:1px solid rgba(180,100,255,.35);border-radius:32px;padding:15px 42px;color:#fff;font-family:'Fredoka One';font-size:1.15rem;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 4px 28px rgba(170,50,255,.55);">Seal and send</button>
+    <button onclick="duaGeri()" style="margin-top:8px;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(200,160,255,.5);font-size:.8rem;cursor:pointer;backdrop-filter:blur(8px);padding:6px;">&#8592; Baska bir dusunce sec</button>
+  </div>
+  <div id="dua-e3" style="display:none;position:absolute;inset:0;z-index:4;flex-direction:column;align-items:center;justify-content:center;">
+    <div id="dua-zarf-wrap" style="text-align:center;">
+      <div id="dua-zarf-angel" style="font-size:3.5rem;margin-bottom:-8px;">&#10024;</div>
+      <div id="dua-zarf" style="font-size:5rem;display:inline-block;">&#9993;&#65039;</div>
+      <div id="dua-muhur-fx" style="font-size:2.8rem;opacity:0;margin-top:4px;">&#10003;</div>
+    </div>
+    <div id="dua-muhur-txt" style="font-family:'Fredoka One';font-size:1.3rem;color:#E8C8FF;margin-top:16px;opacity:0;">Sealing...</div>
+  </div>
+  <div id="dua-e4" style="display:none;position:absolute;inset:0;z-index:5;overflow:hidden;">
+    <div id="dua-fly-obj" style="position:absolute;bottom:30%;left:50%;transform:translateX(-50%);text-align:center;font-size:4rem;line-height:1.2;">&#10024;<br>&#9993;&#65039;</div>
+  </div>
+  <div id="dua-e5" style="display:none;position:absolute;inset:0;z-index:6;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;">
+    <div style="font-size:4.5rem;">&#127747;</div>
+    <div style="font-size:1.8rem;margin:6px 0;">&#10024; &#11088; &#10024;</div>
+    <div id="dua-kabul-txt" style="font-family:'Fredoka One';font-size:1.6rem;color:#FFD700;text-shadow:0 0 30px rgba(255,215,0,.6);margin:12px 0 6px;">Your reflection was sent!</div>
+    <div style="font-size:.95rem;color:rgba(255,255,255,.85);max-width:260px;line-height:1.7;"><span id="dua-kabul-sub">A calm thought goes with you</span><br><span id="dua-kabul-note" style="font-size:.82rem;color:rgba(220,180,255,.6);">Thank you for your mindful moment</span></div>
+    <div id="dua-burst" style="font-size:2rem;letter-spacing:6px;margin:16px 0;">&#10024; &#11088; &#10024;</div>
+    <button id="dua-back-btn" onclick="closeDuaOv()" style="background:linear-gradient(135deg,#5500BB,#AA33FF);border:1px solid rgba(180,100,255,.35);border-radius:32px;padding:13px 34px;color:#fff;font-family:'Fredoka One';font-size:1rem;cursor:pointer;backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18);">Home</button>
+  </div>
+</div>
+
+<style>
+@keyframes duaBig{0%{transform:scale(0);opacity:0;}70%{transform:scale(1.15);}100%{transform:scale(1);opacity:1;}}
+@keyframes duaCardIn{0%{transform:scale(.7) translateY(30px);opacity:0;}100%{transform:scale(1);opacity:1;}}
+@keyframes duaStampBig{0%{transform:scale(4) rotate(-30deg);opacity:0;}60%{transform:scale(.9) rotate(4deg);}100%{transform:scale(1) rotate(0);opacity:1;}}
+@keyframes duaShake{0%,100%{transform:translateX(0) rotate(0);}25%{transform:translateX(-8px) rotate(-5deg);}75%{transform:translateX(8px) rotate(5deg);}}
+@keyframes duaFadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+</style>
+
+<!-- â”€â”€ NAMAZ VAKTÄ° BANNER â”€â”€ -->
+<div id="prayer-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(135deg,#1a4a2e,#2d7a4a);padding:14px 20px;box-shadow:0 4px 20px rgba(0,0,0,.4);animation:prayerSlide .5s ease-out;">
+  <div style="max-width:500px;margin:0 auto;display:flex;align-items:center;gap:14px;">
+    <div style="font-size:2.2rem;">ğŸ•Œ</div>
+    <div style="flex:1;">
+      <div id="prayer-name" style="font-family:'Fredoka One';font-size:1.2rem;color:#FFD700;"></div>
+      <div id="prayer-time-txt" style="font-size:.8rem;color:rgba(255,255,255,.8);margin-top:2px;">Mindful moment</div>
+    </div>
+    <button onclick="document.getElementById('prayer-banner').style.display='none'" 
+      style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:50%;width:32px;height:32px;color:white;font-size:1.1rem;cursor:pointer;backdrop-filter:blur(8px);">âœ•</button>
+  </div>
+</div>
+<style>
+@keyframes prayerSlide{from{transform:translateY(-100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+
+/* â”€â”€ REFLEKS ODASI â”€â”€ */
+#refleks-ov{position:fixed;inset:0;z-index:80;display:none;flex-direction:column;background:linear-gradient(180deg,#060d1a,#0a1628);}
+#refleks-ov.show{display:flex;}
+#refleks-gc{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
+#refleks-hud{position:absolute;top:0;left:0;right:0;z-index:5;justify-content:space-between;align-items:center;padding:8px 12px;}
+.rhb{background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:5px 12px;font-family:'Fredoka One';font-size:.88rem;color:#FFD700;}
+#refleks-pb{position:absolute;top:0;left:0;height:3px;background:linear-gradient(90deg,#FFD700,#FF6B6B);z-index:6;}
+#refleks-talimat{position:absolute;top:14%;left:50%;transform:translateX(-50%);z-index:5;display:none;pointer-events:none;text-align:center;}
+#refleks-sira-wrap{position:absolute;bottom:10%;left:50%;transform:translateX(-50%);z-index:5;display:none;flex-direction:row;gap:10px;}
+.rsd{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.2);transition:.15s;}
+.rsd.bekle{background:#FFD700;border-color:#FFD700;box-shadow:0 0 12px rgba(255,215,0,.6);}
+.rsd.ok{background:#44FF88;border-color:#44FF88;}
+.rsd.hata{background:#FF4444;border-color:#FF4444;}
+#refleks-flash{position:absolute;inset:0;z-index:8;pointer-events:none;opacity:0;transition:opacity .1s;}
+#refleks-menu{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;}
+#refleks-bitis{position:absolute;inset:0;z-index:9;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(4,8,20,.9);backdrop-filter:blur(10px);}
+.rmb{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:.12s;margin-bottom:6px;width:min(300px,90%);}
+.rmb:active{background:rgba(255,255,255,.1);transform:scale(.97);}
+.rmb-ico{font-size:1.8rem;flex-shrink:0;}
+.rmb-name{font-family:'Fredoka One';font-size:.88rem;color:#EAF4FF;}
+.rmb-desc{font-size:.63rem;color:rgba(135,206,235,.4);margin-top:2px;}
+.rbk{background:linear-gradient(145deg,#0d1a30,#1a2840);border:1.5px solid rgba(255,215,0,.3);border-radius:24px;padding:26px 22px;text-align:center;width:min(290px,88%);}
+.rb-skor{font-family:'Fredoka One';font-size:2.8rem;color:#FFD700;text-shadow:0 0 20px rgba(255,215,0,.5);}
+.rb-label{font-size:.68rem;color:rgba(135,206,235,.4);letter-spacing:2px;margin-bottom:4px;}
+.rb-yorum{font-size:.8rem;color:rgba(255,255,255,.65);margin:8px 0 18px;line-height:1.5;}
+.rbbtn{border:none;border-radius:22px;padding:11px 28px;font-family:'Fredoka One';font-size:.88rem;cursor:pointer;margin:3px;}
+.rbbtn1{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#1a0a00;}
+.rbbtn2{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.65);}
+</style>
+
+<!-- â”€â”€ GÃœNLÃœK GÃ–REVLER OVERLAY â”€â”€ -->
+<div id="tasks-ov" style="display:none;position:fixed;inset:0;z-index:115;background:linear-gradient(180deg,#0a1428,#1a2a4a);overflow-y:auto;">
+  <div style="max-width:420px;margin:0 auto;padding:20px 16px 40px;">
+    
+    <!-- BaÅŸlÄ±k -->
+    <div style="text-align:center;margin-bottom:24px;">
+      <div id="tasks-oki-face" style="font-size:3.5rem;">&#128035;</div>
+      <div style="font-family:'Fredoka One';font-size:1.6rem;color:#FFD700;margin-top:6px;">BugÃ¼nÃ¼n GÃ¶revleri</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-top:3px;" id="tasks-date"></div>
+    </div>
+
+    <!-- Oki XP Ã§ubuÄŸu -->
+    <div style="background:rgba(255,255,255,.08);border-radius:14px;padding:14px;margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <canvas id="tasks-oki-mini" width="50" height="58" style="flex-shrink:0;"></canvas>
+        <div style="flex:1;">
+          <div style="font-family:'Fredoka One';font-size:.95rem;color:#FFD700;" id="tasks-oki-name">Baby Oki</div>
+          <div style="font-size:.72rem;color:rgba(255,255,255,.5);">Today <span id="tasks-xp-earned" style="color:#FFD700;font-weight:700;">0</span> XP earned</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;height:8px;overflow:hidden;">
+        <div id="tasks-xp-bar" style="background:linear-gradient(90deg,#FFD700,#FF8C00);height:100%;width:0%;border-radius:6px;transition:width .5s;"></div>
+      </div>
+    </div>
+
+    <!-- GÃ¶rev listesi -->
+    <div id="tasks-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+
+    <button onclick="document.getElementById('tasks-ov').style.display='none'" 
+      style="width:100%;margin-top:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
+  </div>
+</div>
+
+<!-- â­ YILDIZ KAVANOZ OVERLAY -->
+<div id="star-ov" style="display:none;position:fixed;inset:0;z-index:115;background:linear-gradient(180deg,#1a0020,#300040);overflow-y:auto;">
+  <div style="max-width:380px;margin:0 auto;padding:24px 16px 40px;text-align:center;">
+    <canvas id="star-big" width="160" height="180" style="margin:0 auto 12px;display:block;"></canvas>
+    <div style="font-family:'Fredoka One';font-size:1.6rem;color:#FF88AA;">Yıldız Puanları</div>
+    <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin:4px 0 16px;">Mini oyunlardan kazanılan puanlar</div>
+    <div style="font-family:'Fredoka One';font-size:2.2rem;color:#FF88AA;" id="star-count">0 ⭐</div>
+    <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin:14px 0;">
+      <div style="font-size:.8rem;color:rgba(255,255,255,.5);">Bugün kazanılan</div>
+      <div style="font-family:'Fredoka One';font-size:1.3rem;color:#FF88AA;" id="star-today">+0 ⭐</div>
+    </div>
+    <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin:0 0 16px;">
+      <div style="font-size:.8rem;color:rgba(255,255,255,.5);">100 yıldız = 1 para</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;height:8px;margin-top:8px;overflow:hidden;">
+        <div id="star-to-coin-bar" style="background:linear-gradient(90deg,#FF88AA,#FF44AA);height:100%;width:0%;border-radius:6px;transition:width .5s;"></div>
+      </div>
+      <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:6px;" id="star-to-coin-txt"></div>
+    </div>
+    <button onclick="document.getElementById('star-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
+  </div>
+</div>
+
+<!-- ✨ KRİSTAL KÜRE OVERLAY -->
+<div id="crystal-ov" style="display:none;position:fixed;inset:0;z-index:115;background:linear-gradient(180deg,#0a0020,#150040);overflow-y:auto;">
+  <div style="max-width:380px;margin:0 auto;padding:24px 16px 40px;text-align:center;">
+    <canvas id="crystal-big" width="160" height="180" style="margin:0 auto 12px;display:block;"></canvas>
+    <div style="font-family:'Fredoka One';font-size:1.6rem;color:#CC88FF;">Mutluluk Paralar&#305;</div>
+    <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin:4px 0 16px;">Oki bu paralarla b&#252;y&#252;r</div>
+    $10 &#129689;</div>
+    <div id="crystal-stage-box" style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin:14px 0;">
+      <div style="font-family:'Fredoka One';font-size:1rem;color:#E8C8FF;" id="crystal-stage">Yumurta Oki</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;height:8px;margin-top:8px;overflow:hidden;">
+        <div id="crystal-bar" style="background:linear-gradient(90deg,#CC88FF,#8844FF);height:100%;width:0%;border-radius:6px;transition:width .5s;"></div>
+      </div>
+      <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:6px;" id="crystal-next"></div>
+    </div>
+    <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:12px;margin:0 0 16px;">
+      <div style="font-size:.75rem;color:rgba(255,255,255,.5);">Ebeveyn bunu gerÃ§ek bir Ã¶dÃ¼le Ã§evirebilir</div>
+      <div style="font-size:.8rem;color:#CC88FF;margin-top:4px;">10 para = 1 Ã¶dÃ¼l hakkÄ±</div>
+    </div>
+    <button onclick="document.getElementById('crystal-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
+  </div>
+</div>
+
+<!-- ğŸ«™ GÃœNLÃœK OVERLAY -->
+<div id="daily-ov" style="display:none;position:fixed;inset:0;z-index:115;background:linear-gradient(180deg,#1a0e00,#2a1a00);overflow-y:auto;">
+  <div style="max-width:380px;margin:0 auto;padding:24px 16px 40px;text-align:center;">
+    <canvas id="gold-big" width="160" height="180" style="margin:0 auto 12px;display:block;"></canvas>
+    <div style="font-family:'Fredoka One';font-size:1.6rem;color:#FFD700;">Günlük Rapor</div>
+    <div style="font-size:.8rem;color:rgba(255,255,255,.45);margin:4px 0 16px;" id="daily-date"></div>
+    <!-- Giriş / Çıkış -->
+    <div style="display:flex;gap:10px;margin-bottom:14px;">
+      <div style="flex:1;background:rgba(100,255,100,.08);border:1px solid rgba(100,255,100,.2);border-radius:14px;padding:14px;">
+        <div id="daily-earned-label" style="font-size:.75rem;color:rgba(255,255,255,.5);">Kazanılan</div>
+        <div style="font-family:'Fredoka One';font-size:1.4rem;color:#66FF88;" id="daily-in">+0</div>
+        <div id="daily-today-label" style="font-size:.65rem;color:rgba(255,255,255,.35);">bugün</div>
+      </div>
+      <div style="flex:1;background:rgba(255,100,100,.08);border:1px solid rgba(255,100,100,.2);border-radius:14px;padding:14px;">
+        <div id="daily-average-label" style="font-size:.75rem;color:rgba(255,255,255,.5);">Ortalama</div>
+        <div style="font-family:'Fredoka One';font-size:1.4rem;color:#FFD700;" id="daily-avg">0</div>
+        <div id="daily-days-label" style="font-size:.65rem;color:rgba(255,255,255,.35);">7 gün</div>
+      </div>
+    </div>
+    <!-- Görev takibi -->
+    <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin-bottom:14px;text-align:left;">
+      <div style="font-family:'Fredoka One';font-size:.9rem;color:#FFD700;margin-bottom:10px;">Bugünün Görevleri</div>
+      <div id="daily-tasks-mini"></div>
+    </div>
+    <!-- 7 günlük grafik -->
+    <div style="background:rgba(255,255,255,.07);border-radius:14px;padding:14px;margin-bottom:16px;">
+      <div id="daily-chart-label" style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:8px;">Son 7 gün</div>
+      <canvas id="daily-chart" width="320" height="60" style="width:100%;"></canvas>
+    </div>
+    <button onclick="document.getElementById('daily-ov').style.display='none'" style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:12px;color:rgba(255,255,255,.7);font-family:Nunito;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px);">Kapat</button>
+  </div>
+</div>
+
+<!-- EXPERIMENT LIQUID ROOM CARD v1 - CSS ONLY -->
+<style id="experiment-liquid-room-card-v1">
+/* EXPERIMENT LIQUID ROOM CARD
+   Sadece oda giriÅŸ soru kartÄ±nÄ±n gÃ¶rÃ¼nÃ¼mÃ¼.
+   JS mantÄ±ÄŸÄ±, oda giriÅŸ zinciri, puzzle, boyama, layout deÄŸiÅŸtirilmedi. */
+
+.ov-soru2.show{
+  background:
+    radial-gradient(circle at 50% 18%, rgba(146,90,255,.25), transparent 32%),
+    radial-gradient(circle at 18% 72%, rgba(0,214,255,.14), transparent 30%),
+    radial-gradient(circle at 82% 70%, rgba(255,210,90,.13), transparent 28%),
+    rgba(2,5,16,.58) !important;
+  backdrop-filter: blur(9px) saturate(1.25) !important;
+}
+
+.ov-soru2.show::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.90) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle, rgba(145,210,255,.55) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(255,220,120,.50) 0 1px, transparent 1.5px);
+  background-size: 96px 96px, 132px 132px, 168px 168px;
+  background-position: 0 0, 24px 48px, 70px 12px;
+  opacity:.32;
+  animation: evSqStarsFloat 12s linear infinite;
+}
+
+@keyframes evSqStarsFloat{
+  from{transform:translateY(0);}
+  to{transform:translateY(-90px);}
+}
+
+@keyframes evLiquidCardIn{
+  0%{opacity:0; transform:scale(.82) translateY(34px) rotateX(8deg);}
+  68%{opacity:1; transform:scale(1.025) translateY(-4px) rotateX(0deg);}
+  100%{opacity:1; transform:scale(1) translateY(0) rotateX(0deg);}
+}
+
+.sq2-card{
+  position:relative !important;
+  overflow:hidden !important;
+  isolation:isolate !important;
+  width:min(410px, calc(100vw - 34px)) !important;
+  padding:26px 20px 20px !important;
+  border-radius:32px !important;
+  border:1.5px solid rgba(255,255,255,.34) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.055) 36%, rgba(100,55,200,.18)),
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,.38), transparent 31%),
+    radial-gradient(circle at 80% 85%, rgba(108,196,255,.25), transparent 34%),
+    rgba(18,14,42,.64) !important;
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.62),
+    0 0 0 1px rgba(170,130,255,.20) inset,
+    0 0 36px rgba(155,92,255,.38),
+    0 0 66px rgba(64,188,255,.16) !important;
+  backdrop-filter: blur(22px) saturate(1.55) !important;
+  animation: evLiquidCardIn .48s cubic-bezier(.2,1.35,.34,1) !important;
+}
+
+.sq2-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  z-index:-1;
+  background:
+    conic-gradient(from 120deg,
+      rgba(255,221,120,.0),
+      rgba(255,221,120,.55),
+      rgba(166,92,255,.55),
+      rgba(69,210,255,.55),
+      rgba(255,221,120,.0));
+  filter:blur(13px);
+  opacity:.55;
+  animation: evSqGlowSpin 9s linear infinite;
+}
+
+.sq2-card::after{
+  content:"";
+  position:absolute;
+  top:-58%;
+  left:-52%;
+  width:82%;
+  height:210%;
+  transform:rotate(24deg);
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.30), transparent);
+  opacity:.50;
+  pointer-events:none;
+  animation: evSqShine 4.8s ease-in-out infinite;
+}
+
+@keyframes evSqGlowSpin{
+  to{transform:rotate(360deg);}
+}
+
+@keyframes evSqShine{
+  0%, 42%{transform:translateX(-28%) rotate(24deg); opacity:0;}
+  56%{opacity:.52;}
+  78%, 100%{transform:translateX(245%) rotate(24deg); opacity:0;}
+}
+
+.sq2-head{
+  position:relative !important;
+  z-index:1 !important;
+  margin-bottom:12px !important;
+}
+
+.sq2-room-ico{
+  filter:drop-shadow(0 0 14px rgba(255,215,120,.70)) !important;
+  transform:scale(1.08);
+}
+
+.sq2-room-name{
+  color:rgba(250,235,255,.86) !important;
+  text-shadow:0 0 14px rgba(180,125,255,.58) !important;
+  letter-spacing:.02em !important;
+}
+
+.sq2-tag{
+  position:relative !important;
+  z-index:1 !important;
+  color:#FFE6A8 !important;
+  background:linear-gradient(135deg, rgba(255,218,110,.22), rgba(120,76,255,.16)) !important;
+  border:1px solid rgba(255,224,140,.40) !important;
+  box-shadow:0 0 18px rgba(255,212,90,.18) inset, 0 0 18px rgba(137,92,255,.15) !important;
+}
+
+.sq2-text{
+  position:relative !important;
+  z-index:1 !important;
+  color:rgba(255,255,255,.96) !important;
+  text-shadow:0 0 18px rgba(255,255,255,.18), 0 0 20px rgba(110,195,255,.15) !important;
+  font-size:.96rem !important;
+}
+
+.sq2-opts{
+  position:relative !important;
+  z-index:1 !important;
+  gap:9px !important;
+}
+
+.sq2-opt{
+  position:relative !important;
+  overflow:hidden !important;
+  color:rgba(255,255,255,.90) !important;
+  text-align:left !important;
+  border-radius:17px !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.045)),
+    rgba(28,22,58,.42) !important;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.20),
+    0 0 0 1px rgba(255,255,255,.05) inset !important;
+  backdrop-filter: blur(14px) saturate(1.25) !important;
+}
+
+.sq2-opt::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+  transform:translateX(-120%);
+  transition:transform .42s ease;
+}
+
+.sq2-opt:hover{
+  transform:translateY(-1px) !important;
+  border-color:rgba(255,225,135,.45) !important;
+  box-shadow:
+    0 13px 30px rgba(0,0,0,.24),
+    0 0 22px rgba(168,110,255,.22),
+    0 0 0 1px rgba(255,255,255,.08) inset !important;
+}
+
+.sq2-opt:hover::before{
+  transform:translateX(120%);
+}
+
+.sq2-opt[style*="44FF88"]{
+  box-shadow:
+    0 0 0 1px rgba(68,255,136,.40) inset,
+    0 0 24px rgba(68,255,136,.42),
+    0 12px 32px rgba(0,0,0,.23) !important;
+  text-shadow:0 0 12px rgba(68,255,136,.55) !important;
+}
+
+.sq2-opt[style*="FF5555"]{
+  box-shadow:
+    0 0 0 1px rgba(255,85,85,.36) inset,
+    0 0 22px rgba(255,85,85,.32),
+    0 12px 32px rgba(0,0,0,.22) !important;
+}
+
+.sq2-feedback{
+  position:relative !important;
+  z-index:1 !important;
+  border-radius:18px !important;
+  color:rgba(255,255,255,.86) !important;
+}
+
+.sq2-next{
+  position:relative !important;
+  z-index:1 !important;
+  border-radius:999px !important;
+  border:1px solid rgba(255,235,160,.56) !important;
+  background:
+    linear-gradient(135deg, rgba(255,218,110,.95), rgba(167,93,255,.92), rgba(60,197,255,.88)) !important;
+  box-shadow:
+    0 0 24px rgba(255,216,93,.34),
+    0 0 40px rgba(145,94,255,.28),
+    0 12px 30px rgba(0,0,0,.28) !important;
+  text-shadow:0 2px 8px rgba(0,0,0,.35) !important;
+  transition:transform .18s ease, box-shadow .18s ease !important;
+}
+
+.sq2-next:hover{
+  transform:translateY(-1px) scale(1.01) !important;
+  box-shadow:
+    0 0 30px rgba(255,216,93,.45),
+    0 0 55px rgba(145,94,255,.36),
+    0 14px 34px rgba(0,0,0,.32) !important;
+}
+
+.sq2-skip{
+  position:relative !important;
+  z-index:1 !important;
+  color:rgba(255,255,255,.36) !important;
+}
+</style>
+
+
+<!-- EXPERIMENT LIQUID ROOM HOOK CARD v2 - CSS ONLY -->
+<style id="experiment-liquid-room-hook-card-v2">
+/* EXPERIMENT LIQUID ROOM HOOK CARD
+   Sadece oda iÃ§ine geÃ§meden Ã¶nce patlayÄ±p gÃ¶rÃ¼nen room-hook kartÄ±nÄ±n gÃ¶rÃ¼nÃ¼mÃ¼.
+   JS mantÄ±ÄŸÄ±, sÃ¼re, oda aÃ§Ä±lÄ±ÅŸÄ±, puzzle, boyama, layout deÄŸiÅŸtirilmedi. */
+
+#room-hook-ov{
+  background:
+    radial-gradient(circle at 50% 34%, rgba(255,211,94,.16), transparent 28%),
+    radial-gradient(circle at 18% 70%, rgba(255,87,206,.12), transparent 30%),
+    radial-gradient(circle at 82% 70%, rgba(58,202,255,.13), transparent 30%),
+    rgba(2,4,14,.22) !important;
+  backdrop-filter: blur(4px) saturate(1.22) !important;
+}
+
+#room-hook-ov::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle, rgba(255,230,145,.95) 0 1.4px, transparent 1.9px),
+    radial-gradient(circle, rgba(120,205,255,.70) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,90,210,.58) 0 1px, transparent 1.7px);
+  background-size: 86px 86px, 123px 123px, 162px 162px;
+  background-position: 10px 8px, 40px 54px, 90px 16px;
+  opacity:.34;
+  animation: evHookStarsDrift 8.5s linear infinite;
+}
+
+@keyframes evHookStarsDrift{
+  from{transform:translateY(0) scale(1);}
+  to{transform:translateY(-72px) scale(1.03);}
+}
+
+#room-hook-card{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
+  min-width:min(360px, calc(100vw - 48px)) !important;
+  max-width:min(430px, calc(100vw - 34px)) !important;
+  padding:34px 28px 24px !important;
+  border-radius:34px !important;
+  border:1.5px solid rgba(255,239,170,.48) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.24), rgba(255,255,255,.055) 42%, rgba(125,55,205,.20)),
+    radial-gradient(circle at 50% 0%, rgba(255,225,130,.38), transparent 33%),
+    radial-gradient(circle at 18% 92%, rgba(255,95,210,.18), transparent 36%),
+    radial-gradient(circle at 85% 88%, rgba(67,205,255,.18), transparent 36%),
+    rgba(18,12,38,.72) !important;
+  box-shadow:
+    0 34px 92px rgba(0,0,0,.66),
+    0 0 0 1px rgba(255,255,255,.09) inset,
+    0 0 34px rgba(255,213,100,.34),
+    0 0 66px rgba(162,87,255,.26),
+    0 0 88px rgba(46,202,255,.14) !important;
+  backdrop-filter: blur(22px) saturate(1.65) !important;
+}
+
+#room-hook-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  z-index:-1;
+  background:
+    conic-gradient(from 180deg,
+      rgba(255,225,130,.0),
+      rgba(255,225,130,.75),
+      rgba(255,75,206,.55),
+      rgba(75,205,255,.62),
+      rgba(255,225,130,.0));
+  filter:blur(15px);
+  opacity:.62;
+  animation: evHookHaloSpin 7s linear infinite;
+}
+
+#room-hook-card::after{
+  content:"";
+  position:absolute;
+  top:-62%;
+  left:-55%;
+  width:84%;
+  height:220%;
+  transform:rotate(24deg);
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.34), transparent);
+  opacity:.52;
+  pointer-events:none;
+  animation: evHookGlassShine 3.1s ease-in-out infinite;
+}
+
+@keyframes evHookHaloSpin{
+  to{transform:rotate(360deg);}
+}
+
+@keyframes evHookGlassShine{
+  0%, 22%{transform:translateX(-35%) rotate(24deg); opacity:0;}
+  40%{opacity:.62;}
+  76%, 100%{transform:translateX(250%) rotate(24deg); opacity:0;}
+}
+
+#room-hook-card #room-hook-name{
+  position:relative !important;
+  z-index:1 !important;
+  color:#FFE68B !important;
+  font-size:2.05rem !important;
+  text-shadow:
+    0 0 12px rgba(255,232,135,.80),
+    0 0 26px rgba(255,184,70,.42),
+    0 0 44px rgba(166,87,255,.30) !important;
+  letter-spacing:.02em !important;
+}
+
+#room-hook-card #room-hook-sub{
+  position:relative !important;
+  z-index:1 !important;
+  margin-top:8px !important;
+  color:rgba(255,255,255,.86) !important;
+  letter-spacing:1.8px !important;
+  text-shadow:0 0 15px rgba(255,255,255,.18) !important;
+}
+
+#room-hook-card #room-hook-bar-wrap{
+  position:relative !important;
+  z-index:1 !important;
+  width:210px !important;
+  height:8px !important;
+  margin-top:20px !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.14) !important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.11) inset,
+    0 0 18px rgba(255,225,112,.18) !important;
+}
+
+#room-hook-card #room-hook-bar{
+  height:100% !important;
+  border-radius:999px !important;
+  background:
+    linear-gradient(90deg,#FFD85A,#FF7ADF,#58D9FF,#FFD85A) !important;
+  box-shadow:
+    0 0 12px rgba(255,218,90,.76),
+    0 0 22px rgba(255,92,210,.48),
+    0 0 32px rgba(84,210,255,.36) !important;
+}
+
+#room-hook-card .ev-hook-burst,
+#room-hook-card .ev-hook-shard{
+  pointer-events:none !important;
+}
+</style>
+
+
+<!-- EXPERIMENT LIQUID ROOM HOOK BURST v3 - CSS ONLY -->
+<style id="experiment-liquid-room-hook-burst-v3">
+/* EXPERIMENT LIQUID ROOM HOOK BURST
+   Room-hook kartÄ±na referanstaki gibi cam/kÃ¼re patlama hissi.
+   Sadece CSS. JS mantÄ±ÄŸÄ±, oda aÃ§Ä±lÄ±ÅŸÄ±, sÃ¼re, puzzle, boyama deÄŸiÅŸtirilmedi. */
+
+#room-hook-ov{
+  perspective: 900px !important;
+}
+
+#room-hook-ov::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%) scale(.25);
+  border:2px solid rgba(255,230,145,.88);
+  box-shadow:
+    0 0 0 8px rgba(255,210,90,.08),
+    0 0 28px rgba(255,211,90,.62),
+    0 0 54px rgba(255,92,211,.34),
+    0 0 82px rgba(70,208,255,.28);
+  opacity:0;
+  animation: evCrystalShockRing 1.15s cubic-bezier(.16,.82,.26,1) .08s both;
+}
+
+@keyframes evCrystalShockRing{
+  0%{opacity:0; transform:translate(-50%,-50%) scale(.22);}
+  18%{opacity:.95;}
+  100%{opacity:0; transform:translate(-50%,-50%) scale(9.8);}
+}
+
+#room-hook-card{
+  transform-origin:50% 58% !important;
+  animation: evCrystalCardBurstIn .74s cubic-bezier(.16,1.24,.26,1) both !important;
+}
+
+@keyframes evCrystalCardBurstIn{
+  0%{
+    opacity:0;
+    transform:scale(.38) translateY(42px) rotateX(18deg);
+    filter:blur(8px) brightness(1.6);
+  }
+  28%{
+    opacity:1;
+    transform:scale(1.09) translateY(-8px) rotateX(0deg);
+    filter:blur(0) brightness(1.45);
+  }
+  56%{
+    transform:scale(.985) translateY(2px);
+    filter:brightness(1.16);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1) translateY(0);
+    filter:brightness(1);
+  }
+}
+
+/* Cam kÄ±rÄ±ÄŸÄ± / kristal parÃ§alarÄ± hissi: tek pseudo element + Ã§oklu gÃ¶lge */
+#room-hook-card .ev-burst-fake,
+#room-hook-card i{
+  pointer-events:none;
+}
+
+#room-hook-card > span.ev-hook-shard{
+  display:none !important;
+}
+
+#room-hook-card{
+  --evShardColorA: rgba(255,232,138,.95);
+  --evShardColorB: rgba(255,84,214,.82);
+  --evShardColorC: rgba(76,214,255,.82);
+}
+
+/* KartÄ±n arkasÄ±ndan Ã§Ä±kan parÃ§acÄ±klar */
+#room-hook-card .room-hook-fx,
+#room-hook-card::selection{
+  background:transparent;
+}
+
+#room-hook-card #room-hook-name::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:7px;
+  height:7px;
+  border-radius:2px 70% 2px 70%;
+  background:rgba(255,232,138,.9);
+  pointer-events:none;
+  opacity:0;
+  transform:translate(-50%,-50%) rotate(20deg);
+  box-shadow:
+    -168px -102px 0 -1px rgba(255,232,138,.75),
+    -126px -72px 0 0 rgba(255,93,210,.72),
+    -82px -120px 0 -1px rgba(88,213,255,.70),
+    -34px -146px 0 -1px rgba(255,232,138,.75),
+    24px -132px 0 0 rgba(255,93,210,.68),
+    82px -104px 0 -1px rgba(88,213,255,.70),
+    134px -86px 0 0 rgba(255,232,138,.78),
+    172px -28px 0 -1px rgba(255,93,210,.64),
+    -182px 8px 0 0 rgba(88,213,255,.64),
+    -148px 68px 0 -1px rgba(255,232,138,.78),
+    -76px 106px 0 0 rgba(255,93,210,.66),
+    52px 112px 0 -1px rgba(88,213,255,.70),
+    118px 72px 0 0 rgba(255,232,138,.76),
+    166px 28px 0 -1px rgba(255,93,210,.66);
+  animation: evCrystalShardsFly 1.28s cubic-bezier(.13,.83,.25,1) .04s both;
+}
+
+@keyframes evCrystalShardsFly{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.20) rotate(0deg);
+    filter:blur(5px);
+  }
+  18%{
+    opacity:1;
+    filter:blur(0);
+  }
+  100%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(1.24) rotate(44deg);
+    filter:blur(.3px);
+  }
+}
+
+/* Cam kÃ¼re parlamasÄ± */
+#room-hook-card #room-hook-name::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-46px;
+  width:118px;
+  height:118px;
+  border-radius:50%;
+  pointer-events:none;
+  transform:translateX(-50%) scale(.65);
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255,255,255,.72), transparent 13%),
+    radial-gradient(circle at 58% 62%, rgba(255,86,211,.28), transparent 38%),
+    radial-gradient(circle at 74% 28%, rgba(76,214,255,.28), transparent 28%),
+    radial-gradient(circle, rgba(255,225,115,.20), rgba(255,255,255,.035) 62%, transparent 68%);
+  border:1px solid rgba(255,238,170,.32);
+  box-shadow:
+    0 0 28px rgba(255,218,115,.32),
+    0 0 58px rgba(255,84,211,.20),
+    0 0 68px rgba(70,210,255,.16) inset;
+  opacity:0;
+  animation: evCrystalOrbFlash 1.1s ease-out .04s both;
+}
+
+@keyframes evCrystalOrbFlash{
+  0%{opacity:0; transform:translateX(-50%) scale(.30); filter:blur(6px);}
+  24%{opacity:.95; transform:translateX(-50%) scale(1.05); filter:blur(0);}
+  68%{opacity:.70; transform:translateX(-50%) scale(.92);}
+  100%{opacity:0; transform:translateX(-50%) scale(.72);}
+}
+
+/* Kart kapanÄ±rken JS scale(1.1)+opacity 0 veriyor; CSS sadece aÃ§Ä±lÄ±ÅŸÄ± sÃ¼sler. */
+</style>
+
+
+<!-- EXPERIMENT LIQUID IN-ROOM BUBBLES v4 - CSS ONLY -->
+<style id="experiment-liquid-in-room-bubbles-v4">
+/* EXPERIMENT LIQUID IN-ROOM BUBBLES
+   Oda iÃ§indeki karakter konuÅŸma balonlarÄ±, Ã¶ÄŸrenildi toastÄ± ve baÅŸarÄ± kutusu.
+   Sadece CSS. JS mantÄ±ÄŸÄ±, puan, oyun motoru, oda aÃ§Ä±lÄ±ÅŸÄ±, puzzle, boyama, layout deÄŸiÅŸtirilmedi. */
+
+#oki-game-bubble,
+#oki-game-bubble-inner,
+#oki-bubble,
+#refleks-oki-bubble,
+#shop-bubble,
+#ada-bubble{
+  position:relative !important;
+  overflow:visible !important;
+  color:rgba(255,255,255,.94) !important;
+  border:1.2px solid rgba(255,240,175,.44) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.25), rgba(255,255,255,.07) 42%, rgba(118,55,210,.19)),
+    radial-gradient(circle at 25% 0%, rgba(255,226,140,.35), transparent 34%),
+    radial-gradient(circle at 90% 85%, rgba(74,210,255,.20), transparent 34%),
+    rgba(19,13,45,.70) !important;
+  backdrop-filter: blur(18px) saturate(1.55) !important;
+  box-shadow:
+    0 18px 44px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 24px rgba(255,212,95,.24),
+    0 0 42px rgba(148,92,255,.20) !important;
+  text-shadow:0 0 12px rgba(255,255,255,.22) !important;
+  animation: evInRoomBubblePop .34s cubic-bezier(.18,1.28,.28,1) both !important;
+}
+
+@keyframes evInRoomBubblePop{
+  0%{opacity:0; transform:translateY(12px) scale(.88);}
+  72%{opacity:1; transform:translateY(-2px) scale(1.03);}
+  100%{opacity:1; transform:translateY(0) scale(1);}
+}
+
+#oki-game-bubble::before,
+#oki-game-bubble-inner::before,
+#oki-bubble::before,
+#refleks-oki-bubble::before,
+#shop-bubble::before,
+#ada-bubble::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    conic-gradient(from 160deg,
+      transparent,
+      rgba(255,224,130,.48),
+      rgba(255,86,210,.34),
+      rgba(74,210,255,.36),
+      transparent);
+  filter:blur(12px);
+  opacity:.42;
+  z-index:-1;
+  animation: evInRoomHalo 5.5s linear infinite;
+}
+
+@keyframes evInRoomHalo{
+  to{transform:rotate(360deg);}
+}
+
+#oki-game-bubble::after,
+#oki-game-bubble-inner::after,
+#oki-bubble::after,
+#refleks-oki-bubble::after,
+#shop-bubble::after,
+#ada-bubble::after{
+  content:"\2726";
+  position:absolute;
+  right:12px;
+  top:-10px;
+  font-size:1rem;
+  color:#FFE58B;
+  text-shadow:
+    0 0 10px rgba(255,230,140,.75),
+    0 0 20px rgba(255,95,210,.38);
+  animation: evBubbleStarTwinkle 1.8s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes evBubbleStarTwinkle{
+  0%,100%{opacity:.45; transform:scale(.85) rotate(0deg);}
+  50%{opacity:1; transform:scale(1.2) rotate(20deg);}
+}
+
+/* Ã–ÄŸrenildi / kelime kazandÄ± toastÄ± */
+._gf{
+  border:1.2px solid rgba(255,240,175,.52) !important;
+  background:
+    linear-gradient(135deg, rgba(68,255,136,.26), rgba(255,255,255,.12), rgba(132,82,255,.22)),
+    rgba(13,22,40,.78) !important;
+  backdrop-filter: blur(16px) saturate(1.45) !important;
+  box-shadow:
+    0 18px 48px rgba(0,0,0,.32),
+    0 0 24px rgba(68,255,136,.34),
+    0 0 36px rgba(255,218,90,.18) !important;
+  border-radius:999px !important;
+  animation: evLearnToastIn .40s cubic-bezier(.18,1.28,.28,1) both !important;
+}
+
+@keyframes evLearnToastIn{
+  0%{opacity:0; transform:translateX(-50%) translateY(-16px) scale(.86);}
+  74%{opacity:1; transform:translateX(-50%) translateY(2px) scale(1.04);}
+  100%{opacity:1; transform:translateX(-50%) translateY(0) scale(1);}
+}
+
+/* BaÅŸarÄ± kutusu / achievement */
+#ach{
+  border:1.4px solid rgba(255,230,145,.54) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.06) 42%, rgba(106,55,210,.18)),
+    radial-gradient(circle at 18% 10%, rgba(255,220,120,.32), transparent 34%),
+    radial-gradient(circle at 90% 80%, rgba(75,210,255,.19), transparent 34%),
+    rgba(18,13,44,.76) !important;
+  backdrop-filter: blur(18px) saturate(1.55) !important;
+  box-shadow:
+    0 22px 60px rgba(0,0,0,.38),
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 28px rgba(255,210,90,.26),
+    0 0 48px rgba(145,92,255,.22) !important;
+}
+
+#ach-ico{
+  filter:drop-shadow(0 0 15px rgba(255,225,110,.72)) !important;
+}
+
+#ach-title{
+  color:#FFE78E !important;
+  text-shadow:0 0 12px rgba(255,230,145,.75),0 0 25px rgba(255,98,210,.35) !important;
+}
+
+#ach-desc{
+  color:rgba(255,255,255,.82) !important;
+}
+
+/* Oyun iÃ§i Ã¼st puan/ilerleme Ã§ubuklarÄ±nÄ± deÄŸil, sadece mesaj kutularÄ±nÄ± etkiler. */
+</style>
+
+
+<!-- EXPERIMENT LIQUID ROOM BUTTONS v5 - CSS ONLY -->
+<style id="experiment-liquid-room-buttons-v5">
+/* EXPERIMENT LIQUID ROOM BUTTONS
+   Ana oda seÃ§im kartlarÄ± / oda butonlarÄ± iÃ§in premium liquid glass gÃ¶rÃ¼nÃ¼m.
+   Sadece CSS. JS, oda giriÅŸ mantÄ±ÄŸÄ±, kilit sistemi, saÄŸ-sol layout, puzzle, boyama deÄŸiÅŸtirilmedi. */
+
+.rb{
+  position:relative !important;
+  overflow:hidden !important;
+  isolation:isolate !important;
+  border:1.2px solid rgba(255,255,255,.20) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.055) 44%, rgba(118,60,220,.14)),
+    radial-gradient(circle at 24% 0%, rgba(255,229,140,.26), transparent 34%),
+    radial-gradient(circle at 100% 94%, rgba(72,207,255,.15), transparent 36%),
+    rgba(20,15,48,.42) !important;
+  backdrop-filter: blur(15px) saturate(1.35) !important;
+  box-shadow:
+    0 16px 42px rgba(0,0,0,.25),
+    0 0 0 1px rgba(255,255,255,.055) inset,
+    0 0 18px rgba(148,92,255,.16),
+    0 0 24px rgba(255,210,95,.08) !important;
+  transition:
+    transform .20s ease,
+    box-shadow .20s ease,
+    border-color .20s ease,
+    filter .20s ease !important;
+}
+
+.rb::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    conic-gradient(from 170deg,
+      transparent,
+      rgba(255,226,135,.36),
+      rgba(255,92,212,.22),
+      rgba(75,210,255,.24),
+      transparent);
+  opacity:.30;
+  filter:blur(13px);
+  animation: evRoomCardHalo 8s linear infinite;
+}
+
+.rb::after{
+  content:"";
+  position:absolute;
+  top:-76%;
+  left:-58%;
+  width:70%;
+  height:230%;
+  transform:rotate(24deg);
+  pointer-events:none;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+  opacity:0;
+}
+
+@keyframes evRoomCardHalo{
+  to{transform:rotate(360deg);}
+}
+
+.rb:hover{
+  transform:translateY(-3px) scale(1.015) !important;
+  border-color:rgba(255,231,145,.42) !important;
+  box-shadow:
+    0 22px 54px rgba(0,0,0,.31),
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 26px rgba(255,214,96,.22),
+    0 0 42px rgba(145,92,255,.24),
+    0 0 48px rgba(74,210,255,.12) !important;
+  filter:saturate(1.08) brightness(1.04) !important;
+}
+
+.rb:hover::after{
+  opacity:.55;
+  animation: evRoomCardShine .70s ease-out both;
+}
+
+@keyframes evRoomCardShine{
+  0%{transform:translateX(-30%) rotate(24deg); opacity:0;}
+  28%{opacity:.55;}
+  100%{transform:translateX(255%) rotate(24deg); opacity:0;}
+}
+
+.rb-ico{
+  position:relative !important;
+  z-index:1 !important;
+  filter:
+    drop-shadow(0 0 12px rgba(255,225,130,.55))
+    drop-shadow(0 0 18px rgba(145,92,255,.18)) !important;
+  transform:translateZ(0);
+}
+
+.rb-name{
+  position:relative !important;
+  z-index:1 !important;
+  color:rgba(255,255,255,.94) !important;
+  text-shadow:
+    0 0 11px rgba(255,255,255,.16),
+    0 0 18px rgba(146,92,255,.22) !important;
+}
+
+.rb-info{
+  position:relative !important;
+  z-index:1 !important;
+  color:rgba(255,232,150,.82) !important;
+  text-shadow:0 0 12px rgba(255,215,95,.22) !important;
+}
+
+/* Kilitli oda: kapalÄ± ama premium gÃ¶rÃ¼nÃ¼r */
+.rb.locked{
+  opacity:.72 !important;
+  border-color:rgba(255,255,255,.13) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.035)),
+    rgba(14,13,34,.48) !important;
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.25),
+    0 0 0 1px rgba(255,255,255,.04) inset !important;
+  filter:saturate(.72) !important;
+}
+
+.rb.locked::before{
+  opacity:.14 !important;
+}
+
+.rb.locked:hover{
+  transform:none !important;
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.25),
+    0 0 0 1px rgba(255,255,255,.04) inset !important;
+}
+
+.rb.locked .rb-info{
+  color:rgba(255,220,120,.56) !important;
+}
+</style>
+
+
+<!-- EXPERIMENT LIQUID HOME SCREEN v6 - CSS ONLY -->
+<style id="experiment-liquid-home-screen-v6">
+/* EXPERIMENT LIQUID HOME SCREEN
+   Ana giriÅŸ / ana ekran / kÃ¼Ã§Ã¼k menÃ¼ butonlarÄ± iÃ§in premium liquid glass gÃ¶rÃ¼nÃ¼m.
+   Sadece CSS. JS, oda giriÅŸleri, puzzle, boyama, saÄŸ-sol layout, PDF, Analytics deÄŸiÅŸtirilmedi. */
+
+/* Login kartÄ± */
+#ns .nc{
+  position:relative !important;
+  overflow:hidden !important;
+  isolation:isolate !important;
+  border:1.4px solid rgba(255,255,255,.22) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.055) 43%, rgba(104,64,210,.16)),
+    radial-gradient(circle at 30% 0%, rgba(255,225,130,.28), transparent 32%),
+    radial-gradient(circle at 90% 85%, rgba(74,210,255,.16), transparent 34%),
+    rgba(12,13,42,.54) !important;
+  backdrop-filter: blur(18px) saturate(1.4) !important;
+  box-shadow:
+    0 28px 78px rgba(0,0,0,.44),
+    0 0 0 1px rgba(255,255,255,.06) inset,
+    0 0 34px rgba(145,92,255,.22),
+    0 0 50px rgba(255,210,95,.10) !important;
+}
+
+#ns .nc::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  z-index:-1;
+  background:
+    conic-gradient(from 150deg,
+      transparent,
+      rgba(255,224,130,.42),
+      rgba(255,90,210,.22),
+      rgba(73,210,255,.24),
+      transparent);
+  filter:blur(16px);
+  opacity:.45;
+  animation: evHomeHaloSpin 11s linear infinite;
+}
+
+#ns .nc::after{
+  content:"";
+  position:absolute;
+  top:-70%;
+  left:-55%;
+  width:76%;
+  height:230%;
+  transform:rotate(24deg);
+  pointer-events:none;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.20), transparent);
+  opacity:.38;
+  animation: evHomeGlassShine 5.8s ease-in-out infinite;
+}
+
+@keyframes evHomeHaloSpin{
+  to{transform:rotate(360deg);}
+}
+
+@keyframes evHomeGlassShine{
+  0%,35%{transform:translateX(-35%) rotate(24deg); opacity:0;}
+  50%{opacity:.46;}
+  82%,100%{transform:translateX(245%) rotate(24deg); opacity:0;}
+}
+
+/* Ä°sim giriÅŸi */
+#ni{
+  border:1.4px solid rgba(255,255,255,.24) !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.045)),
+    rgba(20,28,70,.48) !important;
+  backdrop-filter: blur(14px) saturate(1.25) !important;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.22),
+    0 0 0 1px rgba(255,255,255,.055) inset,
+    0 0 22px rgba(70,170,255,.14) !important;
+}
+
+#ni:focus{
+  border-color:rgba(255,224,130,.48) !important;
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.24),
+    0 0 24px rgba(255,212,95,.22),
+    0 0 38px rgba(72,190,255,.18) !important;
+}
+
+/* GiriÅŸ butonu */
+#nb{
+  position:relative !important;
+  overflow:hidden !important;
+  border:1.4px solid rgba(255,235,165,.55) !important;
+  background:
+    linear-gradient(135deg, rgba(255,218,100,.95), rgba(170,92,255,.82), rgba(66,205,255,.78)) !important;
+  color:#fff !important;
+  text-shadow:0 2px 10px rgba(0,0,0,.42) !important;
+  box-shadow:
+    0 16px 42px rgba(0,0,0,.28),
+    0 0 26px rgba(255,216,95,.34),
+    0 0 46px rgba(146,92,255,.26) !important;
+}
+
+#nb::after{
+  content:"";
+  position:absolute;
+  top:-80%;
+  left:-55%;
+  width:76%;
+  height:240%;
+  transform:rotate(24deg);
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.32), transparent);
+  animation: evHomeBtnShine 3.5s ease-in-out infinite;
+}
+
+@keyframes evHomeBtnShine{
+  0%,40%{transform:translateX(-40%) rotate(24deg); opacity:0;}
+  54%{opacity:.55;}
+  86%,100%{transform:translateX(250%) rotate(24deg); opacity:0;}
+}
+
+/* Ana ekran baÅŸlÄ±k alanÄ± */
+#hm-head{
+  border-radius:28px !important;
+  margin:8px 10px 10px !important;
+  padding:10px 6px 8px !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,224,120,.18), transparent 40%),
+    linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025)) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  box-shadow:
+    0 12px 34px rgba(0,0,0,.18),
+    0 0 22px rgba(145,92,255,.10) !important;
+  backdrop-filter: blur(10px) saturate(1.2) !important;
+}
+
+#hm-title{
+  text-shadow:
+    0 0 18px rgba(255,224,130,.45),
+    0 0 34px rgba(83,185,255,.25),
+    0 0 52px rgba(145,92,255,.22) !important;
+}
+
+/* Values/TR dil dÃ¼ÄŸmesi ve streak */
+#values-toggle-btn,
+#streak-btn{
+  border-color:rgba(255,255,255,.22) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.055)),
+    rgba(18,16,44,.44) !important;
+  backdrop-filter: blur(13px) saturate(1.3) !important;
+  box-shadow:
+    0 9px 24px rgba(0,0,0,.24),
+    0 0 18px rgba(255,215,95,.12),
+    0 0 0 1px rgba(255,255,255,.045) inset !important;
+}
+
+/* Alt mini butonlar */
+.hm-btn{
+  position:relative !important;
+  overflow:hidden !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.045)),
+    rgba(18,15,42,.48) !important;
+  color:rgba(255,255,255,.84) !important;
+  backdrop-filter: blur(13px) saturate(1.35) !important;
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.22),
+    0 0 0 1px rgba(255,255,255,.045) inset,
+    0 0 18px rgba(145,92,255,.12) !important;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease !important;
+}
+
+.hm-btn::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    conic-gradient(from 160deg,
+      transparent,
+      rgba(255,224,130,.26),
+      rgba(255,92,210,.15),
+      rgba(75,210,255,.18),
+      transparent);
+  opacity:.20;
+  filter:blur(10px);
+  z-index:-1;
+}
+
+.hm-btn::after{
+  content:"";
+  position:absolute;
+  top:-80%;
+  left:-60%;
+  width:74%;
+  height:240%;
+  transform:rotate(24deg);
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  opacity:0;
+}
+
+.hm-btn:hover{
+  transform:translateY(-2px) !important;
+  border-color:rgba(255,228,145,.40) !important;
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.27),
+    0 0 22px rgba(255,214,95,.18),
+    0 0 30px rgba(145,92,255,.18) !important;
+}
+
+.hm-btn:hover::after{
+  opacity:.48;
+  animation: evMiniBtnShine .65s ease-out both;
+}
+
+@keyframes evMiniBtnShine{
+  0%{transform:translateX(-35%) rotate(24deg); opacity:0;}
+  40%{opacity:.45;}
+  100%{transform:translateX(250%) rotate(24deg); opacity:0;}
+}
+
+/* Reflection banner */
+.story-banner{
+  position:relative !important;
+  overflow:hidden !important;
+  border:1.2px solid rgba(255,255,255,.18) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.045)),
+    radial-gradient(circle at 12% 8%, rgba(255,224,130,.18), transparent 34%),
+    rgba(22,14,52,.46) !important;
+  backdrop-filter: blur(14px) saturate(1.3) !important;
+  box-shadow:
+    0 14px 38px rgba(0,0,0,.24),
+    0 0 24px rgba(170,102,255,.16),
+    0 0 0 1px rgba(255,255,255,.04) inset !important;
+}
+
+.story-banner::after{
+  content:"";
+  position:absolute;
+  right:14px;
+  top:10px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#FFE58B;
+  box-shadow:
+    0 0 12px rgba(255,230,145,.85),
+    -32px 18px 0 -2px rgba(90,210,255,.85),
+    -78px -2px 0 -3px rgba(255,95,210,.75);
+  animation: evStorySparkle 2.1s ease-in-out infinite;
+}
+
+@keyframes evStorySparkle{
+  0%,100%{opacity:.45; transform:scale(.86);}
+  50%{opacity:1; transform:scale(1.18);}
+}
+</style>
+
+
+<!-- EXPERIMENT LIQUID CHAMPIONSHIP SAFE v9 - CSS ONLY -->
+<style id="experiment-liquid-championship-safe-v9">
+/* V9 STABLE
+   V7/V8 panel bÃ¼yÃ¼tme denemesi geri alÄ±ndÄ±.
+   Shop / QR-PDF / Dua / DÃ¼ÅŸÃ¼nce panellerine dokunulmadÄ±.
+   Sadece Championship / meydan okuma gibi kÃ¼Ã§Ã¼k baÅŸarÄ± panelini hafif liquid yapar.
+   JS, PDF Ã¼retimi, oda mantÄ±ÄŸÄ±, puzzle, boyama, saÄŸ-sol layout deÄŸiÅŸtirilmedi. */
+
+/* Championship/Meydan okuma paneli genelde #cov iÃ§inde. KÃ¼Ã§Ã¼k ve gÃ¼venli kapsama. */
+#cov{
+  background:
+    radial-gradient(circle at 50% 20%, rgba(145,92,255,.16), transparent 34%),
+    radial-gradient(circle at 18% 82%, rgba(70,210,255,.08), transparent 32%),
+    radial-gradient(circle at 84% 78%, rgba(255,213,92,.08), transparent 30%),
+    rgba(2,5,18,.52) !important;
+  backdrop-filter: blur(7px) saturate(1.18) !important;
+}
+
+#cov > div{
+  position:relative !important;
+  isolation:isolate !important;
+  border:1.2px solid rgba(255,255,255,.20) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.055) 42%, rgba(105,60,210,.14)),
+    radial-gradient(circle at 24% 0%, rgba(255,226,135,.24), transparent 34%),
+    radial-gradient(circle at 92% 88%, rgba(72,210,255,.12), transparent 36%),
+    rgba(17,14,44,.66) !important;
+  backdrop-filter: blur(18px) saturate(1.35) !important;
+  box-shadow:
+    0 26px 70px rgba(0,0,0,.46),
+    0 0 0 1px rgba(255,255,255,.05) inset,
+    0 0 26px rgba(255,214,96,.14),
+    0 0 42px rgba(145,92,255,.16) !important;
+}
+
+/* Championship satÄ±rlarÄ± varsa hafif parlat. */
+#cov .champ-row,
+#cov .leader-row,
+#cov li,
+#cov .rank-row{
+  border:1px solid rgba(255,255,255,.12) !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035)),
+    rgba(20,16,45,.35) !important;
+  box-shadow:0 8px 20px rgba(0,0,0,.16) !important;
+}
+
+/* Ã–zellikle dokunulmayan paneller: eski Ã¶lÃ§Ã¼/scroll kendi inline kodunda kalsÄ±n. */
+#shop-ov > div,
+#qr-ov > div,
+#mail-ov > div,
+#dua-ov > div,
+#sn-ov > div,
+#rov > div{
+  max-height:revert-layer;
+}
+</style>
+
+
+<!-- EXPERIMENT OYUN ARENASI SHADOW FIX v10 - SAFE -->
+<style id="experiment-oyun-arenasi-shadow-fix-v10">
+/* V10 NOKTA ATIÅI
+   Oyun ArenasÄ± / Kumanda OdasÄ± iÃ§indeki kocaman bulut-gÃ¶lge sorununu dÃ¼zeltir.
+   Sebep: kumanda ekran flash'Ä± eski _gf class'Ä±nÄ± kullanÄ±yordu; V4 _gf'yi liquid toast yaptÄ±.
+   Bu fix sadece o flash class'Ä±nÄ± ayÄ±rÄ±r ve full-screen flash'Ä± tekrar temiz bÄ±rakÄ±r. */
+
+.ev-kumanda-flash{
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  filter:none !important;
+  outline:none !important;
+  animation:none !important;
+}
+.ev-kumanda-flash::before,
+.ev-kumanda-flash::after{
+  content:none !important;
+  display:none !important;
+}
+</style>
+
+
+<!-- ğŸ›ï¸ KARAKTER ODASI v2 -->
+<div id="shop-ov" style="display:none;position:fixed;inset:0;z-index:115;overflow:hidden;background:linear-gradient(180deg,#000510,#020820,#050d30);">
+  <!-- YÄ±ldÄ±zlar canvas -->
+  <canvas id="shop-stars-c" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+
+  <!-- EduVerse arka plan yazÄ±larÄ± -->
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.055;">
+    <div style="font-family:'Fredoka One';font-size:4rem;color:#FFD700;white-space:nowrap;position:absolute;top:5%;transform:rotate(-15deg);">EduVerse EduVerse EduVerse EduVerse</div>
+    <div style="font-family:'Fredoka One';font-size:3rem;color:#88CCFF;white-space:nowrap;position:absolute;top:28%;right:-5%;transform:rotate(10deg);">Edu Verse Edu Verse Edu Verse</div>
+    <div style="font-family:'Fredoka One';font-size:4.5rem;color:#FFD700;white-space:nowrap;position:absolute;top:52%;transform:rotate(-8deg);">EduVerse EduVerse EduVerse</div>
+    <div style="font-family:'Fredoka One';font-size:3.5rem;color:#88CCFF;white-space:nowrap;position:absolute;top:74%;right:-8%;transform:rotate(12deg);">Verse Edu Verse Edu Verse</div>
+  </div>
+
+  <!-- KonuÅŸma balonu -->
+  <div id="shop-bubble" style="display:none;position:absolute;top:12px;left:50%;transform:translateX(-50%);
+    background:white;color:#333;font-family:Nunito;font-size:.85rem;font-weight:700;
+    padding:10px 18px;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,.5);
+    z-index:300;max-width:78%;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+  </div>
+
+  <!-- Kapat butonu -->
+  <button onclick="hideShop()" style="position:absolute;top:14px;right:14px;z-index:300;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50%;
+    width:36px;height:36px;font-size:1rem;cursor:pointer;backdrop-filter:blur(8px);color:white;line-height:36px;text-align:center;">âœ•</button>
+
+  <!-- ANA LAYOUT: Sol Ã¼rÃ¼nler | Merkez karakter | SaÄŸ Ã¼rÃ¼nler -->
+  <div style="position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;">
+
+    <!-- ÃœST BAR: BaÅŸlÄ±k + Para + Kategori butonlarÄ± -->
+    <div style="padding:10px 12px 6px;text-align:center;flex-shrink:0;">
+      <div style="font-family:'Fredoka One';font-size:1.1rem;margin-bottom:2px;">
+        <span style="color:#FFD700;text-shadow:0 0 12px #FFaa00;">Edu</span><span style="color:#88CCFF;text-shadow:0 0 12px #4488FF;">Verse</span>
+        <span style="color:rgba(255,255,255,.5);font-size:.75rem;margin-left:6px;">- Karakter Odasi</span>
+      </div>
+      <!-- Kategoriler scroll -->
+      <div id="shop-cats" style="display:flex;gap:5px;overflow-x:auto;padding:4px 0;justify-content:center;flex-wrap:wrap;"></div>
+    </div>
+
+    <!-- ORTA: Sol | Merkez | SaÄŸ -->
+    <div style="flex:1;display:flex;gap:0;overflow:hidden;min-height:0;">
+
+      <!-- SOL ÃœRÃœNLER (scroll) -->
+      <div id="shop-left" style="width:82px;overflow-y:auto;overflow-x:hidden;padding:6px 5px;display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+      </div>
+
+      <!-- MERKEZ: Karakter + Efekt -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px;position:relative;">
+
+        <!-- Edu/Verse seÃ§imi -->
+        <div style="display:flex;gap:6px;margin-bottom:8px;">
+          <div id="shop-btn-edu" onclick="shopSwitchChar('edu')"
+            style="background:rgba(255,255,255,.12);border:2px solid rgba(100,255,100,.5);border-radius:12px;padding:4px 10px;text-align:center;cursor:pointer;transition:all .2s;">
+            <img id="shop-prev-edu" src="" style="width:32px;height:38px;object-fit:contain;display:block;margin:0 auto;">
+            <div style="font-family:'Fredoka One';font-size:.65rem;color:#88FF88;">Edu</div>
+          </div>
+          <div id="shop-btn-verse" onclick="shopSwitchChar('verse')"
+            style="background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.1);border-radius:12px;padding:4px 10px;text-align:center;cursor:pointer;transition:all .2s;">
+            <img id="shop-prev-verse" src="" style="width:32px;height:38px;object-fit:contain;display:block;margin:0 auto;">
+            <div style="font-family:'Fredoka One';font-size:.65rem;color:#FF88CC;">Verse</div>
+          </div>
+        </div>
+
+        <!-- BÃ¼yÃ¼k karakter -->
+        <div style="position:relative;cursor:pointer;" onclick="shopCharClick()">
+          <div style="position:absolute;inset:-12px;border-radius:50%;background:radial-gradient(circle,rgba(100,255,150,.18),transparent 68%);animation:shopGlow 3s ease-in-out infinite;"></div>
+          <img id="shop-char-img" src="" style="width:130px;height:155px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 4px 20px rgba(0,200,100,.45));animation:shopFloat 3s ease-in-out infinite;display:block;">
+        </div>
+
+        <!-- Ä°sim + para -->
+        <div style="text-align:center;margin-top:6px;">
+          <div id="shop-char-name" style="font-family:'Fredoka One';font-size:.95rem;color:#88FF88;">Edu</div>
+          <div style="background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.25);border-radius:10px;padding:4px 10px;display:inline-block;margin-top:3px;">
+            <span id="shop-coin-count" style="font-family:'Fredoka One';font-size:.9rem;color:#FFD700;">0</span> ğŸª™
+          </div>
+          <div style="font-size:.58rem;color:rgba(255,255,255,.3);margin-top:3px;">Wearing: <span id="shop-wearing-txt">Nothing</span></div>
+        </div>
+      </div>
+
+      <!-- SAÄ ÃœRÃœNLER (scroll) -->
+      <div id="shop-right" style="width:82px;overflow-y:auto;overflow-x:hidden;padding:6px 5px;display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+      </div>
+    </div>
+
+    <!-- ALT: Efekt sahnesi tam geniÅŸlik -->
+    <div id="shop-effect-stage" style="height:90px;margin:6px 10px 10px;border-radius:16px;background:rgba(0,0,20,.5);border:1px solid rgba(100,180,255,.15);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <canvas id="shop-fx-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+      <div id="shop-fx-emojis" style="position:absolute;inset:0;pointer-events:none;"></div>
+      <div id="shop-fx-center" style="position:relative;z-index:2;text-align:center;display:flex;align-items:center;gap:12px;padding:0 16px;">
+        <div style="font-size:3.5rem;opacity:.55;filter:drop-shadow(0 0 14px rgba(255,255,255,.5));transition:all .3s;" id="shop-fx-icon">âœ¨</div>
+        <div>
+          <div style="font-family:'Fredoka One';font-size:.9rem;color:white;text-shadow:0 0 8px rgba(100,180,255,.8);" id="shop-fx-name"></div>
+          <div style="font-size:.62rem;color:rgba(150,200,255,.5);margin-top:2px;" id="shop-fx-label">Bir Ã¼rÃ¼n seÃ§!</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GROWTH OVERLAY -->
+<div id="growth-ov" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.8);align-items:center;justify-content:center;flex-direction:column;">
+  <div style="text-align:center;padding:30px;">
+    <div id="growth-ov-icon" style="font-size:5rem;margin-bottom:12px;">&#127793;</div>
+    <div id="growth-ov-title" style="font-family:'Fredoka One';font-size:2rem;color:#FFD700;margin-bottom:6px;">You grew!</div>
+    <div id="growth-ov-sub" style="font-size:1rem;color:rgba(255,255,255,.7);">A new stage begins.</div>
+    <div style="margin-top:16px;font-size:2.5rem;">&#10024; &#127881; &#10024;</div>
+  </div>
+</div>
+
+<!-- MEMORY BOOK -->
+<div class="screen" id="screen-ani-defter" style="display:none;z-index:300;">
+  <div class="ev-bg">
+    <div style="font-size:3.5rem;color:#FFD700;top:5%;transform:rotate(-15deg);">EduVerse EduVerse EduVerse EduVerse</div>
+    <div style="font-size:2.5rem;color:#88CCFF;top:28%;right:-5%;transform:rotate(10deg);">Edu Verse Edu Verse Edu Verse</div>
+    <div style="font-size:4rem;color:#FFD700;top:52%;transform:rotate(-8deg);">EduVerse EduVerse EduVerse</div>
+    <div style="font-size:3rem;color:#88CCFF;top:74%;right:-8%;transform:rotate(12deg);">Verse Edu Verse Edu Verse</div>
+  </div>
+  <div class="header">
+    <div class="header-logo"><span class="hl-e" id="edu-logo-tap" onclick="_eduTap()" style="cursor:pointer;" title="">Edu</span><span class="hl-v">Verse</span></div>
+    <div class="header-sub">&#10022; MEMORY BOOK &#10022;</div>
+  </div>
+  <div class="entries" id="ani-entries"></div>
+  <button class="back-btn" onclick="closeAniDefter()">&#8592; Ana Sayfaya Don</button>
+</div>
+<div class="flashback" id="ani-flashback">
+  <div class="cin-top" id="cin-top"></div>
+  <div class="cin-bot" id="cin-bot"></div>
+  <div class="fb-date-stamp" id="fb-date-stamp">01.01.2026</div>
+  <div class="fb-ev-bg">
+    <div style="font-size:3rem;color:#FFD700;top:5%;transform:rotate(-15deg);">EduVerse EduVerse</div>
+    <div style="font-size:2rem;color:#88CCFF;top:35%;right:-5%;transform:rotate(10deg);">Edu Verse Edu</div>
+    <div style="font-size:3.5rem;color:#FFD700;top:62%;transform:rotate(-8deg);">EduVerse EduVerse</div>
+  </div>
+  <div class="fb-bals" id="fb-bals"></div>
+  <div class="fb-confs" id="fb-confs"></div>
+  <div class="fb-stars-r" id="fb-stars-r"></div>
+  <div class="fb-content">
+    <div class="fb-cake-section">
+      <div class="fb-candles" id="fb-candles"></div>
+      <div class="fb-cake-emoji" id="fb-cake">&#127874;</div>
+    </div>
+    <div class="fb-title" id="fb-title" style="color:#FFD700;">FIDAN OLDUN!</div>
+    <div class="fb-sub" id="fb-sub">O muhtesem gun...</div>
+    <div class="fb-transform">
+      <div class="fb-old-wrap" id="fb-old-wrap">
+        <img id="fb-old-img" src="" alt="">
+        <div class="fb-old-lbl" id="fb-old-lbl">Once</div>
+      </div>
+      <div class="fb-arrow-icon">&#10145;</div>
+      <div class="fb-new-wrap">
+        <img id="fb-new-img" src="" alt="">
+        <div class="fb-new-lbl" id="fb-new-lbl" style="color:#44FF88;">Later</div>
+      </div>
+    </div>
+    <div class="fb-quote" id="fb-quote">"I grew!"</div>
+    <div class="fb-chips" id="fb-chips"></div>
+  </div>
+  <button class="fb-close-btn" onclick="closeFlashback()">&#8592; Ani Defterine Don</button>
+</div>
+
+<!-- V47H - LIQUID ROOM ICON MOTION / SADECE IKON HAREKETI -->
+<style id="v47h-liquid-room-icons-motion">
+/* V47H: Oda seÃ§im kartlarÄ±ndaki liquid ikonlara canlÄ±lÄ±k verir.
+   Sadece gÃ¶rsel animasyon: oda aÃ§ma, kilit, PDF, Shop, Values/Sakinlik, KME ve streak sistemi deÄŸiÅŸtirilmedi. */
+
+@keyframes evV47HIconFloatA{
+  0%,100%{transform:translate3d(0,0,0) rotate(-2deg) scale(1);}
+  25%{transform:translate3d(2px,-5px,0) rotate(4deg) scale(1.045);}
+  50%{transform:translate3d(-1px,2px,0) rotate(-3deg) scale(.99);}
+  75%{transform:translate3d(-3px,-3px,0) rotate(3deg) scale(1.03);}
+}
+@keyframes evV47HIconFloatB{
+  0%,100%{transform:translate3d(0,0,0) rotate(2deg) scale(1);}
+  30%{transform:translate3d(-3px,-4px,0) rotate(-5deg) scale(1.04);}
+  58%{transform:translate3d(2px,1px,0) rotate(3deg) scale(.995);}
+  82%{transform:translate3d(3px,-3px,0) rotate(-2deg) scale(1.025);}
+}
+@keyframes evV47HIconFloatC{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg) scale(1);}
+  20%{transform:translate3d(0,-6px,0) rotate(-4deg) scale(1.05);}
+  45%{transform:translate3d(3px,-1px,0) rotate(5deg) scale(1.015);}
+  70%{transform:translate3d(-2px,2px,0) rotate(-2deg) scale(.99);}
+}
+@keyframes evV47HIconGlow{
+  0%,100%{filter:drop-shadow(0 0 10px rgba(255,225,130,.48)) drop-shadow(0 0 18px rgba(145,92,255,.17));}
+  50%{filter:drop-shadow(0 0 17px rgba(255,236,160,.78)) drop-shadow(0 0 27px rgba(78,215,255,.30));}
+}
+@keyframes evV47HIconTouch{
+  0%{transform:translate3d(0,0,0) rotate(0deg) scale(1);}
+  35%{transform:translate3d(0,-8px,0) rotate(-8deg) scale(1.18);}
+  70%{transform:translate3d(0,2px,0) rotate(6deg) scale(.96);}
+  100%{transform:translate3d(0,0,0) rotate(0deg) scale(1.05);}
+}
+@keyframes evV47HHookIconDance{
+  0%,100%{transform:translate3d(0,0,0) rotate(-4deg) scale(1);}
+  22%{transform:translate3d(6px,-10px,0) rotate(8deg) scale(1.08);}
+  48%{transform:translate3d(-5px,2px,0) rotate(-6deg) scale(.98);}
+  74%{transform:translate3d(3px,-6px,0) rotate(5deg) scale(1.05);}
+}
+@keyframes evV47HRoomHeaderIcon{
+  0%,100%{transform:translate3d(0,0,0) rotate(-2deg) scale(1);}
+  50%{transform:translate3d(0,-3px,0) rotate(2deg) scale(1.04);}
+}
+
+.rb-ico{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width:2.25rem !important;
+  transform-origin:50% 58% !important;
+  will-change:transform,filter !important;
+  animation:evV47HIconFloatA 3.55s ease-in-out infinite, evV47HIconGlow 4.8s ease-in-out infinite !important;
+}
+.rb:nth-child(3n+2) .rb-ico{animation-name:evV47HIconFloatB, evV47HIconGlow !important; animation-duration:3.95s,5.15s !important;}
+.rb:nth-child(3n) .rb-ico{animation-name:evV47HIconFloatC, evV47HIconGlow !important; animation-duration:4.25s,5.45s !important;}
+.rb:nth-child(4n) .rb-ico{animation-delay:-.65s,-1.1s !important;}
+.rb:nth-child(5n) .rb-ico{animation-delay:-1.25s,-.35s !important;}
+
+.rb:not(.locked):hover .rb-ico,
+.rb:not(.locked):focus-visible .rb-ico{
+  animation:evV47HIconTouch .72s cubic-bezier(.22,1.45,.32,1) both, evV47HIconGlow 2.3s ease-in-out infinite !important;
+}
+.rb:not(.locked):active .rb-ico{
+  animation:evV47HIconTouch .38s cubic-bezier(.18,1.55,.32,1) both !important;
+}
+.rb.locked .rb-ico{
+  animation-duration:5.8s,6.8s !important;
+  opacity:.78 !important;
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.22)) !important;
+}
+
+#room-hook-ico{
+  display:block !important;
+  position:relative !important;
+  z-index:2 !important;
+  transform-origin:50% 58% !important;
+  will-change:transform,filter !important;
+  animation:evV47HHookIconDance 1.05s ease-in-out infinite, evV47HIconGlow 2.2s ease-in-out infinite !important;
+  filter:drop-shadow(0 0 18px rgba(255,236,160,.78)) drop-shadow(0 0 34px rgba(94,210,255,.26)) !important;
+}
+#gri{
+  display:inline-block !important;
+  transform-origin:50% 58% !important;
+  animation:evV47HRoomHeaderIcon 3.2s ease-in-out infinite !important;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .rb-ico,#room-hook-ico,#gri{animation:none !important;}
+}
+</style>
+
+
+
+<!-- V47I - LANDING + ROOM ICON MOTION BOOST -->
+<style id="v47i-landing-and-room-icons-motion-boost">
+/* V47I: GiriÅŸ ekranÄ±ndaki ikonlar + oda kart ikonlarÄ± iÃ§in daha gÃ¶rÃ¼nÃ¼r ama hÃ¢lÃ¢ premium hareket.
+   Sadece CSS animasyonudur; oda mantÄ±ÄŸÄ±, PDF, Shop, Streak, KME ve Values/Sakinlik akÄ±ÅŸÄ±na dokunmaz. */
+
+@keyframes evV47ILandingFloatA{
+  0%,100%{transform:translate3d(0,0,0) rotate(-2deg) scale(1);}
+  22%{transform:translate3d(4px,-9px,0) rotate(7deg) scale(1.08);}
+  48%{transform:translate3d(-3px,2px,0) rotate(-5deg) scale(.99);}
+  74%{transform:translate3d(3px,-5px,0) rotate(4deg) scale(1.05);}
+}
+@keyframes evV47ILandingFloatB{
+  0%,100%{transform:translate3d(0,0,0) rotate(2deg) scale(1);}
+  25%{transform:translate3d(-4px,-8px,0) rotate(-7deg) scale(1.075);}
+  52%{transform:translate3d(4px,1px,0) rotate(5deg) scale(.99);}
+  80%{transform:translate3d(2px,-6px,0) rotate(-4deg) scale(1.045);}
+}
+@keyframes evV47ICharFloatA{
+  0%,100%{transform:translate3d(0,0,0) rotate(-1deg) scale(1);}
+  30%{transform:translate3d(5px,-8px,0) rotate(4deg) scale(1.045);}
+  60%{transform:translate3d(-4px,2px,0) rotate(-3deg) scale(.995);}
+  82%{transform:translate3d(2px,-4px,0) rotate(2deg) scale(1.025);}
+}
+@keyframes evV47ICharFloatB{
+  0%,100%{transform:translate3d(0,0,0) rotate(1deg) scale(1);}
+  28%{transform:translate3d(-5px,-7px,0) rotate(-4deg) scale(1.045);}
+  58%{transform:translate3d(4px,2px,0) rotate(3deg) scale(.995);}
+  84%{transform:translate3d(-2px,-4px,0) rotate(-2deg) scale(1.025);}
+}
+@keyframes evV47IRoomIconFloatA{
+  0%,100%{transform:translate3d(0,0,0) rotate(-3deg) scale(1);}
+  24%{transform:translate3d(4px,-8px,0) rotate(7deg) scale(1.075);}
+  50%{transform:translate3d(-3px,2px,0) rotate(-5deg) scale(.985);}
+  76%{transform:translate3d(3px,-5px,0) rotate(5deg) scale(1.045);}
+}
+@keyframes evV47IRoomIconFloatB{
+  0%,100%{transform:translate3d(0,0,0) rotate(3deg) scale(1);}
+  26%{transform:translate3d(-4px,-7px,0) rotate(-8deg) scale(1.07);}
+  55%{transform:translate3d(4px,2px,0) rotate(6deg) scale(.99);}
+  80%{transform:translate3d(2px,-5px,0) rotate(-3deg) scale(1.04);}
+}
+@keyframes evV47IIconGlowPulse{
+  0%,100%{filter:drop-shadow(0 0 11px rgba(255,225,130,.58)) drop-shadow(0 0 22px rgba(145,92,255,.22));}
+  50%{filter:drop-shadow(0 0 21px rgba(255,238,170,.90)) drop-shadow(0 0 36px rgba(85,218,255,.38));}
+}
+@keyframes evV47ITouchPop{
+  0%{transform:translate3d(0,0,0) rotate(0deg) scale(1);}
+  35%{transform:translate3d(0,-11px,0) rotate(-9deg) scale(1.20);}
+  68%{transform:translate3d(0,2px,0) rotate(7deg) scale(.97);}
+  100%{transform:translate3d(0,0,0) rotate(0deg) scale(1.06);}
+}
+
+.ev-login-liquid-icon{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  transform-origin:50% 62% !important;
+  will-change:transform,filter !important;
+  animation:evV47ILandingFloatA 3.1s ease-in-out infinite, evV47IIconGlowPulse 4.25s ease-in-out infinite !important;
+}
+.ev-login-liquid-student{animation-name:evV47ILandingFloatB,evV47IIconGlowPulse !important;animation-duration:3.35s,4.45s !important;animation-delay:-.35s,-.8s !important;}
+.ev-login-liquid-future{animation-name:evV47ILandingFloatA,evV47IIconGlowPulse !important;animation-duration:3.55s,4.65s !important;animation-delay:-.9s,-.25s !important;}
+
+#char-prev-erkek,#char-prev-kiz{
+  transform-origin:50% 78% !important;
+  will-change:transform,filter !important;
+  animation:evV47ICharFloatA 3.35s ease-in-out infinite, evV47IIconGlowPulse 4.7s ease-in-out infinite !important;
+}
+#char-prev-kiz{animation-name:evV47ICharFloatB,evV47IIconGlowPulse !important;animation-duration:3.55s,4.9s !important;animation-delay:-.8s,-.35s !important;}
+#char-sel-erkek:hover #char-prev-erkek,
+#char-sel-kiz:hover #char-prev-kiz,
+#char-sel-erkek:active #char-prev-erkek,
+#char-sel-kiz:active #char-prev-kiz{
+  animation:evV47ITouchPop .72s cubic-bezier(.22,1.45,.32,1) both, evV47IIconGlowPulse 2.1s ease-in-out infinite !important;
+}
+
+.rb-ico{
+  animation:evV47IRoomIconFloatA 3.05s ease-in-out infinite, evV47IIconGlowPulse 4.35s ease-in-out infinite !important;
+}
+.rb:nth-child(3n+2) .rb-ico{animation-name:evV47IRoomIconFloatB,evV47IIconGlowPulse !important;animation-duration:3.25s,4.65s !important;}
+.rb:nth-child(3n) .rb-ico{animation-name:evV47IRoomIconFloatA,evV47IIconGlowPulse !important;animation-duration:3.45s,4.95s !important;}
+.rb:not(.locked):hover .rb-ico,
+.rb:not(.locked):focus-visible .rb-ico,
+.rb:not(.locked):active .rb-ico{
+  animation:evV47ITouchPop .72s cubic-bezier(.22,1.45,.32,1) both, evV47IIconGlowPulse 2.1s ease-in-out infinite !important;
+}
+
+#room-hook-ico{
+  animation:evV47IRoomIconFloatA 1.85s ease-in-out infinite, evV47IIconGlowPulse 2.45s ease-in-out infinite !important;
+}
+#gri{
+  animation:evV47IRoomIconFloatB 3.05s ease-in-out infinite, evV47IIconGlowPulse 4.4s ease-in-out infinite !important;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ev-login-liquid-icon,#char-prev-erkek,#char-prev-kiz,.rb-ico,#room-hook-ico,#gri{animation:none !important;}
+}
+</style>
+
+
+<!-- V47W - Growth overlay laptop size restore / text scale fix -->
+<style id="v47w-growth-overlay-size-restore">
+/* Scope: only Oki growth full-screen overlay typography and fit.
+   Does not touch fullscreen game canvas, balloon pop/card logic, room grid, GÃ¼n Serisi, Boyama, PDF, Shop, KME. */
+#growth-big-ov{
+  padding:16px !important;
+  overflow:auto !important;
+}
+#growth-big-ov > div{
+  max-width:min(300px,92vw) !important;
+  transform:scale(.92) !important;
+  transform-origin:center center !important;
+}
+#gbig-emoji{
+  font-size:clamp(3.8rem,7vw,5.2rem) !important;
+  margin-bottom:4px !important;
+}
+#gbig-title{
+  font-size:clamp(1.42rem,4vw,1.9rem) !important;
+  line-height:1.12 !important;
+  margin-bottom:5px !important;
+  word-break:normal !important;
+}
+#gbig-subtitle{
+  font-size:.82rem !important;
+  margin-bottom:10px !important;
+}
+#gbig-char{
+  width:110px !important;
+  height:132px !important;
+}
+#gbig-bubble{
+  max-width:92% !important;
+  padding:8px 14px !important;
+  font-size:.78rem !important;
+  line-height:1.28 !important;
+  margin-bottom:10px !important;
+}
+#gbig-stars{
+  padding:8px 14px !important;
+  font-size:.82rem !important;
+  line-height:1.25 !important;
+  margin-bottom:12px !important;
+}
+#growth-big-ov button{
+  padding:12px !important;
+  font-size:1rem !important;
+}
+@media (max-height:700px){
+  #growth-big-ov > div{transform:scale(.84) !important;}
+  #gbig-emoji{font-size:4rem !important;}
+  #gbig-char{width:96px !important;height:116px !important;}
+}
+</style>
+
+<!-- V48S73_LOGIN_GLOBAL_ICONS_GUARD_START -->
+<style id="v48s73-login-global-icons-guard-style">
+/* GiriÅŸ/login ekraninda oda iÃ§i global ikonlar kesinlikle gÃ¶rÃ¼nmez.
+   Oyun aÃ§Ä±ldÄ±ktan sonra eski davranÄ±ÅŸÄ±na geri dÃ¶ner. */
+body.ev-v48s73-login-active #ev-invite-btn,
+body.ev-v48s73-login-active #ev-share-btn,
+
+body.ev-v48s73-login-active #ev-chest-btn,
+body.ev-v48s73-login-active #ada-muzik,
+body.ev-v48s73-login-active #ev-room-music-tip{
+  display:none !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+}
+</style>
+<script id="v48s73-login-global-icons-guard-script">
+(function(){
+  var IDS=['ev-invite-btn','ev-share-btn','ev-chest-btn','ada-muzik','ev-room-music-tip'];
+  function nsVisible(){
+    var ns=document.getElementById('ns');
+    var cs;
+    if(!ns) return false;
+    try{ cs=window.getComputedStyle(ns); }catch(e){ cs=null; }
+    if(!cs) return false;
+    return cs.display!=='none' && cs.visibility!=='hidden' && String(cs.opacity||'1')!=='0';
+  }
+  function apply(){
+    var on=nsVisible();
+    var i,el;
+    if(document.body){
+      if(on) document.body.classList.add('ev-v48s73-login-active');
+      else document.body.classList.remove('ev-v48s73-login-active');
+    }
+    for(i=0;i<IDS.length;i++){
+      el=document.getElementById(IDS[i]);
+      if(!el) continue;
+      if(on){
+        try{ el.style.setProperty('display','none','important'); }catch(e1){}
+        try{ el.style.setProperty('visibility','hidden','important'); }catch(e2){}
+        try{ el.style.setProperty('pointer-events','none','important'); }catch(e3){}
+      }else{
+        try{ el.style.removeProperty('display'); }catch(e4){}
+        try{ el.style.removeProperty('visibility'); }catch(e5){}
+        try{ el.style.removeProperty('pointer-events'); }catch(e6){}
+      }
+    }
+  }
+  function start(){
+    apply();
+    setTimeout(apply,30); setTimeout(apply,120); setTimeout(apply,350); setTimeout(apply,900);
+    setInterval(apply,350);
+    window.addEventListener('pageshow',apply);
+    window.addEventListener('resize',apply);
+    window.evV48S73SyncLoginIconGuard=apply;
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start);
+  else start();
+})();
+</script>
+<!-- V48S73_LOGIN_GLOBAL_ICONS_GUARD_END -->
+
+
+<script src="share-card.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+<script src="room-music.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+<script src="invite.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+<script src="chest.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+<script src="values-i18n.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+<script src="english-values-fix.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+<script src="english-hard-clean.js?v=V48S62-edge-gate-lang-stable-20260621"></script>
+
+<!-- V48S74_ROOM_SHARE_CARD_SALON_ONLY_START -->
+<style id="v48s74-room-share-card-salon-only-style">
+body.ev-v48s74-room-active #ev-share-btn,
+body.ev-v48s74-room-active #ev-invite-btn,
+body.ev-v48s74-room-active [id^="ev-share-"],
+body.ev-v48s74-room-active [id^="ev-invite-"],
+body.ev-v48s74-room-active .ev-share-card{
+  display:none !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+}
+/* TARKAN_HOME_TASKS_BUTTON_HIGH_CONTRAST_V2 */
+#home-tasks-btn{
+  color:#201000 !important;
+  -webkit-text-fill-color:#201000 !important;
+  background:linear-gradient(145deg,#FFE66A,#FFC928) !important;
+  border-color:#FFF0A6 !important;
+  font-weight:800 !important;
+  text-shadow:none !important;
+  opacity:1 !important;
+  filter:none !important;
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.24),
+    0 0 18px rgba(255,215,0,.30),
+    0 0 0 1px rgba(255,255,255,.20) inset !important;
+}
+#home-tasks-btn:hover{
+  color:#201000 !important;
+  -webkit-text-fill-color:#201000 !important;
+  background:linear-gradient(145deg,#FFF08A,#FFD43A) !important;
+  border-color:#FFF6C8 !important;
+}
+</style>
+<script id="v48s74-room-share-card-salon-only-script">
+(function(){
+function roomVisible(){
+try{
+var gs=document.getElementById('gs');
+if(!gs) return false;
+var cs=window.getComputedStyle(gs);
+return cs.display!=='none' &&
+       cs.visibility!=='hidden' &&
+       String(cs.opacity||'1')!=='0';
+}catch(e){
+return false;
+}
+}
+
+function applyRoomShareGuard(){
+try{
+if(!document.body) return;
+if(roomVisible()){
+document.body.classList.add('ev-v48s74-room-active');
+}else{
+document.body.classList.remove('ev-v48s74-room-active');
+}
+}catch(e){}
+}
+
+if(document.readyState==='loading'){
+document.addEventListener('DOMContentLoaded',applyRoomShareGuard);
+}else{
+applyRoomShareGuard();
+}
+
+window.addEventListener('load',applyRoomShareGuard);
+document.addEventListener('click',function(){
+setTimeout(applyRoomShareGuard,60);
+setTimeout(applyRoomShareGuard,260);
+},true);
+
+setInterval(applyRoomShareGuard,500);
+})();
+</script>
+<!-- V48S74_ROOM_SHARE_CARD_SALON_ONLY_END -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- EV_PARENT_REPORT_BASE_BUTTON_LABELS_V3 -->
+
+
+
+
+
+
+
+
+

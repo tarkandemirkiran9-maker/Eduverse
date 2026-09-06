@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>EduVerse Dünya Merkezi</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <main class="shell" aria-label="EduVerse Dünya Merkezi demo prototipi">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">E</div>
+        <div>
+          <p class="eyebrow">EDUVERSE WORLD HUB</p>
+          <h1>EduVerse Dünya</h1>
+        </div>
+      </div>
+      <div class="demo-pill" role="status"></div>
+    </header>
+
+    <section class="hero-grid">
+      <article class="globe-panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">DÜNYA KÜRESİ</p>
+            <h2>Dünyada kaç aileye ulaştığımız kadar, o ailelerle neyi değiştirdiğimiz de önemli.</h2>
+          </div>
+          
+        </div>
+
+        <div class="globe-stage" id="globeStage">
+          <canvas id="globe" aria-label="EduVerse dünya küresi"></canvas>
+          <div class="orbit orbit-1" aria-hidden="true"></div>
+          <div class="orbit orbit-2" aria-hidden="true"></div>
+
+          <div class="focus-card" id="focusCard" aria-live="polite">
+            <span class="focus-flag" id="focusFlag">🇹🇷</span>
+            <div>
+              <strong id="focusName">Türkiye</strong>
+              <small id="focusMeta">128 aile</small>
+            </div>
+            <span class="focus-plus" id="focusPlus">+1</span>
+          </div>
+
+          <div class="leader-burst" id="leaderBurst" aria-live="assertive">
+            <span>YENİ LİDER</span>
+            <strong id="leaderBurstName">Türkiye</strong>
+          </div>
+        </div>
+
+        <div id="eduverseMissionSlogan" class="eduverse-mission-slogan" lang="tr" dir="ltr">
+  <p class="eduverse-mission-slogan__text">Dünyada kaç aileye ulaştığımız kadar, o ailelerle neyi değiştirdiğimiz de önemli.</p>
+</div>
+<div class="event-row">
+          <button id="demoEventBtn" class="primary-btn" type="button">+1 Aile</button>
+          <button id="leaderDemoBtn" class="secondary-btn" type="button">Lider Değişimi</button>
+      <button class="secondary-btn theme-cycle-btn" id="themeCycleBtn" type="button">Tema</button>
+      
+        </div>
+
+        <p class="disclaimer">
+          
+        </p>
+      </article>
+
+      <aside class="side-stack">
+        <section class="leader-card" aria-labelledby="leaderTitle">
+          <div class="section-label">LİDER</div>
+          <div class="champion-vault" aria-hidden="true">
+            <div class="halo"></div>
+            <div class="champion-orb" id="championOrb"><span id="championFlag">🇹🇷</span></div>
+          </div>
+          <div class="leader-copy">
+            <p>Şu an</p>
+            <h3 id="leaderTitle">Türkiye</h3>
+            <strong id="leaderVotes">128 aile</strong>
+          </div>
+        </section>
+
+        <section class="league-card" aria-labelledby="leagueTitle">
+          <div class="league-head">
+            <div>
+              <div class="section-label">DÜNYA LİGİ</div>
+              <h3 id="leagueTitle">Bugün</h3>
+            </div>
+            <div class="live-dot"><span></span> CANLI</div>
+          </div>
+          <ol id="leaderboard" class="leaderboard"></ol>
+        </section>
+
+        <section class="signal-card" aria-label="Son olay">
+          <div class="section-label">SON OLAY</div>
+          <p id="eventText">Türkiye prototip sahnesinde lider.</p>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="foot">
+      <span></span>
+      <span></span>
+    </footer>
+  
+<section class="goodness-fund" id="goodnessFund" aria-labelledby="goodnessFundTitle">
+  <div class="goodness-head">
+    <div>
+      <div class="goodness-kicker">EDUVERSE</div>
+      <h2 id="goodnessFundTitle">İyilik Fonu</h2>
+    </div>
+  </div>
+
+  <div class="goodness-grid">
+    <article class="fund-vault">
+      <div class="fund-orbit fund-orbit-a" aria-hidden="true"></div>
+      <div class="fund-orbit fund-orbit-b" aria-hidden="true"></div>
+      <div class="fund-core" aria-live="polite">
+        <span>Gerçek mevcut tutar</span>
+        <strong>—</strong>
+      </div>
+
+      <div class="fund-meta">
+        <div class="fund-meta-card">
+          <span>Hesaplama yöntemi</span>
+          <strong>—</strong>
+        </div>
+        <div class="fund-meta-card">
+          <span>Dönem</span>
+          <strong>—</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="fund-projects">
+      <div class="fund-section-title">Doğrulanmış projeler</div>
+
+      <div class="project-stack">
+        <div class="project-card">
+          <span class="project-index">01</span>
+          <strong>Eğitim / burs / materyal</strong>
+        </div>
+        <div class="project-card">
+          <span class="project-index">02</span>
+          <strong>Çocuk sağlığı</strong>
+        </div>
+        <div class="project-card">
+          <span class="project-index">03</span>
+          <strong>Okul / kütüphane / teknoloji desteği</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="fund-proof">
+      <div class="proof-row">
+        <span>Topluluk oy sonucu</span>
+        <strong>—</strong>
+      </div>
+      <div class="proof-row">
+        <span>Ödeme / tamamlanma kanıtı</span>
+        <strong>—</strong>
+      </div>
+      <div class="proof-row">
+        <span>Geçmiş projeler arşivi</span>
+        <strong>—</strong>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+  <script src="./assets/countries-geometry.js"></script>
+  <script src="./assets/world_tex.js"></script>
+  <script src="./app.js"></script>
+
+<script src="./LANG4.js"></script>
+<script src="./slogan-v14.js"></script>
+<script src="./cleanup-old-slogan-v15.js"></script>
+</body>
+</html>

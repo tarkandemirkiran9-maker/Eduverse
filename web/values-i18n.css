@@ -1,0 +1,113 @@
+#ev-values-panel{position:fixed;top:48px;right:10px;z-index:100004;display:none;width:min(90vw,310px);background:rgba(8,18,42,.86);border:1px solid rgba(100,220,255,.28);border-radius:18px;padding:12px;box-shadow:0 18px 50px rgba(0,0,0,.34);backdrop-filter:blur(10px);font-family:'Nunito',sans-serif;color:white}
+#ev-values-panel.show{display:block;animation:evValuesIn .22s ease both}
+.ev-values-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.ev-values-title{font-family:'Fredoka One',sans-serif;font-size:.95rem;color:#7fffb0}
+.ev-values-sub{font-size:.68rem;font-weight:800;color:rgba(255,255,255,.62);line-height:1.25}
+#ev-values-close{border:none;background:rgba(255,255,255,.1);color:white;border-radius:999px;width:28px;height:28px;cursor:pointer}
+.ev-values-langs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:8px 0 10px}
+.ev-values-langs button{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:white;border-radius:999px;padding:8px 4px;font-family:'Fredoka One',sans-serif;font-size:.68rem;cursor:pointer}
+.ev-values-langs button.active{background:linear-gradient(135deg,#36d783,#26a9ff);border-color:rgba(255,255,255,.45)}
+.ev-values-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px;text-align:left}
+.ev-values-card-title{font-family:'Fredoka One',sans-serif;color:#FFD85B;font-size:.78rem;margin-bottom:4px}
+.ev-values-card-text{font-size:.72rem;font-weight:800;color:rgba(255,255,255,.74);line-height:1.35}
+#values-toggle-btn.ev-values-glow{box-shadow:0 0 18px rgba(80,255,150,.38)!important;border-color:rgba(120,255,180,.7)!important}
+@keyframes evValuesIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:430px){#ev-values-panel{top:44px;right:8px;width:min(92vw,292px);padding:10px}.ev-values-langs button{font-size:.62rem;padding:7px 2px}}
+/* EV_VALUES_ATOMIC_TRANSITION_V1 */
+#ev-values-transition{
+position:fixed;
+inset:0;
+z-index:2147483000;
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+background:
+radial-gradient(circle at 50% 42%,rgba(65,190,135,.18),transparent 38%),
+linear-gradient(155deg,#071426,#0a1020 58%,#060b14);
+transition:opacity .15s ease,visibility 0s linear .18s;
+font-family:'Nunito',system-ui,sans-serif;
+}
+
+#ev-values-transition.show{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+transition:opacity .12s ease;
+}
+
+#ev-values-transition.leaving{
+opacity:0;
+}
+
+#ev-values-transition .evvt-shell{
+width:min(78vw,330px);
+text-align:center;
+transform:translateY(-2vh);
+}
+
+#ev-values-transition .evvt-brand{
+font-family:'Fredoka One',system-ui,sans-serif;
+font-size:1.55rem;
+letter-spacing:.04em;
+color:white;
+text-shadow:0 0 22px rgba(255,255,255,.18);
+}
+
+#ev-values-transition .evvt-mode{
+margin-top:8px;
+font-family:'Fredoka One',system-ui,sans-serif;
+font-size:.78rem;
+letter-spacing:.16em;
+color:#85ffb0;
+}
+
+#ev-values-transition.to-standard .evvt-mode{
+color:#ffd96a;
+}
+
+#ev-values-transition .evvt-sub{
+margin-top:7px;
+font-size:.72rem;
+font-weight:900;
+color:rgba(255,255,255,.66);
+}
+
+#ev-values-transition .evvt-track{
+height:7px;
+margin-top:18px;
+overflow:hidden;
+border-radius:999px;
+background:rgba(255,255,255,.10);
+border:1px solid rgba(255,255,255,.12);
+box-shadow:inset 0 0 12px rgba(0,0,0,.22);
+}
+
+#ev-values-transition .evvt-fill{
+height:100%;
+width:0%;
+border-radius:inherit;
+background:linear-gradient(
+90deg,
+#2dcc75,
+#74ffc0,
+#30bfff
+);
+box-shadow:0 0 18px rgba(80,255,150,.52);
+}
+
+#ev-values-transition.to-standard .evvt-fill{
+background:linear-gradient(
+90deg,
+#cc9c26,
+#ffe273,
+#ffb64c
+);
+box-shadow:0 0 18px rgba(255,215,90,.46);
+}
+
+body.ev-values-transitioning{
+overflow:hidden!important;
+}

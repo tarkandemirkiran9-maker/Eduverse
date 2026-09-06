@@ -1,0 +1,15 @@
+html[data-league-live3="1"] #demoEventBtn,
+html[data-league-live3="1"] #leaderDemoBtn,
+html[data-league-live3="1"] #themeCycleBtn{
+  display:none!important;
+}
+html[data-league-live3="1"] .league-card[data-league-empty="1"] #championFlag{
+  opacity:.12!important;
+}
+.league-card[data-league-empty="1"] #leaderboard li.is-leader{
+  border-color:rgba(255,255,255,.08)!important;
+  box-shadow:none!important;
+}
+.league-card #leaderboard .rank[data-live3-empty-rank="1"]{
+  color:#526a80!important;
+}

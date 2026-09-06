@@ -1,0 +1,24 @@
+#ev-chest-btn{position:fixed;right:10px;bottom:156px;z-index:9998;width:38px;height:38px;border:1px solid rgba(255,255,255,.22);background:rgba(10,18,42,.46);color:transparent;border-radius:50%;padding:0;font-family:'Fredoka One','Nunito',sans-serif;font-size:0;box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;touch-action:manipulation;backdrop-filter:blur(10px);opacity:.74;transition:opacity .18s,transform .18s,background .18s,border-color .18s}
+#ev-chest-btn:hover,#ev-chest-btn:focus,#ev-chest-btn:active{opacity:1;background:rgba(255,204,64,.88);border-color:rgba(255,255,255,.58);transform:scale(1.04)}
+#ev-chest-btn:before{content:'🎁';font-size:18px;color:white;text-shadow:0 2px 8px rgba(0,0,0,.35);line-height:38px;display:block;text-align:center}
+#ev-chest-btn:hover:before,#ev-chest-btn:focus:before,#ev-chest-btn:active:before{color:#3a2200}
+#ev-chest-ov{position:fixed;inset:0;z-index:100003;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.66);backdrop-filter:blur(8px);padding:15px}
+#ev-chest-ov.show{display:flex}
+.ev-chest-card{width:min(92vw,380px);background:linear-gradient(180deg,#07152f,#37206f 58%,#13061f);border:2px solid rgba(255,216,91,.78);border-radius:24px;padding:22px 16px 16px;box-shadow:0 24px 80px rgba(0,0,0,.42);font-family:'Nunito',sans-serif;color:white;text-align:center;position:relative;overflow:hidden}
+.ev-chest-card:before{content:'';position:absolute;inset:-40%;background:radial-gradient(circle at 50% 10%,rgba(255,216,91,.28),transparent 30%),radial-gradient(circle at 12% 70%,rgba(100,230,255,.2),transparent 26%);pointer-events:none}
+.ev-chest-inner{position:relative;z-index:1}
+.ev-chest-title{font-family:'Fredoka One',sans-serif;font-size:1.35rem;color:#FFD85B;margin-bottom:8px}
+.ev-chest-box{font-size:6rem;line-height:1;margin:12px 0 8px;filter:drop-shadow(0 12px 22px rgba(0,0,0,.32));transition:transform .3s}
+.ev-chest-box.shake{animation:evChestShake .6s ease both}
+.ev-chest-box.open{animation:evChestOpen .7s cubic-bezier(.175,.885,.32,1.275) both}
+.ev-chest-reward{min-height:78px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:12px;margin:10px 0 12px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ev-chest-reward-name{font-family:'Fredoka One',sans-serif;font-size:1rem;color:#FFD85B;margin-bottom:4px}
+.ev-chest-reward-sub{font-size:.78rem;font-weight:900;color:rgba(255,255,255,.78);line-height:1.35}
+.ev-chest-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ev-chest-actions button{border:none;border-radius:999px;padding:12px 9px;font-family:'Fredoka One',sans-serif;font-size:.82rem;cursor:pointer}
+#ev-chest-open{background:linear-gradient(135deg,#FFD54A,#FF9B42);color:#422000}
+#ev-chest-close{background:rgba(255,255,255,.12);color:rgba(255,255,255,.78)}
+.ev-chest-note{font-size:.68rem;font-weight:800;color:rgba(255,255,255,.54);margin-top:10px}
+@keyframes evChestShake{0%,100%{transform:rotate(0) scale(1)}20%{transform:rotate(-6deg) scale(1.05)}40%{transform:rotate(6deg) scale(1.06)}60%{transform:rotate(-4deg) scale(1.06)}80%{transform:rotate(4deg) scale(1.04)}}
+@keyframes evChestOpen{0%{transform:scale(1)}45%{transform:scale(1.25) rotate(-4deg)}100%{transform:scale(1.08) rotate(0)}}
+@media(max-width:430px){#ev-chest-btn:before{font-size:16px;line-height:34px}#ev-chest-btn{right:8px;bottom:142px;width:34px;height:34px}

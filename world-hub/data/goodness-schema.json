@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EduVerse Goodness Fund Public Data Contract",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "currency",
+    "publicState",
+    "calculation",
+    "period",
+    "summary",
+    "projects",
+    "ledger",
+    "votes",
+    "evidence"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "currency": {
+      "const": "EUR"
+    },
+    "publicState": {
+      "enum": [
+        "NO_VERIFIED_DATA",
+        "LIVE_VERIFIED_DATA",
+        "PAUSED"
+      ]
+    },
+    "calculation": {
+      "type": "object",
+      "required": [
+        "status",
+        "ruleType",
+        "value",
+        "basis",
+        "ownerApprovalRequired"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "UNSET_OWNER_GATE",
+            "ACTIVE",
+            "PAUSED"
+          ]
+        },
+        "ruleType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "FIXED_PER_ELIGIBLE_SALE",
+            "PERCENT_OF_ELIGIBLE_NET_REVENUE"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "basis": {
+          "const": "eligible_net_revenue"
+        },
+        "ownerApprovalRequired": {
+          "const": true
+        }
+      }
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "start",
+        "end"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "balance",
+        "allocatedThisPeriod",
+        "paidTotal",
+        "completedProjects"
+      ],
+      "properties": {
+        "balance": {
+          "type": "number",
+          "minimum": 0
+        },
+        "allocatedThisPeriod": {
+          "type": "number",
+          "minimum": 0
+        },
+        "paidTotal": {
+          "type": "number",
+          "minimum": 0
+        },
+        "completedProjects": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "countryCode",
+          "status",
+          "targetAmount",
+          "allocatedAmount",
+          "verificationStatus",
+          "evidenceIds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "REVIEW",
+              "VERIFIED",
+              "ALLOCATED",
+              "PAID",
+              "COMPLETED",
+              "REJECTED"
+            ]
+          },
+          "targetAmount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "allocatedAmount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "verificationStatus": {
+            "enum": [
+              "PENDING",
+              "VERIFIED",
+              "REJECTED"
+            ]
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "amount",
+          "currency",
+          "status",
+          "occurredAt",
+          "evidenceIds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "CONTRIBUTION",
+              "ALLOCATION",
+              "PAYMENT",
+              "REFUND",
+              "REVERSAL"
+            ]
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "const": "EUR"
+          },
+          "status": {
+            "enum": [
+              "PENDING",
+              "VERIFIED",
+              "ALLOCATED",
+              "PAID",
+              "COMPLETED",
+              "REVERSED"
+            ]
+          },
+          "occurredAt": {
+            "type": "string"
+          },
+          "evidenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "votes": {
+      "type": "object",
+      "required": [
+        "scope",
+        "separateFromWorldLeague",
+        "eligibility",
+        "oneVotePerPeriod",
+        "records"
+      ],
+      "properties": {
+        "scope": {
+          "const": "GOODNESS_PROJECTS"
+        },
+        "separateFromWorldLeague": {
+          "const": true
+        },
+        "eligibility": {
+          "const": "VERIFIED_ADULT_FAMILY_ACCOUNT"
+        },
+        "oneVotePerPeriod": {
+          "const": true
+        },
+        "records": {
+          "type": "array"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "publicSafe",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "RECEIPT",
+              "INVOICE",
+              "INSTITUTION_CONFIRMATION",
+              "COMPLETION_PROOF"
+            ]
+          },
+          "publicSafe": {
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "PENDING",
+              "VERIFIED",
+              "REJECTED"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

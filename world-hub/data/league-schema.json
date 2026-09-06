@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EduVerse World League Live Data Contract",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "mode",
+    "publicState",
+    "countryUniverse",
+    "rules",
+    "periods",
+    "countries",
+    "events",
+    "audit"
+  ],
+  "properties": {
+    "mode": {
+      "const": "LIVE"
+    },
+    "publicState": {
+      "enum": [
+        "NO_VERIFIED_FAMILY_VOTES",
+        "LIVE_VERIFIED_FAMILY_VOTES",
+        "PAUSED"
+      ]
+    },
+    "countryUniverse": {
+      "type": "object",
+      "required": [
+        "count",
+        "codes"
+      ],
+      "properties": {
+        "count": {
+          "const": 195
+        },
+        "codes": {
+          "type": "array",
+          "minItems": 195,
+          "maxItems": 195,
+          "uniqueItems": true
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "voteUnit",
+        "oneFamilyOneVote",
+        "eligibleEntitlements",
+        "upgradeAddsVote",
+        "repeatPurchaseAddsVote",
+        "refundReversesVote",
+        "countrySource",
+        "countryChangeCooldownDays",
+        "askidaDonorAddsVote",
+        "askidaRecipientEligibleAfterRedemptionAndFamilyVerification",
+        "childIdentityUsed",
+        "ipGeolocationUsed"
+      ]
+    },
+    "periods": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": "TODAY"
+        },
+        {
+          "const": "WEEK"
+        },
+        {
+          "const": "MONTH"
+        },
+        {
+          "const": "ALL_TIME"
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "countries": {
+      "type": "array",
+      "minItems": 195,
+      "maxItems": 195,
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "votes"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "votes": {
+            "type": "object",
+            "required": [
+              "TODAY",
+              "WEEK",
+              "MONTH",
+              "ALL_TIME"
+            ],
+            "properties": {
+              "TODAY": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "WEEK": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "MONTH": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "ALL_TIME": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

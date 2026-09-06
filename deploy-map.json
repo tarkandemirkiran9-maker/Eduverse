@@ -1,0 +1,20 @@
+{
+  "package": "W5_K6R20",
+  "status": "LOCAL_READY_NOT_DEPLOYED",
+  "roots": {
+    "eduverse.club": "world-hub",
+    "play.eduverse.club": "game"
+  },
+  "local": {
+    "hub": "http://127.0.0.1:8789-or-fallback/",
+    "game": "http://127.0.0.1:8788/"
+  },
+  "production": {
+    "hub": "https://eduverse.club/",
+    "game": "https://play.eduverse.club/"
+  },
+  "notes": [
+    "No DNS, deploy, Git, billing or production backend changes are performed by this package.",
+    "web-entry.js keeps local game target 127.0.0.1:8788 and production target play.eduverse.club."
+  ]
+}

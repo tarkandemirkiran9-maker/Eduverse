@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>EduVerse Dünya Merkezi</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./hub/HUB.css" />
+  <link rel="stylesheet" href="./hub/story.css" />
+<link rel="stylesheet" href="./hub/archive.css?v=K6R7"><link rel="stylesheet" href="./hub/reader.css?v=K6R9"><link rel="stylesheet" href="./hub/askida.css?v=K6R12"><link rel="stylesheet" href="./hub/fund2.css?v=K6R17"><link rel="stylesheet" href="./hub/league2.css?v=K6R18"><link rel="stylesheet" href="./hub/league3.css?v=K6R19"></head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <main class="shell" aria-label="EduVerse Dünya Merkezi">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">E</div>
+        <div>
+          <p class="eyebrow">EDUVERSE DÜNYA MERKEZİ</p>
+          <h1>EduVerse Dünya</h1>
+        </div>
+      </div>
+      <div class="demo-pill" role="status"></div>
+    </header>
+
+    <section class="hero-grid">
+      <article class="globe-panel">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">DÜNYA KÜRESİ</p>
+            <h2>Dünyada kaç aileye ulaştığımız kadar, o ailelerle neyi değiştirdiğimiz de önemli.</h2>
+          </div>
+          
+        </div>
+
+        <div class="globe-stage" id="globeStage">
+          <canvas id="globe" aria-label="EduVerse dünya küresi"></canvas>
+          <div class="orbit orbit-1" aria-hidden="true"></div>
+          <div class="orbit orbit-2" aria-hidden="true"></div>
+
+          <div class="focus-card" id="focusCard" aria-live="polite">
+            <span class="focus-flag" id="focusFlag">🇹🇷</span>
+            <div>
+              <strong id="focusName">Türkiye</strong>
+              <small id="focusMeta">128 aile</small>
+            </div>
+            <span class="focus-plus" id="focusPlus">+1</span>
+          </div>
+
+          <div class="leader-burst" id="leaderBurst" aria-live="assertive">
+            <span>YENİ LİDER</span>
+            <strong id="leaderBurstName">Türkiye</strong>
+          </div>
+        </div>
+
+        <div id="eduverseMissionSlogan" class="eduverse-mission-slogan" lang="tr" dir="ltr">
+  <p class="eduverse-mission-slogan__text">Dünyada kaç aileye ulaştığımız kadar, o ailelerle neyi değiştirdiğimiz de önemli.</p>
+</div>
+<div class="event-row">
+          <button id="demoEventBtn" class="primary-btn" type="button">+1 Aile</button>
+          <button id="leaderDemoBtn" class="secondary-btn" type="button">Lider Değişimi</button>
+      <button class="secondary-btn theme-cycle-btn" id="themeCycleBtn" type="button">Tema</button>
+      
+        </div>
+
+        <p class="disclaimer">
+          
+        </p>
+      </article>
+
+      <aside class="side-stack">
+        <section class="leader-card" aria-labelledby="leaderTitle">
+          <div class="section-label">LİDER</div>
+          <div class="champion-vault" aria-hidden="true">
+            <div class="halo"></div>
+            <div class="champion-orb" id="championOrb"><span id="championFlag">🇹🇷</span></div>
+          </div>
+          <div class="leader-copy">
+            <p>Şu an</p>
+            <h3 id="leaderTitle">Türkiye</h3>
+            <strong id="leaderVotes">128 aile</strong>
+          </div>
+        </section>
+
+        <section class="league-card" aria-labelledby="leagueTitle">
+          <div class="league-head">
+            <div>
+              <div class="section-label">DÜNYA LİGİ</div>
+              <h3 id="leagueTitle">Bugün</h3>
+            </div>
+            <div class="live-dot"><span></span> CANLI</div>
+          </div>
+          <ol id="leaderboard" class="leaderboard"></ol>
+        </section>
+
+        <section class="signal-card" aria-label="Son olay">
+          <div class="section-label">SON OLAY</div>
+          <p id="eventText">Türkiye şu anda lider.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section id="launchCountdown" class="launch-countdown" data-vitrin-module="countdown" aria-labelledby="launchCountdownTitle">
+      <div class="launch-countdown__glow" aria-hidden="true"></div>
+      <div class="launch-countdown__copy">
+        <p class="launch-countdown__kicker" data-launch="kicker">EDUVERSE AÇILIŞI</p>
+        <h2 id="launchCountdownTitle" data-launch="title">Açılış çok yakında.</h2>
+        <p class="launch-countdown__subtitle" data-launch="subtitle">Sayaç için tarih belirlendiğinde burada canlı geri sayım başlayacak.</p>
+        <div class="language-promo" aria-label="EduVerse dilleri">
+          <span data-launch="langsLabel">5 DİL</span>
+          <strong>TR · EN · DE · FR · AR</strong>
+        </div>
+      </div>
+      <div class="launch-countdown__display" aria-live="polite" aria-atomic="true">
+        <div class="launch-countdown__units" data-launch-state="soon">
+          <div class="launch-countdown__unit"><strong data-launch-value="days">—</strong><span data-launch-label="days">GÜN</span></div>
+          <div class="launch-countdown__unit"><strong data-launch-value="hours">—</strong><span data-launch-label="hours">SAAT</span></div>
+          <div class="launch-countdown__unit"><strong data-launch-value="minutes">—</strong><span data-launch-label="minutes">DK</span></div>
+          <div class="launch-countdown__unit"><strong data-launch-value="seconds">—</strong><span data-launch-label="seconds">SN</span></div>
+        </div>
+        <div class="launch-clock" hidden>
+          <strong class="launch-clock__date" data-launch="clockDate">—</strong>
+          <span class="launch-clock__time" data-launch="clockTime">—</span>
+          <small data-launch="clockNote">EDUVERSE · ŞİMDİ</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="founderStory" class="founder-story" data-vitrin-module="story" aria-labelledby="founderStoryTitle">
+      <div class="founder-story__head">
+        <div>
+          <p class="founder-story__kicker" data-story="kicker">BİR HİKÂYEDEN BİR DÜNYAYA</p>
+          <h2 id="founderStoryTitle" data-story="title">EduVerse neden doğdu?</h2>
+          <p class="founder-story__lead" data-story="lead">Bu bölüm, EduVerse’in kuruluş hikâyesini kurucusunun kendi sözleriyle anlatmak için hazırlandı.</p>
+        </div>
+        <div class="founder-story__controls" aria-label="Hikâye kontrolleri">
+          <button type="button" class="founder-story__btn is-primary" data-story-action="toggle" aria-pressed="false"><span data-story="play">OYNAT</span></button>
+          <button type="button" class="founder-story__btn" data-story-action="rewind"><span data-story="rewind">BAŞA DÖN</span></button>
+        </div>
+      </div>
+
+      <div class="founder-story__book" data-story-book>
+        <div class="founder-story__spine" aria-hidden="true"></div>
+        <div class="founder-story__viewport" data-story-viewport tabindex="0" aria-label="EduVerse kuruluş hikâyesi">
+          <div class="founder-story__roll" data-story-roll>
+            <article class="founder-story__chapter">
+              <span data-story="chapter1K">BAŞLANGIÇ</span>
+              <h3 data-story="chapter1T">Her büyük fikrin bir başlangıcı vardır.</h3>
+              <p data-story="chapter1D">EduVerse’in gerçek kuruluş nedeni, kurucusunun kendi sözleriyle bu bölümde anlatılacak.</p>
+            </article>
+            <article class="founder-story__chapter">
+              <span data-story="chapter2K">HATIRA</span>
+              <h3 data-story="chapter2T">Bazı hatıralar bir fikre yön verir.</h3>
+              <p data-story="chapter2D">Kişisel bağlar ve hatıralar, yalnızca kurucunun onayladığı anlatımla burada yer alacak.</p>
+            </article>
+            <article class="founder-story__chapter">
+              <span data-story="chapter3K">MİSYON</span>
+              <h3 data-story="chapter3T">Bir dünya kurmak yetmez; neden kurulduğunu da bilmek gerekir.</h3>
+              <p data-story="chapter3D">EduVerse’in çocuklar ve aileler için neyi değiştirmek istediği, nihai hikâyenin merkezinde olacak.</p>
+            </article>
+            <article class="founder-story__chapter">
+              <span data-story="chapter4K">GELECEK</span>
+              <h3 data-story="chapter4T">Hikâye, geleceğe bırakılmak istenen izle tamamlanır.</h3>
+              <p data-story="chapter4D">Nihai metin, kurucunun kendi kelimeleri ve açık onayıyla bu akışa yerleşecek.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <p class="founder-story__note" data-story="note">Hikâyeyi kendi hızınızda okuyabilir, durdurabilir ve başa dönebilirsiniz.</p>
+    </section>
+
+    <section id="eduverseStoreBridge" aria-label="EduVerse">
+      <article class="hub-card hub-opening">
+        <div class="hub-opening-copy">
+          <p class="hub-kicker" data-hub="openK">EDUVERSE</p>
+          <h2 data-hub="openT">Bir dünya. Onlarca kapı. Tek merak.</h2>
+          <p data-hub="openD">EduVerse; oyun, keşif, hareket ve öğrenmeyi aynı evrende buluşturur.</p>
+          <div class="hub-facts">
+            <div class="hub-fact"><strong data-hub="f1">33 oda</strong><span data-hub="f1d">Farklı ilgi ve beceriler</span></div>
+            <div class="hub-fact"><strong data-hub="f2">5 dil</strong><span data-hub="f2d">TR · EN · DE · FR · AR</span></div>
+            <div class="hub-fact"><strong data-hub="f3">5 oda ücretsiz</strong><span data-hub="f3d">Önce dene, sonra karar ver</span></div>
+          </div>
+        </div>
+        <figure class="hub-opening-visual"><img src="./hub/assets/oki_answer.jpg" alt="EduVerse Oki" loading="eager"></figure>
+      </article>
+
+      <section class="hub-card hub-showcase" aria-labelledby="hubShowTitle">
+        <div class="hub-section-head">
+          <div><p class="hub-kicker" data-hub="showK">GERÇEK EDUVERSE</p><h3 id="hubShowTitle" data-hub="showT">Nasıl göründüğünü saklamıyoruz.</h3></div>
+          <p data-hub="showD">Buradaki görüntüler doğrudan EduVerse dünyasından.</p>
+        </div>
+        <div class="hub-gallery-top">
+          <figure class="hub-shot"><img src="./hub/assets/oki_topics.jpg" alt="Oki"><figcaption class="hub-shot-label" data-hub="sOki">Oki’ye Sor</figcaption></figure>
+          <div class="hub-portrait-pair">
+            <figure class="hub-shot"><img src="./hub/assets/rooms.jpg" alt="EduVerse oda dünyası"><figcaption class="hub-shot-label" data-hub="sRooms">33 Oda Dünyası</figcaption></figure>
+            <figure class="hub-shot"><img src="./hub/assets/character.jpg" alt="EduVerse karakteri"><figcaption class="hub-shot-label" data-hub="sChar">Karakter</figcaption></figure>
+          </div>
+        </div>
+        <div class="hub-gallery-bottom">
+          <figure class="hub-shot"><img src="./hub/assets/music.jpg" alt="EduVerse Müzik Odası"><figcaption class="hub-shot-label" data-hub="sMusic">Müzik Odası</figcaption></figure>
+          <figure class="hub-shot"><img src="./hub/assets/gym.jpg" alt="EduVerse Çaba Odası"><figcaption class="hub-shot-label" data-hub="sGym">Çaba Odası</figcaption></figure>
+        </div>
+      </section>
+
+      <div class="hub-access">
+        <section class="hub-card hub-free">
+          <p class="hub-kicker" data-hub="freeK">ÖNCE ÜCRETSİZ KEŞFET</p>
+          <h3 data-hub="freeT">5 oda açık. Kapı burada.</h3>
+          <p data-hub="freeD">Ücretsiz odalarla başlayın.</p>
+          <div class="hub-free-rooms">
+            <a class="hub-room-pill" data-hub="r1" data-hub-room="okiyesor" href="https://play.eduverse.club/?room=okiyesor">Oki’ye Sor</a>
+            <a class="hub-room-pill" data-hub="r2" data-hub-room="cevre" href="https://play.eduverse.club/?room=cevre">Çevre</a>
+            <a class="hub-room-pill" data-hub="r3" data-hub-room="hayvanat" href="https://play.eduverse.club/?room=hayvanat">Hayvanat</a>
+            <a class="hub-room-pill" data-hub="r4" data-hub-room="boyama" href="https://play.eduverse.club/?room=boyama">Boyama</a>
+            <a class="hub-room-pill" data-hub="r5" data-hub-room="bilgitoplari" href="https://play.eduverse.club/?room=bilgitoplari">Bilgi Topları</a>
+          </div>
+          <div class="hub-actions">
+            <a class="hub-action primary" data-hub="web" data-hub-link="web" href="https://play.eduverse.club/?room=okiyesor">WEBDE OYNA · 5 ÜCRETSİZ ODA</a>
+            <a class="hub-action" data-hub="android" data-hub-link="android" href="https://play.google.com/store/apps/details?id=club.eduverse.app">ANDROID · GOOGLE PLAY</a>
+            <a class="hub-action is-disabled" data-hub="ios" data-hub-link="ios" href="#" aria-disabled="true">iOS · APP STORE · YAKINDA</a>
+          </div>
+        </section>
+        <section class="hub-card hub-family">
+          <p class="hub-kicker" data-hub="famK">AİLE İÇİN TASARLANDI</p>
+          <h3 data-hub="famT">Çocuk keşfeder. Aile yanında kalır.</h3>
+          <p data-hub="famD">Özgür keşif ile aile kontrolü aynı yapıda buluşur.</p>
+          <div class="hub-family-grid">
+            <article class="hub-family-item"><span>🔒</span><b data-hub="fam1">Ebeveyn Kapısı</b><small data-hub="fam1d">Aile kontrolü.</small></article>
+            <article class="hub-family-item"><span>📄</span><b data-hub="fam2">Aile PDF Raporu</b><small data-hub="fam2d">Kullanım özeti.</small></article>
+            <article class="hub-family-item"><span>🌐</span><b data-hub="fam3">5 Dil</b><small data-hub="fam3d">Beş farklı dil.</small></article>
+            <article class="hub-family-item"><span>✓</span><b data-hub="fam4">Tek seferlik erişim</b><small data-hub="fam4d">Açık paket yapısı.</small></article>
+          </div>
+        </section>
+      </div>
+
+      <section class="hub-card hub-pricing" aria-labelledby="hubPriceTitle">
+        <div class="hub-section-head">
+          <div><p class="hub-kicker" data-hub="priceK">ERİŞİM SEÇENEKLERİ</p><h3 id="hubPriceTitle" data-hub="priceT">Basit, net, tek seferlik.</h3></div>
+          <p data-hub="priceD">Önce ücretsiz başlayın; isterseniz erişimi büyütün.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card free">
+            <span class="price-chip" data-hub="freeC">ÜCRETSİZ</span><h3 data-hub="freePT">Ücretsiz Başlangıç</h3><div class="price"><b>0 €</b></div><p data-hub="freePD">5 oda hemen açık.</p><button type="button" class="price-btn" data-plan="free" data-hub="hidden">Yakında Açılıyor</button>
+          </article>
+          <article class="price-card five">
+            <span class="price-chip" data-hub="fiveC">5 ODA · TEK PAKET</span><h3 data-hub="fivePT">EduVerse 5 Oda Paketi</h3><div class="price"><b>2,99 €</b><span data-hub="once">tek seferlik</span></div><p data-hub="fivePD">Bulmaca · Refleks · Teknoloji · Nefes · Sağlık</p><button type="button" class="price-btn" data-plan="five" data-hub="hidden">Yakında Açılıyor</button>
+          </article>
+          <article class="price-card full featured">
+            <span class="best-badge" data-hub="best">EN İYİ DEĞER</span><span class="price-chip" data-hub="fullC">TAM DENEYİM</span><h3 data-hub="fullPT">EduVerse Tam Erişim</h3><div class="price"><b>6,99 €</b><span data-hub="once">tek seferlik</span></div><p data-hub="fullPD">Tüm ücretli oda içeriklerini açın.</p><button type="button" class="price-btn primary" data-plan="full" data-hub="hidden">Yakında Açılıyor</button>
+          </article>
+          <article class="price-card upgrade">
+            <span class="price-chip" data-hub="upC">YÜKSELTME</span><h3 data-hub="upPT">Tam Erişime Geç</h3><div class="price"><b>5,99 €</b><span data-hub="once">tek seferlik</span></div><p data-hub="upPD">5 Oda Paketi sahipleri için yükseltme.</p><button type="button" class="price-btn" data-plan="upgrade" data-hub="hidden">Yakında Açılıyor</button>
+          </article>
+        </div>
+      </section>
+
+      <div class="hub-bridge">
+        <section class="hub-card hub-world">
+          <p class="hub-kicker" data-hub="worldK">DÜNYA AİLESİ</p><h3 data-hub="worldT">Bir aile katılır. Bir ülke daha görünür olur.</h3><p data-hub="worldD">EduVerse ailesine katılım Dünya Ligi’nde ülke temsilini büyütür.</p>
+          <div class="hub-world-flow"><span class="hub-world-node" data-hub="node1">Aile</span><span class="hub-world-arrow">→</span><span class="hub-world-node" data-hub="node2">Ülke oyu</span><span class="hub-world-arrow">→</span><span class="hub-world-node" data-hub="node3">Dünya Ligi</span></div>
+          <div class="hub-actions" style="margin-top:14px"><button class="hub-action" id="hubLeague" type="button" data-hub="leagueBtn">DÜNYA LİGİNE DÖN</button><button class="hub-action primary" id="hubFund" type="button" data-hub="fundBtn">İYİLİK FONUNU GÖR</button></div>
+        </section>
+        <section class="hub-card hub-platform">
+          <p class="hub-kicker" data-hub="platK">HER YERDEN ERİŞİM</p><h3 data-hub="platT">Web bugün. Android bugün. iOS yakında.</h3><p data-hub="platD">Aynı EduVerse dünyasına uygun cihazdan girin.</p>
+          <div class="hub-platform-actions"><a class="hub-action primary" data-hub="web" data-hub-link="web" href="https://play.eduverse.club/?room=okiyesor">WEBDE OYNA</a><a class="hub-action" data-hub="android" data-hub-link="android" href="https://play.google.com/store/apps/details?id=club.eduverse.app">GOOGLE PLAY</a><a class="hub-action is-disabled" data-hub="ios" data-hub-link="ios" href="#" aria-disabled="true">APP STORE · YAKINDA</a></div>
+        </section>
+      </div>
+      <div class="hub-toast" id="hubToast" role="status" aria-live="polite"></div>
+    </section>
+
+    <footer class="foot">
+      <span></span>
+      <span></span>
+    </footer>
+  
+<section class="goodness-fund" id="goodnessFund" aria-labelledby="goodnessFundTitle">
+  <div class="goodness-head">
+    <div>
+      <div class="goodness-kicker">EDUVERSE</div>
+      <h2 id="goodnessFundTitle">İyilik Fonu</h2>
+    </div>
+  </div>
+
+  <div class="goodness-grid">
+    <article class="fund-vault">
+      <div class="fund-orbit fund-orbit-a" aria-hidden="true"></div>
+      <div class="fund-orbit fund-orbit-b" aria-hidden="true"></div>
+      <div class="fund-core" aria-live="polite">
+        <span>Gerçek mevcut tutar</span>
+        <strong>—</strong>
+      </div>
+
+      <div class="fund-meta">
+        <div class="fund-meta-card">
+          <span>Hesaplama yöntemi</span>
+          <strong>—</strong>
+        </div>
+        <div class="fund-meta-card">
+          <span>Dönem</span>
+          <strong>—</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="fund-projects">
+      <div class="fund-section-title">Doğrulanmış projeler</div>
+
+      <div class="project-stack">
+        <div class="project-card">
+          <span class="project-index">01</span>
+          <strong>Eğitim / burs / materyal</strong>
+        </div>
+        <div class="project-card">
+          <span class="project-index">02</span>
+          <strong>Çocuk sağlığı</strong>
+        </div>
+        <div class="project-card">
+          <span class="project-index">03</span>
+          <strong>Okul / kütüphane / teknoloji desteği</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="fund-proof">
+      <div class="proof-row">
+        <span>Topluluk oy sonucu</span>
+        <strong>—</strong>
+      </div>
+      <div class="proof-row">
+        <span>Ödeme / tamamlanma kanıtı</span>
+        <strong>—</strong>
+      </div>
+      <div class="proof-row">
+        <span>Geçmiş projeler arşivi</span>
+        <strong>—</strong>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+  <script src="./assets/countries-geometry.js"></script>
+  <script src="./assets/world_tex.js"></script>
+  <script src="./app.js"></script>
+
+
+<script src="./slogan-v14.js"></script>
+<script src="./cleanup-old-slogan-v15.js"></script>
+<script src="./LANG5.js"></script>
+<script src="./LEAGUE7.js"></script>
+<script src="./hub/store-config.js"></script>
+<script src="./hub/vitrin2-config.js"></script>
+<script src="./hub/vitrin-kumandasi.js"></script>
+<script src="./hub/vitrin2.js"></script>
+<script src="./hub/launch.js"></script>
+<script src="./hub/story.js"></script>
+<script src="./hub/purchase-channels.js"></script>
+<script src="./hub/web-entry.js"></script>
+<script src="./hub/HUB.js"></script>
+<script src="./hub/archive.js?v=K6R7"></script><script src="./hub/reader.js?v=K6R9"></script><script src="./hub/askida.js?v=K6R12"></script><script src="./hub/fund2.js?v=K6R17"></script><script src="./hub/league2.js?v=K6R18"></script><script src="./hub/league3.js?v=K6R19"></script></body>
+</html>

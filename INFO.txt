@@ -1,0 +1,5 @@
+EDUVERSE W5_K6A
+TABAN: W5_K6
+IS: Kurucu hikayesi sinematik akan-kitap iyilestirmesi
+KILIT: Dunya + Lig + 21 Eylul sayaci + Store/Web akisi degistirilmedi.
+GERCEK HIKAYE: Owner metni gelmeden placeholder anlatim korunur.

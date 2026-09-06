@@ -1,0 +1,207 @@
+/* EduVerse World + Store bridge. Customer-facing module only. */
+#eduverseStoreBridge{margin-top:18px;color:var(--text)}
+#eduverseStoreBridge *{box-sizing:border-box}
+#eduverseStoreBridge .hub-card{border:1px solid rgba(133,205,255,.16);border-radius:26px;background:linear-gradient(180deg,rgba(10,27,47,.94),rgba(4,14,25,.96));box-shadow:0 24px 72px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.025)}
+#eduverseStoreBridge .hub-kicker{margin:0 0 8px;color:var(--ice);font-size:.69rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+#eduverseStoreBridge h2,#eduverseStoreBridge h3,#eduverseStoreBridge p{margin-top:0}
+#eduverseStoreBridge h2{margin-bottom:12px;font-size:clamp(1.9rem,3.4vw,3.2rem);line-height:1.02;letter-spacing:-.045em}
+#eduverseStoreBridge h3{margin-bottom:8px;font-size:1.12rem;letter-spacing:-.025em}
+#eduverseStoreBridge p{color:#9fb4c6;line-height:1.62}
+#eduverseStoreBridge .hub-gold{color:var(--gold)}
+
+/* 1. Opening: story + real Oki screen, no crop. */
+#eduverseStoreBridge .hub-opening{display:grid;grid-template-columns:minmax(360px,.88fr) minmax(0,1.25fr);gap:18px;align-items:stretch;padding:24px;overflow:hidden;position:relative}
+#eduverseStoreBridge .hub-opening::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 12%,rgba(113,82,255,.11),transparent 26%),radial-gradient(circle at 15% 0%,rgba(48,184,255,.09),transparent 30%)}
+#eduverseStoreBridge .hub-opening-copy,#eduverseStoreBridge .hub-opening-visual{position:relative;z-index:1}
+#eduverseStoreBridge .hub-opening-copy{display:flex;flex-direction:column;justify-content:center;padding:12px 6px}
+#eduverseStoreBridge .hub-opening-copy>p{max-width:670px;margin-bottom:18px;font-size:1rem;color:#c2d1de}
+#eduverseStoreBridge .hub-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:4px}
+#eduverseStoreBridge .hub-fact{padding:12px;border:1px solid rgba(255,255,255,.065);border-radius:15px;background:rgba(255,255,255,.027)}
+#eduverseStoreBridge .hub-fact strong{display:block;color:#f4f9fd;font-size:1.02rem}
+#eduverseStoreBridge .hub-fact span{display:block;margin-top:3px;color:#8299ad;font-size:.69rem;line-height:1.35}
+#eduverseStoreBridge .hub-opening-visual{display:flex;align-items:center;justify-content:center;min-width:0}
+#eduverseStoreBridge .hub-opening-visual img{display:block;width:100%;height:auto;border-radius:20px;border:1px solid rgba(255,255,255,.08);box-shadow:0 26px 65px rgba(0,0,0,.38)}
+
+/* 2. Product gallery: natural aspect ratios, never crop screenshots. */
+#eduverseStoreBridge .hub-showcase{margin-top:16px;padding:24px}
+#eduverseStoreBridge .hub-section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}
+#eduverseStoreBridge .hub-section-head>div{max-width:760px}
+#eduverseStoreBridge .hub-section-head p{max-width:560px;margin:0;font-size:.86rem}
+#eduverseStoreBridge .hub-gallery-top{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(330px,.72fr);gap:12px;align-items:start}
+#eduverseStoreBridge .hub-portrait-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+#eduverseStoreBridge .hub-gallery-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+#eduverseStoreBridge .hub-shot{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.075);border-radius:18px;background:#050e1b;box-shadow:0 14px 36px rgba(0,0,0,.22)}
+#eduverseStoreBridge .hub-shot img{display:block;width:100%;height:auto;object-fit:contain;background:#050e1b}
+#eduverseStoreBridge .hub-shot-label{position:absolute;left:10px;bottom:10px;padding:7px 10px;border:1px solid rgba(255,255,255,.10);border-radius:10px;background:rgba(2,10,19,.82);backdrop-filter:blur(10px);font-size:.68rem;font-weight:850;color:#eef9ff}
+
+/* 3. Free entry + family. */
+#eduverseStoreBridge .hub-access{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(330px,.88fr);gap:16px;margin-top:16px}
+#eduverseStoreBridge .hub-free,#eduverseStoreBridge .hub-family{padding:23px}
+#eduverseStoreBridge .hub-free-rooms{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:17px 0}
+#eduverseStoreBridge .hub-room-pill{display:grid;place-items:center;min-height:72px;padding:8px;text-align:center;text-decoration:none;border:1px solid color-mix(in srgb,var(--edu-accent,#79e8ff) 22%,transparent);border-radius:15px;background:color-mix(in srgb,var(--edu-accent,#79e8ff) 5%,transparent);font-size:.72rem;font-weight:850;color:var(--edu-text,#f4f8ff);transition:transform .18s ease,border-color .18s ease,background .18s ease}
+#eduverseStoreBridge .hub-room-pill:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--edu-accent,#79e8ff) 48%,transparent);background:color-mix(in srgb,var(--edu-accent,#79e8ff) 10%,transparent)}
+#eduverseStoreBridge .hub-actions{display:flex;flex-wrap:wrap;gap:9px}
+#eduverseStoreBridge .hub-action{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;border:1px solid rgba(139,233,255,.24);border-radius:14px;background:rgba(139,233,255,.055);color:#edfaff;text-decoration:none;font-size:.77rem;font-weight:900;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+#eduverseStoreBridge .hub-action:hover{transform:translateY(-1px);border-color:rgba(139,233,255,.45);background:rgba(139,233,255,.10)}
+#eduverseStoreBridge .hub-action.primary{border-color:rgba(247,217,138,.36);background:linear-gradient(135deg,rgba(247,217,138,.20),rgba(81,194,255,.12));color:#ffe9a2}
+#eduverseStoreBridge .hub-action.is-disabled{opacity:.5;pointer-events:none}
+#eduverseStoreBridge .hub-family-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}
+#eduverseStoreBridge .hub-family-item{padding:14px;border:1px solid rgba(255,255,255,.06);border-radius:15px;background:rgba(255,255,255,.026)}
+#eduverseStoreBridge .hub-family-item span{font-size:1.05rem}
+#eduverseStoreBridge .hub-family-item b{display:block;margin:7px 0 3px;font-size:.82rem}
+#eduverseStoreBridge .hub-family-item small{display:block;color:#859caf;font-size:.69rem;line-height:1.45}
+
+/* 4. Pricing: original storefront structure preserved. */
+#eduverseStoreBridge .hub-pricing{margin-top:16px;padding:24px}
+#eduverseStoreBridge .pricing-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+#eduverseStoreBridge .price-card{position:relative;display:flex;flex-direction:column;min-height:365px;padding:20px;border:1px solid rgba(255,255,255,.07);border-radius:20px;background:linear-gradient(180deg,rgba(13,31,54,.82),rgba(5,15,28,.94));box-shadow:0 18px 48px rgba(0,0,0,.18)}
+#eduverseStoreBridge .price-card.featured{border-color:rgba(247,217,138,.36);box-shadow:0 24px 60px rgba(0,0,0,.24),0 0 30px rgba(247,217,138,.055)}
+#eduverseStoreBridge .price-chip{font-size:.60rem;font-weight:950;letter-spacing:.11em;color:#8ebce8}
+#eduverseStoreBridge .best-badge{position:absolute;right:15px;top:15px;padding:5px 8px;border-radius:999px;background:var(--gold);color:#07111c;font-size:.57rem;font-weight:950}
+#eduverseStoreBridge .price-card h3{margin:19px 0 12px;font-size:1rem}
+#eduverseStoreBridge .price{display:flex;align-items:end;gap:7px;margin-bottom:15px}
+#eduverseStoreBridge .price b{font-size:2.35rem;letter-spacing:-.055em;color:#f8fcff}
+#eduverseStoreBridge .price span{padding-bottom:5px;color:#7d93a8;font-size:.67rem}
+#eduverseStoreBridge .price-card p{margin-bottom:15px;color:#91a5b7;line-height:1.54;font-size:.78rem}
+#eduverseStoreBridge .price-btn{margin-top:auto;min-height:44px;border-radius:13px;cursor:pointer;font-weight:900;color:#eaf4ff;background:rgba(85,183,255,.10);border:1px solid rgba(85,183,255,.22)}
+#eduverseStoreBridge .price-btn.primary{color:#07111c;background:linear-gradient(135deg,var(--gold),#fff0a6);border:0}
+#eduverseStoreBridge .ev-buy-channels{display:grid;grid-template-columns:1fr;gap:7px;margin-top:auto}
+#eduverseStoreBridge .ev-buy-channel,#eduverseStoreBridge .ev-web-entry{display:flex;align-items:center;justify-content:center;min-height:43px;padding:8px 10px;border-radius:12px;text-decoration:none;text-align:center;font-size:.67rem;font-weight:900;line-height:1.25;transition:transform .18s ease,filter .18s ease}
+#eduverseStoreBridge .ev-buy-channel:not(.is-disabled):hover,#eduverseStoreBridge .ev-web-entry:hover{transform:translateY(-1px);filter:brightness(1.08)}
+#eduverseStoreBridge .ev-buy-android,#eduverseStoreBridge .ev-web-entry{border:1px solid rgba(139,233,255,.24);background:rgba(139,233,255,.07);color:#eaf8ff}
+#eduverseStoreBridge .ev-buy-ios{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:#a2b3c2}
+#eduverseStoreBridge .ev-buy-channel.is-disabled{opacity:.48;cursor:not-allowed}
+#eduverseStoreBridge .ev-web-entry-free{margin:0 0 7px;border-color:rgba(247,217,138,.36);background:linear-gradient(135deg,rgba(247,217,138,.19),rgba(81,194,255,.10));color:#ffe8a0}
+#eduverseStoreBridge .ev-buy-note{margin-top:8px;color:#7890a4;font-size:.62rem;line-height:1.4}
+
+/* 5. Compact platform / world-family bridge. */
+#eduverseStoreBridge .hub-bridge{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);gap:16px;margin-top:16px}
+#eduverseStoreBridge .hub-world,#eduverseStoreBridge .hub-platform{padding:22px}
+#eduverseStoreBridge .hub-world-flow{display:flex;align-items:center;gap:10px;margin-top:15px}
+#eduverseStoreBridge .hub-world-node{flex:1;padding:12px;border:1px solid rgba(255,255,255,.065);border-radius:14px;background:rgba(255,255,255,.025);text-align:center;color:#dbe9f3;font-size:.73rem;font-weight:800}
+#eduverseStoreBridge .hub-world-arrow{color:var(--gold);font-weight:950}
+#eduverseStoreBridge .hub-platform-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}
+#eduverseStoreBridge .hub-platform .hub-action{width:100%}
+
+#eduverseStoreBridge .hub-toast{position:fixed;z-index:9999;left:50%;bottom:24px;transform:translate(-50%,18px);max-width:min(520px,calc(100% - 28px));padding:11px 15px;border:1px solid rgba(139,233,255,.22);border-radius:13px;background:rgba(4,16,29,.95);box-shadow:0 16px 50px rgba(0,0,0,.4);color:#eaf8ff;font-size:.76rem;font-weight:800;opacity:0;pointer-events:none;transition:.2s ease}
+#eduverseStoreBridge .hub-toast.show{opacity:1;transform:translate(-50%,0)}
+
+#eduverseStoreBridge[dir="rtl"]{text-align:right}
+#eduverseStoreBridge[dir="rtl"] .hub-shot-label{left:auto;right:10px}
+#eduverseStoreBridge[dir="rtl"] .best-badge{right:auto;left:15px}
+
+@media(max-width:1180px){
+  #eduverseStoreBridge .hub-opening{grid-template-columns:1fr}
+  #eduverseStoreBridge .hub-gallery-top{grid-template-columns:1fr}
+  #eduverseStoreBridge .hub-portrait-pair{grid-template-columns:1fr 1fr;max-width:620px;margin-inline:auto}
+  #eduverseStoreBridge .hub-access,#eduverseStoreBridge .hub-bridge{grid-template-columns:1fr}
+  #eduverseStoreBridge .pricing-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  #eduverseStoreBridge{margin-top:12px}
+  #eduverseStoreBridge .hub-opening,#eduverseStoreBridge .hub-showcase,#eduverseStoreBridge .hub-free,#eduverseStoreBridge .hub-family,#eduverseStoreBridge .hub-pricing,#eduverseStoreBridge .hub-world,#eduverseStoreBridge .hub-platform{padding:17px}
+  #eduverseStoreBridge .hub-section-head{display:block}
+  #eduverseStoreBridge .hub-section-head p{margin-top:8px}
+  #eduverseStoreBridge .hub-gallery-bottom,#eduverseStoreBridge .pricing-grid{grid-template-columns:1fr}
+  #eduverseStoreBridge .hub-free-rooms{grid-template-columns:1fr 1fr}
+  #eduverseStoreBridge .hub-family-grid{grid-template-columns:1fr}
+  #eduverseStoreBridge .hub-facts{grid-template-columns:1fr}
+  #eduverseStoreBridge .hub-world-flow{display:grid;grid-template-columns:1fr}
+  #eduverseStoreBridge .hub-world-arrow{transform:rotate(90deg);text-align:center}
+  #eduverseStoreBridge .hub-platform-actions{grid-template-columns:1fr}
+}
+@media(max-width:480px){#eduverseStoreBridge .hub-portrait-pair{grid-template-columns:1fr}#eduverseStoreBridge .hub-free-rooms{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#eduverseStoreBridge *{transition:none!important}}
+
+/* Keep the 194-country league complete without letting it define page height. */
+@media(min-width:981px){
+  .hero-grid{align-items:start!important}
+  .hero-grid>.globe-panel{align-self:start!important}
+  .hero-grid>.side-stack{align-self:start!important;overflow:hidden!important}
+  .hero-grid>.side-stack>.league-card{min-height:0!important;overflow:hidden!important}
+  .hero-grid>.side-stack>.league-card>.leaderboard{min-height:0!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain}
+}
+
+
+/* WORLD THEME SYNC — colors only; geometry remains unchanged. */
+body[data-edu-theme] #eduverseStoreBridge{color:var(--edu-text,#f4f8ff)}
+body[data-edu-theme] #eduverseStoreBridge .hub-card{
+  border-color:var(--edu-border,rgba(88,190,255,.24));
+  background:linear-gradient(180deg,var(--edu-panel-1,rgba(8,24,44,.96)),var(--edu-panel-2,rgba(5,15,28,.95)));
+  box-shadow:0 24px 72px rgba(0,0,0,.28),0 0 30px var(--edu-glow,rgba(73,175,255,.12)),inset 0 1px 0 rgba(255,255,255,.025)
+}
+body[data-edu-theme] #eduverseStoreBridge .hub-kicker{color:var(--edu-accent,#79e8ff)}
+body[data-edu-theme] #eduverseStoreBridge p,
+body[data-edu-theme] #eduverseStoreBridge .hub-family-item small,
+body[data-edu-theme] #eduverseStoreBridge .ev-buy-note{color:var(--edu-muted,#a9bad0)}
+body[data-edu-theme] #eduverseStoreBridge .hub-opening-copy>p{color:color-mix(in srgb,var(--edu-text,#f4f8ff) 78%,var(--edu-muted,#a9bad0))}
+body[data-edu-theme] #eduverseStoreBridge .hub-opening::before{
+  background:radial-gradient(circle at 82% 12%,color-mix(in srgb,var(--edu-accent-2,#8b74ff) 11%,transparent),transparent 26%),radial-gradient(circle at 15% 0%,color-mix(in srgb,var(--edu-accent,#79e8ff) 9%,transparent),transparent 30%)
+}
+body[data-edu-theme] #eduverseStoreBridge .hub-fact,
+body[data-edu-theme] #eduverseStoreBridge .hub-family-item,
+body[data-edu-theme] #eduverseStoreBridge .hub-world-node{
+  border-color:color-mix(in srgb,var(--edu-border,rgba(88,190,255,.24)) 34%,transparent);
+  background:color-mix(in srgb,var(--edu-panel-1,rgba(8,24,44,.96)) 42%,transparent)
+}
+body[data-edu-theme] #eduverseStoreBridge .hub-fact strong,
+body[data-edu-theme] #eduverseStoreBridge .price b,
+body[data-edu-theme] #eduverseStoreBridge .hub-world-node{color:var(--edu-text,#f4f8ff)}
+body[data-edu-theme] #eduverseStoreBridge .price-card{
+  border-color:color-mix(in srgb,var(--edu-border,rgba(88,190,255,.24)) 42%,transparent);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--edu-panel-1,rgba(8,24,44,.96)) 92%,transparent),var(--edu-panel-2,rgba(5,15,28,.95)))
+}
+body[data-edu-theme] #eduverseStoreBridge .price-card.featured{border-color:color-mix(in srgb,var(--edu-warm,#ffd979) 55%,transparent);box-shadow:0 24px 60px rgba(0,0,0,.24),0 0 30px color-mix(in srgb,var(--edu-warm,#ffd979) 12%,transparent)}
+body[data-edu-theme] #eduverseStoreBridge .price-chip{color:color-mix(in srgb,var(--edu-accent,#79e8ff) 78%,var(--edu-text,#f4f8ff))}
+body[data-edu-theme] #eduverseStoreBridge .best-badge{background:var(--edu-warm,#ffd979)}
+body[data-edu-theme] #eduverseStoreBridge .hub-action,
+body[data-edu-theme] #eduverseStoreBridge .ev-buy-android,
+body[data-edu-theme] #eduverseStoreBridge .ev-web-entry{
+  border-color:var(--edu-border,rgba(88,190,255,.24));
+  background:color-mix(in srgb,var(--edu-accent,#79e8ff) 7%,transparent);
+  color:var(--edu-text,#f4f8ff)
+}
+body[data-edu-theme] #eduverseStoreBridge .hub-action.primary,
+body[data-edu-theme] #eduverseStoreBridge .ev-web-entry-free{
+  border-color:color-mix(in srgb,var(--edu-warm,#ffd979) 48%,transparent);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--edu-warm,#ffd979) 20%,transparent),color-mix(in srgb,var(--edu-accent,#79e8ff) 11%,transparent));
+  color:var(--edu-warm,#ffd979)
+}
+body[data-edu-theme] #eduverseStoreBridge .hub-world-arrow{color:var(--edu-warm,#ffd979)}
+body[data-edu-theme] #eduverseStoreBridge .hub-toast{border-color:var(--edu-border,rgba(88,190,255,.24));background:var(--edu-panel-2,rgba(5,15,28,.95));color:var(--edu-text,#f4f8ff)}
+
+
+/* 5. Launch countdown -> live local clock. Owner date is config-controlled. */
+#launchCountdown{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.82fr);gap:24px;align-items:center;margin-top:18px;padding:24px 26px;overflow:hidden;border:1px solid rgba(133,205,255,.18);border-radius:26px;background:linear-gradient(180deg,rgba(10,27,47,.94),rgba(4,14,25,.96));box-shadow:0 24px 72px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.025)}
+#launchCountdown .launch-countdown__glow{position:absolute;inset:-35%;pointer-events:none;background:radial-gradient(circle at 72% 42%,color-mix(in srgb,var(--edu-accent,#79e8ff) 15%,transparent),transparent 25%),radial-gradient(circle at 18% 0%,color-mix(in srgb,var(--edu-warm,#ffd979) 10%,transparent),transparent 26%);opacity:.88}
+#launchCountdown .launch-countdown__copy,#launchCountdown .launch-countdown__display{position:relative;z-index:1;min-width:0}
+#launchCountdown .launch-countdown__kicker{margin:0 0 8px;color:var(--edu-accent,var(--ice));font-size:.69rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+#launchCountdown h2{margin:0 0 9px;font-size:clamp(1.55rem,3vw,2.55rem);line-height:1.04;letter-spacing:-.04em}
+#launchCountdown .launch-countdown__subtitle{max-width:720px;margin:0;color:var(--edu-muted,#9fb4c6);font-size:.9rem;line-height:1.55}
+#launchCountdown .language-promo{display:inline-flex;align-items:center;gap:10px;margin-top:15px;padding:8px 11px;border:1px solid color-mix(in srgb,var(--edu-border,rgba(133,205,255,.18)) 65%,transparent);border-radius:999px;background:color-mix(in srgb,var(--edu-accent,#79e8ff) 5%,transparent);font-size:.67rem}
+#launchCountdown .language-promo span{color:var(--edu-warm,var(--gold));font-weight:950;letter-spacing:.11em}
+#launchCountdown .language-promo strong{color:var(--edu-text,#f4f8ff);font-size:.68rem;letter-spacing:.08em}
+#launchCountdown .launch-countdown__display{padding:15px;border:1px solid color-mix(in srgb,var(--edu-border,rgba(133,205,255,.18)) 70%,transparent);border-radius:21px;background:rgba(2,10,19,.36);box-shadow:inset 0 1px 0 rgba(255,255,255,.035)}
+#launchCountdown .launch-countdown__units{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#launchCountdown .launch-countdown__unit{display:grid;place-items:center;min-width:0;padding:14px 8px;border:1px solid color-mix(in srgb,var(--edu-border,rgba(133,205,255,.18)) 48%,transparent);border-radius:16px;background:color-mix(in srgb,var(--edu-panel-1,rgba(10,27,47,.94)) 56%,transparent)}
+#launchCountdown .launch-countdown__unit strong{font-variant-numeric:tabular-nums;color:var(--edu-text,#f4f8ff);font-size:clamp(1.4rem,3vw,2.35rem);line-height:1;font-weight:900;letter-spacing:-.04em}
+#launchCountdown .launch-countdown__unit span{margin-top:7px;color:var(--edu-muted,#9fb4c6);font-size:.58rem;font-weight:900;letter-spacing:.13em}
+#launchCountdown .launch-clock{display:grid;place-items:center;min-height:92px;text-align:center}
+#launchCountdown .launch-clock__date{color:var(--edu-text,#f4f8ff);font-size:clamp(1rem,2.1vw,1.45rem);font-weight:850;letter-spacing:-.02em}
+#launchCountdown .launch-clock__time{margin-top:5px;color:var(--edu-warm,var(--gold));font-variant-numeric:tabular-nums;font-size:clamp(2rem,5vw,3.6rem);font-weight:950;line-height:1;letter-spacing:-.05em;text-shadow:0 0 22px color-mix(in srgb,var(--edu-warm,#ffd979) 22%,transparent)}
+#launchCountdown .launch-clock small{margin-top:8px;color:var(--edu-muted,#9fb4c6);font-size:.61rem;font-weight:850;letter-spacing:.13em}
+#launchCountdown [hidden]{display:none!important}
+/* Clock mode becomes a compact live card after countdown ends. */
+#launchCountdown[data-mode="clock"]{width:min(100%,430px);margin-left:auto;padding:0;grid-template-columns:1fr;gap:0;border:0;background:transparent;box-shadow:none;overflow:visible}
+#launchCountdown[data-mode="clock"] .launch-countdown__glow,#launchCountdown[data-mode="clock"] .launch-countdown__copy{display:none!important}
+#launchCountdown[data-mode="clock"] .launch-countdown__display{width:100%;padding:11px 14px;border-color:color-mix(in srgb,var(--edu-warm,#ffd979) 42%,transparent);border-radius:17px;background:linear-gradient(180deg,color-mix(in srgb,var(--edu-panel-1,rgba(8,24,44,.96)) 82%,transparent),color-mix(in srgb,var(--edu-panel-2,rgba(5,15,28,.95)) 86%,transparent));box-shadow:0 12px 34px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.035)}
+#launchCountdown[data-mode="clock"] .launch-countdown__units{display:none!important}
+#launchCountdown[data-mode="clock"] .launch-clock{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"date time" "note time";column-gap:14px;row-gap:2px;align-items:center;min-height:0;text-align:left}
+#launchCountdown[data-mode="clock"] .launch-clock__date{grid-area:date;font-size:.84rem;line-height:1.15;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#launchCountdown[data-mode="clock"] .launch-clock__time{grid-area:time;margin:0;font-size:clamp(1.65rem,3vw,2.05rem);line-height:1;font-weight:950;white-space:nowrap;text-shadow:0 0 18px color-mix(in srgb,var(--edu-warm,#ffd979) 18%,transparent)}
+#launchCountdown[data-mode="clock"] .launch-clock small{grid-area:note;margin:0;font-size:.52rem;line-height:1.2;letter-spacing:.11em}
+body[data-edu-theme] #launchCountdown{border-color:var(--edu-border,rgba(88,190,255,.24));background:linear-gradient(180deg,var(--edu-panel-1,rgba(8,24,44,.96)),var(--edu-panel-2,rgba(5,15,28,.95)));box-shadow:0 24px 72px rgba(0,0,0,.28),0 0 30px var(--edu-glow,rgba(73,175,255,.12)),inset 0 1px 0 rgba(255,255,255,.025)}
+body[data-edu-theme] #launchCountdown[data-mode="clock"]{border:0;background:transparent;box-shadow:none}
+@media(max-width:900px){#launchCountdown{grid-template-columns:1fr;gap:16px;padding:20px}}
+@media(max-width:520px){#launchCountdown .launch-countdown__units{grid-template-columns:1fr 1fr}#launchCountdown .launch-countdown__unit{min-height:82px}#launchCountdown[data-mode="clock"]{width:100%;margin-left:0}#launchCountdown[data-mode="clock"] .launch-countdown__display{padding:10px 12px}#launchCountdown[data-mode="clock"] .launch-clock{column-gap:10px}#launchCountdown[data-mode="clock"] .launch-clock__date{font-size:.76rem}#launchCountdown[data-mode="clock"] .launch-clock__time{font-size:1.55rem}#launchCountdown[data-mode="clock"] .launch-clock small{font-size:.48rem}}
+@media(prefers-reduced-motion:reduce){#launchCountdown *{transition:none!important;animation:none!important}}
