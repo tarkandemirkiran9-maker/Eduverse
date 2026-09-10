@@ -1,0 +1,622 @@
+======================================================================
+EDUVERSE — YANLIŞ DNS AYARLARI KİTABI
+Olay Kaydı ve Kurtarma Rehberi
+Tarih: 10.09.2026
+======================================================================
+
+AMAÇ
+----------------------------------------------------------------------
+Bu dosya, 10.09.2026 tarihinde EduVerse web sitesinde yaşanan
+"play.eduverse.club / sunucuya ulaşılamadı" probleminin nasıl oluştuğunu,
+hangi dosyaların etkilendiğini, hangi yanlış müdahalelerin yapıldığını,
+problemin nasıl kesin olarak çözüldüğünü ve aynı durum tekrar meydana
+gelirse nereden başlanacağını kayıt altında tutmak için hazırlanmıştır.
+
+Bu dosya silinmemelidir.
+
+Ana production adresi:
+https://eduverse.club/
+
+Doğru oyun adresi:
+https://eduverse.club/game/
+
+BUGÜN NE OLDU?
+----------------------------------------------------------------------
+EduVerse web sayfasında iki adet:
+
+"WEBDE OYNA · 5 ÜCRETSİZ ODA"
+
+girişi bulunuyordu.
+
+Amaç:
+Her iki girişin de Android PLAY5 sürümündeki çalışan sisteme benzer şekilde
+oyunun ana girişine gitmesi ve kullanıcının 5 ücretsiz odayı seçebilmesiydi.
+
+PLAY5 Android sürümü incelendi.
+
+PLAY5 içinde çalışan 5 oda sistemi zaten mevcuttu.
+
+Temel oda motoru örnekleri:
+
+V48H_DOOR_ONLY
+V48H_WITH_INNER
+enterRoom
+showRoomSoru
+_showRoomHook
+_doEnterRoom
+
+Yani asıl problem oyun motorunun eksik olması değildi.
+
+ASIL PROBLEM ROUTING / YÖNLENDİRMEYDİ.
+----------------------------------------------------------------------
+
+HATA NASIL OLUŞTU?
+----------------------------------------------------------------------
+Web sayfasının oyun girişlerinde aşağıdaki adres kullanılmaya başladı:
+
+https://play.eduverse.club/
+
+Bazı yerlerde ise:
+
+https://play.eduverse.club/?room=okiyesor
+
+bulunuyordu.
+
+Bu adres gerçek production mimarisinde gerekli değildi.
+
+EduVerse oyunu ayrı bir "play.eduverse.club" sunucusunda olmak zorunda
+değildi.
+
+Doğru mimari şuydu:
+
+https://eduverse.club/
+    -> mağaza / World Hub
+
+https://eduverse.club/game/
+    -> oyun / 5 oda sistemi
+
+Fakat çalışma sırasında PLAY5 adı ile gerçek "play" subdomain kavramı
+birbirine karıştı.
+
+PLAY5:
+Android çalışan referans paketinin / sürümünün adıydı.
+
+play.eduverse.club:
+Bir internet subdomain adresiydi.
+
+Bunlar aynı şey DEĞİLDİR.
+
+Bu ayrım kaybolunca web bağlantıları yanlışlıkla:
+
+https://play.eduverse.club/
+
+adresine bağlandı.
+
+SONUÇ
+----------------------------------------------------------------------
+Telefon veya bilgisayar "WEBDE OYNA" butonuna basınca:
+
+play.eduverse.club
+
+adresine gitmeye çalıştı.
+
+Ancak bu subdomain için çalışan DNS kaydı bulunmuyordu.
+
+Sonuç:
+
+- Sunucu bulunamadı
+- Sunucuya ulaşılamadı
+- DNS çözümleme başarısız
+- Android telefonda oyun açılmadı
+- iPhone tarafında da aynı adres açılamadı
+
+Bu nedenle ilk bakışta problem DNS problemi gibi görünüyordu.
+
+Fakat esas başlangıç sebebi:
+
+YANLIŞ WEB ROUTE / YANLIŞ ABSOLUTE URL
+
+idi.
+
+YANLIŞ İKİNCİ MÜDAHALE
+----------------------------------------------------------------------
+Sorunun play.eduverse.club DNS kaydından kaynaklandığı görülünce,
+ayrı bir Cloudflare Pages projesi kullanılarak oyunun:
+
+eduverse
+
+isimli Pages projesine deployment işlemi yapıldı.
+
+Deployment adresi örneği:
+
+https://eduverse-345.pages.dev/
+
+Daha sonra:
+
+play.eduverse.club
+
+Cloudflare Pages custom domain olarak bu projeye bağlanmaya çalışıldı.
+
+Cloudflare API sonucu:
+
+DOMAIN=play.eduverse.club
+STATUS=initializing
+
+daha sonra:
+
+STATUS=pending
+
+oldu.
+
+Fakat DNS kaydı yoktu.
+
+DNS kontrolü:
+
+DNS=FAIL
+
+sonucu verdi.
+
+Cloudflare OAuth yetkisiyle DNS kaydı oluşturulmaya çalışıldığında:
+
+DNS_API_HTTP=403
+DNS_WRITE_PERMISSION=MISSING_OR_FORBIDDEN
+
+sonucu alındı.
+
+Burada problem artık daha da büyüyebilirdi.
+
+Çünkü gerçekte yeni play.eduverse.club subdomaini oluşturmaya ihtiyaç
+yoktu.
+
+DOĞRU ÇÖZÜM
+----------------------------------------------------------------------
+Sonunda mimari yeniden doğru şekilde kuruldu.
+
+Oyunun ayrı bir subdomain yerine aynı production sitesi altında çalışması
+sağlandı:
+
+https://eduverse.club/game/
+
+Yapılanlar:
+
+1. world-hub içine production game klasörü eklendi.
+
+Kaynak:
+
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\game
+
+Production içindeki hedef:
+
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\game
+
+2. Web girişleri:
+
+https://play.eduverse.club/
+
+yerine:
+
+/game/
+
+olarak değiştirildi.
+
+3. World Hub ve oyun aynı Cloudflare Pages production projesinde tutuldu:
+
+PROJECT:
+eduverse-club
+
+4. Yanlış oluşturulan:
+
+play.eduverse.club
+
+Pages custom domain bağlantısı silindi.
+
+Silme sonucu:
+
+PLAY_DOMAIN_DELETE=True
+
+5. Production kontrolleri yapıldı.
+
+Sonuç:
+
+STORE_HTTP=200
+GAME_HTTP=200
+STORE_HAS_BAD_PLAY=False
+STORE_HAS_GAME_ROUTE=True
+GAME_HAS_RETURN=True
+RESULT=PASSED
+
+Bu sonuçtan sonra telefon tekrar doğru şekilde çalışmaya başladı.
+
+KALAN GİZLİ İKİ REFERANS
+----------------------------------------------------------------------
+Ana sorun çözüldükten sonra yerel kaynak taramasında iki eski
+play.eduverse.club referansı daha bulundu.
+
+Dosya 1:
+
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\game\ev-platform\ev-config.js
+
+Eski:
+
+playBase:'https://play.eduverse.club'
+
+Yeni:
+
+playBase:'/game'
+
+
+Dosya 2:
+
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\game\ev-platform\ev-router.js
+
+Eski fallback:
+
+'https://play.eduverse.club'
+
+Yeni fallback:
+
+'/game'
+
+Temizlik sonucu:
+
+REMAINING_PLAY_REFERENCES=0
+NEW_PLAY_BASE=/game
+RESULT=PASSED_CLEAN
+
+Backup:
+
+C:\Users\Lenovo\Desktop\Edu\PLAY_CLEAN_20260910_165801
+
+Daha sonra production tekrar deploy edildi.
+
+Son production doğrulaması:
+
+LIVE_CONFIG_BAD_PLAY=False
+LIVE_ROUTER_BAD_PLAY=False
+LIVE_CONFIG_GAME_BASE=True
+LIVE_ROUTER_GAME_BASE=True
+RESULT=PASSED_PRODUCTION_CLEAN
+
+Production deployment:
+
+https://938f3504.eduverse-club.pages.dev
+
+======================================================================
+HATANIN BULUNDUĞU TEMEL DOSYALAR
+======================================================================
+
+1.
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\index.html
+
+Burada WEBDE OYNA butonlarında hardcoded play.eduverse.club bağlantıları
+bulunabiliyordu.
+
+
+2.
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\hub\HUB.js
+
+Mağazadan oyuna geçiş route'ları burada bulunuyor.
+
+
+3.
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\hub\web-entry.js
+
+Özellikle satın alma / ücretsiz başlangıç kartındaki:
+
+WEBDE OYNA · 5 ÜCRETSİZ ODA
+
+butonunun route üretimi burada yapılıyor.
+
+
+4.
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\hub\store-config.js
+
+Web production URL ayarları burada bulunabilir.
+
+
+5.
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\game\ev-platform\ev-config.js
+
+playBase ayarı burada bulunur.
+
+
+6.
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub\game\ev-platform\ev-router.js
+
+Oyunun fallback router adresi burada bulunur.
+
+
+======================================================================
+BİR DAHA AYNI HATA OLURSA İLK YAPILACAK KONTROL
+======================================================================
+
+Eğer telefon veya web:
+
+"Sunucuya ulaşılamadı"
+
+"play.eduverse.club bulunamadı"
+
+veya benzeri bir hata verirse:
+
+İLK OLARAK DNS DEĞİŞTİRİLMEYECEK.
+
+Önce kaynak kodda yanlış play adresi aranacak.
+
+READ ONLY kontrol:
+
+$H='C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub'
+Get-ChildItem $H -Recurse -File -Include *.html,*.js,*.json |
+Select-String -Pattern 'play\.eduverse\.club' -CaseSensitive:$false
+
+Beklenen doğru sonuç:
+
+0 eşleşme
+
+
+======================================================================
+İKİNCİ KONTROL
+======================================================================
+
+Doğrudan oyun yolu kontrol edilir:
+
+https://eduverse.club/game/
+
+PowerShell:
+
+Invoke-WebRequest 'https://eduverse.club/game/' -UseBasicParsing
+
+Beklenen:
+
+StatusCode = 200
+
+
+Eğer /game/ 200 dönüyor fakat butona basınca başka domain açılıyorsa:
+
+DNS PROBLEMİ DEĞİLDİR.
+
+ROUTE PROBLEMİDİR.
+
+
+======================================================================
+ÜÇÜNCÜ KONTROL
+======================================================================
+
+Ana mağaza:
+
+https://eduverse.club/
+
+Oyun:
+
+https://eduverse.club/game/
+
+Bu iki adres 200 veriyorsa yeni bir subdomain oluşturmaya çalışılmayacak.
+
+
+======================================================================
+WEBDE OYNA BUTONLARININ KURALI
+======================================================================
+
+"WEBDE OYNA · 5 ÜCRETSİZ ODA"
+
+butonları doğrudan tek bir Oki odasına gitmemelidir.
+
+YANLIŞ:
+
+/game/?room=okiyesor
+
+ve özellikle:
+
+https://play.eduverse.club/?room=okiyesor
+
+DOĞRU:
+
+/game/
+
+Kullanıcı önce ana oyun sistemine girer.
+
+Daha sonra 5 ücretsiz odadan istediğini seçer.
+
+
+======================================================================
+PLAY5 İLE PLAY SUBDOMAIN ARASINDAKİ FARK
+======================================================================
+
+PLAY5 =
+Android üzerinde çalışan referans sürüm / AAB / oyun gövdesi.
+
+play.eduverse.club =
+İnternet subdomain adresi.
+
+PLAY5 kelimesi görüldüğünde otomatik olarak:
+
+play.eduverse.club
+
+adresinin oluşturulması veya kullanılmasına izin verilmemelidir.
+
+
+======================================================================
+CLOUDFLARE PRODUCTION KURALI
+======================================================================
+
+Ana production Pages projesi:
+
+eduverse-club
+
+Ana site:
+
+https://eduverse.club/
+
+Oyun production yolu:
+
+https://eduverse.club/game/
+
+Oyun için ayrıca:
+
+play.eduverse.club
+
+oluşturulmayacak.
+
+Ancak gelecekte mimari özellikle değiştirilirse ve Tarkan Bey açıkça ayrı
+subdomain kullanılmasını isterse bu yeniden değerlendirilebilir.
+
+Bunun dışında:
+
+PLAY SUBDOMAIN OLUŞTURMA = YASAK
+
+
+======================================================================
+DEPLOYMENT KURALI
+======================================================================
+
+World Hub + game birlikte production'a gönderilecekse hedef:
+
+C:\Users\Lenovo\Desktop\Edu\W5_K6R20\world-hub
+
+Cloudflare Pages project:
+
+eduverse-club
+
+Komut yapısı:
+
+npx.cmd wrangler pages deploy "<world-hub>" --project-name eduverse-club --branch main
+
+
+======================================================================
+PRODUCTION SONRASI ZORUNLU QA
+======================================================================
+
+Kontrol edilmesi gerekenler:
+
+STORE_HTTP=200
+
+GAME_HTTP=200
+
+LIVE_BAD_PLAY=False
+
+LIVE_GAME_ROUTE=True
+
+GAME_RETURN_BUTTON=True
+
+LIVE_CONFIG_BAD_PLAY=False
+
+LIVE_ROUTER_BAD_PLAY=False
+
+LIVE_CONFIG_GAME_BASE=True
+
+LIVE_ROUTER_GAME_BASE=True
+
+
+Bu değerlerden biri başarısızsa production tamamlandı kabul edilmemelidir.
+
+
+======================================================================
+ÖNEMLİ: DNS'E NE ZAMAN DOKUNULUR?
+======================================================================
+
+Bir site açılmıyor diye ilk işlem DNS olmamalıdır.
+
+Sıra:
+
+1. Buton hangi URL'ye gidiyor?
+2. URL doğru mu?
+3. /game/ doğrudan açılıyor mu?
+4. Kaynak kodda yanlış absolute domain var mı?
+5. Cloudflare deployment doğru projeye mi yapıldı?
+6. Ancak gerçekten ayrı subdomain gerekiyorsa DNS kontrol edilir.
+
+Bu olayda gerçek hata:
+
+YANLIŞ ROUTE
+
+olduğu halde önce:
+
+DNS / CUSTOM DOMAIN
+
+problemi gibi ele alınmıştır.
+
+Bu tekrar edilmemelidir.
+
+
+======================================================================
+BUGÜNÜN EN ÖNEMLİ DERSİ
+======================================================================
+
+Çalışan bir Android referansının adı PLAY5 ise,
+bu isim internet adresine dönüştürülmez.
+
+Önce mevcut production mimarisi korunur.
+
+EduVerse için şu an doğru mimari:
+
+eduverse.club
+    |
+    +-- World Hub / Mağaza
+    |
+    +-- /game/
+            |
+            +-- 5 ücretsiz oda
+            +-- oyun sistemi
+            +-- Mağazaya Dön
+
+
+======================================================================
+KİLİTLİ SON DURUM — 10.09.2026
+======================================================================
+
+ANA WEB:
+https://eduverse.club/
+
+OYUN:
+https://eduverse.club/game/
+
+YANLIŞ PLAY DOMAIN:
+KALDIRILDI
+
+LOCAL play.eduverse.club REFERANSI:
+0
+
+PRODUCTION play.eduverse.club REFERANSI:
+0
+
+EV-CONFIG:
+playBase='/game'
+
+EV-ROUTER:
+fallback='/game'
+
+WEBDE OYNA GİRİŞLERİ:
+/game/
+
+MAĞAZAYA DÖN:
+ÇALIŞIYOR
+
+TELEFON:
+ÇALIŞIYOR
+
+PRODUCTION:
+ÇALIŞIYOR
+
+SON DURUM:
+PASSED_PRODUCTION_CLEAN
+
+
+======================================================================
+KIRMIZI ÇİZGİ
+======================================================================
+
+Aşağıdaki adres tekrar kaynak kodda görülürse alarm kabul edilecek:
+
+play.eduverse.club
+
+Önce bu dosyaya bakılacak.
+
+Yeni DNS, yeni subdomain, yeni Cloudflare Pages projesi veya yeni route
+oluşturulmadan önce mevcut:
+
+https://eduverse.club/game/
+
+mimarisi kontrol edilecek.
+
+======================================================================
+DOSYA SONU
+======================================================================

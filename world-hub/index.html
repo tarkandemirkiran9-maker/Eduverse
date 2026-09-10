@@ -9,7 +9,56 @@
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./hub/HUB.css" />
   <link rel="stylesheet" href="./hub/story.css" />
-<link rel="stylesheet" href="./hub/archive.css?v=K6R7"><link rel="stylesheet" href="./hub/reader.css?v=K6R9"><link rel="stylesheet" href="./hub/askida.css?v=K6R12"><link rel="stylesheet" href="./hub/fund2.css?v=K6R17"><link rel="stylesheet" href="./hub/league2.css?v=K6R18"><link rel="stylesheet" href="./hub/league3.css?v=K6R19"></head>
+<link rel="stylesheet" href="./hub/archive.css?v=K6R7"><link rel="stylesheet" href="./hub/reader.css?v=K6R9"><link rel="stylesheet" href="./hub/askida.css?v=K6R12"><link rel="stylesheet" href="./hub/fund2.css?v=K6R17"><link rel="stylesheet" href="./hub/league2.css?v=K6R18"><link rel="stylesheet" href="./hub/league3.css?v=K6R19">  <!-- EDUVERSE_GA4_V2 -->
+  <script>
+  (function(){
+    var host=(location.hostname||'').toLowerCase();
+    if(host!=='eduverse.club' && host!=='www.eduverse.club') return;
+
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=G-0TT3VWYV6M';
+    document.head.appendChild(s);
+
+    window.gtag('js',new Date());
+    window.gtag('config','G-0TT3VWYV6M',{send_page_view:true});
+
+    document.addEventListener('click',function(ev){
+      var el=ev.target&&ev.target.closest?ev.target.closest(
+        '#demoEventBtn,#leaderDemoBtn,#themeCycleBtn,.world-lang-btn,[data-hub-link],#hubLeague,#hubFund,a[href*="play.google.com"]'
+      ):null;
+      if(!el||typeof window.gtag!=='function') return;
+      var label=(el.getAttribute('data-hub')||el.getAttribute('data-lang')||el.id||el.textContent||'')
+        .trim().replace(/\s+/g,' ').slice(0,80);
+      window.gtag('event','eduverse_cta_click',{
+        element_id:el.id||'',
+        element_label:label,
+        page_path:location.pathname
+      });
+    },{passive:true});
+  })();
+  </script>
+  <link rel="stylesheet" href="./hub/WEB2.css?v=1" />
+  <link rel="stylesheet" href="./hub/mobile-story.css?v=CF6M1">
+<style id="ios-safari-image-fix">
+@supports (-webkit-touch-callout:none){
+  .hub-opening-visual,.hub-showcase,.hub-opening-visual img,.hub-showcase img{
+    opacity:1!important;
+    visibility:visible!important;
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+  }
+  .hub-opening-visual img,.hub-showcase img{
+    display:block!important;
+    max-width:100%!important;
+    height:auto!important;
+  }
+}
+</style>
+</head>
 <body>
   <div class="ambient ambient-a"></div>
   <div class="ambient ambient-b"></div>
@@ -211,14 +260,14 @@
           <h3 data-hub="freeT">5 oda açık. Kapı burada.</h3>
           <p data-hub="freeD">Ücretsiz odalarla başlayın.</p>
           <div class="hub-free-rooms">
-            <a class="hub-room-pill" data-hub="r1" data-hub-room="okiyesor" href="https://play.eduverse.club/?room=okiyesor">Oki’ye Sor</a>
-            <a class="hub-room-pill" data-hub="r2" data-hub-room="cevre" href="https://play.eduverse.club/?room=cevre">Çevre</a>
-            <a class="hub-room-pill" data-hub="r3" data-hub-room="hayvanat" href="https://play.eduverse.club/?room=hayvanat">Hayvanat</a>
-            <a class="hub-room-pill" data-hub="r4" data-hub-room="boyama" href="https://play.eduverse.club/?room=boyama">Boyama</a>
-            <a class="hub-room-pill" data-hub="r5" data-hub-room="bilgitoplari" href="https://play.eduverse.club/?room=bilgitoplari">Bilgi Topları</a>
+            <a class="hub-room-pill" data-hub="r1" data-hub-room="okiyesor" href="/game/?room=okiyesor">Oki’ye Sor</a>
+            <a class="hub-room-pill" data-hub="r2" data-hub-room="cevre" href="/game/?room=cevre">Çevre</a>
+            <a class="hub-room-pill" data-hub="r3" data-hub-room="hayvanat" href="/game/?room=hayvanat">Hayvanat</a>
+            <a class="hub-room-pill" data-hub="r4" data-hub-room="boyama" href="/game/?room=boyama">Boyama</a>
+            <a class="hub-room-pill" data-hub="r5" data-hub-room="bilgitoplari" href="/game/?room=bilgitoplari">Bilgi Topları</a>
           </div>
           <div class="hub-actions">
-            <a class="hub-action primary" data-hub="web" data-hub-link="web" href="https://play.eduverse.club/?room=okiyesor">WEBDE OYNA · 5 ÜCRETSİZ ODA</a>
+            <a class="hub-action primary" data-hub="web" data-hub-link="web" href="/game/">WEBDE OYNA · 5 ÜCRETSİZ ODA</a>
             <a class="hub-action" data-hub="android" data-hub-link="android" href="https://play.google.com/store/apps/details?id=club.eduverse.app">ANDROID · GOOGLE PLAY</a>
             <a class="hub-action is-disabled" data-hub="ios" data-hub-link="ios" href="#" aria-disabled="true">iOS · APP STORE · YAKINDA</a>
           </div>
@@ -265,7 +314,7 @@
         </section>
         <section class="hub-card hub-platform">
           <p class="hub-kicker" data-hub="platK">HER YERDEN ERİŞİM</p><h3 data-hub="platT">Web bugün. Android bugün. iOS yakında.</h3><p data-hub="platD">Aynı EduVerse dünyasına uygun cihazdan girin.</p>
-          <div class="hub-platform-actions"><a class="hub-action primary" data-hub="web" data-hub-link="web" href="https://play.eduverse.club/?room=okiyesor">WEBDE OYNA</a><a class="hub-action" data-hub="android" data-hub-link="android" href="https://play.google.com/store/apps/details?id=club.eduverse.app">GOOGLE PLAY</a><a class="hub-action is-disabled" data-hub="ios" data-hub-link="ios" href="#" aria-disabled="true">APP STORE · YAKINDA</a></div>
+          <div class="hub-platform-actions"><a class="hub-action primary" data-hub="web" data-hub-link="web" href="/game/">WEBDE OYNA</a><a class="hub-action" data-hub="android" data-hub-link="android" href="https://play.google.com/store/apps/details?id=club.eduverse.app">GOOGLE PLAY</a><a class="hub-action is-disabled" data-hub="ios" data-hub-link="ios" href="#" aria-disabled="true">APP STORE · YAKINDA</a></div>
         </section>
       </div>
       <div class="hub-toast" id="hubToast" role="status" aria-live="polite"></div>
@@ -352,14 +401,15 @@
 <script src="./cleanup-old-slogan-v15.js"></script>
 <script src="./LANG5.js"></script>
 <script src="./LEAGUE7.js"></script>
-<script src="./hub/store-config.js"></script>
+<script src="./hub/store-config.js?v=20260910164918"></script>
 <script src="./hub/vitrin2-config.js"></script>
 <script src="./hub/vitrin-kumandasi.js"></script>
 <script src="./hub/vitrin2.js"></script>
 <script src="./hub/launch.js"></script>
 <script src="./hub/story.js"></script>
 <script src="./hub/purchase-channels.js"></script>
-<script src="./hub/web-entry.js"></script>
-<script src="./hub/HUB.js"></script>
-<script src="./hub/archive.js?v=K6R7"></script><script src="./hub/reader.js?v=K6R9"></script><script src="./hub/askida.js?v=K6R12"></script><script src="./hub/fund2.js?v=K6R17"></script><script src="./hub/league2.js?v=K6R18"></script><script src="./hub/league3.js?v=K6R19"></script></body>
+<script src="./hub/web-entry.js?v=20260910164918"></script>
+<script src="./hub/HUB.js?v=20260910164918"></script>
+<script src="./hub/archive.js?v=K6R7"></script><script src="./hub/reader.js?v=K6R9"></script><script src="./hub/askida.js?v=K6R12"></script><script src="./hub/fund2.js?v=K6R17"></script><script src="./hub/league2.js?v=K6R18"></script><script src="./hub/league3.js?v=K6R19"></script>  <script src="./hub/mobile-story-play.js?v=CF6M1"></script>
+<script src="FLARE.js?v=1"></script></body>
 </html>

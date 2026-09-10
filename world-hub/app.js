@@ -460,7 +460,12 @@ function drawFamilyStreams(w,h,t,cx,cy,r){
   ctx.save();
   ctx.textBaseline="middle";
 
-  const visibleCount=16;
+  /* EDUVERSE_IOS_FAMILY_STREAM_FIX_V2
+     Desktop geometry stays unchanged.
+     On narrow screens, family/country stream uses compact edge lanes so it
+     remains visible instead of being eliminated by the globe collision guards. */
+  const compactStream=w<=620;
+  const visibleCount=compactStream?14:16;
   const stepMs=2800;
   const head=Math.floor(t/stepMs)%familyStreamPool.length;
   const frac=(t%stepMs)/stepMs;
@@ -471,30 +476,37 @@ function drawFamilyStreams(w,h,t,cx,cy,r){
     const progress=(slot+frac)/visibleCount;
     const y=-24+progress*(h+48);
     const fade=Math.sin(Math.PI*Math.max(0,Math.min(1,progress)));
-    const alpha=.035+fade*.115;
+    /* EDUVERSE_IOS_STREAM_CONTRAST_V1 */
+    const alpha=compactStream ? (.075+fade*.155) : (.035+fade*.115);
 
-    const fontSize=11.2+(item.lane%2)*.7;
+    const fontSize=compactStream ? (8.6+(item.lane%2)*.55) : (11.2+(item.lane%2)*.7);
     ctx.font=`600 ${fontSize}px "Segoe UI", Inter, Arial, sans-serif`;
-    const width=Math.min(220,ctx.measureText(item.label).width);
-    const laneShift=(item.lane%2)*14;
-    const x=item.side==="left" ? 24+laneShift : w-24-laneShift;
+    const width=Math.min(compactStream?170:220,ctx.measureText(item.label).width);
+    const laneShift=(item.lane%2)*(compactStream?7:14);
+    const edge=compactStream?8:24;
+    const x=item.side==="left" ? edge+laneShift : w-edge-laneShift;
 
     const centerX=item.side==="left" ? x+width*.5 : x-width*.5;
     const dx=centerX-cx;
     const dy=y-cy;
 
-    if(dx*dx+dy*dy < (r*1.18)*(r*1.18)) continue;
+    if(!compactStream){
+      if(dx*dx+dy*dy < (r*1.18)*(r*1.18)) continue;
 
-    const leftBoundary=cx-r-22;
-    const rightBoundary=cx+r+22;
-    if(item.side==="left" && x+width>leftBoundary) continue;
-    if(item.side==="right" && x-width<rightBoundary) continue;
+      const leftBoundary=cx-r-22;
+      const rightBoundary=cx+r+22;
+      if(item.side==="left" && x+width>leftBoundary) continue;
+      if(item.side==="right" && x-width<rightBoundary) continue;
+    }
 
     ctx.save();
     ctx.textAlign=item.side==="left"?"left":"right";
     ctx.fillStyle=streamColor(item,alpha);
 
-    if(slot%5===0){
+    if(compactStream){
+      ctx.shadowBlur=5;
+      ctx.shadowColor="rgba(144,218,255,.20)";
+    }else if(slot%5===0){
       ctx.shadowBlur=8;
       ctx.shadowColor="rgba(144,218,255,.12)";
     }

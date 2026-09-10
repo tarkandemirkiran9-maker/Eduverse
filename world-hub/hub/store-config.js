@@ -80,10 +80,10 @@ window.EDUVERSE_PURCHASE_CONFIG = {
 
 /* EduVerse web game entry.
    Localhost tests use :8788 automatically.
-   Live storefront uses play.eduverse.club. */
+   Live storefront uses /game/. */
 window.EDUVERSE_WEB_GAME_CONFIG = {
   enabled: true,
   localUrl: 'http://127.0.0.1:8788/',
-  productionUrl: 'https://play.eduverse.club/',
+  productionUrl: '/game/',
   freeRoom: 'okiyesor'
 };

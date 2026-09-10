@@ -1,4 +1,4 @@
-﻿// EduVerse ana oyun kodu
+// EduVerse ana oyun kodu
 var _snMelody = [
   [523,.4],[523,.4],[784,.4],[784,.4],[880,.4],[880,.4],[784,.8],
   [698,.4],[698,.4],[659,.4],[659,.4],[587,.4],[587,.4],[523,.8],
@@ -25749,7 +25749,7 @@ if(closeBack) v48nSet(closeBack,L.geriDon||'← Geri');
   function v48pNextTheme(){ var t=v48pTheme(); var i=v48pThemes.indexOf(t); if(i<0) i=0; t=v48pThemes[(i+1)%v48pThemes.length]; try{ localStorage.setItem('v48p_ball_theme',t); }catch(e){} v48pSound('theme'); v48pApplyTheme(); }
   function v48pApplyTheme(){
     var ov=document.getElementById('v48p-arena'); var t=v48pTheme();
-    if(ov){ ov.className='v48p-theme-'+t; }
+    if(ov){ for(var i=ov.classList.length-1;i>=0;i--){ if(/^v48p-theme-/.test(ov.classList[i])) ov.classList.remove(ov.classList[i]); } ov.classList.add('v48p-theme-'+t); }
     var btn=document.getElementById('v48p-theme-btn'); if(btn){ btn.textContent='🎨 '+v48pUi('theme')+': '+v48pThemeName(t); }
     var sb=document.getElementById('v48p-sound-btn'); if(sb){ sb.textContent=(v48pSoundOn?'🔊 ':'🔇 ')+(v48pSoundOn?v48pUi('soundOn'):v48pUi('soundOff')); }
   }

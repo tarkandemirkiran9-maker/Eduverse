@@ -1,0 +1,14 @@
+#ev-share-btn{position:fixed;right:10px;bottom:76px;z-index:9998;width:38px;height:38px;border:1px solid rgba(255,255,255,.22);background:rgba(10,18,42,.46);color:transparent;border-radius:50%;padding:0;font-family:'Fredoka One','Nunito',sans-serif;font-size:0;box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;touch-action:manipulation;backdrop-filter:blur(10px);opacity:.74;transition:opacity .18s,transform .18s,background .18s,border-color .18s}
+#ev-share-btn:hover,#ev-share-btn:focus,#ev-share-btn:active{opacity:1;background:rgba(97,228,255,.82);border-color:rgba(255,255,255,.58);transform:scale(1.04)}
+#ev-share-btn:before{content:'🏆';font-size:18px;color:white;text-shadow:0 2px 8px rgba(0,0,0,.35);line-height:38px;display:block;text-align:center}
+#ev-share-ov{position:fixed;inset:0;z-index:100001;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.66);backdrop-filter:blur(8px);padding:14px}
+#ev-share-ov.show{display:flex}
+.ev-share-card{width:min(94vw,390px);background:linear-gradient(180deg,#07152f,#102763 58%,#26145f);border:2px solid rgba(255,215,90,.75);border-radius:24px;padding:14px;box-shadow:0 24px 80px rgba(0,0,0,.42);font-family:'Nunito',sans-serif;color:white;text-align:center}
+.ev-share-title{font-family:'Fredoka One',sans-serif;font-size:1.15rem;color:#FFD85B;margin-bottom:10px}
+#ev-share-canvas{width:100%;max-width:340px;border-radius:18px;box-shadow:0 12px 32px rgba(0,0,0,.3);background:#07152f}
+.ev-share-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.ev-share-actions button{border:none;border-radius:999px;padding:11px 8px;font-family:'Fredoka One',sans-serif;font-size:.78rem;cursor:pointer}
+#ev-share-close{background:rgba(255,255,255,.12);color:rgba(255,255,255,.78)}
+#ev-share-download{background:linear-gradient(135deg,#FFD54A,#FF9B42);color:#422000}
+#ev-share-send{background:linear-gradient(135deg,#44D986,#28B763);color:white}
+@media (max-width:430px){#ev-share-btn:before{font-size:16px;line-height:34px}#ev-share-btn{right:8px;bottom:70px;width:34px;height:34px}

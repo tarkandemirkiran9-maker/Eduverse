@@ -10,8 +10,8 @@
     return {
       enabled:c.enabled!==false,
       baseUrl:local
-        ? String(c.localUrl||'http://127.0.0.1:8788/')
-        : String(c.productionUrl||'https://play.eduverse.club/'),
+        ? String((w.location&&w.location.origin)||'http://127.0.0.1:8788')+'/game/'
+        : String(c.productionUrl||'/game/'),
       freeRoom:String(c.freeRoom||'okiyesor')
     };
   }
@@ -31,7 +31,8 @@
     var a=d.createElement('a');
     a.className='ev-web-entry '+(cls||'');
     a.textContent=text;
-    var url=roomUrl(roomId);
+    var c=cfg();
+    var url=(String(cls||'').indexOf('ev-web-entry-free')>=0)?c.baseUrl:roomUrl(roomId);
     if(url){
       a.href=url;
     }else{

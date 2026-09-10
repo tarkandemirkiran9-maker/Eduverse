@@ -1,0 +1,44 @@
+EV_V50_MODE_SAFE_FINAL_REPORT
+
+Source: EduVerse_V50_FINAL (1).zip
+Backup: EV_V50_BACKUP_BEFORE_MODE_SAFE_FINAL.zip
+Output: EV_V50_MODE_SAFE_FINAL.zip
+
+Touched files:
+- game.js
+- values-i18n.js
+- ev_balloon_cards_v50_final.js
+
+Main changes:
+- Added mode-safe Values/Islamic separation helper to ev_balloon_cards_v50_final.js.
+- Preserved original V50 Islamic Arabic pool as `ar`.
+- Added/generated modern non-religious Arabic Values pool as `ar_values`.
+- Existing Turkish modern Values pool `tr_values` remains the Values Turkish pool.
+- EN/DE/FR V50 pools remain modern Values pools.
+- Gate selection now uses tr_values/ar_values only when Values mode is active.
+- Arabic Values UI dictionary in values-i18n.js was changed from Islamic/Dua wording to modern values wording.
+- Lazer was removed from the visible ROOMS entry and a runtime access guard was added.
+
+QA actually run:
+- node --check game.js: PASS
+- node --check values-i18n.js: PASS
+- node --check room-music.js: PASS
+- node --check ev_balloon_cards_v50_final.js: PASS
+- Values card pool count scan: PASS
+  Rooms scanned: 23
+  Required pools per room: tr_values/en/de/fr/ar_values >= 50
+- Targeted Arabic Values UI dictionary religious-term scan: PASS
+- Visible ROOMS id:'lazer' scan: PASS - removed
+- Card-forced special/no-balloon rooms scan: PASS - none
+
+Not claimed:
+- No live Surge browser/phone test was performed here.
+- No manual entry into every room was performed here.
+
+Protected/untouched intentionally:
+- Robot mascot system
+- Oki mobile/game systems
+- Shop/coin system
+- Room music system and audio assets
+- Player/score/localStorage systems
+- Special room mechanics for Sinema/Puzzle/Refleks/Boyama/Bilgi Topları/Hikaye/Shop

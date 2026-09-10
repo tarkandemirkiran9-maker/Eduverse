@@ -1,0 +1,26 @@
+/* EDUVERSE_WEB2_PARITY_V1
+   Owner decision 09.09.2026:
+   Web, Android and iPhone must expose the same World Hub controls. */
+
+html[data-league-live3="1"] #demoEventBtn,
+html[data-league-live3="1"] #leaderDemoBtn,
+html[data-league-live3="1"] #themeCycleBtn,
+.league-card[data-league-mode="LIVE"] #demoEventBtn,
+.league-card[data-league-mode="LIVE"] #leaderDemoBtn{
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+
+@media (max-width:650px){
+  .event-row > #demoEventBtn,
+  .event-row > #leaderDemoBtn,
+  .event-row > #themeCycleBtn{
+    display:flex!important;
+    flex:1 1 100%!important;
+    width:100%!important;
+    min-width:0!important;
+    justify-content:center!important;
+  }
+}

@@ -77,15 +77,14 @@ function routeLinks(){
   const cfg=window.EDUVERSE_STORE_LINKS||{};
   const android=String(cfg.android||window.EDUVERSE_PURCHASE_CONFIG?.channels?.android?.url||'');
   const ios=String(cfg.ios||window.EDUVERSE_PURCHASE_CONFIG?.channels?.ios?.url||'');
-  let web='https://play.eduverse.club/?room=okiyesor';
-  try{ if(window.EDUVERSE_WEB_ENTRY?.roomUrl) web=window.EDUVERSE_WEB_ENTRY.roomUrl('okiyesor')||web; }catch(e){}
+  let web='/game/';
+  
   root.querySelectorAll('[data-hub-link="android"]').forEach(a=>{if(android){a.href=android;a.target='_blank';a.rel='noopener noreferrer';a.classList.remove('is-disabled');}});
-  root.querySelectorAll('[data-hub-link="web"]').forEach(a=>{if(web){a.href=web;a.removeAttribute('target');a.removeAttribute('rel');a.classList.remove('is-disabled');}});
+  root.querySelectorAll('[data-hub-link="web"]').forEach(a=>{if(web){a.href=web;a.onclick=function(ev){ev.preventDefault();location.href=web;};a.removeAttribute('target');a.removeAttribute('rel');a.classList.remove('is-disabled');}});
   root.querySelectorAll('[data-hub-room]').forEach(a=>{
     const room=a.getAttribute('data-hub-room');
     let url='';
-    try{ if(window.EDUVERSE_WEB_ENTRY?.roomUrl) url=window.EDUVERSE_WEB_ENTRY.roomUrl(room)||''; }catch(e){}
-    if(!url){url='https://play.eduverse.club/?room='+encodeURIComponent(room||'okiyesor');}
+    url='/game/';
     a.href=url;a.removeAttribute('target');a.removeAttribute('rel');
   });
   root.querySelectorAll('[data-hub-link="ios"]').forEach(a=>{if(ios){a.href=ios;a.target='_blank';a.rel='noopener noreferrer';a.classList.remove('is-disabled');a.removeAttribute('aria-disabled');}else{a.href='#';a.classList.add('is-disabled');a.setAttribute('aria-disabled','true');}});
@@ -95,6 +94,7 @@ function localizeGenerated(){
   root.querySelectorAll('.ev-buy-channel').forEach(a=>{
     const ch=a.getAttribute('data-channel'), plan=a.getAttribute('data-plan');
     if(ch==='android') a.textContent=plan==='free'?t.buyAndroidFree:t.buyAndroid;
+    if(ch==='web'){a.textContent=t.webFree;a.href=web;a.onclick=function(ev){ev.preventDefault();location.href=web;};a.removeAttribute('target');a.removeAttribute('rel');a.classList.remove('is-disabled');}
     if(ch==='ios') a.textContent=t.buyIos;
   });
   root.querySelectorAll('.ev-web-entry-free').forEach(a=>a.textContent=t.webFree);
