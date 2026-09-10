@@ -206,27 +206,3 @@ body[data-edu-theme] #launchCountdown[data-mode="clock"]{border:0;background:tra
 @media(max-width:520px){#launchCountdown .launch-countdown__units{grid-template-columns:1fr 1fr}#launchCountdown .launch-countdown__unit{min-height:82px}#launchCountdown[data-mode="clock"]{width:100%;margin-left:0}#launchCountdown[data-mode="clock"] .launch-countdown__display{padding:10px 12px}#launchCountdown[data-mode="clock"] .launch-clock{column-gap:10px}#launchCountdown[data-mode="clock"] .launch-clock__date{font-size:.76rem}#launchCountdown[data-mode="clock"] .launch-clock__time{font-size:1.55rem}#launchCountdown[data-mode="clock"] .launch-clock small{font-size:.48rem}}
 @media(prefers-reduced-motion:reduce){#launchCountdown *{transition:none!important;animation:none!important}}
 
-/* IOS_SAFARI_IMAGE_FIX_V1 */
-@supports (-webkit-touch-callout:none){
-  #eduverseStoreBridge .hub-opening-visual,
-  #eduverseStoreBridge .hub-shot{
-    display:block!important;
-    visibility:visible!important;
-    opacity:1!important;
-    min-width:0!important;
-    height:auto!important;
-  }
-  #eduverseStoreBridge .hub-opening-visual img,
-  #eduverseStoreBridge .hub-showcase .hub-shot img{
-    display:block!important;
-    visibility:visible!important;
-    opacity:1!important;
-    width:100%!important;
-    max-width:100%!important;
-    height:auto!important;
-    min-height:1px!important;
-    object-fit:contain!important;
-    -webkit-transform:translateZ(0);
-    transform:translateZ(0);
-  }
-}
