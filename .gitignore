@@ -1,0 +1,15 @@
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+**/local.properties
+**/google-services.json
+.env
+*.aab
+*.apk
+*.zip
+**/build/
+**/.gradle/
+**/node_modules/

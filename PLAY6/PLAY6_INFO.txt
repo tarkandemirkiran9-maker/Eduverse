@@ -1,0 +1,22 @@
+PLAY6 FINAL BACKUP
+Created=2026-09-13T18:03:11.578Z
+AndroidRoot=C:\Users\Lenovo\Desktop\Edu\ANDROID_UI
+ApplicationId=club.eduverse.app
+VersionCode=6
+VersionName=1.0
+PreviewApk=preview6.apk
+PreviewApkSha256=8C16B11E21B8BC8EA5EA414F67FA68C54DAC6F230FF6F56761A7029BEB3BA5B8
+PhoneTest=PASS
+PhoneTestedPublicFiles=427
+ReleaseAab=play6.aab
+ReleaseAabSha256=91A83F7E9D4E82C56D084BE30DAE115B6C1C87379CC5385700D8754B511F3F10
+ReleaseAabSigner=CN=EduVerse Upload Key
+Film28InAab=YES
+PhoneTestedContentMatch=YES
+GooglePlayTrack=Closed testing - Alpha
+GooglePlayVersion=6 (1.0)
+GooglePlayStatus=Submitted for review on 2026-09-13
+GitHubChange=NONE
+GooglePlayChangeDuringBackup=NONE
+RestoreNote=Extract ANDROID_UI plus preview6.apk/play6.aab/release6.txt to Desktop\Edu after preserving any newer work.
+ANDROID_UI_Manifest=ANDROID_UI_SHA256.txt

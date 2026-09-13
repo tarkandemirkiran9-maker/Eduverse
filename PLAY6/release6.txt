@@ -1,0 +1,1 @@
+Kapalı test kullanıcılarımızdan gelen geri bildirimler doğrultusunda bazı geçiş ve görüntüleme sorunlarını giderdik. EduVerse dünyasını daha anlaşılır tanıtan yeni görsel keşif akışını ekledik; mobil görünüm ve genel kararlılığı iyileştirdik. Test kullanıcılarımızla yakın iletişim içinde ürünü geliştirmeye ve her sürümde daha iyi hale getirmeye devam ediyoruz.
