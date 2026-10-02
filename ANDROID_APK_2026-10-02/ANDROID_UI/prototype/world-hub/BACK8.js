@@ -1,0 +1,267 @@
+/* EDUVERSE_LEAGUE_PERIODS_V1 */
+(() => {
+"use strict";
+
+if (window.__EDUVERSE_LEAGUE_PERIODS_V1__) return;
+window.__EDUVERSE_LEAGUE_PERIODS_V1__ = true;
+
+const board = document.getElementById("leaderboard");
+const leagueCard = document.querySelector(".league-card");
+const leagueHead = leagueCard?.querySelector(".league-head");
+const leagueTitle = document.getElementById("leagueTitle");
+
+if (!board || !leagueCard || !leagueHead || !leagueTitle) return;
+
+const PERIODS = ["today","week","month","all"];
+const LABELS = {
+  tr:{today:"Bugün",week:"Bu Hafta",month:"Bu Ay",all:"Tüm Zamanlar"},
+  en:{today:"Today",week:"This Week",month:"This Month",all:"All Time"},
+  de:{today:"Heute",week:"Diese Woche",month:"Dieser Monat",all:"Gesamt"},
+  fr:{today:"Aujourd’hui",week:"Cette semaine",month:"Ce mois-ci",all:"Depuis toujours"},
+  ar:{today:"اليوم",week:"هذا الأسبوع",month:"هذا الشهر",all:"كل الأوقات"}
+};
+
+const STYLE = `
+.league-period-tabs{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  margin:12px 0 10px;
+}
+.league-period-btn{
+  min-width:0;
+  min-height:38px;
+  border:1px solid rgba(139,233,255,.15);
+  border-radius:12px;
+  background:linear-gradient(180deg,rgba(18,43,68,.82),rgba(8,24,42,.82));
+  color:#a9c0d4;
+  font:800 .70rem/1.15 Inter,Segoe UI,Arial,sans-serif;
+  letter-spacing:.01em;
+  padding:8px 9px;
+  cursor:pointer;
+  touch-action:manipulation;
+  user-select:none;
+  transition:border-color .16s ease,background .16s ease,color .16s ease,box-shadow .16s ease;
+}
+.league-period-btn:hover{
+  border-color:rgba(139,233,255,.32);
+  color:#eefaff;
+}
+.league-period-btn.is-active{
+  border-color:rgba(247,217,138,.48);
+  background:linear-gradient(135deg,rgba(247,217,138,.16),rgba(81,194,255,.12));
+  color:#ffe7a3;
+  box-shadow:0 0 0 1px rgba(247,217,138,.06) inset,0 8px 24px rgba(0,0,0,.18);
+}
+.league-period-btn:focus-visible{
+  outline:2px solid rgba(139,233,255,.72);
+  outline-offset:2px;
+}
+@media (max-width:650px){
+  .league-period-tabs{grid-template-columns:1fr 1fr;}
+  .league-period-btn{font-size:.68rem;}
+}
+@media (prefers-reduced-motion:reduce){
+  .league-period-btn{transition:none;}
+}`;
+
+const styleEl = document.createElement("style");
+styleEl.id = "eduverseLeague7Style";
+styleEl.textContent = STYLE;
+document.head.appendChild(styleEl);
+
+const tabs = document.createElement("div");
+tabs.id = "leaguePeriodTabs";
+tabs.className = "league-period-tabs";
+tabs.setAttribute("role","group");
+tabs.setAttribute("aria-label","League period");
+tabs.innerHTML = PERIODS.map(p =>
+  `<button type="button" class="league-period-btn" data-period="${p}" aria-pressed="false"></button>`
+).join("");
+leagueHead.insertAdjacentElement("afterend", tabs);
+
+const baseVotes = new Map();
+let activePeriod = "today";
+try {
+  const saved = localStorage.getItem("eduverse-league-period");
+  if (PERIODS.includes(saved)) activePeriod = saved;
+} catch(e){}
+
+function currentLang(){
+  const raw = String(document.body?.dataset?.eduLang || window.EDUVERSE_I18N?.lang || document.documentElement.lang || "tr").toLowerCase();
+  return LABELS[raw] ? raw : "tr";
+}
+function familyUnit(){
+  try {
+    if (typeof window.EDUVERSE_I18N?.familyUnit === "function") return window.EDUVERSE_I18N.familyUnit();
+  } catch(e){}
+  return {tr:"aile",en:"families",de:"Familien",fr:"familles",ar:"عائلة"}[currentLang()] || "aile";
+}
+function parseVote(text){
+  const m = String(text || "").replace(/[.,\s]/g,"").match(/\d+/);
+  return m ? Number(m[0]) : 0;
+}
+function seedFor(code){
+  let h = 2166136261;
+  for (const ch of String(code || "")) {
+    h ^= ch.charCodeAt(0);
+    h = Math.imul(h,16777619);
+  }
+  return h >>> 0;
+}
+
+/*
+  Prototype-only period simulation.
+  "today" preserves the existing page values exactly.
+  Other periods are deterministic views so the UX can be tested before a real
+  paid-family history source exists. Production must replace this score source.
+*/
+function scoreFor(code, base, period){
+  if (period === "today") return base;
+  const s = seedFor(code);
+  if (period === "week")  return base * 5  + (s % 181);
+  if (period === "month") return base * 18 + ((s >>> 3) % 601);
+  return base * 60 + ((s >>> 5) % 2201);
+}
+
+function captureBaseFromFreshBoard(){
+  [...board.children].forEach(li => {
+    const code = String(li.dataset.countryId || "").toLowerCase();
+    const voteEl = li.querySelector(".country-votes");
+    if (!code || !voteEl) return;
+    const n = parseVote(voteEl.textContent);
+    if (Number.isFinite(n)) baseVotes.set(code,n);
+  });
+}
+
+function localizedCountry(code,fallback){
+  try {
+    if (typeof window.EDUVERSE_I18N?.countryName === "function") {
+      return window.EDUVERSE_I18N.countryName(code,fallback) || fallback;
+    }
+  } catch(e){}
+  return fallback;
+}
+
+function setChampionFromRow(row){
+  const champion = document.getElementById("championFlag");
+  if (!champion || !row) return;
+  const img = row.querySelector(".country-flag img");
+  if (img) {
+    champion.innerHTML = "";
+    const copy = document.createElement("img");
+    copy.src = img.src;
+    copy.alt = "";
+    copy.className = "champion-flag-img";
+    champion.appendChild(copy);
+  } else {
+    const flag = row.querySelector(".country-flag");
+    champion.textContent = flag ? flag.textContent : "";
+  }
+}
+
+function translateTabs(){
+  const lang = currentLang();
+  const labels = LABELS[lang];
+  [...tabs.querySelectorAll(".league-period-btn")].forEach(btn => {
+    btn.textContent = labels[btn.dataset.period];
+    const on = btn.dataset.period === activePeriod;
+    btn.classList.toggle("is-active",on);
+    btn.setAttribute("aria-pressed",on ? "true" : "false");
+  });
+  leagueTitle.textContent = labels[activePeriod];
+  tabs.setAttribute("aria-label", labels[activePeriod]);
+}
+
+let boardObserver = null;
+
+function observeBoard(){
+  if (!boardObserver) {
+    boardObserver = new MutationObserver(() => {
+      boardObserver.disconnect();
+      captureBaseFromFreshBoard();
+      applyPeriod(activePeriod,false);
+      observeBoard();
+    });
+  }
+  boardObserver.observe(board,{childList:true});
+}
+
+function applyPeriod(period,persist=true){
+  if (!PERIODS.includes(period)) period = "today";
+  activePeriod = period;
+
+  if (boardObserver) boardObserver.disconnect();
+
+  const rows = [...board.children];
+  const unit = familyUnit();
+
+  const scored = rows.map(li => {
+    const code = String(li.dataset.countryId || "").toLowerCase();
+    const base = baseVotes.has(code) ? baseVotes.get(code) : parseVote(li.querySelector(".country-votes")?.textContent);
+    const score = scoreFor(code,base,period);
+    return {li,code,base,score};
+  });
+
+  scored.sort((a,b) => b.score - a.score || a.code.localeCompare(b.code));
+
+  scored.forEach((item,i) => {
+    const voteEl = item.li.querySelector(".country-votes");
+    const rankEl = item.li.querySelector(".rank");
+    if (rankEl) rankEl.textContent = String(i+1).padStart(3,"0");
+    if (voteEl) voteEl.textContent = `${item.score} ${unit}`;
+    item.li.classList.toggle("is-leader",i===0);
+    board.appendChild(item.li);
+  });
+
+  const top = scored[0];
+  if (top) {
+    const leaderCard = document.querySelector(".leader-card");
+    const leaderTitleEl = document.getElementById("leaderTitle");
+    const leaderVotesEl = document.getElementById("leaderVotes");
+    if (leaderCard) leaderCard.dataset.countryId = top.code;
+    if (leaderTitleEl) {
+      const rowName = top.li.querySelector(".country-name")?.textContent || leaderTitleEl.textContent;
+      leaderTitleEl.textContent = localizedCountry(top.code,rowName);
+    }
+    if (leaderVotesEl) leaderVotesEl.textContent = `${top.score} ${unit}`;
+    setChampionFromRow(top.li);
+  }
+
+  translateTabs();
+
+  if (persist) {
+    try { localStorage.setItem("eduverse-league-period",activePeriod); } catch(e){}
+  }
+
+  observeBoard();
+}
+
+tabs.querySelectorAll(".league-period-btn").forEach(btn => {
+  const choose = e => {
+    if (e.type === "pointerdown" && e.pointerType === "mouse" && e.button !== 0) return;
+    e.preventDefault();
+    e.stopPropagation();
+    applyPeriod(btn.dataset.period,true);
+  };
+  btn.addEventListener("pointerdown",choose,{passive:false});
+  btn.addEventListener("click",choose);
+  btn.addEventListener("keydown",e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      applyPeriod(btn.dataset.period,true);
+    }
+  });
+});
+
+const langObserver = new MutationObserver(() => {
+  translateTabs();
+  applyPeriod(activePeriod,false);
+});
+langObserver.observe(document.body,{attributes:true,attributeFilter:["data-edu-lang"]});
+
+captureBaseFromFreshBoard();
+applyPeriod(activePeriod,false);
+
+window.EDUVERSE_SET_LEAGUE_PERIOD = p => applyPeriod(p,true);
+})();

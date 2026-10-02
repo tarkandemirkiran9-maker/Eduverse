@@ -1,0 +1,1969 @@
+{
+  "schemaVersion": "1.0",
+  "mode": "DEMO",
+  "localOnly": true,
+  "publicLabelRequired": "DEMO",
+  "countryUniverse": {
+    "count": 195,
+    "codes": [
+      "AF",
+      "AL",
+      "DZ",
+      "AD",
+      "AO",
+      "AG",
+      "AR",
+      "AM",
+      "AU",
+      "AT",
+      "AZ",
+      "BS",
+      "BH",
+      "BD",
+      "BB",
+      "BY",
+      "BE",
+      "BZ",
+      "BJ",
+      "BT",
+      "BO",
+      "BA",
+      "BW",
+      "BR",
+      "BN",
+      "BG",
+      "BF",
+      "BI",
+      "CV",
+      "KH",
+      "CM",
+      "CA",
+      "CF",
+      "TD",
+      "CL",
+      "CN",
+      "CO",
+      "KM",
+      "CG",
+      "CD",
+      "CR",
+      "CI",
+      "HR",
+      "CU",
+      "CY",
+      "CZ",
+      "DK",
+      "DJ",
+      "DM",
+      "DO",
+      "EC",
+      "EG",
+      "SV",
+      "GQ",
+      "ER",
+      "EE",
+      "SZ",
+      "ET",
+      "FJ",
+      "FI",
+      "FR",
+      "GA",
+      "GM",
+      "GE",
+      "DE",
+      "GH",
+      "GR",
+      "GD",
+      "GT",
+      "GN",
+      "GW",
+      "GY",
+      "HT",
+      "HN",
+      "HU",
+      "IS",
+      "IN",
+      "ID",
+      "IR",
+      "IQ",
+      "IE",
+      "IL",
+      "IT",
+      "JM",
+      "JP",
+      "JO",
+      "KZ",
+      "KE",
+      "KI",
+      "KP",
+      "KR",
+      "KW",
+      "KG",
+      "LA",
+      "LV",
+      "LB",
+      "LS",
+      "LR",
+      "LY",
+      "LI",
+      "LT",
+      "LU",
+      "MG",
+      "MW",
+      "MY",
+      "MV",
+      "ML",
+      "MT",
+      "MH",
+      "MR",
+      "MU",
+      "MX",
+      "FM",
+      "MD",
+      "MC",
+      "MN",
+      "ME",
+      "MA",
+      "MZ",
+      "MM",
+      "NA",
+      "NR",
+      "NP",
+      "NL",
+      "NZ",
+      "NI",
+      "NE",
+      "NG",
+      "MK",
+      "NO",
+      "OM",
+      "PK",
+      "PW",
+      "PA",
+      "PG",
+      "PY",
+      "PE",
+      "PH",
+      "PL",
+      "PT",
+      "QA",
+      "RO",
+      "RU",
+      "RW",
+      "KN",
+      "LC",
+      "VC",
+      "WS",
+      "SM",
+      "ST",
+      "SA",
+      "SN",
+      "RS",
+      "SC",
+      "SL",
+      "SG",
+      "SK",
+      "SI",
+      "SB",
+      "SO",
+      "ZA",
+      "SS",
+      "ES",
+      "LK",
+      "SD",
+      "SR",
+      "SE",
+      "CH",
+      "SY",
+      "TJ",
+      "TZ",
+      "TH",
+      "TL",
+      "TG",
+      "TO",
+      "TT",
+      "TN",
+      "TR",
+      "TM",
+      "TV",
+      "UG",
+      "UA",
+      "AE",
+      "GB",
+      "US",
+      "UY",
+      "UZ",
+      "VU",
+      "VA",
+      "VE",
+      "VN",
+      "YE",
+      "ZM",
+      "ZW",
+      "PS"
+    ]
+  },
+  "periods": [
+    "TODAY",
+    "WEEK",
+    "MONTH",
+    "ALL_TIME"
+  ],
+  "countries": [
+    {
+      "code": "AF",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 11,
+        "MONTH": 13,
+        "ALL_TIME": 17
+      }
+    },
+    {
+      "code": "AL",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 22,
+        "MONTH": 26,
+        "ALL_TIME": 34
+      }
+    },
+    {
+      "code": "DZ",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 33,
+        "MONTH": 39,
+        "ALL_TIME": 51
+      }
+    },
+    {
+      "code": "AD",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 3,
+        "MONTH": 52,
+        "ALL_TIME": 68
+      }
+    },
+    {
+      "code": "AO",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 14,
+        "MONTH": 65,
+        "ALL_TIME": 85
+      }
+    },
+    {
+      "code": "AG",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 25,
+        "MONTH": 78,
+        "ALL_TIME": 102
+      }
+    },
+    {
+      "code": "AR",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 36,
+        "MONTH": 4,
+        "ALL_TIME": 119
+      }
+    },
+    {
+      "code": "AM",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 6,
+        "MONTH": 17,
+        "ALL_TIME": 136
+      }
+    },
+    {
+      "code": "AU",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 17,
+        "MONTH": 30,
+        "ALL_TIME": 2
+      }
+    },
+    {
+      "code": "AT",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 28,
+        "MONTH": 43,
+        "ALL_TIME": 19
+      }
+    },
+    {
+      "code": "AZ",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 39,
+        "MONTH": 56,
+        "ALL_TIME": 36
+      }
+    },
+    {
+      "code": "BS",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 9,
+        "MONTH": 69,
+        "ALL_TIME": 53
+      }
+    },
+    {
+      "code": "BH",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 20,
+        "MONTH": 82,
+        "ALL_TIME": 70
+      }
+    },
+    {
+      "code": "BD",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 31,
+        "MONTH": 8,
+        "ALL_TIME": 87
+      }
+    },
+    {
+      "code": "BB",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 1,
+        "MONTH": 21,
+        "ALL_TIME": 104
+      }
+    },
+    {
+      "code": "BY",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 12,
+        "MONTH": 34,
+        "ALL_TIME": 121
+      }
+    },
+    {
+      "code": "BE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 23,
+        "MONTH": 47,
+        "ALL_TIME": 138
+      }
+    },
+    {
+      "code": "BZ",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 34,
+        "MONTH": 60,
+        "ALL_TIME": 4
+      }
+    },
+    {
+      "code": "BJ",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 4,
+        "MONTH": 73,
+        "ALL_TIME": 21
+      }
+    },
+    {
+      "code": "BT",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 15,
+        "MONTH": 86,
+        "ALL_TIME": 38
+      }
+    },
+    {
+      "code": "BO",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 26,
+        "MONTH": 12,
+        "ALL_TIME": 55
+      }
+    },
+    {
+      "code": "BA",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 37,
+        "MONTH": 25,
+        "ALL_TIME": 72
+      }
+    },
+    {
+      "code": "BW",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 7,
+        "MONTH": 38,
+        "ALL_TIME": 89
+      }
+    },
+    {
+      "code": "BR",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 18,
+        "MONTH": 51,
+        "ALL_TIME": 106
+      }
+    },
+    {
+      "code": "BN",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 29,
+        "MONTH": 64,
+        "ALL_TIME": 123
+      }
+    },
+    {
+      "code": "BG",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 40,
+        "MONTH": 77,
+        "ALL_TIME": 140
+      }
+    },
+    {
+      "code": "BF",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 10,
+        "MONTH": 3,
+        "ALL_TIME": 6
+      }
+    },
+    {
+      "code": "BI",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 21,
+        "MONTH": 16,
+        "ALL_TIME": 23
+      }
+    },
+    {
+      "code": "CV",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 32,
+        "MONTH": 29,
+        "ALL_TIME": 40
+      }
+    },
+    {
+      "code": "KH",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 2,
+        "MONTH": 42,
+        "ALL_TIME": 57
+      }
+    },
+    {
+      "code": "CM",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 13,
+        "MONTH": 55,
+        "ALL_TIME": 74
+      }
+    },
+    {
+      "code": "CA",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 24,
+        "MONTH": 68,
+        "ALL_TIME": 91
+      }
+    },
+    {
+      "code": "CF",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 35,
+        "MONTH": 81,
+        "ALL_TIME": 108
+      }
+    },
+    {
+      "code": "TD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 5,
+        "MONTH": 7,
+        "ALL_TIME": 125
+      }
+    },
+    {
+      "code": "CL",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 16,
+        "MONTH": 20,
+        "ALL_TIME": 142
+      }
+    },
+    {
+      "code": "CN",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 27,
+        "MONTH": 33,
+        "ALL_TIME": 8
+      }
+    },
+    {
+      "code": "CO",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 38,
+        "MONTH": 46,
+        "ALL_TIME": 25
+      }
+    },
+    {
+      "code": "KM",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 8,
+        "MONTH": 59,
+        "ALL_TIME": 42
+      }
+    },
+    {
+      "code": "CG",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 19,
+        "MONTH": 72,
+        "ALL_TIME": 59
+      }
+    },
+    {
+      "code": "CD",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 30,
+        "MONTH": 85,
+        "ALL_TIME": 76
+      }
+    },
+    {
+      "code": "CR",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 0,
+        "MONTH": 11,
+        "ALL_TIME": 93
+      }
+    },
+    {
+      "code": "CI",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 11,
+        "MONTH": 24,
+        "ALL_TIME": 110
+      }
+    },
+    {
+      "code": "HR",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 22,
+        "MONTH": 37,
+        "ALL_TIME": 127
+      }
+    },
+    {
+      "code": "CU",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 33,
+        "MONTH": 50,
+        "ALL_TIME": 144
+      }
+    },
+    {
+      "code": "CY",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 3,
+        "MONTH": 63,
+        "ALL_TIME": 10
+      }
+    },
+    {
+      "code": "CZ",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 14,
+        "MONTH": 76,
+        "ALL_TIME": 27
+      }
+    },
+    {
+      "code": "DK",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 25,
+        "MONTH": 2,
+        "ALL_TIME": 44
+      }
+    },
+    {
+      "code": "DJ",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 36,
+        "MONTH": 15,
+        "ALL_TIME": 61
+      }
+    },
+    {
+      "code": "DM",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 6,
+        "MONTH": 28,
+        "ALL_TIME": 78
+      }
+    },
+    {
+      "code": "DO",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 17,
+        "MONTH": 41,
+        "ALL_TIME": 95
+      }
+    },
+    {
+      "code": "EC",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 28,
+        "MONTH": 54,
+        "ALL_TIME": 112
+      }
+    },
+    {
+      "code": "EG",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 39,
+        "MONTH": 67,
+        "ALL_TIME": 129
+      }
+    },
+    {
+      "code": "SV",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 9,
+        "MONTH": 80,
+        "ALL_TIME": 146
+      }
+    },
+    {
+      "code": "GQ",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 20,
+        "MONTH": 6,
+        "ALL_TIME": 12
+      }
+    },
+    {
+      "code": "ER",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 31,
+        "MONTH": 19,
+        "ALL_TIME": 29
+      }
+    },
+    {
+      "code": "EE",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 1,
+        "MONTH": 32,
+        "ALL_TIME": 46
+      }
+    },
+    {
+      "code": "SZ",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 12,
+        "MONTH": 45,
+        "ALL_TIME": 63
+      }
+    },
+    {
+      "code": "ET",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 23,
+        "MONTH": 58,
+        "ALL_TIME": 80
+      }
+    },
+    {
+      "code": "FJ",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 34,
+        "MONTH": 71,
+        "ALL_TIME": 97
+      }
+    },
+    {
+      "code": "FI",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 4,
+        "MONTH": 84,
+        "ALL_TIME": 114
+      }
+    },
+    {
+      "code": "FR",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 15,
+        "MONTH": 10,
+        "ALL_TIME": 131
+      }
+    },
+    {
+      "code": "GA",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 26,
+        "MONTH": 23,
+        "ALL_TIME": 148
+      }
+    },
+    {
+      "code": "GM",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 37,
+        "MONTH": 36,
+        "ALL_TIME": 14
+      }
+    },
+    {
+      "code": "GE",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 7,
+        "MONTH": 49,
+        "ALL_TIME": 31
+      }
+    },
+    {
+      "code": "DE",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 18,
+        "MONTH": 62,
+        "ALL_TIME": 48
+      }
+    },
+    {
+      "code": "GH",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 29,
+        "MONTH": 75,
+        "ALL_TIME": 65
+      }
+    },
+    {
+      "code": "GR",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 40,
+        "MONTH": 1,
+        "ALL_TIME": 82
+      }
+    },
+    {
+      "code": "GD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 10,
+        "MONTH": 14,
+        "ALL_TIME": 99
+      }
+    },
+    {
+      "code": "GT",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 21,
+        "MONTH": 27,
+        "ALL_TIME": 116
+      }
+    },
+    {
+      "code": "GN",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 32,
+        "MONTH": 40,
+        "ALL_TIME": 133
+      }
+    },
+    {
+      "code": "GW",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 2,
+        "MONTH": 53,
+        "ALL_TIME": 150
+      }
+    },
+    {
+      "code": "GY",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 13,
+        "MONTH": 66,
+        "ALL_TIME": 16
+      }
+    },
+    {
+      "code": "HT",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 24,
+        "MONTH": 79,
+        "ALL_TIME": 33
+      }
+    },
+    {
+      "code": "HN",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 35,
+        "MONTH": 5,
+        "ALL_TIME": 50
+      }
+    },
+    {
+      "code": "HU",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 5,
+        "MONTH": 18,
+        "ALL_TIME": 67
+      }
+    },
+    {
+      "code": "IS",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 16,
+        "MONTH": 31,
+        "ALL_TIME": 84
+      }
+    },
+    {
+      "code": "IN",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 27,
+        "MONTH": 44,
+        "ALL_TIME": 101
+      }
+    },
+    {
+      "code": "ID",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 38,
+        "MONTH": 57,
+        "ALL_TIME": 118
+      }
+    },
+    {
+      "code": "IR",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 8,
+        "MONTH": 70,
+        "ALL_TIME": 135
+      }
+    },
+    {
+      "code": "IQ",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 19,
+        "MONTH": 83,
+        "ALL_TIME": 1
+      }
+    },
+    {
+      "code": "IE",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 30,
+        "MONTH": 9,
+        "ALL_TIME": 18
+      }
+    },
+    {
+      "code": "IL",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 0,
+        "MONTH": 22,
+        "ALL_TIME": 35
+      }
+    },
+    {
+      "code": "IT",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 11,
+        "MONTH": 35,
+        "ALL_TIME": 52
+      }
+    },
+    {
+      "code": "JM",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 22,
+        "MONTH": 48,
+        "ALL_TIME": 69
+      }
+    },
+    {
+      "code": "JP",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 33,
+        "MONTH": 61,
+        "ALL_TIME": 86
+      }
+    },
+    {
+      "code": "JO",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 3,
+        "MONTH": 74,
+        "ALL_TIME": 103
+      }
+    },
+    {
+      "code": "KZ",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 14,
+        "MONTH": 0,
+        "ALL_TIME": 120
+      }
+    },
+    {
+      "code": "KE",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 25,
+        "MONTH": 13,
+        "ALL_TIME": 137
+      }
+    },
+    {
+      "code": "KI",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 36,
+        "MONTH": 26,
+        "ALL_TIME": 3
+      }
+    },
+    {
+      "code": "KP",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 6,
+        "MONTH": 39,
+        "ALL_TIME": 20
+      }
+    },
+    {
+      "code": "KR",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 17,
+        "MONTH": 52,
+        "ALL_TIME": 37
+      }
+    },
+    {
+      "code": "KW",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 28,
+        "MONTH": 65,
+        "ALL_TIME": 54
+      }
+    },
+    {
+      "code": "KG",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 39,
+        "MONTH": 78,
+        "ALL_TIME": 71
+      }
+    },
+    {
+      "code": "LA",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 9,
+        "MONTH": 4,
+        "ALL_TIME": 88
+      }
+    },
+    {
+      "code": "LV",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 20,
+        "MONTH": 17,
+        "ALL_TIME": 105
+      }
+    },
+    {
+      "code": "LB",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 31,
+        "MONTH": 30,
+        "ALL_TIME": 122
+      }
+    },
+    {
+      "code": "LS",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 1,
+        "MONTH": 43,
+        "ALL_TIME": 139
+      }
+    },
+    {
+      "code": "LR",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 12,
+        "MONTH": 56,
+        "ALL_TIME": 5
+      }
+    },
+    {
+      "code": "LY",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 23,
+        "MONTH": 69,
+        "ALL_TIME": 22
+      }
+    },
+    {
+      "code": "LI",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 34,
+        "MONTH": 82,
+        "ALL_TIME": 39
+      }
+    },
+    {
+      "code": "LT",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 4,
+        "MONTH": 8,
+        "ALL_TIME": 56
+      }
+    },
+    {
+      "code": "LU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 15,
+        "MONTH": 21,
+        "ALL_TIME": 73
+      }
+    },
+    {
+      "code": "MG",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 26,
+        "MONTH": 34,
+        "ALL_TIME": 90
+      }
+    },
+    {
+      "code": "MW",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 37,
+        "MONTH": 47,
+        "ALL_TIME": 107
+      }
+    },
+    {
+      "code": "MY",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 7,
+        "MONTH": 60,
+        "ALL_TIME": 124
+      }
+    },
+    {
+      "code": "MV",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 18,
+        "MONTH": 73,
+        "ALL_TIME": 141
+      }
+    },
+    {
+      "code": "ML",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 29,
+        "MONTH": 86,
+        "ALL_TIME": 7
+      }
+    },
+    {
+      "code": "MT",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 40,
+        "MONTH": 12,
+        "ALL_TIME": 24
+      }
+    },
+    {
+      "code": "MH",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 10,
+        "MONTH": 25,
+        "ALL_TIME": 41
+      }
+    },
+    {
+      "code": "MR",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 21,
+        "MONTH": 38,
+        "ALL_TIME": 58
+      }
+    },
+    {
+      "code": "MU",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 32,
+        "MONTH": 51,
+        "ALL_TIME": 75
+      }
+    },
+    {
+      "code": "MX",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 2,
+        "MONTH": 64,
+        "ALL_TIME": 92
+      }
+    },
+    {
+      "code": "FM",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 13,
+        "MONTH": 77,
+        "ALL_TIME": 109
+      }
+    },
+    {
+      "code": "MD",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 24,
+        "MONTH": 3,
+        "ALL_TIME": 126
+      }
+    },
+    {
+      "code": "MC",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 35,
+        "MONTH": 16,
+        "ALL_TIME": 143
+      }
+    },
+    {
+      "code": "MN",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 5,
+        "MONTH": 29,
+        "ALL_TIME": 9
+      }
+    },
+    {
+      "code": "ME",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 16,
+        "MONTH": 42,
+        "ALL_TIME": 26
+      }
+    },
+    {
+      "code": "MA",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 27,
+        "MONTH": 55,
+        "ALL_TIME": 43
+      }
+    },
+    {
+      "code": "MZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 38,
+        "MONTH": 68,
+        "ALL_TIME": 60
+      }
+    },
+    {
+      "code": "MM",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 8,
+        "MONTH": 81,
+        "ALL_TIME": 77
+      }
+    },
+    {
+      "code": "NA",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 19,
+        "MONTH": 7,
+        "ALL_TIME": 94
+      }
+    },
+    {
+      "code": "NR",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 30,
+        "MONTH": 20,
+        "ALL_TIME": 111
+      }
+    },
+    {
+      "code": "NP",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 0,
+        "MONTH": 33,
+        "ALL_TIME": 128
+      }
+    },
+    {
+      "code": "NL",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 11,
+        "MONTH": 46,
+        "ALL_TIME": 145
+      }
+    },
+    {
+      "code": "NZ",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 22,
+        "MONTH": 59,
+        "ALL_TIME": 11
+      }
+    },
+    {
+      "code": "NI",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 33,
+        "MONTH": 72,
+        "ALL_TIME": 28
+      }
+    },
+    {
+      "code": "NE",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 3,
+        "MONTH": 85,
+        "ALL_TIME": 45
+      }
+    },
+    {
+      "code": "NG",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 14,
+        "MONTH": 11,
+        "ALL_TIME": 62
+      }
+    },
+    {
+      "code": "MK",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 25,
+        "MONTH": 24,
+        "ALL_TIME": 79
+      }
+    },
+    {
+      "code": "NO",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 36,
+        "MONTH": 37,
+        "ALL_TIME": 96
+      }
+    },
+    {
+      "code": "OM",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 6,
+        "MONTH": 50,
+        "ALL_TIME": 113
+      }
+    },
+    {
+      "code": "PK",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 17,
+        "MONTH": 63,
+        "ALL_TIME": 130
+      }
+    },
+    {
+      "code": "PW",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 28,
+        "MONTH": 76,
+        "ALL_TIME": 147
+      }
+    },
+    {
+      "code": "PA",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 39,
+        "MONTH": 2,
+        "ALL_TIME": 13
+      }
+    },
+    {
+      "code": "PG",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 9,
+        "MONTH": 15,
+        "ALL_TIME": 30
+      }
+    },
+    {
+      "code": "PY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 20,
+        "MONTH": 28,
+        "ALL_TIME": 47
+      }
+    },
+    {
+      "code": "PE",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 31,
+        "MONTH": 41,
+        "ALL_TIME": 64
+      }
+    },
+    {
+      "code": "PH",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 1,
+        "MONTH": 54,
+        "ALL_TIME": 81
+      }
+    },
+    {
+      "code": "PL",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 12,
+        "MONTH": 67,
+        "ALL_TIME": 98
+      }
+    },
+    {
+      "code": "PT",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 23,
+        "MONTH": 80,
+        "ALL_TIME": 115
+      }
+    },
+    {
+      "code": "QA",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 34,
+        "MONTH": 6,
+        "ALL_TIME": 132
+      }
+    },
+    {
+      "code": "RO",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 4,
+        "MONTH": 19,
+        "ALL_TIME": 149
+      }
+    },
+    {
+      "code": "RU",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 15,
+        "MONTH": 32,
+        "ALL_TIME": 15
+      }
+    },
+    {
+      "code": "RW",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 26,
+        "MONTH": 45,
+        "ALL_TIME": 32
+      }
+    },
+    {
+      "code": "KN",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 37,
+        "MONTH": 58,
+        "ALL_TIME": 49
+      }
+    },
+    {
+      "code": "LC",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 7,
+        "MONTH": 71,
+        "ALL_TIME": 66
+      }
+    },
+    {
+      "code": "VC",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 18,
+        "MONTH": 84,
+        "ALL_TIME": 83
+      }
+    },
+    {
+      "code": "WS",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 29,
+        "MONTH": 10,
+        "ALL_TIME": 100
+      }
+    },
+    {
+      "code": "SM",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 40,
+        "MONTH": 23,
+        "ALL_TIME": 117
+      }
+    },
+    {
+      "code": "ST",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 10,
+        "MONTH": 36,
+        "ALL_TIME": 134
+      }
+    },
+    {
+      "code": "SA",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 21,
+        "MONTH": 49,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SN",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 32,
+        "MONTH": 62,
+        "ALL_TIME": 17
+      }
+    },
+    {
+      "code": "RS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 2,
+        "MONTH": 75,
+        "ALL_TIME": 34
+      }
+    },
+    {
+      "code": "SC",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 13,
+        "MONTH": 1,
+        "ALL_TIME": 51
+      }
+    },
+    {
+      "code": "SL",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 24,
+        "MONTH": 14,
+        "ALL_TIME": 68
+      }
+    },
+    {
+      "code": "SG",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 35,
+        "MONTH": 27,
+        "ALL_TIME": 85
+      }
+    },
+    {
+      "code": "SK",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 5,
+        "MONTH": 40,
+        "ALL_TIME": 102
+      }
+    },
+    {
+      "code": "SI",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 16,
+        "MONTH": 53,
+        "ALL_TIME": 119
+      }
+    },
+    {
+      "code": "SB",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 27,
+        "MONTH": 66,
+        "ALL_TIME": 136
+      }
+    },
+    {
+      "code": "SO",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 38,
+        "MONTH": 79,
+        "ALL_TIME": 2
+      }
+    },
+    {
+      "code": "ZA",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 8,
+        "MONTH": 5,
+        "ALL_TIME": 19
+      }
+    },
+    {
+      "code": "SS",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 19,
+        "MONTH": 18,
+        "ALL_TIME": 36
+      }
+    },
+    {
+      "code": "ES",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 30,
+        "MONTH": 31,
+        "ALL_TIME": 53
+      }
+    },
+    {
+      "code": "LK",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 0,
+        "MONTH": 44,
+        "ALL_TIME": 70
+      }
+    },
+    {
+      "code": "SD",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 11,
+        "MONTH": 57,
+        "ALL_TIME": 87
+      }
+    },
+    {
+      "code": "SR",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 22,
+        "MONTH": 70,
+        "ALL_TIME": 104
+      }
+    },
+    {
+      "code": "SE",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 33,
+        "MONTH": 83,
+        "ALL_TIME": 121
+      }
+    },
+    {
+      "code": "CH",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 3,
+        "MONTH": 9,
+        "ALL_TIME": 138
+      }
+    },
+    {
+      "code": "SY",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 14,
+        "MONTH": 22,
+        "ALL_TIME": 4
+      }
+    },
+    {
+      "code": "TJ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 25,
+        "MONTH": 35,
+        "ALL_TIME": 21
+      }
+    },
+    {
+      "code": "TZ",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 36,
+        "MONTH": 48,
+        "ALL_TIME": 38
+      }
+    },
+    {
+      "code": "TH",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 6,
+        "MONTH": 61,
+        "ALL_TIME": 55
+      }
+    },
+    {
+      "code": "TL",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 17,
+        "MONTH": 74,
+        "ALL_TIME": 72
+      }
+    },
+    {
+      "code": "TG",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 28,
+        "MONTH": 0,
+        "ALL_TIME": 89
+      }
+    },
+    {
+      "code": "TO",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 39,
+        "MONTH": 13,
+        "ALL_TIME": 106
+      }
+    },
+    {
+      "code": "TT",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 9,
+        "MONTH": 26,
+        "ALL_TIME": 123
+      }
+    },
+    {
+      "code": "TN",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 20,
+        "MONTH": 39,
+        "ALL_TIME": 140
+      }
+    },
+    {
+      "code": "TR",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 31,
+        "MONTH": 52,
+        "ALL_TIME": 6
+      }
+    },
+    {
+      "code": "TM",
+      "votes": {
+        "TODAY": 12,
+        "WEEK": 1,
+        "MONTH": 65,
+        "ALL_TIME": 23
+      }
+    },
+    {
+      "code": "TV",
+      "votes": {
+        "TODAY": 2,
+        "WEEK": 12,
+        "MONTH": 78,
+        "ALL_TIME": 40
+      }
+    },
+    {
+      "code": "UG",
+      "votes": {
+        "TODAY": 9,
+        "WEEK": 23,
+        "MONTH": 4,
+        "ALL_TIME": 57
+      }
+    },
+    {
+      "code": "UA",
+      "votes": {
+        "TODAY": 16,
+        "WEEK": 34,
+        "MONTH": 17,
+        "ALL_TIME": 74
+      }
+    },
+    {
+      "code": "AE",
+      "votes": {
+        "TODAY": 6,
+        "WEEK": 4,
+        "MONTH": 30,
+        "ALL_TIME": 91
+      }
+    },
+    {
+      "code": "GB",
+      "votes": {
+        "TODAY": 13,
+        "WEEK": 15,
+        "MONTH": 43,
+        "ALL_TIME": 108
+      }
+    },
+    {
+      "code": "US",
+      "votes": {
+        "TODAY": 3,
+        "WEEK": 26,
+        "MONTH": 56,
+        "ALL_TIME": 125
+      }
+    },
+    {
+      "code": "UY",
+      "votes": {
+        "TODAY": 10,
+        "WEEK": 37,
+        "MONTH": 69,
+        "ALL_TIME": 142
+      }
+    },
+    {
+      "code": "UZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 7,
+        "MONTH": 82,
+        "ALL_TIME": 8
+      }
+    },
+    {
+      "code": "VU",
+      "votes": {
+        "TODAY": 7,
+        "WEEK": 18,
+        "MONTH": 8,
+        "ALL_TIME": 25
+      }
+    },
+    {
+      "code": "VA",
+      "votes": {
+        "TODAY": 14,
+        "WEEK": 29,
+        "MONTH": 21,
+        "ALL_TIME": 42
+      }
+    },
+    {
+      "code": "VE",
+      "votes": {
+        "TODAY": 4,
+        "WEEK": 40,
+        "MONTH": 34,
+        "ALL_TIME": 59
+      }
+    },
+    {
+      "code": "VN",
+      "votes": {
+        "TODAY": 11,
+        "WEEK": 10,
+        "MONTH": 47,
+        "ALL_TIME": 76
+      }
+    },
+    {
+      "code": "YE",
+      "votes": {
+        "TODAY": 1,
+        "WEEK": 21,
+        "MONTH": 60,
+        "ALL_TIME": 93
+      }
+    },
+    {
+      "code": "ZM",
+      "votes": {
+        "TODAY": 8,
+        "WEEK": 32,
+        "MONTH": 73,
+        "ALL_TIME": 110
+      }
+    },
+    {
+      "code": "ZW",
+      "votes": {
+        "TODAY": 15,
+        "WEEK": 2,
+        "MONTH": 86,
+        "ALL_TIME": 127
+      }
+    },
+    {
+      "code": "PS",
+      "votes": {
+        "TODAY": 5,
+        "WEEK": 13,
+        "MONTH": 12,
+        "ALL_TIME": 144
+      }
+    }
+  ]
+}

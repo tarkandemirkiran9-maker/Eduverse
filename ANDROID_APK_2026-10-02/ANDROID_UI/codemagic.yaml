@@ -1,0 +1,93 @@
+workflows:
+  eduverse-ios-simulator:
+    name: EduVerse iOS Simulator - Cloud Mac Proof
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+
+    environment:
+      xcode: latest
+
+    scripts:
+      - name: Install Node dependencies
+        script: |
+          npm ci
+
+      - name: Sync Capacitor iOS
+        script: |
+          npx cap sync ios
+
+      - name: Build unsigned iOS Simulator app
+        script: |
+          mkdir -p "$CM_BUILD_DIR/artifacts"
+          xcodebuild build \
+            -project "$CM_BUILD_DIR/ios/App/App.xcodeproj" \
+            -target App \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            CONFIGURATION_BUILD_DIR="$CM_BUILD_DIR/artifacts" \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+    artifacts:
+      - artifacts/*.app
+      - /tmp/xcodebuild_logs/*.log
+  eduverse-ios-device-unsigned:
+    name: EduVerse iOS Device - Unsigned IPA
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+
+    environment:
+      xcode: latest
+
+    scripts:
+      - name: Install Node dependencies
+        script: |
+          npm ci
+
+      - name: Sync Capacitor iOS
+        script: |
+          npx cap sync ios
+
+      - name: Build unsigned iOS device app
+        script: |
+          set -e
+          rm -rf "$CM_BUILD_DIR/artifacts-device"
+          mkdir -p "$CM_BUILD_DIR/artifacts-device"
+
+          xcodebuild build \
+            -project "$CM_BUILD_DIR/ios/App/App.xcodeproj" \
+            -scheme App \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -configuration Debug \
+            CONFIGURATION_BUILD_DIR="$CM_BUILD_DIR/artifacts-device" \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Package unsigned IPA
+        script: |
+          set -e
+
+          APP_PATH="$CM_BUILD_DIR/artifacts-device/App.app"
+          test -d "$APP_PATH"
+
+          rm -rf "$CM_BUILD_DIR/ipa-work"
+          mkdir -p "$CM_BUILD_DIR/ipa-work/Payload"
+
+          cp -R "$APP_PATH" "$CM_BUILD_DIR/ipa-work/Payload/App.app"
+
+          cd "$CM_BUILD_DIR/ipa-work"
+
+          /usr/bin/ditto \
+            -c -k \
+            --sequesterRsrc \
+            --keepParent \
+            Payload \
+            "$CM_BUILD_DIR/artifacts-device/EduVerse-unsigned.ipa"
+
+    artifacts:
+      - artifacts-device/EduVerse-unsigned.ipa
+      - artifacts-device/App.app
+      - /tmp/xcodebuild_logs/*.log

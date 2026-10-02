@@ -1,0 +1,35 @@
+/* Android Preview: persistent return control from game to showcase */
+#evAndroidHomeBtn{
+  position:fixed;
+  top:max(10px,env(safe-area-inset-top));
+  left:max(10px,env(safe-area-inset-left));
+  z-index:2147483646;
+  min-width:44px;
+  height:44px;
+  padding:0 13px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  background:rgba(8,13,24,.82);
+  color:#fff;
+  font:700 12px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  letter-spacing:.03em;
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+#evAndroidHomeBtn:active{transform:scale(.96)}
+#evAndroidHomeBtn .ev-home-icon{font-size:17px;line-height:1}
+@media (max-width:420px){
+  #evAndroidHomeBtn{
+    min-width:42px;
+    height:42px;
+    padding:0 11px;
+    font-size:11px;
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "currency": "EUR",
+  "publicState": "NO_VERIFIED_DATA",
+  "calculation": {
+    "status": "UNSET_OWNER_GATE",
+    "ruleType": null,
+    "value": null,
+    "basis": "eligible_net_revenue",
+    "ownerApprovalRequired": true
+  },
+  "period": {
+    "id": null,
+    "label": null,
+    "start": null,
+    "end": null
+  },
+  "summary": {
+    "balance": 0,
+    "allocatedThisPeriod": 0,
+    "paidTotal": 0,
+    "completedProjects": 0
+  },
+  "projects": [],
+  "ledger": [],
+  "votes": {
+    "scope": "GOODNESS_PROJECTS",
+    "separateFromWorldLeague": true,
+    "eligibility": "VERIFIED_ADULT_FAMILY_ACCOUNT",
+    "oneVotePerPeriod": true,
+    "records": []
+  },
+  "evidence": []
+}

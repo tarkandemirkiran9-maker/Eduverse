@@ -1,0 +1,3 @@
+LOCAL_ZIP=C:\Users\Lenovo\Desktop\Edu\ANDROID_APK_2026-10-02.zip
+LOCAL_ZIP_SHA256=88B9D106646AD8C6A76D72A0CCF7E74493B0814C5D3D243036BC516EE920494B
+NOTE=Yerel tam ZIP GitHub'a tek blob olarak yuklenmedi. GitHub'da Android kaynak + final APK + master PDF + recovery/hash kayitlari bulunur.

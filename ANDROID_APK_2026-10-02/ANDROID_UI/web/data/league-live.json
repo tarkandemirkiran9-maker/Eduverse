@@ -1,0 +1,2002 @@
+{
+  "schemaVersion": "1.0",
+  "mode": "LIVE",
+  "publicState": "NO_VERIFIED_FAMILY_VOTES",
+  "countryUniverse": {
+    "count": 195,
+    "codes": [
+      "AF",
+      "AL",
+      "DZ",
+      "AD",
+      "AO",
+      "AG",
+      "AR",
+      "AM",
+      "AU",
+      "AT",
+      "AZ",
+      "BS",
+      "BH",
+      "BD",
+      "BB",
+      "BY",
+      "BE",
+      "BZ",
+      "BJ",
+      "BT",
+      "BO",
+      "BA",
+      "BW",
+      "BR",
+      "BN",
+      "BG",
+      "BF",
+      "BI",
+      "CV",
+      "KH",
+      "CM",
+      "CA",
+      "CF",
+      "TD",
+      "CL",
+      "CN",
+      "CO",
+      "KM",
+      "CG",
+      "CD",
+      "CR",
+      "CI",
+      "HR",
+      "CU",
+      "CY",
+      "CZ",
+      "DK",
+      "DJ",
+      "DM",
+      "DO",
+      "EC",
+      "EG",
+      "SV",
+      "GQ",
+      "ER",
+      "EE",
+      "SZ",
+      "ET",
+      "FJ",
+      "FI",
+      "FR",
+      "GA",
+      "GM",
+      "GE",
+      "DE",
+      "GH",
+      "GR",
+      "GD",
+      "GT",
+      "GN",
+      "GW",
+      "GY",
+      "HT",
+      "HN",
+      "HU",
+      "IS",
+      "IN",
+      "ID",
+      "IR",
+      "IQ",
+      "IE",
+      "IL",
+      "IT",
+      "JM",
+      "JP",
+      "JO",
+      "KZ",
+      "KE",
+      "KI",
+      "KP",
+      "KR",
+      "KW",
+      "KG",
+      "LA",
+      "LV",
+      "LB",
+      "LS",
+      "LR",
+      "LY",
+      "LI",
+      "LT",
+      "LU",
+      "MG",
+      "MW",
+      "MY",
+      "MV",
+      "ML",
+      "MT",
+      "MH",
+      "MR",
+      "MU",
+      "MX",
+      "FM",
+      "MD",
+      "MC",
+      "MN",
+      "ME",
+      "MA",
+      "MZ",
+      "MM",
+      "NA",
+      "NR",
+      "NP",
+      "NL",
+      "NZ",
+      "NI",
+      "NE",
+      "NG",
+      "MK",
+      "NO",
+      "OM",
+      "PK",
+      "PW",
+      "PA",
+      "PG",
+      "PY",
+      "PE",
+      "PH",
+      "PL",
+      "PT",
+      "QA",
+      "RO",
+      "RU",
+      "RW",
+      "KN",
+      "LC",
+      "VC",
+      "WS",
+      "SM",
+      "ST",
+      "SA",
+      "SN",
+      "RS",
+      "SC",
+      "SL",
+      "SG",
+      "SK",
+      "SI",
+      "SB",
+      "SO",
+      "ZA",
+      "SS",
+      "ES",
+      "LK",
+      "SD",
+      "SR",
+      "SE",
+      "CH",
+      "SY",
+      "TJ",
+      "TZ",
+      "TH",
+      "TL",
+      "TG",
+      "TO",
+      "TT",
+      "TN",
+      "TR",
+      "TM",
+      "TV",
+      "UG",
+      "UA",
+      "AE",
+      "GB",
+      "US",
+      "UY",
+      "UZ",
+      "VU",
+      "VA",
+      "VE",
+      "VN",
+      "YE",
+      "ZM",
+      "ZW",
+      "PS"
+    ]
+  },
+  "rules": {
+    "voteUnit": "UNIQUE_VERIFIED_FAMILY",
+    "oneFamilyOneVote": true,
+    "eligibleEntitlements": [
+      "FIVE_ROOM_PACK",
+      "FULL_ACCESS"
+    ],
+    "upgradeAddsVote": false,
+    "repeatPurchaseAddsVote": false,
+    "refundReversesVote": true,
+    "countrySource": "ADULT_FAMILY_ACCOUNT_SELECTED_COUNTRY",
+    "countryChangeCooldownDays": 30,
+    "askidaDonorAddsVote": false,
+    "askidaRecipientEligibleAfterRedemptionAndFamilyVerification": true,
+    "childIdentityUsed": false,
+    "ipGeolocationUsed": false
+  },
+  "periods": [
+    "TODAY",
+    "WEEK",
+    "MONTH",
+    "ALL_TIME"
+  ],
+  "countries": [
+    {
+      "code": "AF",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AL",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "DZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BH",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BB",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BJ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BW",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BF",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "BI",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CV",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KH",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CF",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CL",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CI",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "HR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "DK",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "DJ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "DM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "DO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "EC",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "EG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SV",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GQ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ER",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "EE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ET",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "FJ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "FI",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "FR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "DE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GH",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GW",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "HT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "HN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "HU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "IS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "IN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ID",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "IR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "IQ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "IE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "IL",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "IT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "JM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "JP",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "JO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KI",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KP",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KW",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LV",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LB",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LI",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MW",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MV",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ML",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MH",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MX",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "FM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MC",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ME",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NP",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NL",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NI",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "MK",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "NO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "OM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PK",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PW",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PH",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PL",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "QA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "RO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "RU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "RW",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "KN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LC",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "VC",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "WS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ST",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "RS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SC",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SL",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SK",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SI",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SB",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ZA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ES",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "LK",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SD",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "CH",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "SY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TJ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TH",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TL",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TO",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TT",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TR",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "TV",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "UG",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "UA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "AE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "GB",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "US",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "UY",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "UZ",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "VU",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "VA",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "VE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "VN",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "YE",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ZM",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "ZW",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    },
+    {
+      "code": "PS",
+      "votes": {
+        "TODAY": 0,
+        "WEEK": 0,
+        "MONTH": 0,
+        "ALL_TIME": 0
+      }
+    }
+  ],
+  "events": {
+    "input": [
+      "PAID_ENTITLEMENT_VERIFIED",
+      "ENTITLEMENT_REFUNDED",
+      "FAMILY_COUNTRY_CHANGED",
+      "ASKIDA_REDEEMED"
+    ],
+    "output": [
+      "FAMILY_VOTE_CREATED",
+      "FAMILY_VOTE_REVERSED",
+      "FAMILY_VOTE_MOVED"
+    ]
+  },
+  "audit": {
+    "appendOnly": true,
+    "deleteHistoricalVotes": false
+  }
+}

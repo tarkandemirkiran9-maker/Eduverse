@@ -1,0 +1,85 @@
+IOS_READ_ONLY_CHECK
+PATH=C:\Users\Lenovo\Desktop\EDU\eduverse_bitmis\EduVerse_V51_MOBILE_PILOT
+NOTE=Bu Android arsiv islemi iOS dosyalarina yazmaz.
+NOTE=Gunun erken asamasinda MOBILE_PILOT icinde yanlis kaynakta privacy denemesi yapildigi icin tum repo icin 'hic dokunulmadi' iddiasi yapilmiyor.
+HEAD=70c1fc63a7de86590e05e289eeb86085eec8355b
+BRANCH=ios-storekit-bridge-20260926
+--- GIT_STATUS_PORCELAIN ---
+ M android/app/build.gradle
+ M android/app/src/main/java/club/eduverse/app/MainActivity.java
+ M android/app/src/main/res/values/strings.xml
+ M storefront/app.js
+ M storefront/index.html
+ M storefront/styles.css
+ M web-ios/ios-platform-guard.js
+ M web/index.html
+?? .agents_artifacts_cf5fb434/
+?? 90_DEVIR/
+?? IOS_HUB_LAB/
+?? IOS_WORLD_HUB_LAB/
+?? _oki_dual_tts_v5_backup_1787409874266/
+?? _oki_helper_fixed_cfs_v7_backup_1787411228507/
+?? _oki_question_emoji_backup_1787406478684/
+?? _oki_three_role_v4_backup_1787407988995/
+?? _oki_voice_audition_v6_backup_1787410672278/
+?? _oki_voice_layer_backup_1787404597270/
+?? _oki_voice_role_backup_1787404356493/
+?? _oki_voice_timing_backup_1787405882324/
+?? _tarkan_backup/
+?? _tts_global_voice_backup/
+?? android/app/src/main/res/drawable-hdpi/eduverse_launcher_adaptive_bg.png
+?? android/app/src/main/res/drawable-mdpi/eduverse_launcher_adaptive_bg.png
+?? android/app/src/main/res/drawable-xhdpi/eduverse_launcher_adaptive_bg.png
+?? android/app/src/main/res/drawable-xxhdpi/eduverse_launcher_adaptive_bg.png
+?? android/app/src/main/res/drawable-xxxhdpi/eduverse_launcher_adaptive_bg.png
+?? android/app/src/main/res/drawable/eduverse_launcher_empty_foreground.xml
+?? android/launcher_backup_20260831_190804/
+?? android/strix_runs/
+?? branding/
+?? capacitor.config.before_ios_stage.json
+?? "ersLenovoDesktopeduverse_bitmisEduVerse_V51_MOBILE_PILOT\357\200\242"
+?? ios/App/App/Base.lproj/Main.storyboard.backup_STOREKIT_BRIDGE_20260926
+?? ios/App/App/EduVerseStoreKitPlugin_before_brace_fix.swift
+?? ios/App/App/EduVerseStoreKitPlugin_before_ping_backup.swift
+?? ios/App/App/EduVerseStoreKitPlugin_emergency_backup_20260925.swift
+?? ios/App/App/Info.plist.backup_SINGLE_BRIDGE_20260926
+?? "kida.js\357\200\242"
+?? prototype/
+?? storefront/assets/oki_dede_future.png
+?? storefront/purchase-channels.js
+?? storefront/store-config.js
+?? storefront/vitrin-kumandasi.js
+?? storefront/web-entry.js
+?? "t "
+?? "t ===== TARKAN_BASLANGIC ====="
+?? "t RESULT=STOP_REVERT_92505E4"
+?? "t RESULT=STOP_REVERT_E213533"
+?? "tatus --porcelain -- web-ios)"
+?? "tatus --short"
+?? "tore -- `"
+?? web-ios-stage/.wrangler/
+?? web-ios-stage/BACK1.html
+?? web-ios-stage/BACK10.js
+?? web-ios-stage/BACK11.js
+?? web-ios-stage/BACK2.html
+?? web-ios-stage/BACK2.js
+?? web-ios-stage/BACK3.js
+?? web-ios-stage/BACK4.html
+?? web-ios-stage/BACK5.html
+?? web-ios-stage/BACK6.html
+?? web-ios-stage/BACK7.html
+?? web-ios-stage/BACK8.js
+?? web-ios-stage/BACK9.js
+?? web-ios-stage/README_PROTO.txt
+?? web-ios-stage/game/CHROME_ILE_AC.bat
+?? web-ios-stage/game/EDGE_ILE_AC.bat
+?? web-ios-stage/game/EV_V50_MODE_SAFE_FINAL_REPORT.txt
+?? web-ios-stage/game/LOCAL_SERVER.ps1
+?? web-ios-stage/game/MUSIC_TRIAL_REPORT.txt
+?? web-ios-stage/game/OKU_BENI_EDGE_TEST.txt
+?? web-ios-stage/index.HUB_ISIK1_20260910_142839.bak
+?? web-ios-stage/index.HUB_ISIK2_20260910_143125.bak
+?? web-ios/game/ev-platform/ev-ios-parent-gate.js.backup_DIRECT_STOREKIT_20260926
+?? web-ios/game/ev-platform/ev-ios-store.js.backup_EVACCESS_20260924
+?? web-ios/game/ev-platform/ev-ios-store.js.backup_NATIVE_PLUGIN_PATH_20260926
+?? web-ios/game/ev-platform/ev-ios-store.js.backup_ios_gate_20260924

@@ -1,0 +1,243 @@
+/* EV_OKI_VOICE_LAYER_V1_START */
+/* EV_OKI_VOICE_TIMING_TUNE_V2 */
+(function(){
+  'use strict';
+  if(window.__EV_OKI_VOICE_LAYER_V1) return;
+  window.__EV_OKI_VOICE_LAYER_V1=1;
+
+  var voiceTurn=0;
+  var questionReadyAt=0;
+  var lastAnswerKey='';
+
+  function lang(){
+    var l='';
+    try{
+      if(typeof evValuesLang==='function') l=evValuesLang()||'';
+    }catch(e){}
+    try{
+      if(!l) l=localStorage.getItem('ev_values_lang')||
+        localStorage.getItem('edu_values_lang')||
+        localStorage.getItem('eduverse_lang')||
+        localStorage.getItem('app_lang')||
+        document.documentElement.lang||'tr';
+    }catch(e2){ l='tr'; }
+    l=String(l||'tr').slice(0,2).toLowerCase();
+    return ({tr:1,en:1,de:1,fr:1,ar:1})[l]?l:'tr';
+  }
+
+  function speechLang(){
+    var l=lang();
+    return l==='en'?'en-US':
+      (l==='de'?'de-DE':
+      (l==='fr'?'fr-FR':
+      (l==='ar'?'ar-SA':'tr-TR')));
+  }
+
+  function safeName(){
+    var n='';
+    try{
+      if(typeof playerName!=='undefined' && playerName) n=String(playerName);
+    }catch(e){}
+    if(!n){
+      var keys=['eduverse_player_name','playerName'];
+      for(var i=0;i<keys.length;i++){
+        try{
+          n=localStorage.getItem(keys[i])||'';
+          if(n) break;
+        }catch(e2){}
+      }
+    }
+    n=String(n||'')
+      .replace(/[\u0000-\u001F\u007F<>{}\[\]\\\/]/g,' ')
+      .replace(/\s+/g,' ')
+      .trim()
+      .slice(0,18);
+
+    var low=n.toLowerCase();
+    if(!n || /^(kahraman|hero|held|heros|explorer|kasif)$/.test(low)) return '';
+    return n;
+  }
+
+  function personalAnswer(text){
+    var l=lang();
+    var n=safeName();
+    var lead='';
+
+    if(l==='en') lead=n?('Dear '+n+', '):'Dear friend, ';
+    else if(l==='de') lead=n?('Hallo '+n+', '):'Hallo, ';
+    else if(l==='fr') lead=n?('Bonjour '+n+', '):'Bonjour, ';
+    else if(l==='ar') lead=n?('\u064A\u0627 '+n+'\u060C '):'\u0645\u0631\u062D\u0628\u064B\u0627\u060C ';
+    else lead=n?('Sevgili '+n+', '):'Sevgili arkada\u015F\u0131m, ';
+
+    return lead+String(text||'').trim();
+  }
+
+  function estimate(text){
+    return Math.min(6000,Math.max(1900,String(text||'').length*105));
+  }
+
+  function nativeObject(){
+    return window.AndroidTTS||window.EVAndroidTTS||window.NativeTTS||null;
+  }
+
+  function stopVoice(){
+    try{
+      var a=nativeObject();
+      if(a && typeof a.stop==='function') a.stop();
+    }catch(e){}
+    try{
+      if(window.speechSynthesis) window.speechSynthesis.cancel();
+    }catch(e2){}
+  }
+
+  function speakRole(text,role,onend){
+    text=String(text||'').trim();
+    if(!text){
+      if(typeof onend==='function') onend();
+      return;
+    }
+
+    stopVoice();
+
+    var finished=false;
+    var ms=estimate(text);
+    function finish(){
+      if(finished) return;
+      finished=true;
+      if(typeof onend==='function'){
+        try{ onend(); }catch(e){}
+      }
+    }
+
+    try{
+      var a=nativeObject();
+      if(a && typeof a.speakStyled==='function'){
+        a.speakStyled(text,speechLang(),role);
+        setTimeout(finish,ms);
+        return;
+      }
+    }catch(e2){}
+
+    try{
+      if(window.speechSynthesis){
+        var u=new SpeechSynthesisUtterance(text);
+        u.lang=speechLang();
+        u.volume=1;
+        if(role==='child'){
+          u.rate=.82;
+          u.pitch=1.18;
+        }else{
+          u.rate=.84;
+          u.pitch=1.10;
+        }
+        u.onend=finish;
+        u.onerror=finish;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(u);
+        setTimeout(finish,ms+500);
+        return;
+      }
+    }catch(e3){}
+
+    setTimeout(finish,ms);
+  }
+
+  function closest(el,selector){
+    while(el && el.nodeType===1){
+      if(el.matches && el.matches(selector)) return el;
+      el=el.parentElement;
+    }
+    return null;
+  }
+
+  document.addEventListener('click',function(ev){
+    var q=closest(ev.target,'.okiyesor-q[data-i]');
+    if(q){
+      voiceTurn++;
+      lastAnswerKey='';
+      stopVoice();
+
+      var myTurn=voiceTurn;
+      var text=String(q.textContent||'').replace(/\s+/g,' ').trim();
+      questionReadyAt=Date.now()+estimate(text);
+
+      speakRole(text,'child',function(){
+        if(myTurn===voiceTurn) questionReadyAt=Date.now();
+      });
+      return;
+    }
+
+    if(
+      closest(ev.target,'.okiyesor-topic-btn[data-k]') ||
+      closest(ev.target,'.okiyesor-back')
+    ){
+      voiceTurn++;
+      questionReadyAt=0;
+      lastAnswerKey='';
+      stopVoice();
+    }
+  },true);
+
+  function handleAnswer(){
+    var app=document.getElementById('okiyesor-app');
+    if(!app) return;
+
+    var answers=app.querySelectorAll(
+      '.okiyesor-answer.show:not(.think) p'
+    );
+
+    for(var i=0;i<answers.length;i++){
+      var p=answers[i];
+      if(p.getAttribute('data-ev-oki-personalized')==='1') continue;
+
+      var original=String(p.textContent||'').trim();
+      if(!original) continue;
+
+      var spoken=personalAnswer(original);
+      p.textContent=spoken;
+      p.setAttribute('data-ev-oki-personalized','1');
+
+      var key=voiceTurn+'|'+original;
+      if(lastAnswerKey===key) continue;
+      lastAnswerKey=key;
+
+      (function(myTurn,textToSpeak){
+        var wait=Math.max(150,questionReadyAt-Date.now()+350);
+        setTimeout(function(){
+          if(myTurn!==voiceTurn) return;
+          var current=document.getElementById('okiyesor-app');
+          if(!current || current.style.display==='none') return;
+          speakRole(textToSpeak,'oki');
+        },wait);
+      })(voiceTurn,spoken);
+    }
+  }
+
+  var observer=new MutationObserver(function(){
+    handleAnswer();
+  });
+
+  function boot(){
+    try{
+      observer.observe(document.documentElement,{
+        childList:true,
+        subtree:true
+      });
+      handleAnswer();
+    }catch(e){}
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',boot);
+  }else{
+    boot();
+  }
+
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){
+      voiceTurn++;
+      stopVoice();
+    }
+  });
+})();
+/* EV_OKI_VOICE_LAYER_V1_END */

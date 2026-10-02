@@ -1,0 +1,13 @@
+/* EduVerse Android packaged layer — APK10 */
+[data-hub-link="ios"],
+[data-hub-link="android"],
+.ev-buy-ios,
+#eduverseStoreBridge .ev-buy-ios{
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+
+html.ev-android-app [data-hub-link="web"]{
+  cursor:pointer!important;
+}
